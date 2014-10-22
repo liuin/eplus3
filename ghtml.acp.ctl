@@ -6,9 +6,6 @@ $(this)[0].offsetWidth;
 #T=@ÄÚºËÅÐ¶Ï
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=text
-baiduyuhn
-
 #T=¡°¡°
 ¡°  ¡±
 #T=<div id='fancybox-loading'><div></div></div>

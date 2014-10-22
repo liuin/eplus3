@@ -94,9 +94,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -357,6 +357,8 @@ display:^!;
 display:block;
 #T=d-cp
 display:compact;
+#T=d-fl
+display:flex
 #T=d-i
 display:inline;
 #T=d-ib
