@@ -1,0 +1,15 @@
+﻿[Version]
+Signature="$CHICAGO$"
+
+[DefaultInstall]
+AddReg=editplus_AddReg
+
+[editplus_AddReg]
+hkcu,"%editplus1_SEEI%","INI directory",,"%01%\setting"
+hkcu,"%editplus1_SEEI%","STX ACP CTL",,"%01%"
+hkcu,"%editplus1_SEEI%","License",1,db,89,29,18,fd,5d,05,5e,78,9c,63,4d,\
+  2e,2a,ce,ae,94,35,b7,30,b7,74,d5,35,75,72,33,b5,d0,35,77,09,32,32,\
+  d6,75,71,f4,77,32,02,b1,8d,0d,00,ae,db,08,fb
+
+[Strings]
+editplus1_SEEI="Software\ES-Computing\EditPlus 3\Install"
