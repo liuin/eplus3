@@ -247,6 +247,12 @@ createTHead(^!)
 css(^!)
 #T=data
 data(^!)
+#T=data-form="select"
+/*-- ±íµ¥select --*/
++function ($) {
+  'use strict';
+
+}(jQuery); 
 #T=dblclick
 dblclick(^!)
 #T=decodeURI
@@ -1144,9 +1150,9 @@ setSeconds(^!)
 setTime(^!)
 #T=setTimeout
 setTimeout(
-    function(){
-	^!
-    }, speed)
+  function(){
+    ^!
+  }, speed)
 #T=setUTCDate
 setUTCDate(^!)
 #T=setUTCFullYear
