@@ -732,9 +732,9 @@ serialize()^!
 #T=jqsl
 scrollLeft(^!)
 #T=jqst
-scrollTop(^!)
-#T=jqst
 slideToggle(^!)
+#T=jqst
+scrollTop(^!)
 #T=jqsu
 slideUp(^!)
 #T=jqsupport
@@ -904,6 +904,8 @@ offsetTop
 offsetX
 #T=offsetY
 offsetY
+#T=on
+on(^!)
 #T=one
 one(^!)
 #T=open
@@ -1067,9 +1069,9 @@ ScriptEngineMajorVersion(^!)
 #T=ScriptEngineMinorVersion
 ScriptEngineMinorVersion(^!)
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -1164,9 +1166,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
