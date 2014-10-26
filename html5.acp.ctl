@@ -1492,7 +1492,9 @@ jQuery.extend(jQuery.easing, {
 #T=js-v
 javascript:void(0);
 #T=k
-{^!}
+{
+  ^!
+}
 #T=kbd
 <kbd>^!</kbd>
 #T=keygen

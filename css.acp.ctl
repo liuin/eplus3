@@ -358,7 +358,7 @@ display:block;
 #T=d-cp
 display:compact;
 #T=d-fl
-display:flex
+display:flex;
 #T=d-i
 display:inline;
 #T=d-ib
@@ -550,7 +550,9 @@ height:^!;
 #T=h-a
 height:auto;
 #T=k
-{^!}
+{
+  ^!
+}
 #T=l
 left:^!;
 #T=l-a
