@@ -738,9 +738,9 @@ serialize()^!
 #T=jqsl
 scrollLeft(^!)
 #T=jqst
-slideToggle(^!)
-#T=jqst
 scrollTop(^!)
+#T=jqst
+slideToggle(^!)
 #T=jqsu
 slideUp(^!)
 #T=jqsupport
@@ -784,7 +784,9 @@ show()^!
 #T=jtriggerHandler
 triggerHandler(^!)
 #T=k
-{^!}
+{
+  ^!
+}
 #T=key
 key(^!)
 #T=keydown
@@ -1075,9 +1077,9 @@ ScriptEngineMajorVersion(^!)
 #T=ScriptEngineMinorVersion
 ScriptEngineMinorVersion(^!)
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -1172,9 +1174,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog

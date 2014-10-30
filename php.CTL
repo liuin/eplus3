@@ -5,6 +5,8 @@ New Cliptext library
 
 #T= urldecode($cate);
  urldecode($cate);
+#T=$_GET["nickname"]
+$_GET["nickname"]
 #T=$str = str_replace("&", "&amp;", "<body text='%body%'>");
 $str = str_replace("&", "&amp;", "<body text='%body%'>");
 #T=$this->db->order_by();  asc, desc, random

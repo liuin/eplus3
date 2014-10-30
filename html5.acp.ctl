@@ -66,6 +66,8 @@ class="^!"
 <colgroup>^!</colgroup>
 #T=command
 <command>^!</command>
+#T=container
+container
 #T=contenteditable html5 ÎÄ±¾¿ò±à¼­
 contenteditable="true"
 #T=datalist
@@ -1717,7 +1719,5 @@ target="_blank"
 #T=width=""
 width="^!"
 #T=zs-ze
-<!-- start ^! -->
-
-<!-- end -->
+<!-- /^! -->
 #
