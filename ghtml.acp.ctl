@@ -134,4 +134,6 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=ĞŞ¸ÄcheckµÄÊôĞÔ $(".ckiput").prop('checked',true); 
+$(".ckiput").prop('checked',true);
 #
