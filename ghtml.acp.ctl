@@ -104,6 +104,44 @@ $ pure release -d build # -d 代表发布到配置文件中的build节点
   'use strict';
 
 }(jQuery);
+#T=jquery模块
+/** 
+* extend 首页服务模块事件
+* 
+* @package jquery
+* @author cuki13
+  */
++(function($){
+
+
+})(jQuery);
+#T=magento产品模板
+<style type="text/css">
+              
+               .cpd-c2 {margin-bottom: 10px; position: relative; left: 34px; clear: both; top:0px;}
+                   .cpd-c2  .add-to-links1{display: none; }
+            body.catalog-product-view .product-view .price-box1{display: block;float: left;width: 100px;}
+            .product-view .product-shop .product-name{margin-bottom:10px;}
+            body.catalog-product-view .product-view .price-box1 {display: block;}
+            body.catalog-product-view .product-view .c-option-bottom  .price-box1{display:block;}
+            .qty-box .btcount{display: none;}
+            
+            .itemcount  {display: none;}
+            </style>
+            
+            <script type="text/javascript">
+            <!--
+              jQuery(document).ready(function($) {
+                $("#qty").val(1).attr("readonly","readonly");
+                            $(".qty-box .btcount").remove();
+              })
+            //-->
+            </script>
+            <div id="buynow"></div>
+            <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720.jpg" alt="">
+            <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-02.jpg" alt="">
+            <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-03.jpg" alt="">
+            <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-04.jpg" alt="">
 #T=v.charAt(i)
 v.charAt(i)
 #T=valcss
@@ -134,6 +172,12 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=比亚迪元旦right活动
+<li>
+<a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
+</li>
+#T=图片模板
+<img src="http://placehold.it/300x350/42bdc2/FFFFFF" />
 #T=修改check的属性 $(".ckiput").prop('checked',true); 
 $(".ckiput").prop('checked',true);
 #
