@@ -6,6 +6,17 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
+#T=jquery模块
+/** 
+* extend 首页服务模块事件
+* 
+* @package jquery
+* @author cuki13
+  */
++(function($){
+  'use strict';
+
+})(jQuery);
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -104,17 +115,6 @@ $ pure release -d build # -d 代表发布到配置文件中的build节点
   'use strict';
 
 }(jQuery);
-#T=jquery模块
-/** 
-* extend 首页服务模块事件
-* 
-* @package jquery
-* @author cuki13
-  */
-+(function($){
-
-
-})(jQuery);
 #T=magento产品模板
 <style type="text/css">
               
