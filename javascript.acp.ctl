@@ -514,6 +514,8 @@ index(^!)
 indexOf(^!)
 #T=innerHeight
 innerHeight()^!
+#T=innerHTML
+innerHTML
 #T=innerWidth
 innerWidth()^!
 #T=inRange
@@ -740,9 +742,9 @@ serialize()^!
 #T=jqsl
 scrollLeft(^!)
 #T=jqst
-slideToggle(^!)
-#T=jqst
 scrollTop(^!)
+#T=jqst
+slideToggle(^!)
 #T=jqsu
 slideUp(^!)
 #T=jqsupport
@@ -922,6 +924,8 @@ one(^!)
 open(^!)
 #T=outerHeight
 outerHeight(^!)
+#T=outerHTML
+outerHTML
 #T=outerWidth
 outerWidth(^!)
 #T=parentElement
@@ -1079,9 +1083,9 @@ ScriptEngineMajorVersion(^!)
 #T=ScriptEngineMinorVersion
 ScriptEngineMinorVersion(^!)
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -1176,9 +1180,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog

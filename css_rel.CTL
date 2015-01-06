@@ -44,6 +44,8 @@ ie6在某种情况下 相连的标签不能有空格 不然会产生BUG
     background: rgba(255,0,0,0.4);
 }
 
+#T=渐变background-image: linear-gradient(to bottom, #e1e1e1, #fcfcfc);
+background-image: linear-gradient(to bottom, #e1e1e1, #fcfcfc);
 #T=ie图片居中
 1.在父层用上line-height
 2.用两个子层一个用postion：absolute；top：50%；另一个用postion：absolute；top：-50%；
