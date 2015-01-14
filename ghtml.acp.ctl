@@ -6,6 +6,8 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
+#T=href="(.[^"]*)" ep搜索href="内容"的内容
+href="(.[^"]*)"
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -99,6 +101,9 @@ $ cd /path/to/welab/webapp/develop
 $ pure release # 编译
 $ pure release -omp # -omp 代表压缩,md5后缀,打包
 $ pure release -d build # -d 代表发布到配置文件中的build节点
+#T=iframe
+      <iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
+
 #T=jquery pugin
 +function ($) {
   'use strict';
@@ -142,6 +147,8 @@ $ pure release -d build # -d 代表发布到配置文件中的build节点
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-02.jpg" alt="">
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-03.jpg" alt="">
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-04.jpg" alt="">
+#T=tablefix
+jQuery.fn.fixedtableheader = function(options) {var settings = jQuery.extend({headerrowsize: 1, highlightrow: false, highlightclass: "highlight", thetop: 0 }, options); this.each(function(i) {var $tbl = $(this); var $tblhfixed = $tbl.find("tr:lt(" + settings.headerrowsize + ")"); var headerelement = "th"; if ($tblhfixed.find(headerelement).length == 0) headerelement = "td"; if ($tblhfixed.find(headerelement).length > 0) {$tblhfixed.find(headerelement).each(function() {$(this).css("width", $(this).width()); }); var $clonedTable = $tbl.clone().empty(); var tblwidth = GetTblWidth($tbl); $clonedTable.attr("id", "fixedtableheader" + i).css({"position": "fixed", "top": settings.thetop, "left": $tbl.offset().left }).append($tblhfixed.clone()).width(tblwidth).hide().appendTo($("body")); if (settings.highlightrow) $("tr:gt(" + (settings.headerrowsize - 1) + ")", $tbl).hover(function() {$(this).addClass(settings.highlightclass); }, function() {$(this).removeClass(settings.highlightclass); }); $(window).scroll(function() {if (jQuery.browser.msie && jQuery.browser.version == "6.0") $clonedTable.css({"position": "absolute", "top": $(window).scrollTop(), "left": $tbl.offset().left }); else $clonedTable.css({"position": "fixed", "top": settings.thetop, "left": $tbl.offset().left - $(window).scrollLeft() }); var sctop = $(window).scrollTop(); var elmtop = $tblhfixed.offset().top; if (sctop > elmtop && sctop <= (elmtop + $tbl.height() - $tblhfixed.height())) $clonedTable.show(); else $clonedTable.hide(); }); $(window).resize(function() {if ($clonedTable.outerWidth() != $tbl.outerWidth()) {$tblhfixed.find(headerelement).each(function(index) {var w = $(this).width(); $(this).css("width", w); $clonedTable.find(headerelement).eq(index).css("width", w); }); $clonedTable.width($tbl.outerWidth()); } $clonedTable.css("left", $tbl.offset().left); }); } }); function GetTblWidth($tbl) {var tblwidth = $tbl.outerWidth(); return tblwidth; } };
 #T=v.charAt(i)
 v.charAt(i)
 #T=valcss
@@ -172,10 +179,6 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
-#T=忽略将数字变为电话号码 移动开发
-忽略将数字变为电话号码：
-
-<meta content="telephone=no" name="format-detection">
 #T=比亚迪元旦right活动
 <li>
 <a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
