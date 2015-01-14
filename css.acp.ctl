@@ -3,6 +3,8 @@
 
 #T=!
 !important
+#T=-webkit-box-flex: 2;
+-webkit-box-flex: 2;
 #T=@f
 @font-face {font-family:^!;src:url();}
 #T=@i
@@ -94,9 +96,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -549,6 +551,8 @@ font-size-adjust:none;
 height:^!;
 #T=h-a
 height:auto;
+#T=justify
+justify
 #T=k
 {^!}
 #T=l

@@ -6,17 +6,6 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=jquery模块
-/** 
-* extend 首页服务模块事件
-* 
-* @package jquery
-* @author cuki13
-  */
-+(function($){
-  'use strict';
-
-})(jQuery);
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -115,6 +104,17 @@ $ pure release -d build # -d 代表发布到配置文件中的build节点
   'use strict';
 
 }(jQuery);
+#T=jquery模块
+/** 
+* extend 首页服务模块事件
+* 
+* @package jquery
+* @author cuki13
+  */
++(function($){
+  'use strict';
+
+})(jQuery);
 #T=magento产品模板
 <style type="text/css">
               
@@ -172,6 +172,10 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=忽略将数字变为电话号码 移动开发
+忽略将数字变为电话号码：
+
+<meta content="telephone=no" name="format-detection">
 #T=比亚迪元旦right活动
 <li>
 <a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
