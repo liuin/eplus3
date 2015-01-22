@@ -3,8 +3,6 @@
 
 #T=!
 !important
-#T=-webkit-box-flex: 2;
--webkit-box-flex: 2;
 #T=@f
 @font-face {font-family:^!;src:url();}
 #T=@i
@@ -96,9 +94,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -638,7 +636,9 @@ margin-top:^!;
 #T=mt-a
 margin-top:auto;
 #T=nth-
-nth-child(odd)
+nth-child(5n)
+#T=nth-last-child(-n+5)
+nth-last-child(-n+5)
 #T=o
 outline:^!;
 #T=oc
@@ -960,6 +960,8 @@ visibility:visible;
 width:^!;
 #T=w-a
 width:auto;
+#T=-webkit-box-flex: 2;
+-webkit-box-flex: 2;
 #T=whs
 white-space:^!;
 #T=whsc
