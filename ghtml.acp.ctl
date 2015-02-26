@@ -6,8 +6,13 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=href="(.[^"]*)" ep搜索href="内容"的内容
-href="(.[^"]*)"
+#T=AMD格式
+  //AMD格式
+  if ( typeof define === "function" && define.amd ) {
+    define( "formSelect", ["jquery"], function($) {
+      return Select;
+    });
+  }
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -101,6 +106,8 @@ $ cd /path/to/welab/webapp/develop
 $ pure release # 编译
 $ pure release -omp # -omp 代表压缩,md5后缀,打包
 $ pure release -d build # -d 代表发布到配置文件中的build节点
+#T=href="(.[^"]*)" ep搜索href="内容"的内容
+href="(.[^"]*)"
 #T=iframe
       <iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 
@@ -179,6 +186,10 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=普通闭包
+(function() {
+  ^!
+})()
 #T=比亚迪元旦right活动
 <li>
 <a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
