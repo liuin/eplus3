@@ -94,9 +94,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -399,6 +399,8 @@ display:table-header-group;
 display:table-row;
 #T=d-tbrg
 display:table-row-group;
+#T=d-wb
+display: -webkit-box;
 #T=ec
 empty-cells:^!;
 #T=ec-h
