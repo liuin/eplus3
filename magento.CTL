@@ -17,6 +17,8 @@ $_product->getShortDescription();
 $this->getSkinUrl('images/btn_proceed_to_checkout.gif')
 #T=<cms_no_route>no-route</cms_no_route>取消后台定义的CMS输出 在code里面
 <cms_no_route>no-route</cms_no_route>
+#T=修改系统地址
+E:\xampp\htdocs\mall\app\code\core\Mage\Customer\Model\Address
 #T=connect20.magentocommerce.com/community/Kontilint_News news
 connect20.magentocommerce.com/community/Kontilint_News
 #T=magento 安装jqueryzoom
