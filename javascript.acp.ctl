@@ -247,6 +247,8 @@ createTFoot(^!)
 createTHead(^!)
 #T=css
 css(^!)
+#T=d
+"^!"
 #T=data
 data(^!)
 #T=data-form="select"
@@ -742,9 +744,9 @@ serialize()^!
 #T=jqsl
 scrollLeft(^!)
 #T=jqst
-slideToggle(^!)
-#T=jqst
 scrollTop(^!)
+#T=jqst
+slideToggle(^!)
 #T=jqsu
 slideUp(^!)
 #T=jqsupport
@@ -788,9 +790,7 @@ show()^!
 #T=jtriggerHandler
 triggerHandler(^!)
 #T=k
-{
-  ^!
-}
+{^!}
 #T=key
 key(^!)
 #T=keydown
@@ -827,6 +827,8 @@ live(^!)
 load(^!)
 #T=localeCompare
 localeCompare(^!)
+#T=localStorage
+localStorage
 #T=log
 log(^!)
 #T=map
@@ -1074,6 +1076,8 @@ return ^!;
 reverse(^!)
 #T=round
 round(^!)
+#T=s
+'^!'
 #T=ScriptEngine
 ScriptEngine(^!)
 #T=ScriptEngineBuildVersion
@@ -1083,9 +1087,9 @@ ScriptEngineMajorVersion(^!)
 #T=ScriptEngineMinorVersion
 ScriptEngineMinorVersion(^!)
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -1180,9 +1184,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog

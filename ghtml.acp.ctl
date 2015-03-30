@@ -6,6 +6,12 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
+#T=fgsf
+fgsdfgsdg dsfgds 
+#T=““
+“  ”
+#T=<div id='fancybox-loading'><div></div></div>
+<div id='fancybox-loading'><div></div></div>
 #T=AMD格式
   //AMD格式
   if ( typeof define === "function" && define.amd ) {
@@ -13,10 +19,6 @@ $(this)[0].offsetWidth;
       return Select;
     });
   }
-#T=““
-“  ”
-#T=<div id='fancybox-loading'><div></div></div>
-<div id='fancybox-loading'><div></div></div>
 #T=cdn
 <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -186,14 +188,14 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
-#T=普通闭包
-(function() {
-  ^!
-})()
 #T=比亚迪元旦right活动
 <li>
 <a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
 </li>
+#T=普通闭包
+(function() {
+  ^!
+})()
 #T=图片模板
 <img src="http://placehold.it/300x350/42bdc2/FFFFFF" />
 #T=修改check的属性 $(".ckiput").prop('checked',true); 

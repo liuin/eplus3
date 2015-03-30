@@ -906,6 +906,8 @@ text-outline:none;
 text-replace:^!;
 #T=tr-n
 text-replace:none;
+#T=transform
+transform
 #T=tsh
 text-shadow:^!;
 #T=tsh-

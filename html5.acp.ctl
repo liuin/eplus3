@@ -70,6 +70,8 @@ class="^!"
 container
 #T=contenteditable html5 ÎÄ±¾¿ò±à¼­
 contenteditable="true"
+#T=d
+"^!"
 #T=datalist
 <datalist>
 	<option value="^!"></option>
