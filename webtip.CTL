@@ -217,9 +217,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -663,7 +663,7 @@ cursor:pointer;
 #T=cur-t
 cursor:text;
 #T=d
-display:^!;
+'^!'
 #T=data
 data(^!)
 #T=data-form="select"
@@ -729,6 +729,8 @@ display:inline-block;
 die(^!)
 #T=d-itb
 display:inline-table;
+#T=display
+display:^!;
 #T=div
 <div>^!</div>
 #T=dl
@@ -1220,9 +1222,9 @@ href="javascript:void(0);"
 #T=href-n
 href="#"
 #T=html
-<html>^!</html>
-#T=html
 html(^!)
+#T=html
+<html>^!</html>
 #T=html-2col
 <style type="text/css">
 					.ct {}
@@ -2776,9 +2778,9 @@ serialize()^!
 #T=jqsl
 scrollLeft(^!)
 #T=jqst
-slideToggle(^!)
-#T=jqst
 scrollTop(^!)
+#T=jqst
+slideToggle(^!)
 #T=jqsu
 slideUp(^!)
 #T=jqsupport
@@ -2844,11 +2846,11 @@ keyup(^!)
 #T=kk
 "^!"
 #T=l
+(^!)
+#T=l
+(^!)
+#T=l
 left:^!;
-#T=l
-(^!)
-#T=l
-(^!)
 #T=l-a
 left:auto;
 #T=label
@@ -2924,9 +2926,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2952,11 +2954,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
 	<area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3309,9 +3311,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3445,9 +3447,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3463,14 +3465,14 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
+select(^!)
+#T=select
 <select name="^!">
 	<option></option>
 	<option></option>
 </select>
-#T=select
-select(^!)
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -3549,9 +3551,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3575,9 +3577,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -3613,9 +3615,9 @@ style="^!"
   ^!	
 </style>
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -3629,9 +3631,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3649,14 +3651,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
 	<td>^!</td>
 	<td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3735,9 +3737,9 @@ table-layout:fixed;
 .list-nofl li a {text-decoration:none; padding-left:10px; display:block; }
 .list-nofl li a span {}
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3777,9 +3779,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3921,9 +3923,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -3945,9 +3947,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -4106,9 +4108,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner

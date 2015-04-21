@@ -94,9 +94,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -904,10 +904,12 @@ text-outline:0 0 #000;
 text-outline:none;
 #T=tr
 text-replace:^!;
-#T=tr-n
-text-replace:none;
 #T=transform
 transform
+#T=tr-n
+text-replace:none;
+#T=transition
+transition:
 #T=tsh
 text-shadow:^!;
 #T=tsh-

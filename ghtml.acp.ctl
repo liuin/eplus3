@@ -6,8 +6,6 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=fgsf
-fgsdfgsdg dsfgds 
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -89,6 +87,8 @@ var fc = {
 		}
 }
 
+#T=fgsf
+fgsdfgsdg dsfgds 
 #T=git指令
 cd path/to/你的项目根目录
 

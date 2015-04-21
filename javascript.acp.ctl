@@ -31,17 +31,18 @@ function (^!) {
 }
 #T=ajax
 $.ajax({
-    type: "POST",
-    url: "test.html",
-    data: getdata,
-    dataType: 'json',
-    success: function(data){
-    },
-    error:function  () {
-    },
-    beforeSend:function  () {
-        alert('1212');
-    }
+  type: "POST",
+  url: "test.html",
+  data: getdata,
+  dataType: 'json',
+  async:true, //“Ï≤Ω
+  success: function(data){
+  },
+  error:function  () {
+  },
+  beforeSend:function  () {
+    alert('1212');
+  }
 });
 #T=ajaxComplete
 ajaxComplete(function(event, request, settings){
@@ -235,6 +236,12 @@ createPopup(^!)
 createRange(^!)
 #T=createRangeCollection
 createRangeCollection(^!)
+#T=createServer
+createServer(function (request, response) {
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.end('Hello World\n');
+  response.end(); 
+}).listen(8888);
 #T=createStyleSheet
 createStyleSheet(^!)
 #T=createTextNode
@@ -292,6 +299,8 @@ die(^!)
 #T=do
 do {
 } while (^!);
+#T=document
+document
 #T=d-ready
 $(document).ready(function() {
 	^!	
@@ -309,6 +318,8 @@ else {
 #T=elseif
 else if (^!) {
 }
+#T=emit
+emit
 #T=empty
 empty(^!)
 #T=encodeURI
@@ -325,6 +336,8 @@ error(^!)
 escape(^!)
 #T=eval
 eval(^!)
+#T=EventEmitter
+EventEmitter
 #T=exec
 exec(^!)
 #T=execCommand
@@ -374,6 +387,8 @@ for (var i = 0, l = ^!.length; i < l; ++i) {
 }
 #T=forward
 forward(^!)
+#T=frames
+frames[$(this).attr("name")]
 #T=fromCharCode
 fromCharCode(^!)
 #T=func
@@ -930,6 +945,16 @@ outerHeight(^!)
 outerHTML
 #T=outerWidth
 outerWidth(^!)
+#T=package
+{ 
+	"name": "microblog",
+	"version": "0.0.1" ,
+	"private": true ,
+	"dependencies": { 
+		"express": "2.5.8" ,
+		"ejs": ">= 0.0.1" 
+	}
+}
 #T=parentElement
 parentElement(^!)
 #T=parentj
@@ -980,6 +1005,8 @@ print(^!)
 /*private*/ 
 #T=pro
 prototype
+#T=process
+process
 #T=prompt
 prompt(^!)
 #T=pub
@@ -1008,6 +1035,14 @@ queue(^!)
 raiseEvent(^!)
 #T=random
 random(^!)
+#T=readdir
+readdir('^!',function(err, files){
+
+})
+#T=readFile
+readFile(^!)
+#T=readFileSync
+readFileSync(^!)
 #T=ready
 ready(function(){^!})
 #T=recalc
@@ -1401,6 +1436,8 @@ wrapAll(^!)
 wrapInner(^!)
 #T=write
 write(^!)
+#T=writeFile
+writeFile(^!)
 #T=writeln
 writeln(^!)
 #T=z
