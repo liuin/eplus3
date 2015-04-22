@@ -127,7 +127,7 @@ attr(^!)
 #T=audio
 <audio src="^!"></audio>
 #T=b
-
+^^
   ^!
 
 #T=b-a
@@ -1194,306 +1194,9 @@ href="javascript:void(0);"
 #T=href-n
 href="#"
 #T=html
-html(^!)
-#T=html
 <html>^!</html>
-#T=html-2col
-<style type="text/css">
-          .ct {}
-          .ct .ct-c1 {width:260px;}
-          .ct .ct-c2 {}
-        </style>
-        <div class="ct clearfix">
-          <div class="ct-c1 fl">Learn more.</div>
-          <div class="ct-c2">Learn more.</div>
-        </div>
-#T=html-3col
-<style type="text/css">
-          .ct {}
-          .ct .ct-c1 {width:260px;}
-          .ct .ct-c2 {width:500px;}
-          .ct .ct-c3 {}
-        </style>
-        <div class="ct clearfix">
-          <div class="ct-c1 fl">Learn more.</div>
-          <div class="ct-c2 fl">Learn more.</div>
-          <div class="ct-c3">Learn more.</div>
-        </div>
-#T=html5-ie
-<!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-#T=html-artlist
-<style type="text/css">
-          .ar-list {}
-          .ar-list li {height: auto; padding: 24px 0 18px 0; overflow: hidden; border-top: 1px #ddd dotted; position: relative; top: -1px; _top: -3px; left: 0;}
-          .ar-list h2 {font-size: 16px; margin-bottom: 10px;}
-          .ar-list p {height: 75px; line-height: 25px; color: #666;}
-          .ar-list p a {float:left;margin: 5px 10px 0 0;display: block; width: 110px; height: 65px; float: left;}
-        </style>
-        <ul class="ar-list clearfix">
-          <li><h2><a href="#">前端之Android入门 – 环境配置</a></h2>
-          <p><a href="article-1297-1.html" target="_blank"><img width="110" height="65" src="#" alt="前端之Android入门 – 环境配置"></a>随着移动互联网的迅速发展，前端的概念已发生很大的变化，已不仅仅局限在网页端。而Android系统作为智能机市场的老大，作为前端开发工程师，非常有必要了解和学习。但面对众多学习资</p>
-          </li>
-          <li>
-            <h2><a href="article-1296-1.html" target="_blank">网页浏览毫秒必争，超强前端网页性能总结</a></h2>
-            <p><a href="article-1296-1.html" target="_blank"><img  width="110" height="65" src="#" alt="网页浏览毫秒必争，超强前端网页性能总结"></a>你愿意为打开一个网页等待多长时间？我一秒也不愿意等。但是事实上大多数网站在响应速度方面都让人失望。现在越来越多的人开始建立自己的网站，博客，你的网页响应速度如何呢？在这篇</p>
-          </li>
-        </ul>
-#T=html-back-top
-    <style type="text/css">
-    .back-top {display: none;width: 18px;line-height: 1.2;padding: 5px 0;background-color: #000;color: #fff;font-size: 12px;text-align: center;position: fixed;_position:absolute;right: 112px;_right: 92px;bottom: 100px;_bottom: "auto";cursor: pointer;opacity: 0.6;filter: Alpha(opacity=60);}
-    </style>
-    <script type="text/javascript">
-    //<![CDATA[
-
-    //返回顶部
-    (function() {
-      var $backToTopTxt = "返回顶部", 
-        $backToTopEle = $('<div class="back-top"></div>').appendTo($("body"))
-        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
-            $("html, body").animate({ scrollTop: 0 }, 300);
-        });
-
-        $backToTopFun = function() {					
-          var st = $(document).scrollTop(), winh = $(window).height();
-          if(st > 200)
-          {
-            if($backToTopEle.data('pos') == 'top'){return false;} $backToTopEle.data('pos','top').stop().css('opacity','1').fadeIn();
-          }else{
-            if($backToTopEle.data('pos') == 'scroll'){return false;}
-            $backToTopEle.data('pos','scroll').stop().fadeOut()
-          }
-        
-          //IE6下的定位
-          if (!window.XMLHttpRequest) {
-            $backToTopEle.css("top", st + winh - 166);
-          }
-        };
-      $(window).bind("scroll", $backToTopFun);
-      $(function() { $backToTopFun(); });
-    })();
-#T=html-checkbox
-<!-- start html-radio and  -->
-        <style type="text/css">
-          .checkbox1 { display:inline-block; background:#000; color:#fff;}
-          .checkbox-hover {background:blue;}
-          .checkbox1 input {position:absolute;left:-999em;}
-        </style>
-
-        <script type="text/javascript">
-          var fc = {
-            checkbox: function  (obj) {
-              obj.each(function () {
-                  $(this).change(function  () {
-                  if ($(this).is(":checked")) {
-                    $(this).parent('label').addClass('checkbox-hover');
-                  }else {
-                    $(this).parent('label').removeClass('checkbox-hover');
-                  }
-                  
-                  })
-                $(this).trigger('change');
-              })
-            }
-          }
-          
-          $(document).ready(function() {
-            fc.checkbox($(".ck1"));							
-          })
-            
-        </script>
-
-        <label class="checkbox1">
-          <input class="ck1" checked="checked" type="checkbox" name="ck1" id="" />check1
-        </label>
-        <label class="checkbox1">
-          <input class="ck1" type="checkbox" name="ck1" id="" />check2				
-        </label>
-        <label class="checkbox1">
-          <input class="ck1" type="checkbox" name="ck1" id="" />check3				
-        </label>
-        <!-- end -->
-#T=html-dialog
-      <style type="text/css">
-  .popbox{ background:blue; color:#fff; width:800px; height:300px; text-align:center; display:none;}
-    .cover {background:#000; display:none; position:fixed; width:100%; height:100%; z-index:1000; top:0; left:0;
-      _position:absolute;
-    }
-    .close {position:absolute; right:0; top:0; cursor:pointer; background:red; width:30px; height:30px;}
-    .close span {visibility:hidden;}
-  </style>
-   <div class="cover"></div>
-  <div id="popbox" class="popbox">
-    <h1>fdsflak fdslkfjs flkjf dalkfjlsakf sflksajf l </h1>
-    <p>leopdn pejdfi difdsifu dsifsif </p>
-    <span class="close"><span>close</span></span>
-  </div>
-  
-  <script type="text/javascript">
-  <!--
-    var fc = {
-      dialog:function  (obj,coverobj) {
-        fc.objcenter(obj);
-        coverobj.css("opacity","0.5").show();
-        if (fc.ifiesix()) {
-          var ht = ($(window).height() > $("body").height()) ? $(window).height() : $("body").height();
-          
-          
-          coverobj.height(ht);
-        }
-        obj.find(".close").click(function  () {
-          $(this).parent().hide();
-          coverobj.hide();
-        })
-      },
-      //是否IE6
-      ifiesix: function() {
-          return $.browser.msie&&($.browser.version == "6.0");
-      },
-      //让层居中
-      objcenter:function  (obj, obj_size) {
-        var m_left=-(obj.innerWidth())/2;
-        var m_top = '';
-        if (fc.ifiesix()) {
-
-        var objtop=$(window).scrollTop()+($(window).height()-obj.height()>0?$(window).height()-obj.height(): 60)/2;
-
-        obj.css({'top':objtop+'px','position':'absolute',"margin-left":m_left,"z-index":"1010","left":"50%;"});
-          
-        }else {
-        var gettop=0;
-        if ($(window).height()<obj.height()) {
-          gettop=$(window).scrollTop()+30;
-          var objtop=$(window).height()+$(window).scrollTop()+30;
-          obj.css({'top':'50%','left':'50%','position':'absolute',"margin-left":m_left + 'px',top:gettop+'px'});			
-        }else {
-          if (obj_size) {
-            m_left = obj_size.goleft;
-            m_top = obj_size.gotop;
-          }else {
-            m_top = -obj.height()/2;
-          }
-          gettop=($(window).height()-obj.height())/2;
-          obj.css({"position":"fixed",'top':'50%','left':'50%',"margin-left": m_left + 'px',"margin-top": m_top + 'px'});
-        }
-        }
-        obj.css({"z-index":"1110"}).show();
-      }
-    }
-    $(document).ready(function() {
-      $("#opener").click(function  () {
-        fc.dialog($("#popbox"),$(".cover"));
-      })
-    })
-  //-->
-  </script>
-#T=html-facnybox
-<!-- start facnybox -->
-      <!-- Add mousewheel plugin (this is optional) -->
-        <script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
-
-        <!-- Add fancyBox -->
-        <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-        <script type="text/javascript" src="js/fancybox/jquery.fancybox.js"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-            $(".various").fancybox({});	
-            })
-        </script>
-
-        <a class="various" data-fancybox-type="iframe" href="http://fancyapps.com/demo/iframe.html">Iframe</a>
-
-
-      <!-- end facnbox-->
-#T=html-flash自适应
-    <style type="text/css">
-      body {max-width:1440px; margin:0 auto;}
-      .wrap {overflow:hidden;position:relative; }
-      .flash {text-align:center; width:100%; margin:0 auto; }
-    </style>
-    <div class="wrap">
-      <div class="flash">
-          <object  class="flashwrap" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" >
-           <param name="movie" value="index.swf">
-           <param name="quality" value="high">
-           <embed src="index.swf" class="flashwrap"  quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" ></embed>
-        </object>
-      </div>
-    </div>
-    <script type="text/javascript">
-    <!--
-      $(document).ready(function() {
-        function resizefalsh(obj,min,max) {
-          var windw = $(window).width();
-          var windh = $(window).height()-5;
-          
-          if (windw < min.w) {
-            obj.width(min.w);
-          }else {
-            if (windw > max.w) {
-              obj.width(max.w);
-            }else {
-              obj.width(windw);
-            }
-          }
-          
-          if (windh < min.h) {
-            obj.height(min.h);
-          }else {
-            if (windh > max.h) {
-              obj.height(max.h);
-            }else {
-              obj.height(windh);
-            }
-          }
-        }
-
-        resizefalsh($(".flashwrap"),{'w':980,'h':600},{'w':1440,'h':776});
-
-        $(window).resize(function(){
-          resizefalsh($(".flashwrap"),{'w':980,'h':600},{'w':1440,'h':776});
-        })
-      })
-    //-->
-    </script>
-#T=html-footer
-        <style type="text/css">
-          .footer .link {margin-right:20px;}
-          .footer .copyright {text-align:right;}
-          .footer .share {margin-right:20px;}
-          .share *,.wb * {vertical-align:top;margin-left:1px;}
-          .share img,.wb img {position:relative;top:-3px;}
-        </style>
-        <!-- start 底部 -->
-        <div class="footer clearfix">
-          <div class="link fl yh">
-            <a href="#">> 集团链接</a>
-            <a href="#">> 联系我们</a>
-          </div>
-          
-          <div class="share fl">
-            <span class="link-sh">分享好友</span>
-            <a href="#" class="sina" target="_blank"><img src="images/share/sina.png" alt="新浪" /></a>
-            <a href="#" class="qq" target="_blank"><img src="images/share/qq.png" alt="腾讯" /></a>
-            <a href="#" class="kaixin" target="_blank"><img src="images/share/fx.png" alt="开心" /></a>
-            <a href="#" class="renren" target="_blank"><img src="images/share/rr.png" alt="人人" /></a>
-            <a href="#" class="doupan" target="_blank"><img src="images/share/db.png" alt="豆瓣" /></a>
-          </div>
-          <div class="wb fl">
-            <span class="link-sh">关注微博</span>
-            <a href="#" target="_blank" class="sina"><img src="images/share/sina.png" alt="新浪" /></a>
-            <a href="#" target="_blank" class="qq"><img src="images/share/qq.png" alt="腾讯" /></a>
-            <a href="#" target="_blank" class="souhu"><img src="images/share/sh.png" alt="搜狐" /></a>
-            <a href="#" target="_blank" class="wangyi"><img src="images/share/wy.png" alt="网易" /></a>
-          </div>
-          <div class="copyright" >
-            客服热线:4008-303-666 &nbsp;
-            版权所有?比亚迪汽车销售有限公司&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备10216027号</a>
-          </div>
-        </div>
-        <!-- end 底部 -->
+#T=html()
+html(^!)
 #T=html-form-inline
 <!-- start form-inline -->
         <style type="text/css">
@@ -1566,249 +1269,6 @@ html(^!)
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <!-- end form-ver -->
-#T=html-header
-  <style type="text/css">
-    .logo {padding-top: 18px; padding-bottom: 5px; padding-left: 20px;}
-  </style>
-  <!-- start wrap-header -->
-  <div class="wrap-header clearfix">
-    <!-- start logo -->
-    <div class="logo fl">
-      <a href="#"><img src="images/logo.jpg" alt="logo" /></a>
-    </div>
-    <!-- end -->
-  </div>	
-  <!-- end wrap-header -->
-#T=html-hovershow
-<style type="text/css">
-          
-          .top-nav {width:auto; padding-right:10px; position:relative; height:300px;}
-          .top-nav li {float:left;  font-weight: 800; list-style-type:none;}
-          .top-nav li a {color:#000; text-decoration:none; display:block; margin-left:10px; }
-          .block-menu {position:absolute;left:0; top:14px; display:none; width:300px; height:300px; background:#000; color:#fff; }
-        </style>
-        <script type="text/javascript">
-          var fc= {
-              hovershow:function  (triggerobj,showobj) {
-                triggerobj.add(showobj).hover(function  (e) {
-                    showobj.show();
-                
-                },function  () {
-                    showobj.hide();					
-                })
-              }		
-          }
-          $(document).ready(function() {
-            fc.hovershow($(".top-nav-ul li"),$(".block-menu"));
-          })
-        </script>
-        <div class="top-nav fl">
-          <ul class="top-nav-ul clearfix">
-            <li><a href="#"><span>豆瓣读书</span></a></li>
-            <li><a href="#"><span>豆瓣读书</span></a></li>
-            <li><a href="#"><span>豆瓣读书</span></a></li>
-            <li><a href="#"><span>豆瓣读书</span></a></li>
-            <li><a href="#"><span>豆瓣读书</span></a></li>
-          </ul>
-          <div class="block-menu">
-            豆瓣读书 豆瓣读书 豆瓣读书 豆瓣读书 豆瓣读书
-            豆瓣读书 豆瓣读书 豆瓣读书 豆瓣读书 豆瓣读书
-          </div>
-        </div>
-#T=html-imgload
-var img = '<img />';
-img = $("img");
-img.attr("src","images/pic-fp.png");
-if (img.complete) {
-  
-}else {
-  img.load(function  () {
-
-  })
-}
-#T=html-Jseasing
-/* jQuery EasIng v1.1.2 - http://gsgd.co.uk/sandbox/jquery.easIng.php
-*
-* Uses the built In easIng capabilities added In jQuery 1.1
-* to offer multiple easIng options
-*
-* Copyright (c) 2007 George Smith
-* Licensed under the MIT License:
-*   http://www.opensource.org/licenses/mit-license.php
-*/
-
-// t: current time, b: begInnIng value, c: change In value, d: duration 动画特效
-
-jQuery.extend(jQuery.easing, {
-  easeInQuad : function(x, t, b, c, d) {
-    return c * (t /= d) * t + b;
-  },
-  easeOutQuad : function(x, t, b, c, d) {
-    return -c * (t /= d) * (t - 2) + b;
-  },
-  easeInOutQuad : function(x, t, b, c, d) {
-    if((t /= d / 2) < 1)
-      return c / 2 * t * t + b;
-    return -c / 2 * ((--t) * (t - 2) - 1) + b;
-  },
-  easeInCubic : function(x, t, b, c, d) {
-    return c * (t /= d) * t * t + b;
-  },
-  easeOutCubic : function(x, t, b, c, d) {
-    return c * (( t = t / d - 1) * t * t + 1) + b;
-  },
-  easeInOutCubic : function(x, t, b, c, d) {
-    if((t /= d / 2) < 1)
-      return c / 2 * t * t * t + b;
-    return c / 2 * ((t -= 2) * t * t + 2) + b;
-  },
-  easeInQuart : function(x, t, b, c, d) {
-    return c * (t /= d) * t * t * t + b;
-  },
-  easeOutQuart : function(x, t, b, c, d) {
-    return -c * (( t = t / d - 1) * t * t * t - 1) + b;
-  },
-  easeInOutQuart : function(x, t, b, c, d) {
-    if((t /= d / 2) < 1)
-      return c / 2 * t * t * t * t + b;
-    return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
-  },
-  easeInQuint : function(x, t, b, c, d) {
-    return c * (t /= d) * t * t * t * t + b;
-  },
-  easeOutQuint : function(x, t, b, c, d) {
-    return c * (( t = t / d - 1) * t * t * t * t + 1) + b;
-  },
-  easeInOutQuint : function(x, t, b, c, d) {
-    if((t /= d / 2) < 1)
-      return c / 2 * t * t * t * t * t + b;
-    return c / 2 * ((t -= 2) * t * t * t * t + 2) + b;
-  },
-  easeInSine : function(x, t, b, c, d) {
-    return -c * Math.cos(t / d * (Math.PI / 2)) + c + b;
-  },
-  easeOutSine : function(x, t, b, c, d) {
-    return c * Math.sin(t / d * (Math.PI / 2)) + b;
-  },
-  easeInOutSine : function(x, t, b, c, d) {
-    return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
-  },
-  easeInExpo : function(x, t, b, c, d) {
-    return (t == 0) ? b : c * Math.pow(2, 10 * (t / d - 1)) + b;
-  },
-  easeOutExpo : function(x, t, b, c, d) {
-    return (t == d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
-  },
-  easeInOutExpo : function(x, t, b, c, d) {
-    if(t == 0)
-      return b;
-    if(t == d)
-      return b + c;
-    if((t /= d / 2) < 1)
-      return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
-    return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
-  },
-  easeInCirc : function(x, t, b, c, d) {
-    return -c * (Math.sqrt(1 - (t /= d) * t) - 1) + b;
-  },
-  easeOutCirc : function(x, t, b, c, d) {
-    return c * Math.sqrt(1 - ( t = t / d - 1) * t) + b;
-  },
-  easeInOutCirc : function(x, t, b, c, d) {
-    if((t /= d / 2) < 1)
-      return -c / 2 * (Math.sqrt(1 - t * t) - 1) + b;
-    return c / 2 * (Math.sqrt(1 - (t -= 2) * t) + 1) + b;
-  },
-  easeInElastic : function(x, t, b, c, d) {
-    var s = 1.70158;
-    var p = 0;
-    var a = c;
-    if(t == 0)
-      return b;
-    if((t /= d) == 1)
-      return b + c;
-    if(!p)
-      p = d * .3;
-    if(a < Math.abs(c)) {
-      a = c;
-      var s = p / 4;
-    } else
-      var s = p / (2 * Math.PI) * Math.asin(c / a);
-    return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
-  },
-  easeOutElastic : function(x, t, b, c, d) {
-    var s = 1.70158;
-    var p = 0;
-    var a = c;
-    if(t == 0)
-      return b;
-    if((t /= d) == 1)
-      return b + c;
-    if(!p)
-      p = d * .3;
-    if(a < Math.abs(c)) {
-      a = c;
-      var s = p / 4;
-    } else
-      var s = p / (2 * Math.PI) * Math.asin(c / a);
-    return a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * (2 * Math.PI) / p) + c + b;
-  },
-  easeInOutElastic : function(x, t, b, c, d) {
-    var s = 1.70158;
-    var p = 0;
-    var a = c;
-    if(t == 0)
-      return b;
-    if((t /= d / 2) == 2)
-      return b + c;
-    if(!p)
-      p = d * (.3 * 1.5);
-    if(a < Math.abs(c)) {
-      a = c;
-      var s = p / 4;
-    } else
-      var s = p / (2 * Math.PI) * Math.asin(c / a);
-    if(t < 1)
-      return -.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
-    return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p) * .5 + c + b;
-  },
-  easeInBack : function(x, t, b, c, d, s) {
-    if(s == undefined)
-      s = 1.70158;
-    return c * (t /= d) * t * ((s + 1) * t - s) + b;
-  },
-  easeOutBack : function(x, t, b, c, d, s) {
-    if(s == undefined)
-      s = 1.70158;
-    return c * (( t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
-  },
-  easeInOutBack : function(x, t, b, c, d, s) {
-    if(s == undefined)
-      s = 1.70158;
-    if((t /= d / 2) < 1)
-      return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
-    return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
-  },
-  easeInBounce : function(x, t, b, c, d) {
-    return c - jQuery.easing.easeOutBounce(x, d - t, 0, c, d) + b;
-  },
-  easeOutBounce : function(x, t, b, c, d) {
-    if((t /= d) < (1 / 2.75)) {
-      return c * (7.5625 * t * t) + b;
-    } else if(t < (2 / 2.75)) {
-      return c * (7.5625 * (t -= (1.5 / 2.75)) * t + .75) + b;
-    } else if(t < (2.5 / 2.75)) {
-      return c * (7.5625 * (t -= (2.25 / 2.75)) * t + .9375) + b;
-    } else {
-      return c * (7.5625 * (t -= (2.625 / 2.75)) * t + .984375) + b;
-    }
-  },
-  easeInOutBounce : function(x, t, b, c, d) {
-    if(t < d / 2)
-      return jQuery.easing.easeInBounce(x, t * 2, 0, c, d) * .5 + b;
-      return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * .5 + c * .5 + b;
-  }
-});
 #T=html-note-ie6
 <!--[if lte IE 6]>
 
@@ -1829,497 +1289,47 @@ jQuery.extend(jQuery.easing, {
 </div>
 <![endif]-->
 
-#T=html-scrollpan
-<link rel="stylesheet" type="text/css" href="css/scrollbar/jquery.jscrollpane.css" media="all" />
-      <script type="text/javascript" src="js/scrollbar/jquery.mousewheel.js"></script>
-      <script type="text/javascript" src="js/scrollbar/jquery.jscrollpane.min.js"></script>
-      <div class="scroll-pane" style="height:200px;">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices
-          eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. Pellentesque nec orci
-          mi, in pharetra ligula. Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis
-          consectetur felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar ultricies
-          bibendum. Vivamus diam leo, faucibus et vehicula eu, molestie sit amet dui. Proin nec orci et elit
-          semper ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-          mus. Sed quis urna mi, ac dignissim mauris. Quisque mollis ornare mauris, sed laoreet diam malesuada
-          quis. Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. Vestibulum nec risus
-          eu lacus semper viverra.
-        </p>
-        <p>
-          Vestibulum dictum consectetur magna eu egestas. Praesent molestie dapibus erat, sit amet sodales
-          lectus congue ut. Nam adipiscing, tortor ac blandit egestas, lorem ligula posuere ipsum, nec
-          faucibus nisl enim eu purus. Quisque bibendum diam quis nunc eleifend at molestie libero tincidunt.
-          Quisque tincidunt sapien a sapien pellentesque consequat. Mauris adipiscing venenatis augue ut
-          tempor. Donec auctor mattis quam quis aliquam. Nullam ultrices erat in dolor pharetra bibendum.
-          Suspendisse eget odio ut libero imperdiet rhoncus. Curabitur aliquet, ipsum sit amet aliquet varius,
-          est urna ullamcorper magna, sed eleifend libero nunc non erat. Vivamus semper turpis ac turpis
-          volutpat non cursus velit aliquam. Fusce id tortor id sapien porta egestas. Nulla venenatis luctus
-          libero et suscipit. Sed sed purus risus. Donec auctor, leo nec eleifend vehicula, lacus felis
-          sollicitudin est, vitae lacinia lectus urna nec libero. Aliquam pellentesque, arcu condimentum
-          pharetra vestibulum, lectus felis malesuada felis, vel fringilla dolor dui tempus nisi. In hac
-          habitasse platea dictumst. Ut imperdiet mauris vitae eros varius eget accumsan lectus adipiscing.
-        </p>
-        <p>
-          Quisque et massa leo, sit amet adipiscing nisi. Mauris vel condimentum dolor. Duis quis ullamcorper
-          eros. Proin metus dui, facilisis id bibendum sed, aliquet non ipsum. Aenean pulvinar risus eu nisi
-          dictum eleifend. Maecenas mattis dolor eget lectus pretium eget molestie libero auctor. Praesent sit
-          amet tellus sed nibh convallis semper. Curabitur nisl odio, feugiat non dapibus sed, tincidunt ut
-          est. Nullam erat velit, suscipit aliquet commodo sit amet, mollis in mauris. Curabitur pharetra
-          dictum interdum. In posuere pretium ultricies. Curabitur volutpat eros vehicula quam ultrices
-          varius. Proin volutpat enim a massa tempor ornare. Sed ullamcorper fermentum nisl, ac hendrerit sem
-          feugiat ac. Donec porttitor ullamcorper quam. Morbi pretium adipiscing quam, quis bibendum diam
-          congue eget. Sed at lectus at est malesuada iaculis. Sed fermentum quam dui. Donec eget ipsum dolor,
-          id mollis nisi. Donec fermentum vehicula porta.
-        </p>
-        <p>
-          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-          Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
-          sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-          Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
-          commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros
-          ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
-          Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
-          eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-          luctus, metus
-        </p>
-        <p>
-          Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-          Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
-          amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-        </p>
-      </div>
-      <script type="text/javascript" id="sourcecode">
-      $(function()
-      {
-        $('.scroll-pane').jScrollPane();
-      });
-      </script>
-#T=html-scrollPic
-<!-- start scrollPic -->
-      <style type="text/css">
-        /*-- banner1 --*/
-        .scroll-ad {position:relative; top:-83px; margin-bottom:-83px;}
-        .banner1 {overflow:hidden; width:980px; position:relative; margin-bottom:12px; height:317px; margin-left:-200px;}
-        .slider1 {position:relative;}
-        .slider1 li{float:left; width:980px; text-align:center; overflow:hidden;}
-        .banner1 .banner-nav {bottom: 21px; left: auto; position: absolute; right: 10px; bottom: 25px; }
-        .banner1 .banner-nav a {display:inline-block; width:8px; height:8px; background:#494949; margin-right:4px; overflow:hidden;border:2px solid #494949;}
-
-        .banner1 .banner-nav a span {display:inline-block;line-height:1; text-indent:-999em;}
-        .banner1 .banner-nav a:hover,.banner1 .banner-nav a.current{background:#fff; border:2px solid #72aef8;}
-      </style>
-      <ul id="slider1" class="slider1">
-        <li><img src="images/ad-pic1.jpg" width="980" height="300" alt=""></li>
-        <li><img src="images/ad-pic1.jpg" width="980" height="300" alt=""></li>
-        <li><img src="images/ad-pic1.jpg" width="980" height="300" alt=""></li>
-      </ul>
-
-      <script type="text/javascript">
-        $(document).ready(function() {
-            $('#slider1').scbanner({
-              showType: 'scroll'
-            });	
-        })
-        
-
-         /** 
-* extend 图片滚动插件
-* 
-* @package scbanner
-* @author k-night
-*/
-;(function($){  
-  $.fn.scbanner = function (options) {  
-    var defualts = { 
-      scrollWidth: 980,     //滚动距离
-      warpcss: 'banner1', //外部包含CSS
-      auto:	true,     //是否自动,
-      speed:	5000,     //间隔5秒
-      showType: 'scroll'
-    };  
-    var opts = $.extend({}, defualts, options);  
-    var obj = $(this);
-
-    //生成控制器
-    obj.wrap('<div class="'+opts.warpcss+'"></div>');
-  
-    //生成页码
-    function  nav(obj) {
-      var nav_html = '<div class="banner-nav">';
-      for (var i = 0; i < obj.find('li').length; i++) {
-        nav_html += '<a class="'+(i == 0 ? 'current' : '')+'" data="'+i+'" href="javascript:void(0);"><span>'+(i+1)+'</span></a>';
-      }
-      nav_html += '</div>';
-      return nav_html;
-    }
-
-    obj.css('width',opts.scrollWidth*obj.find('li').length);
-    var timecount = '';
-
-    var nav=$(nav(obj));
-
-    nav.find('a').click(function  (e) {
-      if ($(this).hasClass('current')) {
-        return false;
-      }else {
-        var w = $(this).attr('data');
-        var that = $(this);
-        obj_scroll(obj,-w,opts.showType,function  () {
-          that.siblings('.current').removeClass('current'); 
-          that.addClass('current');
-        });
-        
-      }
-      e.preventDefault();	
-    })
-    var wpauto = true;
-    //自动滚动函数
-
-    obj.parent().parent().delegate('.'+opts.warpcss,'mouseenter',function  () {
-        wpauto = false;
-        clearInterval(timecount);
-      }).delegate('.'+opts.warpcss,'mouseleave',function  () {
-        wpauto = true;
-          timecount = setInterval(function  () {
-          loop_main();
-        }, opts.speed);
-    })
-
-    function loop_main() {
-      if (wpauto) {
-        click_next();
-      }
-    }
-    //循环
-    timecount = setInterval(function  () {
-      loop_main();
-    }, opts.speed);
-    
-    function click_next() {
-      var n = nav.find('a.current').next();
-      if (n.length > 0) {
-        n.trigger('click');
-      }else {
-        nav.find('a').eq(0).trigger('click');
-      }
-    }
-
-    function click_prev() {
-      var n = nav.find('a.current').prev();
-      if (n.length > 0) {
-        n.trigger('click');
-      }else {
-        nav.find('a').last().trigger('click');
-      }
-    }
-    
-    //moblie tounch
-    var currntp = 0;
-    var pageX;
-    var ifchlick = false;
-    
-    $("."+opts.warpcss).bind("touchstart",function  (e) {
-      $("."+opts.warpcss).trigger("mouseenter");
-      currntp = window.event.touches[0].pageX;
-      ifchlick = true;
-    });
-
-     $("."+opts.warpcss).bind('touchend', function(e) {
-      ifchlick = false;
-      var width_step = 5;
-      if (Math.abs(currntp - pageX) >= width_step) {
-        if (currntp - pageX >= width_step) {
-          click_prev();
-          //$(".show-pic .prev").trigger('click');
-        } else {
-          click_next();
-          //$(".show-pic .next").trigger('click');
-        }
-        $("."+opts.warpcss).trigger("mouseleave");
-      }
-    });
-
-    $("."+opts.warpcss).bind('touchmove', function(e) {
-      if (ifchlick) {
-        ifchlick = false;
-        pageX = window.event.targetTouches[0].pageX;					
-      }else {
-        return false;
-      }
-    });
-
-    nav.insertAfter(obj);
-
-
-
-
-
-    //显示
-    function obj_scroll(obj,w,type,callback) {
-      switch (type) {
-      case 'scroll':
-        obj.stop().animate({'left':opts.scrollWidth*w},800,'easeInOutExpo',function  () {
-          if (callback) {
-            callback();
-          }
-        });
-      break
-      case 'fade':
-        obj.css({'left':opts.scrollWidth*w}).hide().fadeIn();
-      break
-      default:
-      }
-    }
-
-  };  
-})(jQuery);
-      </script>
-      <!-- end scrollPic -->
-#T=html-search
-<style type="text/css">
-          .form-search .search-query{padding-right: 14px; height: 20px; padding: 4px 6px;  font-size: 14px; line-height: 20px; vertical-align: middle; border:1px solid #000; }
-          .form-search .btn {display: inline-block;  cursor: pointer; background-color: #f5f5f5; height:30px; border:1px solid #000; background:none; padding:0 20px; vertical-align:middle;}
-        </style>
-
-        <form class="form-search">
-          <input type="text" class="search-query">
-          <button type="submit" class="btn">Search</button>
-          <span>文字部分</span>
-        </form>
-#T=html-select-ui
-<!-- start html-select-ui -->
-        <style type="text/css">
-          .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px;padding-left:5px; padding-right:5px; width:100px; overflow:hidden;}
-          .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:110px; }
-          .selectstyle .val {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-        </style>
-        <script type="text/javascript">
-        <!--
-          var fc = {
-            selectstyle:function  (obj) {
-              if (this.ie6()) {
-                return false;
-              }
-              obj.each(function () {
-                $(this).css("opacity","0");	    
-                $(this).wrap("<span class='selectstyle'></span>");
-                var gettxt = '<span class="val textb" style="display:inline-block;">'+$(this).find("option:eq(0)").html()+'</span>';
-                
-                gettxt = $(gettxt);
-                
-                gettxt.insertBefore($(this));
-                gettxt.width($(this).width());
-
-                $(this).change(function  () {
-                  var vl = $(this).find("option:selected").html();
-                  $(this).prev('.val').html(vl);
-                })
-                $(this).trigger('change');
-
-              })
-            },
-            ie6: function  () {
-              return !window.XMLHttpRequest;
-            }
-          }
-          $(document).ready(function() {
-            fc.selectstyle($(".selectname"));
-          })
-        //-->
-        </script>
-        <select name="pro" class="selectname">
-          <option value="0"  selected="selected" >请选择</option>
-          <option value="1"  >广东省</option>
-          <option value="2"  >广西壮族自治区广西壮族自治区</option>
-        </select>
-
-        <select name="pro" class="selectname">
-          <option value="0" select="selected" >请选择</option>
-          <option value="1"  >广东省</option>
-          <option value="2"  >广西壮族自治区广西壮族自治区</option>
-        </select>
-        <!-- end html-select-ui -->
 #T=html-table
 <style type="text/css">
-          .table-bordered {border: 1px solid #ddd; border-collapse: collapse; border-left: 0; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; border-top:0;border-spacing: 0;}
-          .table-bordered td,.table-bordered th{padding: 8px; line-height: 20px; text-align: left; vertical-align: top; border: 1px solid #ddd;}
-        </style>
-
-        <!-- start table -->
-        <table class="table-bordered">
-          <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td rowspan="2">1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@TwBootstrap</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          </tbody>
-        </table>
-        <!-- end table -->
-#T=html-table-hor
-<!-- start form-hor -->
-        <style type="text/css">
-          .form-horizontal {font-size:14px;}
-          .form-horizontal .control-label{text-align: right;}
-          .form-horizontal .col-sm-2 { position: relative; width:150px; padding-top:10px; min-height: 1px; padding-right: 15px; padding-left: 15px;}
-          .form-horizontal .col-sm-10 { width:130px;}
-          .form-horizontal .form-control { display: block; width: auto; height: 20px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;}
-          .form-horizontal .form-group {margin-bottom:15px;}
-          .form-horizontal .checkbox {padding-left:182px;}
-          .form-horizontal .checkbox input{float:left;margin-right:5px;}
-          .form-horizontal .btn { display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; background-image: none; border: 1px solid transparent; border-radius: 4px; margin-left:182px;}
-        </style>
-        <form class="form-horizontal">
-          <div class="form-group clearfix">
-            <label for="inputEmail3" class="col-sm-2 fl control-label">Email</label>
-            <div class="col-sm-10 fl">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            </div>
-          </div>
-          <div class="form-group clearfix">
-            <label for="inputPassword3" class="col-sm-2 fl control-label">Password</label>
-            <div class="col-sm-10 fl">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-          </div>
-            <div class="form-group clearfix">
-              <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-              </div>
-            </div>
-            <div class="form-group clearfix">
-              <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Sign in</button>
-            </div>
-          </div>
-        </form>
-        <!-- end form-hor -->
-#T=html-tag
-<style type="text/css">
-      /*-- tag-box --*/
-      .tag-box{}
-      .tag-nav li{float:left; line-height:30px; margin-right:10px;}
-      .tag-nav li a {text-decoration:none;}
-      .tag-box .none{display:none;}
-      .tag-box .c1 {position:relative; background:#ccc;}
-      .tag-box .c1 .tag-box-setion{background:#ccc; height:400px;}
-    </style>
-
-    <div id="tag-message-box" class="tag-box clearfix">
-      <!-- start 目录 -->
-      <div class="c2">
-        <ul class="tag-nav clearfix">
-          <li><a rel="0" class="current" href="javascript:;">动力节油冠军评选比赛</a></li>
-          <li><a rel="1" class="c2_c1" href="javascript:;">城市动力节油挑战赛</a></li>
-          <li><a rel="2" href="javascript:;" class="">各省冠军挑战赛</a></li>
-        </ul>
-      </div>
-      <!-- end 目录 -->
-        
-      <!-- start tag1模块 -->
-      <div class="c1">
-        <div class="tag-box1-setion tag-box-setion clearfix">
-        </div>
-      
-      </div>
-      <!-- end tag1模块 -->
-      
-      <!-- start  tag2模块  -->
-      <div class="c1 none">				
-        <div class="tag-box2-setion tag-box-setion clearfix">
-        </div>
-      </div>
-      <!-- end tag2模块 -->
-
-      <!-- start tag3模块  -->
-      <div class="c1 none">				
-        <div class="tag-box3-setion tag-box-setion clearfix">
-        </div>
-      </div>
-      <!-- end tag3模块 -->
-    </div>
-    <script type="text/javascript">
-    <!--
-    $(document).ready(function() {	
-      //tag切换
-      $('.tag-box').tagshow({
-        objshow: $(this).find('.c1'),
-        taglink: $(this).find('.c2 a')
-      }); 
-    })
-    /** 
-    * extend tag切换
-    * 
-    * @package tagshow
-    * @author xcld
-    */
-    ;(function($){  
-      $.fn.tagshow = function (options) {
-        var obj=$(this);
-
-        var defualts = {
-          objshow: obj.find('.c1'),			//展示的区域 
-          taglink: obj.find('.c2 a'),			//点击链接
-          current_class: 'current'			//当前的样式
-        };
-
-        var opts = $.extend({}, defualts, options);  
-
-        var is_fade=false;   //判断效果是否在执行
-        opts.taglink.click(function  () {
-          if ($(this).hasClass(opts.current_class)) {
-            return false;
-          }else {
-            if (is_fade) {
-              return false;
-            }
-            var e=$(this).attr('rel');
-            is_fade=true;
-            opts.objshow.not('.none').fadeOut(200,function  () {
-              $(this).addClass('none').hide();
-              opts.objshow.eq(e).fadeIn(200).removeClass('none');
-              is_fade=false;
-            });
-
-            opts.taglink.removeClass(opts.current_class);
-            $(this).addClass(opts.current_class);
-          }
-          return false;
-        });
-
-        
-      };  
-    })(jQuery);
-
-    //-->
-    </script>
+.table-bordered {border: 1px solid #ddd;border-collapse: collapse;border-left: 0;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;border-top:0;border-spacing: 0;}
+.table-bordered td, .table-bordered th {padding: 8px;line-height: 20px;text-align: left;vertical-align: top;border: 1px solid #ddd;}
+</style>
+<!-- start table -->
+<table class="table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">1</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@TwBootstrap</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<!-- end table -->
 #T=html-temp5
 <!DOCTYPE html>
 <html>
@@ -2364,11 +1374,11 @@ jQuery.extend(jQuery.easing, {
         // andriod 2.3
         if(version > 2.3){
           document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', minimum-scale = ' + phoneScale + ', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
-        // andriod 2.3����
+        // andriod 2.3����
         }else{
           document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', target-densitydpi=device-dpi">');
         }
-        // ����ϵͳ
+        // ����ϵͳ
       } else {
         document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', user-scalable=no, target-densitydpi=device-dpi">');
       }
@@ -2388,7 +1398,7 @@ jQuery.extend(jQuery.easing, {
 </head>
 <body class="yh">
   <noscript>
-    <strong>���������ƺ������� JavaScript��</strong><br />�������������������JavaScript����ʹ�ñ���վ�Ĺ��ܡ� 
+    <strong>���������ƺ������� JavaScript��</strong><br />�������������������JavaScript����ʹ�ñ���վ�Ĺ��ܡ� 
   </noscript>
   <div class="container">
      
@@ -2397,87 +1407,10 @@ jQuery.extend(jQuery.easing, {
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
-#T=html-thumbnail
-<style type="text/css">
-                  .thumbnail{display:block;margin-left:auto;margin-right:auto;text-align:center;width:300px;border:1px solid #ddd;line-height:1.5; padding:4px;}
-                  .thumbnail .caption{height:200px;overflow-y:hidden;color:#555; padding:10px;}
-                  .thumbnail .caption h3 {font-size:24px;margin-top: 20px; margin-bottom: 10px; line-height: 1.1;}
-                  .thumbnail .caption h3 a {color:#428bca;}
-                  .thumbnail .caption h3 small {font-size:65%; color:#999;}
-                  .thumbnail .caption a:hover,.projects .thumbnail .caption a:focus{text-decoration:none}
-                  .thumbnail img{max-width:100%;height:auto}
-                  .thumbnail .caption p{font-size:14px;}
-                </style>
-                <div class="thumbnail">
-                  <a href="#" title="Headroom.js 是一个轻量级、纯 JS 组件，用来隐藏或展现页面上的元素，为你的页面留下更多展示内容的空间。" target="_blank" ><img class="lazy" src="http://www.bootcss.com/assets/img/headroom.png" width="300" height="150" data-src="assets/img/headroom.png" alt="Headroom.js"></a>
-                  <div class="caption">
-                    <h3> 
-                    <a href="/p/headroom.js/" title="Headroom.js 是一个轻量级、纯 JS 组件，用来隐藏或展现页面上的元素，为你的页面留下更多展示内容的空间。" target="_blank" onclick="_hmt.push(['_trackEvent', 'tile', 'click', 'headroom'])">Headroom.js<br><small>隐藏或展示页面元素</small></a>
-                    </h3>
-                    <p>
-                    Headroom.js 是一个轻量级、纯 JavaScript 组件，用来隐藏或展现页面上的元素，为你的页面留下更多展示内容的空间。
-                    </p>
-                  </div>
-                </div>
-#T=html-top-nav
-    <style type="text/css">
-      /*-- top-nav float --*/
-      .top-nav {width:auto; padding-right:10px;}
-      .top-nav li {float:left;  font-weight: 800; list-style-type:none;}
-      .top-nav li a {color:#000; text-decoration:none; display:block; margin-left:10px; }
-    </style>
-    <div class="top-nav fr">
-      <ul class="top-nav-ul clearfix">
-        <li><a href="#"><span>豆瓣读书</span></a></li>
-        <li><a href="#"><span>豆瓣读书</span></a></li>
-        <li><a href="#"><span>豆瓣读书</span></a></li>
-        <li><a href="#"><span>豆瓣读书</span></a></li>
-        <li><a href="#"><span>豆瓣读书</span></a></li>
-      </ul>
-    </div>
-#T=html-vm
-<style type="text/css">
-      .list {margin-left:0px;}
-      .list li{float:left; width:298px; border: 1px solid green; margin-left:10px; display:inline; height:300px;}
-      /*-- vm-outer  --*/
-      .vm-outer{ width: 100%; background:ivory; display: table; position: static; height: 100%; overflow: hidden; position: relative; }
-      .vm-middle{display: table-cell; vertical-align: middle; position: static;*position: absolute; *top: 50%; *text-align:center;}
-      .vm-inner{border: 1px solid green; background-color: #FFF; position: relative; top: -50%; margin: 0 auto;text-align:center; zoom:1;}
-    </style>
-
-
-    <ul class="list clearfix">
-      <li>
-        <!-- start vm-outer -->
-        <div class="vm-outer">
-          <div class="vm-middle">
-          <div class="vm-inner">
-            <img src="images/pic-small.jpg" width="91" height="58" alt="" />
-          </div>
-           </div>
-         </div>				
-        <!-- end  vm-outer -->
-      </li>
-      <li>
-        <div class="vm-outer">
-          <div class="vm-middle">
-          <div class="vm-inner">
-            <img src="images/pic-small.jpg" width="91" height="58" alt="" />
-          </div>
-           </div>
-         </div>
-        
-      </li>
-      <li>
-        <div class="vm-outer">
-          <div class="vm-middle">
-          <div class="vm-inner">
-            <img src="images/pic-small.jpg" width="91" height="58" alt="" />
-          </div>
-           </div>
-         </div>
-      </li>
-    </ul>
+#T=html5-ie
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 #T=i
 <i>^!</i>
 #T=if
@@ -3272,8 +2205,6 @@ search(^!)
 #T=select
 select(^!)
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
@@ -3413,7 +2344,7 @@ strike(^!)
 var /*string*/ ^!
 #T=strong
 <strong>^!</strong>
-#T=style
+#T=style=""
 style="^!"
 #T=style-wrap
 <style type="text/css">
@@ -3780,7 +2711,7 @@ typeof (^!)
 #T=ubound
 ubound(^!)
 #T=ui-autoImg
-/*�ȱ�������ͼƬ*/
+/*�ȱ�������ͼƬ*/
 function autoImg(ImgD, maxwidth, maxheight) {
   var image = new Image();
   image.src = ImgD.src;
@@ -3806,8 +2737,41 @@ function autoImg(ImgD, maxwidth, maxheight) {
     } 
   }
 }
+#T=ui-back-top
+    <style type="text/css">
+    .back-top {display: none;width: 18px;line-height: 1.2;padding: 5px 0;background-color: #000;color: #fff;font-size: 12px;text-align: center;position: fixed;_position:absolute;right: 112px;_right: 92px;bottom: 100px;_bottom: "auto";cursor: pointer;opacity: 0.6;filter: Alpha(opacity=60);}
+    </style>
+    <script type="text/javascript">
+    //<![CDATA[
+
+    //返回顶部
+    (function() {
+      var $backToTopTxt = "返回顶部", 
+        $backToTopEle = $('<div class="back-top"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 300);
+        });
+
+        $backToTopFun = function() {					
+          var st = $(document).scrollTop(), winh = $(window).height();
+          if(st > 200)
+          {
+            if($backToTopEle.data('pos') == 'top'){return false;} $backToTopEle.data('pos','top').stop().css('opacity','1').fadeIn();
+          }else{
+            if($backToTopEle.data('pos') == 'scroll'){return false;}
+            $backToTopEle.data('pos','scroll').stop().fadeOut()
+          }
+        
+          //IE6下的定位
+          if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);
+          }
+        };
+      $(window).bind("scroll", $backToTopFun);
+      $(function() { $backToTopFun(); });
+    })();
 #T=ui-blockShow
-/*-- ����ʾ --*/
+/*-- ����ʾ --*/
 +function ($) {
   'use strict';
    $.blockShow = function blockShow(objIn, objOut, callBack) {
@@ -3847,7 +2811,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
   }
 }(jQuery);
 #T=ui-cooki
-/*-- cooki���� --*/
+/*-- cooki���� --*/
 function addCookie(objName,objValue,objHours){
   var str = objName + "=" + escape(objValue);
   if(objHours > 0){
@@ -3867,7 +2831,7 @@ function getCookie(objName){
   } 
 }
 #T=ui-countTime
-//����ʱ
+//����ʱ
 jQuery(document).ready(function($) {
   var servertime = new Date("2015/01/22 23:08:28").getTime();
   var endtime = new Date("2015/01/21 17:42:00").getTime();
@@ -3876,7 +2840,7 @@ jQuery(document).ready(function($) {
   var timese = "";
 
   if (sbtime <= 0) {
-    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">��</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">ʱ</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">��</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">��</span></li>';
+    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">��</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">ʱ</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">��</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">��</span></li>';
     $("#timener ul").html(temp);
   } else {
     timese = setInterval(function() {
@@ -3889,7 +2853,7 @@ jQuery(document).ready(function($) {
       var minite = Math.floor(getsc / 60 % 60);
       var hour = Math.floor(getsc / 3600 % 24);
       var day = Math.floor(getsc / 3600 / 24);
-      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">��</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">ʱ</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">��</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">��</span></li>';
+      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">��</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">ʱ</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">��</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">��</span></li>';
       $("#timener ul").html(temp);
       sbtime--;
     } else {
@@ -3930,7 +2894,7 @@ function fixhead(obj) {
 }
 #T=ui-formCheck
 /** 
-* extend �����ؼ��Զ���
+* extend ����ؼ��Զ���
 * @author cuki13  
   .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
   .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
@@ -4035,7 +2999,7 @@ $(".ckiput").prop('checked',true);
 
 })(jQuery);
 #T=ui-formRadio
-/*-- ����radio [data-form="radio"] --*/
+/*-- ���radio [data-form="radio"] --*/
 +function ($) {
   'use strict';
   var formSting = '[data-form="radio"]';
@@ -4079,7 +3043,7 @@ $(".ckiput").prop('checked',true);
 }(jQuery); 
 #T=ui-formSelect
 /** 
-* extend �����ؼ��Զ���
+* extend ����ؼ��Զ���
 * @author cuki13  
   .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
   .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
@@ -4140,7 +3104,7 @@ $(".ckiput").prop('checked',true);
 })()
 #T=ui-guagua
 /** 
-* extend �ιο�����
+* extend �ιο�����
 */
   function guagua() {
   //$("#canvas1").remove();
@@ -4251,7 +3215,7 @@ canvas.addEventListener('mousemove', eventMove);
 
 
 #T=ui-hoverdelay
-// ����ӳ�ִ�з���
+// ����ӳ�ִ�з���
 /*
 $(this).hoverDelay({
   hoverEvent: function(){},
@@ -4283,8 +3247,19 @@ $(this).hoverDelay({
     });
   }      
 })(jQuery);
+#T=ui-imgload
+var img = '<img />';
+img = $("img");
+img.attr("src","images/pic-fp.png");
+if (img.complete) {
+  
+}else {
+  img.load(function  () {
+
+  })
+}
 #T=ui-inserChar
-//�ַ�������"," 112345 => 12,345
+//�ַ�������"," 112345 => 12,345
 function  inserChar() {
   var gval = parseInt($("#result-number").data("number"));
   gval = parseInt((gval - Math.random()*100));
@@ -4308,6 +3283,189 @@ function  inserChar() {
   }
 }
 
+#T=ui-Jseasing
+/* jQuery EasIng v1.1.2 - http://gsgd.co.uk/sandbox/jquery.easIng.php
+*
+* Uses the built In easIng capabilities added In jQuery 1.1
+* to offer multiple easIng options
+*
+* Copyright (c) 2007 George Smith
+* Licensed under the MIT License:
+*   http://www.opensource.org/licenses/mit-license.php
+*/
+
+// t: current time, b: begInnIng value, c: change In value, d: duration 动画特效
+
+jQuery.extend(jQuery.easing, {
+  easeInQuad : function(x, t, b, c, d) {
+    return c * (t /= d) * t + b;
+  },
+  easeOutQuad : function(x, t, b, c, d) {
+    return -c * (t /= d) * (t - 2) + b;
+  },
+  easeInOutQuad : function(x, t, b, c, d) {
+    if((t /= d / 2) < 1)
+      return c / 2 * t * t + b;
+    return -c / 2 * ((--t) * (t - 2) - 1) + b;
+  },
+  easeInCubic : function(x, t, b, c, d) {
+    return c * (t /= d) * t * t + b;
+  },
+  easeOutCubic : function(x, t, b, c, d) {
+    return c * (( t = t / d - 1) * t * t + 1) + b;
+  },
+  easeInOutCubic : function(x, t, b, c, d) {
+    if((t /= d / 2) < 1)
+      return c / 2 * t * t * t + b;
+    return c / 2 * ((t -= 2) * t * t + 2) + b;
+  },
+  easeInQuart : function(x, t, b, c, d) {
+    return c * (t /= d) * t * t * t + b;
+  },
+  easeOutQuart : function(x, t, b, c, d) {
+    return -c * (( t = t / d - 1) * t * t * t - 1) + b;
+  },
+  easeInOutQuart : function(x, t, b, c, d) {
+    if((t /= d / 2) < 1)
+      return c / 2 * t * t * t * t + b;
+    return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
+  },
+  easeInQuint : function(x, t, b, c, d) {
+    return c * (t /= d) * t * t * t * t + b;
+  },
+  easeOutQuint : function(x, t, b, c, d) {
+    return c * (( t = t / d - 1) * t * t * t * t + 1) + b;
+  },
+  easeInOutQuint : function(x, t, b, c, d) {
+    if((t /= d / 2) < 1)
+      return c / 2 * t * t * t * t * t + b;
+    return c / 2 * ((t -= 2) * t * t * t * t + 2) + b;
+  },
+  easeInSine : function(x, t, b, c, d) {
+    return -c * Math.cos(t / d * (Math.PI / 2)) + c + b;
+  },
+  easeOutSine : function(x, t, b, c, d) {
+    return c * Math.sin(t / d * (Math.PI / 2)) + b;
+  },
+  easeInOutSine : function(x, t, b, c, d) {
+    return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
+  },
+  easeInExpo : function(x, t, b, c, d) {
+    return (t == 0) ? b : c * Math.pow(2, 10 * (t / d - 1)) + b;
+  },
+  easeOutExpo : function(x, t, b, c, d) {
+    return (t == d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
+  },
+  easeInOutExpo : function(x, t, b, c, d) {
+    if(t == 0)
+      return b;
+    if(t == d)
+      return b + c;
+    if((t /= d / 2) < 1)
+      return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
+    return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
+  },
+  easeInCirc : function(x, t, b, c, d) {
+    return -c * (Math.sqrt(1 - (t /= d) * t) - 1) + b;
+  },
+  easeOutCirc : function(x, t, b, c, d) {
+    return c * Math.sqrt(1 - ( t = t / d - 1) * t) + b;
+  },
+  easeInOutCirc : function(x, t, b, c, d) {
+    if((t /= d / 2) < 1)
+      return -c / 2 * (Math.sqrt(1 - t * t) - 1) + b;
+    return c / 2 * (Math.sqrt(1 - (t -= 2) * t) + 1) + b;
+  },
+  easeInElastic : function(x, t, b, c, d) {
+    var s = 1.70158;
+    var p = 0;
+    var a = c;
+    if(t == 0)
+      return b;
+    if((t /= d) == 1)
+      return b + c;
+    if(!p)
+      p = d * .3;
+    if(a < Math.abs(c)) {
+      a = c;
+      var s = p / 4;
+    } else
+      var s = p / (2 * Math.PI) * Math.asin(c / a);
+    return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
+  },
+  easeOutElastic : function(x, t, b, c, d) {
+    var s = 1.70158;
+    var p = 0;
+    var a = c;
+    if(t == 0)
+      return b;
+    if((t /= d) == 1)
+      return b + c;
+    if(!p)
+      p = d * .3;
+    if(a < Math.abs(c)) {
+      a = c;
+      var s = p / 4;
+    } else
+      var s = p / (2 * Math.PI) * Math.asin(c / a);
+    return a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * (2 * Math.PI) / p) + c + b;
+  },
+  easeInOutElastic : function(x, t, b, c, d) {
+    var s = 1.70158;
+    var p = 0;
+    var a = c;
+    if(t == 0)
+      return b;
+    if((t /= d / 2) == 2)
+      return b + c;
+    if(!p)
+      p = d * (.3 * 1.5);
+    if(a < Math.abs(c)) {
+      a = c;
+      var s = p / 4;
+    } else
+      var s = p / (2 * Math.PI) * Math.asin(c / a);
+    if(t < 1)
+      return -.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
+    return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p) * .5 + c + b;
+  },
+  easeInBack : function(x, t, b, c, d, s) {
+    if(s == undefined)
+      s = 1.70158;
+    return c * (t /= d) * t * ((s + 1) * t - s) + b;
+  },
+  easeOutBack : function(x, t, b, c, d, s) {
+    if(s == undefined)
+      s = 1.70158;
+    return c * (( t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
+  },
+  easeInOutBack : function(x, t, b, c, d, s) {
+    if(s == undefined)
+      s = 1.70158;
+    if((t /= d / 2) < 1)
+      return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
+    return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
+  },
+  easeInBounce : function(x, t, b, c, d) {
+    return c - jQuery.easing.easeOutBounce(x, d - t, 0, c, d) + b;
+  },
+  easeOutBounce : function(x, t, b, c, d) {
+    if((t /= d) < (1 / 2.75)) {
+      return c * (7.5625 * t * t) + b;
+    } else if(t < (2 / 2.75)) {
+      return c * (7.5625 * (t -= (1.5 / 2.75)) * t + .75) + b;
+    } else if(t < (2.5 / 2.75)) {
+      return c * (7.5625 * (t -= (2.25 / 2.75)) * t + .9375) + b;
+    } else {
+      return c * (7.5625 * (t -= (2.625 / 2.75)) * t + .984375) + b;
+    }
+  },
+  easeInOutBounce : function(x, t, b, c, d) {
+    if(t < d / 2)
+      return jQuery.easing.easeInBounce(x, t * 2, 0, c, d) * .5 + b;
+      return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * .5 + c * .5 + b;
+  }
+});
 #T=ui-mobileTouch
 +(function ($) {
   'use strict';
@@ -4477,7 +3635,7 @@ function  inserChar() {
 
 #T=ui-pop
 /** 
-* extend ������
+* extend ������
 * @author cuki13
   $(obj).popbk();
   .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100;}
@@ -4568,18 +3726,18 @@ function  inserChar() {
   })
 })(jQuery);
 #T=ui-randomColor
-/* ȡ�����ɫ */
+/* ȡ�����ɫ */
 +function ($) {
   'use strict';
   var srand = '[data-dismiss="srand"]';
   var Rand   = function () {}
   Rand.prototype.rcolor = function  () {
-    //16���Ʒ�ʽ��ʾ��ɫ0-F
+    //16���Ʒ�ʽ��ʾ��ɫ0-F
     var arrHex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     var strHex = "#";
     var index;
     for(var i = 0; i < 6; i++) {
-      //ȡ��0-15֮����������
+      //ȡ��0-15֮����������
       index = Math.round(Math.random() * 15);
       strHex += arrHex[index];
     }
@@ -4591,7 +3749,7 @@ function  inserChar() {
 }(jQuery);
 #T=ui-reload
 /** 
-* extend ��ˢ�¼���
+* extend ��ˢ�¼���
 * 
 * @package jquery
 * @author cuki13
@@ -4651,7 +3809,7 @@ function  inserChar() {
         ajax = true;
       },
       error:function  () {
-        alert('�ܱ�Ǹ����ʧ�ܣ�������ˢ��ҳ��');
+        alert('�ܱ�Ǹ����ʧ�ܣ�������ˢ��ҳ��');
         $.blockHide($("#loading-wrap"));
       },
       beforeSend:function  () {
@@ -4702,7 +3860,7 @@ function  inserChar() {
 })(jQuery);
 #T=ui-scollUp
 /** 
-* extend ����ÿ���������
+* extend ����ÿ��������
 * @author cuki13
   $(obj).scollUp({
     speed:3000,
@@ -4752,7 +3910,7 @@ function  inserChar() {
 })(jQuery);
 #T=ui-scrolleffect
 /* ========================================================================
-��������Ч��
+��������Ч��
  */
 +function ($) {
   "use strict";
@@ -4797,7 +3955,7 @@ function  inserChar() {
       }else {
         permb = 0;
       }
-      //�����������ϱ�Ե�ľ���
+      //�����������ϱ�Ե�ľ���
       var tempY = $(document).scrollTop()-$domParent.position().top + permb;
       var per = Math.max(-tempY/800,0);
       var targetX = $dom.data("endX")+$dom.data("tempX")*per;
@@ -4808,7 +3966,7 @@ function  inserChar() {
 
   scrollEffe.prototype.opacity = function($dom,$domParent,ease)
   {
-    //�����������ϱ�Ե�ľ���
+    //�����������ϱ�Ե�ľ���
     var tempY = $(document).scrollTop()-$domParent.position().top;
     var opacity = Math.min(tempY*0.008,1);
     $dom.css("opacity",opacity);
@@ -4816,7 +3974,7 @@ function  inserChar() {
 
   scrollEffe.prototype.scale = function($dom,$domParent,ease)
   {
-    //�����������ϱ�Ե�ľ���
+    //�����������ϱ�Ե�ľ���
     var tempY = $(document).scrollTop()-$domParent.position().top + $(window).height()/2;
 
     var scale = Math.min(tempY*0.003,1);
@@ -4848,7 +4006,7 @@ function  inserChar() {
   }
 
   $(document).ready(function() {
-      //����ģ��
+      //����ģ��
       if ($('body.home').length > 0) {
         var blockSilder = [
           [$(".server-block1"),$("#server-container"),-700,-600-300,'moveblock'],
@@ -4875,7 +4033,7 @@ function  inserChar() {
 }(jQuery);
 #T=ui-scrollPic
 /** 
-* extend ͼƬѭ��
+* extend ͼƬѭ��
 * 
 * @package jquery
 * @author cuki13
@@ -4885,7 +4043,7 @@ function  inserChar() {
     itemHeight : 250,
     bigImg : 'off',
     scollBack : function  (img , obj) {
-      //ִ����ص��¼�����
+      //ִ����ص��¼�����
     }
    });
 
@@ -4943,7 +4101,7 @@ function isTransform() {
 }
 
 $.fn.scollpic= function (options) {
-  //���㳤��
+  //���㳤��
   $(this).each(function  () {
     var $this = $(this);
     var defualts = {
@@ -4963,8 +4121,8 @@ $.fn.scollpic= function (options) {
 
    
 
-    var ifLoad = false; //�Ƿ����
-    var currentItemIndex = 0 ; //��ǰitem����
+    var ifLoad = false; //�Ƿ����
+    var currentItemIndex = 0 ; //��ǰitem����
     if (opts.parenWidth == 'auto') {
       opts.parenWidth = parseInt(opts.itemCount * opts.itemWidth);
     }
@@ -4973,7 +4131,7 @@ $.fn.scollpic= function (options) {
 
     $wrapObj.css({'position':'relative','height':opts.itemHeight});
 
-    //���ؼ�ͷ
+    //���ؼ�ͷ
     if (opts.itemWidth == 'auto') {
       opts.itemWidth = $(this).find(opts.sdiv).width();
     }
@@ -4995,7 +4153,7 @@ $.fn.scollpic= function (options) {
       scoll('right',$this);
     });
 
-    //ҳ��
+    //ҳ��
     var navItemCount = $this.find(opts.itemTag).length / opts.itemCount;
     function  nav() {
       var html = '<div class="banner-nav">';
@@ -5021,7 +4179,7 @@ $.fn.scollpic= function (options) {
       }
     })
 
-    //���ѭ��
+    //���ѭ��
     if (opts.loop == true) {
       var totleCount = $this.find(opts.itemTag).length;
       var $prevClone = $this.find(opts.itemTag + ':gt(' + (totleCount - opts.itemCount - 1) + ')').clone().addClass("clone");
@@ -5030,7 +4188,7 @@ $.fn.scollpic= function (options) {
       $prevClone.prependTo($this);
     }
 
-    //�ܳ���
+    //�ܳ���
     var itemTotal=0; 
 
     $this.find(opts.itemTag).last().css("padding-right","0");
@@ -5039,7 +4197,7 @@ $.fn.scollpic= function (options) {
     });
     $this.css({'position':'relative','width':itemTotal});    
 
-    //moblie tounch�ֻ��¼�
+    //moblie tounch�ֻ��¼�
     var currntp = 0;
     var pageX = 0;
     var ifchlick = false;
@@ -5079,7 +4237,7 @@ $.fn.scollpic= function (options) {
       }
     });
     
-    //�����ʾ��ͼ
+    //�����ʾ��ͼ
     $this.find(opts.itemTag).find("a").click(function  (e) {
       var $item = $(this);
       if (opts.bigImg && (opts.bigImg == 'off')) {
@@ -5109,7 +4267,7 @@ $.fn.scollpic= function (options) {
       }
     })
 
-    //ѭ��
+    //ѭ��
     var onHover = false;
     $this.hover(function  () {
       onHover = true;
@@ -5129,7 +4287,7 @@ $.fn.scollpic= function (options) {
       loopMain();
     }, opts.playSpeed);
     
-    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>�����С�����</span></div>');
+    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>�����С�����</span></div>');
     var showImg = function (obj,data,objlink) {
       var img = $('<img src="' + data + '" />');
       ajaxLoad.insertBefore(obj);
@@ -5153,7 +4311,7 @@ $.fn.scollpic= function (options) {
         ifload = false;
         }).error(function(){
           ajaxLoad.detach();
-          alert('�ܱ�Ǹ,����ʧ��');
+          alert('�ܱ�Ǹ,����ʧ��');
           ifload = false;
         });
       }
@@ -5165,7 +4323,7 @@ $.fn.scollpic= function (options) {
     
     var leftVal = 0;
 
-    //Ԥ��ѭ��ģʽ
+    //Ԥ��ѭ��ģʽ
     function  loopRest() {
       if (opts.loop == true) {
         $this.css("transition","0"); 
@@ -5187,7 +4345,7 @@ $.fn.scollpic= function (options) {
 
     loopRest();
 
-    //����ģʽ
+    //����ģʽ
     function  scrollObj(obj, value, navlong, callback) {
       if (navlong) {
          leftVal = 0;
@@ -5237,7 +4395,7 @@ $.fn.scollpic= function (options) {
       }
     }
 
-    //��������
+    //��������
     function scoll(dir,obj,moveWidth) {
       if (ifScroll == true) {
         return false;
@@ -5291,7 +4449,7 @@ $.fn.scollpic= function (options) {
 
 #T=ui-snows
 ///** 
-* extend ѩ��Ч��
+* extend ѩ��Ч��
 * 
 * @package jquery
 * @author cuki13
@@ -5449,7 +4607,7 @@ $.fn.scollpic= function (options) {
 })();
 #T=ui-tag
 /** 
-* extend tag�л�
+* extend tag�л�
 * 
 * @package tagshow
 * @author cuki13
@@ -5466,14 +4624,14 @@ $.fn.scollpic= function (options) {
     var obj=$(this);
 
     var defualts = {
-      objshow: obj.find('.c1'),     //չʾ������ 
-      taglink: obj.find('.c2 a'),     //�������
-      current_class: 'current'      //��ǰ����ʽ
+      objshow: obj.find('.c1'),     //չʾ������ 
+      taglink: obj.find('.c2 a'),     //�������
+      current_class: 'current'      //��ǰ����ʽ
     };
 
     var opts = $.extend({}, defualts, options);  
 
-    var is_fade=false;   //�ж�Ч���Ƿ���ִ��
+    var is_fade=false;   //�ж�Ч���Ƿ���ִ��
     opts.taglink.click(function  (e) {
       if ($(this).hasClass(opts.current_class)) {
         return false;
