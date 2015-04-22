@@ -862,36 +862,6 @@ fadeIn(^!)
 fadeOut(^!)
 #T=fadeto
 fadeTo(^!)
-#T=fef
-font-effect:^!;
-#T=fef-eb
-font-effect:emboss;
-#T=fef-eg
-font-effect:engrave;
-#T=fef-n
-font-effect:none;
-#T=fef-o
-font-effect:outline;
-#T=fem
-font-emphasize:^!;
-#T=femp
-font-emphasize-position:^!;
-#T=femp-a
-font-emphasize-position:after;
-#T=femp-b
-font-emphasize-position:before;
-#T=fems
-font-emphasize-style:^!;
-#T=fems-ac
-font-emphasize-style:accent;
-#T=fems-c
-font-emphasize-style:circle;
-#T=fems-ds
-font-emphasize-style:disc;
-#T=fems-dt
-font-emphasize-style:dot;
-#T=fems-n
-font-emphasize-style:none;
 #T=ff
 font-family:^!;
 #T=ff-c
@@ -922,10 +892,6 @@ font-family:'微软雅黑';
 </figure>
 #T=filter
 filter(^!)
-#T=finally
-finally {
-  ^!
-}
 #T=find
 find(^!)
 #T=findText
@@ -1651,21 +1617,15 @@ html(^!)
         </div>
 #T=html-imgload
 var img = '<img />';
-                img = $("img");
-                img.attr("src","images/pic-fp.png");
-                if (img.complete) {
-                  
-                }else {
-                  img.load(function  () {
-                    
-                     $("#invoiceImg").attr("src", "../Handler/InvoiceImage.ashx?filePath=" + data.data.invoiceImg);
-                      $("#zoom").attr("href", "../Handler/InvoiceImage.ashx?filePath=" + data.data.invoiceImg);
-                      $("#down").attr("href", "../Handler/InvoiceImage.ashx?download=1&filePath=" + data.data.invoiceImg);
-                      $("#invoiceImgLink").attr("href", "../Handler/InvoiceImage.ashx?filePath=" + data.data.invoiceImg);
-                     $("#invoiceImgLink").show();
-                     $(".p-vote-img load,.p-vote-img .ui-loader").hide();
-                  })
-                }
+img = $("img");
+img.attr("src","images/pic-fp.png");
+if (img.complete) {
+  
+}else {
+  img.load(function  () {
+
+  })
+}
 #T=html-Jseasing
 /* jQuery EasIng v1.1.2 - http://gsgd.co.uk/sandbox/jquery.easIng.php
 *
@@ -1869,42 +1829,6 @@ jQuery.extend(jQuery.easing, {
 </div>
 <![endif]-->
 
-#T=html-radio
-<!-- start html-raido -->
-        <style type="text/css">
-          .radio1 { display:inline-block; background:#000; color:#fff;}
-          .radio-hover {background:blue;}
-          .radio1 input {position:absolute;left:-999em;}
-        </style>
-        <script type="text/javascript">
-            var fc = {
-            radio: function  (obj) {
-              obj.each(function () {
-                  $(this).click(function  () {
-                  $(this).parent('label').addClass("radio-hover");
-                  $(this).parent('label').siblings().removeClass("radio-hover");
-                  })
-                $(this).trigger('change');
-              })
-            }
-          }
-          
-          $(document).ready(function() {
-            fc.radio($(".rd1"));							
-          })
-        </script>
-        
-        <label class="radio1">
-          <input class="rd1" type="radio" name="r1" id="" />radio1
-        </label>
-        <label class="radio1">
-          <input class="rd1" type="radio" name="r1" id="" />radio1
-        </label>
-        <label class="radio1">
-          <input class="rd1" type="radio" name="r1" id="" />radio1
-        </label>
-
-        <!-- end html-raido -->
 #T=html-scrollpan
 <link rel="stylesheet" type="text/css" href="css/scrollbar/jquery.jscrollpane.css" media="all" />
       <script type="text/javascript" src="js/scrollbar/jquery.mousewheel.js"></script>
@@ -2602,42 +2526,6 @@ focusout(function(){^!})
 join(^!)
 #T=jq
 $(^!)
-#T=jqa
-after(^!)
-#T=jqac
-addClass(^!)
-#T=jqajax
-$.ajax(^!)
-#T=jqajaxSetup
-$.ajaxSetup(^!)
-#T=jqap
-append(^!)
-#T=jqat
-appendTo(^!)
-#T=jqb
-before(^!)
-#T=jqboxModel
-$.boxModel^!
-#T=jqBrowser
-$.browser^!
-#T=jqbrowserVersion
-$.browser.version^!
-#T=jqc
-click(^!)
-#T=jqcontains
-$.contains(^!)
-#T=jqcq
-clearQueue(^!)
-#T=jqdata
-$.data(^!)
-#T=jqdc
-dblclick(^!)
-#T=jqeach
-$.each(^!, function(i, n) {})
-#T=jqerror
-$.error(^!)
-#T=jqextend
-$.extend(^!)
 #T=jqextendz
 /** 
 * extend ^!
@@ -2659,172 +2547,6 @@ $.extend(^!)
         var obj = $(this);
     };  
 })(jQuery);
-#T=jqf
-find(^!)
-#T=jqfi
-focusin(function(){^!})
-#T=jqfnextend
-$.fn.extend(^!)
-#T=jqfo
-fadeOut(^!)
-#T=jqft
-fadeTo(^!)
-#T=jqfxoff
-$.fx.off^!
-#T=jqget
-$.get(^!)
-#T=jqgetJSON
-$.getJSON(^!)
-#T=jqgetScript
-$.getScript(^!)
-#T=jqgrep
-$.grep(^!)
-#T=jqh
-html(^!)
-#T=jqhc
-hasClass(^!)
-#T=jqia
-insertAfter(^!)
-#T=jqib
-insertBefore(^!)
-#T=jqid
-$("#^!")
-#T=jqih
-innerHeight()^!
-#T=jqinArray
-$.inArray(^!)
-#T=jqis
-is(^!)
-#T=jqisArray
-$.isArray(^!)
-#T=jqisEmptyObject
-$.isEmptyObject(^!)
-#T=jqisFunction
-$.isFunction(^!)
-#T=jqisPlainObject
-$.isPlainObject(^!)
-#T=jqiw
-innerWidth()^!
-#T=jqkd
-keydown(^!)
-#T=jqkp
-keypress(^!)
-#T=jqku
-keyup(^!)
-#T=jqload
-$(function(){
-  ^!
-});
-#T=jqmakeArray
-$.makeArray(^!)
-#T=jqmap
-$.map(^!, function(n) {})
-#T=jqmd
-mousedown(function(){^!})
-#T=jqmerge
-$.merge(^!)
-#T=jqmm
-mousemove(function(){^!})
-#T=jqmo
-mouseout(function(){^!})
-#T=jqmouseenter
-mouseenter
-#T=jqmouseleave
-mouseleave
-#T=jqmov
-mouseover(function(){^!})
-#T=jqmu
-mouseup(function(){^!})
-#T=jqna
-nextAll(^!)
-#T=jqnoop
-$.noop^!
-#T=jqnu
-nextUntil(^!)
-#T=jqoh
-outerHeight(^!)
-#T=jqop
-offsetParent()^!
-#T=jqow
-outerWidth(^!)
-#T=jqp
-prepend(^!)
-#T=jqpa
-prevAll(^!)
-#T=jqparam
-$.param(^!)
-#T=jqparseJSON
-$.parseJSON(^!)
-#T=jqpos
-position()^!
-#T=jqpost
-$.post(^!)
-#T=jqproxy
-$.proxy(^!)
-#T=jqpt
-prependTo(^!)
-#T=jqpu
-prevUntil(^!)
-#T=jqra
-removeAttr(^!)
-#T=jqrc
-removeClass(^!)
-#T=jqrd
-removeData(^!)
-#T=jqrpa
-replaceAll(^!)
-#T=jqrpw
-replaceWith(^!)
-#T=jqsa
-serializeArray()^!
-#T=jqsd
-slideDown(^!)
-#T=jqse
-serialize()^!
-#T=jqsl
-scrollLeft(^!)
-#T=jqst
-scrollTop(^!)
-#T=jqst
-slideToggle(^!)
-#T=jqsu
-slideUp(^!)
-#T=jqsupport
-$.support^!)
-#T=jqt
-text(^!)
-#T=jqtc
-toggleClass(^!)
-#T=jqth
-triggerHandler(^!)
-#T=jqtoArray
-$.toArray()^!
-#T=jqtrim
-$.trim(^!)
-#T=jqub
-unbind(^!)
-#T=jqud
-undelegate(^!)
-#T=jQuery
-jQuery(^!)
-#T=jqul
-unload(function(){
-  ^!
-})
-#T=jqunique
-$.unique(^!)
-#T=jquw
-unwrap()^!
-#T=jqver
-$.browser.version^!
-#T=jqw
-wrap(^!)
-#T=jqwa
-wrapAll(^!)
-#T=jqwi
-wrapInner(^!)
-#T=jr
-remove(^!)
 #T=js
 show()^!
 #T=js-v
@@ -2853,10 +2575,6 @@ keyup(^!)
 "^!"
 #T=l
 (^!)
-#T=l
-(^!)
-#T=l
-left:^!;
 #T=l-a
 left:auto;
 #T=label
@@ -2875,6 +2593,8 @@ layerX
 layerY
 #T=lbound
 lbound(^!)
+#T=left
+left:^!;
 #T=legend
 <legend>^!</legend>
 #T=lh
@@ -2941,6 +2661,8 @@ load(^!)
 localeCompare(^!)
 #T=log
 log(^!)
+#T=lorem
+lorem
 #T=lts
 letter-spacing:^!;
 #T=m

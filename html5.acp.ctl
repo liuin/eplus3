@@ -160,11 +160,11 @@ contenteditable="true"
 <footer>^!</footer>
 #T=form-get
 <form  method="get" action="">
-    ^!		
+  ^!		
 </form>
 #T=form-post
 <form method="post" action="">
-    ^!
+  ^!
 </form>
 #T=h1
 <h1>^!</h1>
@@ -216,10 +216,40 @@ href="#"
 					<div class="ct-c2 fl">Learn more.</div>
 					<div class="ct-c3">Learn more.</div>
 				</div>
+#T=html-back-top
+<script type="text/javascript"> 
+//<![CDATA[
+//返回顶部
+(function() {
+  var $backToTopTxt = "返回顶部", 
+    $backToTopEle = $('<div class="back-top"></div>').appendTo($("body"))
+    .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 300);
+    });
+
+    $backToTopFun = function() {          
+      var st = $(document).scrollTop(), winh = $(window).height();
+      if(st > 200)
+      {
+        if($backToTopEle.data('pos') == 'top'){return false;} $backToTopEle.data('pos','top').stop().css('opacity','1').fadeIn();
+      }else{
+        if($backToTopEle.data('pos') == 'scroll'){return false;}
+        $backToTopEle.data('pos','scroll').stop().fadeOut()
+      }
+    
+      //IE6下的定位
+      if (!window.XMLHttpRequest) {
+        $backToTopEle.css("top", st + winh - 166);
+      }
+    };
+  $(window).bind("scroll", $backToTopFun);
+  $(function() { $backToTopFun(); });
+})();
+</script>
 #T=html5-ie
 <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->  
 #T=html-artlist
 <style type="text/css">
 					.ar-list {}
@@ -237,39 +267,6 @@ href="#"
 						<p><a href="article-1296-1.html" target="_blank"><img  width="110" height="65" src="#" alt="网页浏览毫秒必争，超强前端网页性能总结"></a>你愿意为打开一个网页等待多长时间？我一秒也不愿意等。但是事实上大多数网站在响应速度方面都让人失望。现在越来越多的人开始建立自己的网站，博客，你的网页响应速度如何呢？在这篇</p>
 					</li>
 				</ul>
-#T=html-back-top
-	  <style type="text/css">
-		.back-top {display: none;width: 18px;line-height: 1.2;padding: 5px 0;background-color: #000;color: #fff;font-size: 12px;text-align: center;position: fixed;_position:absolute;right: 112px;_right: 92px;bottom: 100px;_bottom: "auto";cursor: pointer;opacity: 0.6;filter: Alpha(opacity=60);}
-		</style>
-	  <script type="text/javascript">
-		//<![CDATA[
-
-		//返回顶部
-		(function() {
-			var $backToTopTxt = "返回顶部", 
-				$backToTopEle = $('<div class="back-top"></div>').appendTo($("body"))
-				.text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
-						$("html, body").animate({ scrollTop: 0 }, 300);
-				});
-
-				$backToTopFun = function() {					
-					var st = $(document).scrollTop(), winh = $(window).height();
-					if(st > 200)
-					{
-						if($backToTopEle.data('pos') == 'top'){return false;} $backToTopEle.data('pos','top').stop().css('opacity','1').fadeIn();
-					}else{
-						if($backToTopEle.data('pos') == 'scroll'){return false;}
-						$backToTopEle.data('pos','scroll').stop().fadeOut()
-					}
-				
-					//IE6下的定位
-					if (!window.XMLHttpRequest) {
-						$backToTopEle.css("top", st + winh - 166);
-					}
-				};
-			$(window).bind("scroll", $backToTopFun);
-			$(function() { $backToTopFun(); });
-		})();
 #T=html-checkbox
 <!-- start html-radio and  -->
 				<style type="text/css">
@@ -404,57 +401,6 @@ href="#"
 
 
 			<!-- end facnbox-->
-#T=html-flash自适应
-		<style type="text/css">
-			body {max-width:1440px; margin:0 auto;}
-			.wrap {overflow:hidden;position:relative; }
-			.flash {text-align:center; width:100%; margin:0 auto; }
-		</style>
-		<div class="wrap">
-			<div class="flash">
-					<object  class="flashwrap" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" >
-					 <param name="movie" value="index.swf">
-					 <param name="quality" value="high">
-					 <embed src="index.swf" class="flashwrap"  quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" ></embed>
-				</object>
-			</div>
-		</div>
-		<script type="text/javascript">
-		<!--
-			$(document).ready(function() {
-				function resizefalsh(obj,min,max) {
-					var windw = $(window).width();
-					var windh = $(window).height()-5;
-					
-					if (windw < min.w) {
-						obj.width(min.w);
-					}else {
-						if (windw > max.w) {
-							obj.width(max.w);
-						}else {
-							obj.width(windw);
-						}
-					}
-					
-					if (windh < min.h) {
-						obj.height(min.h);
-					}else {
-						if (windh > max.h) {
-							obj.height(max.h);
-						}else {
-							obj.height(windh);
-						}
-					}
-				}
-
-				resizefalsh($(".flashwrap"),{'w':980,'h':600},{'w':1440,'h':776});
-
-				$(window).resize(function(){
-					resizefalsh($(".flashwrap"),{'w':980,'h':600},{'w':1440,'h':776});
-				})
-			})
-		//-->
-		</script>
 #T=html-footer
 				<style type="text/css">
 					.footer .link {margin-right:20px;}
