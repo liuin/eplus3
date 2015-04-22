@@ -2,7 +2,7 @@
 ; CSS syntax file written by ES-Computing.
 ; This file is required for EditPlus to run correctly.
 
-#DELIMITER=:;,.={}()#
+#DELIMITER=:;,.={}()#'"/
 #QUOTATION1='
 #QUOTATION2="
 #COMMENTON=/*
@@ -39,7 +39,6 @@ border-right-width
 border-spacing
 border-style
 border-top
-border-bottom-image
 border-top-color
 border-top-style
 border-top-width

@@ -7,138 +7,138 @@
 ; Do not add/remove any entry.
 ; Do not modify title of each entry.
 
-#CASE=y
+#CASE=n
 
 #T=B
-<B>^!</B>
+<strong>^!</strong>
 #T=I
-<I>^!</I>
+<em>^!</em>
 #T=U
-<U>^!</U>
+<u>^!</u>
 #T=H1
-<H1>^!</H1>
+<h1>^!</h1>
 #T=H2
-<H2>^!</H2>
+<h2>^!</h2>
 #T=H3
-<H3>^!</H3>
+<h3>^!</h3>
 #T=H4
-<H4>^!</H4>
+<h4>^!</h4>
 #T=H5
-<H5>^!</H5>
+<h5>^!</h5>
 #T=H6
-<H6>^!</H6>
+<h6>^!</h6>
 #T=BR
-<BR>
+<br>
 #T=P
-<P>
+<p>^!</p>
 #T=nb
 &nbsp;
 #T=A
-<A href="">^!</A>
+<a href="">^!</a>
 #T=HR
-<HR>
+<hr>
 #T=IMG
-<IMG src="" width="" height="" border="0" alt="^!">
+<img src="" width="" height="" border="0" alt="^!">
 #T=CENTER
-<CENTER>^!</CENTER>
+<center>^!</center>
 #T=BLOCKQUOTE
-<BLOCKQUOTE>^!</BLOCKQUOTE>
+<blockquote>^!</blockquote>
 #T=PRE
-<PRE>^!</PRE>
+<pre>^!</pre>
 #T=<!
 <!-- ^! -->
 #T=UL
-<UL>
-	<LI>^!
-	<LI>
-</UL>
+<ul>
+	<li>^!</li>
+	<li></li>
+</ul>
 #T=OL
-<OL>
-	<LI>^!
-	<LI>
-</OL>
+<ol>
+	<li>^!</li>
+	<li></li>
+</ol>
 #T=DL
-<DL>
-	<DT>^!
-	<DD>
-</DL>
+<dl>
+	<dt>^!</dt>
+	<dd></dd>
+</dl>
 #T=FORM
-<FORM method="post" action="">
+<form method="post" action="">
 	^!
-</FORM>
+</form>
 #T=FRAME
-<FRAMESET rows="^!," cols=",">
-	<FRAME src="" name="">
-	<FRAME src="" name="">
-</FRAMESET>
+<frameset rows="^!," cols=",">
+	<frame src="" name="">
+	<frame src="" name="">
+</frameset>
 #T=MAP
-<MAP name="^!">
-	<AREA shape="" href="" coords="" alt="">
-</MAP>
+<map name="^!">
+	<area shape="" href="" coords="" alt="">
+</map>
 #T=SCRIPT
-<SCRIPT type="text/javascript">
+<script type="text/javascript">
 <!--
 	^!
 //-->
-</SCRIPT>
+</script>
 #T=APPLET
-<APPLET code="^!" width="" height="">
-</APPLET>
+<applet code="^!" width="" height="">
+</applet>
 #T=TEXT
-<INPUT type="text" name="^!">
+<input type="text" name="^!">
 #T=SELECT
-<SELECT name="">
-	<OPTION value="" selected>^!
-	<OPTION value="">
-</SELECT>
+<select name="">
+	<option value="" selected>^!
+	<option value="">
+</select>
 #T=RADIO
-<INPUT type="radio" name="^!">
+<input type="radio" name="^!">
 #T=CHECKBOX
-<INPUT type="checkbox" name="^!">
+<input type="checkbox" name="^!">
 #T=TEXTAREA
-<TEXTAREA name="" rows="" cols="">^!</TEXTAREA>
+<textarea name="" rows="" cols="">^!</textarea>
 #T=RESET
-<INPUT type="reset">
+<input type="reset">
 #T=SUBMIT
-<INPUT type="submit">
+<input type="submit">
 #T=PASSWORD
-<INPUT type="password" name="^!">
+<input type="password" name="^!">
 #T=HIDDEN
-<INPUT type="hidden" name="^!">
+<input type="hidden" name="^!">
 #T=FORMIMAGE
-<INPUT type="image" src="^!">
+<input type="image" src="^!">
 #T=BUTTON
-<INPUT type="button" value="^!" onclick="">
+<input type="button" value="^!" onclick="">
 #T=FONT
-<FONT size="" color="">^!</FONT>
+<font size="" color="">^!</font>
 #T=TABLE
-<TABLE>
+<table>
 
 #T=TABLE2
-</TABLE>
+</table>
 #T=TR
-<TR>
+<tr>
 
 #T=TR2
-</TR>
+</tr>
 
 #T=TD
-	<TD>^!</TD>
+	<td>^!</td>
 
 #T=TD2
-	<TD></TD>
+	<td></td>
 
 #T=OBJECT
-<OBJECT id="%s" width="^!" height="" classid="CLSID:%s">
-</OBJECT>
+<object id="%s" width="^!" height="" classid="clsid:%s">
+</object>
 #T=STYLE
-<STYLE type="text/css">
+<style type="text/css">
 	^!
-</STYLE>
+</style>
 #T=DIV
-<DIV id="" class="">
+<div id="" class="">
 	^!
-</DIV>
+</div>
 #T=SPAN
-<SPAN class="">^!</SPAN>
+<span class="">^!</span>
 #

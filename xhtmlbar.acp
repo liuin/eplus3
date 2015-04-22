@@ -7,12 +7,12 @@
 ; Do not add/remove any entry.
 ; Do not modify title of each entry.
 
-#CASE=y
+#CASE=n
 
 #T=B
-<b>^!</b>
+<strong>^!</strong>
 #T=I
-<i>^!</i>
+<em>^!</em>
 #T=U
 <u>^!</u>
 #T=H1
