@@ -2320,6 +2320,83 @@ jQuery.extend(jQuery.easing, {
 
     //-->
     </script>
+#T=html-temp5
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+    function browserRedirect() {
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+        window.location.href = './wap/';
+      } else {
+        //window.location = 'index.html';
+      }
+    }
+
+    browserRedirect();
+  </script>
+  <script type="text/javascript">
+  (function(){
+    'use strict';
+    var Fixmobile = function  () {
+      this.viwep();
+    }
+
+    Fixmobile.width = 640;
+
+    Fixmobile.prototype.viwep = function  (e) {
+      var phoneWidth = parseInt(window.screen.width),
+      phoneScale = phoneWidth/Fixmobile.width,
+      ua = navigator.userAgent,
+      headmate;
+      if (/Android (\d+\.\d+)/.test(ua)){
+        var version = parseFloat(RegExp.$1);
+        // andriod 2.3
+        if(version > 2.3){
+          document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', minimum-scale = ' + phoneScale + ', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+        // andriod 2.3以上
+        }else{
+          document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', target-densitydpi=device-dpi">');
+        }
+        // 其他系统
+      } else {
+        document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', user-scalable=no, target-densitydpi=device-dpi">');
+      }
+    }
+    var newviewport = new Fixmobile();
+  })();
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="description" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/style.css">
+  <title>website name</title>
+</head>
+<body class="yh">
+  <noscript>
+    <strong>你的浏览器似乎禁用了 JavaScript。</strong><br />您必须在浏览器中启用JavaScript才能使用本网站的功能。 
+  </noscript>
+  <div class="container">
+     
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
 #T=html-thumbnail
 <style type="text/css">
                   .thumbnail{display:block;margin-left:auto;margin-right:auto;text-align:center;width:300px;border:1px solid #ddd;line-height:1.5; padding:4px;}
@@ -3160,7 +3237,7 @@ resize:vertical;
 <samp>^!</samp>
 #T=script
 <script type="text/javascript">
-    ^!
+  ^!
 </script>
 #T=ScriptEngine
 ScriptEngine(^!)
@@ -3702,6 +3779,1792 @@ text-wrap:unrestricted;
 typeof (^!)
 #T=ubound
 ubound(^!)
+#T=ui-autoImg
+/*等比例缩放图片*/
+function autoImg(ImgD, maxwidth, maxheight) {
+  var image = new Image();
+  image.src = ImgD.src;
+  if (image.width > 0 && image.height > 0) {
+    flag = true;
+    if (image.width / image.height >= maxwidth / maxheight) {
+      if (image.width > maxwidth) {
+        ImgD.width = maxwidth;
+        ImgD.height = (image.height * maxwidth) / image.width;
+        } else {
+          ImgD.width = image.width;
+          ImgD.height = image.height;
+        }
+      }
+    else {
+       if (image.height > maxheight) {
+         ImgD.height = maxheight;
+         ImgD.width = (image.width * maxheight) / image.height;
+       }else {
+          ImgD.width = image.width;
+          ImgD.height = image.height;
+       }
+    } 
+  }
+}
+#T=ui-blockShow
+/*-- 层显示 --*/
++function ($) {
+  'use strict';
+   $.blockShow = function blockShow(objIn, objOut, callBack) {
+    if (!objOut) {
+      objIn.show();
+      objIn[0].offsetWidth;
+      objIn.addClass("in").one('bsTransitionEnd',function  () {
+        $(this).removeClass("in");
+      }).emulateTransitionEnd(220);
+    }else {
+      objOut.addClass("out").one('bsTransitionEnd', function  () {
+
+      $(this).hide();
+      $(this)[0].offsetWidth;
+      $(this).removeClass("out");
+
+      objIn.show();
+      $(this)[0].offsetWidth;
+      objIn.addClass("in").one('bsTransitionEnd',function  () {
+        $(this).removeClass("in");
+      }).emulateTransitionEnd(220);
+      if (callBack) {
+        callBack();
+      }
+      }).emulateTransitionEnd(220);
+    }
+  }
+
+  $.blockHide = function blockHide(objOut, callBack) {
+    objOut.addClass('out').one('bsTransitionEnd', function  () {
+    $(this).hide().removeClass("out");
+
+    if (callBack) {
+      callBack();
+    }
+    }).emulateTransitionEnd(350);
+  }
+}(jQuery);
+#T=ui-cooki
+/*-- cooki操作 --*/
+function addCookie(objName,objValue,objHours){
+  var str = objName + "=" + escape(objValue);
+  if(objHours > 0){
+    var date = new Date();
+    var ms = objHours*3600*1000;
+    date.setTime(date.getTime() + ms);
+    str += "; expires=" + date.toGMTString();
+  }
+  document.cookie = str;
+}
+
+function getCookie(objName){
+  var arrStr = document.cookie.split("; ");
+  for(var i = 0;i < arrStr.length;i ++){
+    var temp = arrStr[i].split("=");
+    if(temp[0] == objName) return unescape(temp[1]);
+  } 
+}
+#T=ui-countTime
+//倒计时
+jQuery(document).ready(function($) {
+  var servertime = new Date("2015/01/22 23:08:28").getTime();
+  var endtime = new Date("2015/01/21 17:42:00").getTime();
+  var sbtime = (endtime - servertime) / 1e3;		
+  var temp = "";
+  var timese = "";
+
+  if (sbtime <= 0) {
+    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">天</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">时</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">分</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">秒</span></li>';
+    $("#timener ul").html(temp);
+  } else {
+    timese = setInterval(function() {
+      timmer(sbtime);
+    }, 1e3);
+  }
+  function timmer(getsc) {
+    if (getsc > 0) {
+      var second = Math.floor(getsc % 60);
+      var minite = Math.floor(getsc / 60 % 60);
+      var hour = Math.floor(getsc / 3600 % 24);
+      var day = Math.floor(getsc / 3600 / 24);
+      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">天</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">时</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">分</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">秒</span></li>';
+      $("#timener ul").html(temp);
+      sbtime--;
+    } else {
+      window.clearInterval(timese);
+      location.reload();
+    }
+  }
+})
+#T=ui-fixtable
+/*
+fixhead($(".fixhead"));
+<style type="text/css">
+  .fixhead-box {width:800px; position:relative; border:1px solid #000;
+  }
+  .fixhead {width:800px;}
+  .fixhead td,.fixhead th{border-bottom:1px solid #000;border-left:1px solid #000;}
+
+  .fixhead-ct {height:170px; overflow:auto; overflow-x:hidden;}
+  .fixhead-ct .trhd {visibility:hidden; display:none;}
+  .fixhead-hd {height:22px; overflow:hidden; background:#fff; position:relative;}
+</style>
+*/
+function fixhead(obj) {
+  var clonetb = '';
+  obj.find("th").each(function (n) {
+      $(this).outerWidth($(this).outerWidth());
+    obj.find("tr:eq(1) td:eq("+n+")").outerWidth($(this).outerWidth());
+    if (n == obj.find("th").length-1) {
+      clonetb = obj.clone();      
+      obj.wrap('<div class="fixhead-box"></div>');
+      obj.wrap('<div class="fixhead-ct"></div>');
+            
+      clonetb.insertBefore(obj.parent());
+      clonetb.wrap('<div class="fixhead-hd"></div>');
+      obj.find("tr").last().find("td").css("border-bottom","0");
+    }
+  })      
+}
+#T=ui-formCheck
+/** 
+* extend 表单控件自定义
+* @author cuki13  
+  .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
+  .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
+  .selectstyle .val {display:block;}
+  obj.each(function (n) {
+      dataFormType($(this));
+  })
+*/
+
++function ($) {
+  'use strict';
+  var formSting = '[data-form="checkbox"]';
+  
+  var Radio = function  (number) {
+    this.id = number;
+  }
+$(".ckiput").prop('checked',true);
+  Radio.prototype.build = function  (el) {
+    var setCss = {
+      "opacity":"1",
+      "position":"absolute"
+    }
+    var $this = $(el);
+    $this.css(setCss);
+    var idiv = $('<i></i>');
+    idiv.insertBefore($this);
+    $this.parent("label").css("position","relative");
+    $this.on("change.resize",function  () { 
+        
+        if ($(this).prop('checked') == true) {
+          $(this).parent("label").addClass("ck-select");    
+        }else {
+          $(this).parent("label").removeClass("ck-select");   
+        }        
+    });
+  }
+
+  function Plugin(option) {
+    return this.each(function (n) {
+      var $this   = $(this)
+      var number = $this.attr('id') || n 
+      var data    = $this.data('ck.select')
+      var options = typeof option == 'object' && option
+      if (!data) $this.data('ck.select', (data = new Radio(number)))
+      if (option == 'build') data.build($(this))
+      else if (option) data.setState(option)
+    })
+  }
+
+  $(document).on('ready.ck.checkbox', function (e) {
+    var $this = $(formSting);
+    Plugin.call($this,'build');
+  })
+  
+}(jQuery); 
+#T=ui-formCheckbox
++(function ($) {
+  'use strict';
+  var formSting = '[data-form="checkbox"]';
+  
+  var checkbox = function  (number) {
+    this.id = number;
+  }
+
+  checkbox.prototype.build = function  (el) {
+    var setCss = {
+      "opacity":"0",
+      "position":"absolute",
+      "left":'0'
+    }
+    var $this = $(el);
+    $this.css(setCss);
+    var idiv = $('<i></i>');
+    idiv.insertBefore($this);
+    $this.parent("label").css("position","relative");
+    $this.on("change.resize",function  () {
+     ($(this).prop('checked')) ? ($(this).parent("label").addClass("ck-checkbox-acitve") ) : ($(this).parent("label").removeClass("ck-checkbox-acitve"));
+    });
+  }
+
+  function Plugin(option) {
+    return this.each(function (n) {
+      var $this   = $(this)
+      var number = $this.attr('id') || n 
+      var data    = $this.data('ck.checkbox')
+      var options = typeof option == 'object' && option
+      if (!data) $this.data('ck.checkbox', (data = new checkbox(number)))
+      if (option == 'build') data.build($(this))
+      else if (option) data.setState(option)
+    })
+  }
+
+  $(document).on('ready.ck.checkbox', function (e) {
+    var $this = $(formSting);
+    Plugin.call($this,'build');
+  })
+  
+  $.fn.formCheckbox = function  (options) {
+    var $this = $(this);
+    Plugin.call($this,'build');
+  }
+
+})(jQuery);
+#T=ui-formRadio
+/*-- 表单radio [data-form="radio"] --*/
++function ($) {
+  'use strict';
+  var formSting = '[data-form="radio"]';
+  
+  var Radio = function  (number) {
+    this.id = number;
+  }
+
+  Radio.prototype.build = function  (el) {
+    var setCss = {
+      "opacity":"0",
+      "position":"absolute"
+    }
+    var $this = $(el);
+    $this.css(setCss);
+    var idiv = $('<i></i>');
+    idiv.insertBefore($this);
+    $this.parent("label").css("position","relative");
+    $this.on("change.resize",function  () {      
+        $(this).parent("label").addClass("ck-select").siblings("label").removeClass("ck-select");     
+    });
+  }
+
+  function Plugin(option) {
+    return this.each(function (n) {
+      var $this   = $(this)
+      var number = $this.attr('id') || n 
+      var data    = $this.data('ck.select')
+      var options = typeof option == 'object' && option
+      if (!data) $this.data('ck.select', (data = new Radio(number)))
+      if (option == 'build') data.build($(this))
+      else if (option) data.setState(option)
+    })
+  }
+
+  $(document).on('ready.ck.radio', function (e) {
+    var $this = $(formSting);
+    Plugin.call($this,'build');
+  })
+  
+}(jQuery); 
+#T=ui-formSelect
+/** 
+* extend 表单控件自定义
+* @author cuki13  
+  .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
+  .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
+  .selectstyle .val {display:block;}
+  obj.each(function (n) {
+      dataFormType($(this));
+  })
+*/
+(function() {
+  var formSting = '[data-form="select"]';
+  var Select = function  (number) {
+    this.id = number;
+  }
+
+  Select.prototype.build = function  (el) {
+    var $this = $(el);
+    $this.css("opacity","0");
+    $this.wrap("<span class='selectstyle'></span>");
+    var gettxt = '<span class="val textb" >'+ $this.find("option:eq(0)").html()+'<i class="none"></i></span>';
+    gettxt = $(gettxt);       
+    gettxt.insertBefore($this);
+    $this.parents(".selectstyle").addClass("select-"+ this.id);
+    $this.on("change.resize",function  () {
+      var vl = $(this).find("option:selected").html();
+      $(this).prev('.val').html(vl);
+      $(this).parents(".selectstyle").find('.val').html(vl);
+    })
+    $this.trigger('change.resize');
+  }
+
+  function Plugin(option) {
+    return this.each(function (n) {
+      var $this   = $(this)
+      var number = $this.attr('id') || n 
+      var data    = $this.data('ck.select')
+      var options = typeof option == 'object' && option
+      if (!data) $this.data('ck.select', (data = new Select(number)))
+      if (option == 'build') data.build($(this))
+      else if (option) data.setState(option)
+    })
+  }
+
+  Select.init = function  () {
+    var $this = $(formSting);
+    Plugin.call($this,'build');
+  }
+  
+  $(document).ready(function() {
+    var $this = $(formSting);
+    Plugin.call($this,'build');
+  })
+
+  $.fn.formSelect = function  (options) {
+    var $this = $(this);
+    Plugin.call($this,'build');
+  }
+
+})()
+#T=ui-guagua
+/** 
+* extend 刮刮看代码
+*/
+  function guagua() {
+  //$("#canvas1").remove();
+  //$(".content-box").append('<canvas id="canvas1" style=" background-repeat:no-repeat; background-position:center center;" />');
+(function(bodyStyle) {
+bodyStyle.mozUserSelect = 'none';
+bodyStyle.webkitUserSelect = 'none';
+
+var img = new Image();
+
+var canvas = document.getElementById('canvas1');
+var canvasbg = document.getElementById('canvasbg');
+
+img.addEventListener('load', function(e) {
+var ctx;
+var ctxbg;
+var w = 640,
+h = 320;
+var offsetX = canvas.offsetLeft,
+offsetY = canvas.offsetTop;
+var mousedown = false;
+
+function getTransparentPercent(ctx, width, height) {
+  var imgData = ctx.getImageData(0, 0, width, height),
+    pixles = imgData.data,
+    transPixs = [];
+  for (var i = 0, j = pixles.length; i < j; i += 4) {
+    var a = pixles[i + 3];
+    if (a < 128) {
+      transPixs.push(i);
+    }
+  }
+  rate=(transPixs.length / (pixles.length / 4) * 100).toFixed(2);
+   return rate
+}
+
+
+function layer(ctx) {
+  var img1 = new Image();
+  img1.onload = function() {    
+    ctx.drawImage(img1, 0, 0, w, h);
+    ctxbg.drawImage(img, (w-img.width)/2, (h-img.height)/2, img.width, img.height);    
+    //canvas.style.backgroundImage='url('+img.src+')';
+    ctx.globalCompositeOperation = 'destination-out';
+  };
+  img1.src = 'img/banner1.jpg';
+  ctx.fillRect(0, 0, w, h);
+}
+
+function eventDown(e){
+  e.preventDefault();
+  mousedown=true;
+}
+
+function eventUp(e){
+  e.preventDefault();
+  mousedown=false;
+}
+
+function eventMove(e){
+  e.preventDefault();
+  if(mousedown) {
+  if(e.changedTouches){
+    e=e.changedTouches[e.changedTouches.length-1];
+  }
+  var x = (e.clientX + document.body.scrollLeft || e.pageX) - offsetX || 0,
+  y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+
+
+  with(ctx) {
+    
+  beginPath();
+  var radgrad = ctx.createRadialGradient(x, y, 0, x, y, 30);
+  radgrad.addColorStop(0, 'rgba(0,0,0,1)');
+  radgrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+  ctx.fillStyle = radgrad;
+
+  arc(x, y, 30, 0, Math.PI * 2);
+  //ctx.clearRect(x, y, 440, 440);
+  fill();
+  }
+  }
+}
+
+canvas.width=w;
+canvasbg.width=w;
+canvas.height=h;
+canvasbg.height=h;
+
+ctx=canvas.getContext('2d');
+ctxbg=canvasbg.getContext('2d');
+ctx.fillStyle='transparent';
+ctx.fillRect(0, 0, w, h);
+layer(ctx);
+
+canvas.addEventListener('touchstart', eventDown);
+canvas.addEventListener('touchend', eventUp);
+canvas.addEventListener('touchmove', eventMove);
+canvas.addEventListener('mousedown', eventDown);
+canvas.addEventListener('mouseup', eventUp);
+canvas.addEventListener('mousemove', eventMove);
+});
+
+//img.src = hideimg;
+
+}) (document.body.style);
+}
+
+
+#T=ui-hoverdelay
+// 鼠标延迟执行方法
+/*
+$(this).hoverDelay({
+  hoverEvent: function(){},
+  outEvent:function  () {}
+})
+*/
++(function($){
+  $.fn.hoverDelay = function(options){
+    var defaults = {
+      hoverDuring: 200,
+      outDuring: 200,
+      hoverEvent: function(){
+        $.noop();
+      },
+      outEvent: function(){
+        $.noop();    
+      }
+    };
+    var sets = $.extend(defaults,options || {});
+    var hoverTimer, outTimer, that = this;
+    return $(this).each(function(){
+      $(this).hover(function(){
+        clearTimeout(outTimer);
+        hoverTimer = setTimeout(function(){sets.hoverEvent.apply(that)}, sets.hoverDuring);
+      },function(){
+        clearTimeout(hoverTimer);
+        outTimer = setTimeout(function(){sets.outEvent.apply(that)}, sets.outDuring);
+      });
+    });
+  }      
+})(jQuery);
+#T=ui-inserChar
+//字符串插入"," 112345 => 12,345
+function  inserChar() {
+  var gval = parseInt($("#result-number").data("number"));
+  gval = parseInt((gval - Math.random()*100));
+
+  gvalString = gval.toString();
+
+  var long = gvalString.length;
+  var mo = long%3 - 1;
+
+  var string = '';
+  for (var i = 0;  i<long ; i++) {
+    string += gvalString.charAt(i);
+
+    if (i == (mo)) {
+      string += ',';
+    }
+
+    if (((i - mo)>0) && ((i - mo)%3) == 0 && (i<(long-1))) {
+      string += ',';
+    }                        
+  }
+}
+
+#T=ui-mobileTouch
++(function ($) {
+  'use strict';
+  var touch = {},
+      touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
+      longTapDelay = 750,
+      gesture
+
+  function swipeDirection(x1, x2, y1, y2) {
+    return Math.abs(x1 - x2) >=
+    Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
+  }
+
+  function longTap() {
+    longTapTimeout = null
+    if (touch.last) {
+      touch.el.trigger('longTap')
+      touch = {}
+    }
+  }
+
+  function cancelLongTap() {
+    if (longTapTimeout) clearTimeout(longTapTimeout)
+    longTapTimeout = null
+  }
+
+  function cancelAll() {
+    if (touchTimeout) clearTimeout(touchTimeout)
+    if (tapTimeout) clearTimeout(tapTimeout)
+    if (swipeTimeout) clearTimeout(swipeTimeout)
+    if (longTapTimeout) clearTimeout(longTapTimeout)
+    touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null
+    touch = {}
+  }
+
+  function isPrimaryTouch(event) {
+    return (event.pointerType == 'touch' ||
+    event.pointerType == event.MSPOINTER_TYPE_TOUCH)
+    && event.isPrimary
+  }
+
+  function isPointerEventType(e, type) {
+    return (e.type == 'pointer' + type ||
+    e.type.toLowerCase() == 'mspointer' + type)
+  }
+
+  $(document).ready(function () {
+    var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType
+
+    if ('MSGesture' in window) {
+      gesture = new MSGesture()
+      gesture.target = document.body
+    }
+
+    $(document)
+        .bind('MSGestureEnd', function (e) {
+          var swipeDirectionFromVelocity =
+              e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
+          if (swipeDirectionFromVelocity) {
+            touch.el.trigger('swipe')
+            touch.el.trigger('swipe' + swipeDirectionFromVelocity)
+          }
+        })
+        .on('touchstart MSPointerDown pointerdown', function (e) {
+          if ((_isPointerType = isPointerEventType(e, 'down')) && !isPrimaryTouch(e)) return
+
+          firstTouch = _isPointerType ? e : window.event.touches[0]
+          if (e.touches && e.touches.length === 1 && touch.x2) {
+            // Clear out touch movement data if we have it sticking around
+            // This can occur if touchcancel doesn't fire due to preventDefault, etc.
+            touch.x2 = undefined
+            touch.y2 = undefined
+          }
+          now = Date.now()
+          delta = now - (touch.last || now)
+          touch.el = $('tagName' in firstTouch.target ?
+              firstTouch.target : firstTouch.target.parentNode)
+          touchTimeout && clearTimeout(touchTimeout)
+          touch.x1 = firstTouch.pageX
+          touch.y1 = firstTouch.pageY
+          if (delta > 0 && delta <= 250) touch.isDoubleTap = true
+          touch.last = now
+          longTapTimeout = setTimeout(longTap, longTapDelay)
+          // adds the current touch contact for IE gesture recognition
+          if (gesture && _isPointerType) gesture.addPointer(e.pointerId);
+        })
+        .on('touchmove MSPointerMove pointermove', function (e) {
+          if ((_isPointerType = isPointerEventType(e, 'move')) && !isPrimaryTouch(e)) return
+          firstTouch = _isPointerType ? e : window.event.touches[0]
+          cancelLongTap()
+          touch.x2 = firstTouch.pageX
+          touch.y2 = firstTouch.pageY
+
+          deltaX += Math.abs(touch.x1 - touch.x2)
+          deltaY += Math.abs(touch.y1 - touch.y2)
+          e.preventDefault();
+        })
+        .on('touchend MSPointerUp pointerup', function (e) {
+          if ((_isPointerType = isPointerEventType(e, 'up')) && !isPrimaryTouch(e)) return
+          cancelLongTap()
+
+          // swipe
+          if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > 30) ||
+              (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
+
+            swipeTimeout = setTimeout(function () {
+              touch.el.trigger('swipe')
+              touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
+              touch = {}
+            }, 0)
+
+          // normal tap
+          else if ('last' in touch)
+          // don't fire tap when delta position changed by more than 30 pixels,
+          // for instance when moving to a point and back to origin
+            if (deltaX < 30 && deltaY < 30) {
+              // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
+              // ('tap' fires before 'scroll')
+              tapTimeout = setTimeout(function () {
+
+                // trigger universal 'tap' with the option to cancelTouch()
+                // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
+                var event = $.Event('tap')
+                event.cancelTouch = cancelAll
+                touch.el.trigger(event)
+
+                // trigger double tap immediately
+                if (touch.isDoubleTap) {
+                  if (touch.el) touch.el.trigger('doubleTap')
+                  touch = {}
+                }
+
+                // trigger single tap after 250ms of inactivity
+                else {
+                  touchTimeout = setTimeout(function () {
+                    touchTimeout = null
+                    if (touch.el) touch.el.trigger('singleTap')
+                    touch = {}
+                  }, 250)
+                }
+              }, 0)
+            } else {
+              touch = {}
+            }
+          deltaX = deltaY = 0
+
+        })
+      // when the browser window loses focus,
+      // for example when a modal dialog is shown,
+      // cancel all ongoing events
+        .on('touchcancel MSPointerCancel pointercancel', cancelAll)
+
+    // scrolling the window indicates intention of the user
+    // to scroll, not tap or swipe, so cancel all ongoing events
+    $(window).on('scroll', cancelAll)
+  })
+
+  ;
+  ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
+    'doubleTap', 'tap', 'singleTap', 'longTap'].forEach(function (eventName) {
+        $.fn[eventName] = function (callback) {
+          return this.on(eventName, callback)
+        }
+      })
+
+})(jQuery);
+
+#T=ui-pop
+/** 
+* extend 弹出框
+* @author cuki13
+  $(obj).popbk();
+  .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100;}
+  .popbk {position: absolute; top:0; left:50%;}
+  .popbk .close {position:absolute;right:0;top:0;}
+  .fade.in { opacity: 1; }
+  .fade{opacity: 0;-webkit-transition: opacity .15s linear;-o-transition: opacity .15s linear;transition: opacity .15s linear;}
+  $("#popbk2").data('ck.pokbk').open();
+  $("#popbk2").data('ck.pokbk').close();
+*/
+
++(function($){
+  var dataString = '[data-box="popbk"]';
+  
+  var Popbk = function  (el, number ,options) {
+    this.el = $(el)
+    this.id = number
+    this.options = $.extend({}, this.defualts, options); 
+  }
+  
+  Popbk.defualts = {};
+
+  Popbk.prototype.build = function  (el) {
+    
+    var $this = $(el);
+    $this.wrap('<div class="popbk-wrap-'+ this.id +' popbk-wrap fade" ></div>');
+    $this.wrap('<div class="popbk-'+ this.id +' popbk" ></div>');
+
+    var sClose = "<a class='close'><span class='none'>close</span></a>";
+    sClose = $(sClose);
+    sClose.insertAfter($this);
+    var ml = $this.width()/2;     
+    $this.parent(".popbk").css("margin-left",-ml);
+    
+    var wh = $this.height();
+    if ($(window).height < wh) {
+      $this.parent(".popbk").css("top","30px");
+    }else {
+      $this.parent(".popbk").css({
+        "margin-top":-wh/2,
+        "top":'50%'
+      });
+    }
+    $this.parent(".popbk").find(".close").on('click',function  () {
+      $this.data('ck.pokbk').close();
+    })    
+    $this.parents(".popbk-wrap").hide();
+  }
+
+  Popbk.prototype.open = function  () {
+    this.close;
+    var $this = this.el;
+    if ($this.length) {
+      $this.parents(".popbk-wrap").show();
+      $this.parents(".popbk-wrap")[0].offsetWidth;
+      $this.parents(".popbk-wrap").addClass("in");
+    }
+  }
+
+  Popbk.prototype.close = function  () {
+    var $this = this.el;
+    var $parent = $this.parents(".popbk-wrap");
+    if ($.support.transition && $parent.hasClass('fade')) {
+      $parent.removeClass("in");
+      $parent.one('bsTransitionEnd', function  () {
+          $parent.hide();
+        }).emulateTransitionEnd(150);
+    }else {
+      $parent.hide();
+    }
+  }
+
+  function Plugin(option) {
+    return this.each(function (n) {
+      var $this   = $(this)
+      var data    = $this.data('ck.pokbk')
+      var number = $this.attr('id') || n 
+      var options = typeof option == 'object' && option
+      if (!data) $this.data('ck.pokbk', (data = new Popbk(this,number)))
+      if (option == 'build') data.build($(this))
+      else if (option) data.setState(option)
+    })
+  }
+
+  $(document).on('ready.popbk', function  () {
+    var $this = $(dataString);
+    Plugin.call($this,'build');
+  })
+})(jQuery);
+#T=ui-randomColor
+/* 取随机颜色 */
++function ($) {
+  'use strict';
+  var srand = '[data-dismiss="srand"]';
+  var Rand   = function () {}
+  Rand.prototype.rcolor = function  () {
+    //16进制方式表示颜色0-F
+    var arrHex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+    var strHex = "#";
+    var index;
+    for(var i = 0; i < 6; i++) {
+      //取得0-15之间的随机整数
+      index = Math.round(Math.random() * 15);
+      strHex += arrHex[index];
+    }
+
+    var $this = $(this);
+    $this.html(strHex);
+  }
+  $(document).on('click', srand, Rand.prototype.rcolor);
+}(jQuery);
+#T=ui-reload
+/** 
+* extend 无刷新加载
+* 
+* @package jquery
+* @author cuki13
+*/
++(function($){
+  'use strict';
+  var ajax = null;
+  var urlLink = function  (el) {
+    this.$el = $(el) || null;
+    this.url = $(el).attr("href") || null;
+  }
+  urlLink.prototype.jump = function  () {
+    var $this = this;
+    $.ajax({
+      type: "POST",
+      url: $this.url,
+      //dataType: 'json',
+      success: function(data){
+       $.blockHide($("#loading-wrap"));
+        var cotenData = null;
+        var data = $(data);
+        var gTitle = null;
+        $(data).each(function (n) {
+          var findContainer = $(data)[n];
+          var container = $(findContainer);
+          if (container.is("title")) {
+            gTitle = $($(data)[n]).html();
+          }
+          if (container.hasClass("container")) {
+            cotenData = findContainer.outerHTML;
+           
+            if ($.support.transition) {
+              $(".container").addClass("out").one('bsTransitionEnd',function  () {
+                $(".container").removeClass("out");
+                $(".container").replaceWith(container);
+                
+                container.addClass("in");
+                setTimeout(
+                  function(){
+                    container.removeClass("in");
+                  }, 320);
+              }).emulateTransitionEnd(320);
+            }else {
+              $(".container").replaceWith(container);
+            }
+            return false;
+          }
+        })
+        document.title = gTitle;
+        var state = {
+          url: $this.url,
+          title: document.title,
+          getHtml: cotenData
+        };
+
+        history.pushState(state,gTitle,$this.url);
+        ajax = true;
+      },
+      error:function  () {
+        alert('很抱歉加载失败，请重新刷新页面');
+        $.blockHide($("#loading-wrap"));
+      },
+      beforeSend:function  () {
+        $.blockShow($("#loading-wrap"));
+      }
+    });
+  }
+
+  $(document).ready(function() {
+    urlLink.currentState = {
+      url : document.location.href,
+      title :  document.title,
+      getHtml : $(".container")[0].outerHTML
+    }
+
+    //history.pushState(urlLink.currentState,document.title,location.href);
+    $("body").on('click','[data-url="true"]',function  (e) {
+      e.preventDefault();
+      $(this).data("url",new urlLink(this));
+      $(this).data("url").jump();
+    })
+  })
+
+
+
+  window.addEventListener("popstate",function(event){
+    if(event && event.state){
+      var gcontent = $(event.state.getHtml);
+      $(".container").replaceWith(gcontent);
+      $(".container").removeClass("out");
+      document.title = event.state.title;
+    }else{
+      if (ajax == null) {
+        return false;
+      }
+      document.title = urlLink.currentState.title;
+      $(".container").replaceWith(urlLink.currentState.getHtml);
+      $(".container").removeClass("out");
+    }
+  });
+
+ $.pUrl = function (url) {
+   var blink = new urlLink();
+   blink.url = url;
+   blink.jump();
+ }
+
+})(jQuery);
+#T=ui-scollUp
+/** 
+* extend 向上每隔几秒滚动
+* @author cuki13
+  $(obj).scollUp({
+    speed:3000,
+    scolldiv:'.scolldiv'
+  })
+*/
++(function($){
+  $.fn.scollUp = function (options) {
+    var obj=$(this);
+    var defualts = {
+      scolldiv:'.scolldiv'
+    };
+    var opts = $.extend({}, defualts, options);  
+
+    var MyMar = 0;
+    var scolldiv = obj.find(opts.scolldiv);
+    var objclone = obj.find(opts.scolldiv).clone();
+    objclone.appendTo(obj);
+    function Marquee() {
+       if(objclone.offset().top - obj.offset().top <=0){
+          obj.scrollTop(0);
+         }else{
+           if ((obj.scrollTop())%(objclone.height()/2) == 0) {
+            clearInterval(MyMar);
+            setTimeout(
+              function(){
+                clearInterval(MyMar);
+                MyMar=setInterval(Marquee,speed);
+              }, 3000)
+
+           }
+            var k = obj.scrollTop();
+            obj.scrollTop(k+1);
+         }
+    }
+
+     MyMar=setInterval(Marquee,speed);
+
+     obj.hover(function  () {
+      clearInterval(MyMar);
+     },function  () {
+      clearInterval(MyMar);
+      MyMar=setInterval(Marquee,speed);
+     })
+    
+  };  
+})(jQuery);
+#T=ui-scrolleffect
+/* ========================================================================
+滚动控制效果
+ */
++function ($) {
+  "use strict";
+  var scrollEffe = function  (groudEl) {
+    this.groudEl = groudEl;
+    this.$el = [];
+    this.$parentEl = [];
+    this.startPro = [];
+    for (var i = 0;  i<groudEl.length ; i++) {
+      this.$el[i] = groudEl[i][0];
+      this.$parentEl[i] = groudEl[i][1];
+      this.startPro[i] = groudEl[i][5];
+      this.initPosFun(this.$el[i],groudEl[i][2],groudEl[i][3],groudEl[i][4]);
+    }
+
+    this.initScroll();
+
+  }
+
+  scrollEffe.prototype.initPosFun =function  ($dom,tempX,tempY,type) {
+    if (!type) {
+      type = "moveblock";
+    }
+    tempX = tempX || 0;
+    tempY = tempY || 0;
+    $dom.data("endX",parseFloat($dom.css("left")));
+    $dom.data("startX",parseFloat($dom.css("left"))+tempX);
+    $dom.data("tempX",tempX);
+
+    $dom.data("endY",parseFloat($dom.css("top")));
+    $dom.data("startY",parseFloat($dom.css("top"))+tempY);
+    $dom.data("tempY",tempY);
+
+    $dom.css({"left":$dom.data("startX"),"top":$dom.data("startY")});
+  }
+
+  scrollEffe.prototype.posMoveFun = function($dom,$domParent,plong)
+  {
+      var permb = 0;
+      if (plong) {
+        permb = plong;
+      }else {
+        permb = 0;
+      }
+      //父级到窗口上边缘的距离
+      var tempY = $(document).scrollTop()-$domParent.position().top + permb;
+      var per = Math.max(-tempY/800,0);
+      var targetX = $dom.data("endX")+$dom.data("tempX")*per;
+      var targetY = $dom.data("endY")+$dom.data("tempY")*per;
+      $dom.css({"left":targetX,"top":targetY});
+  }
+
+
+  scrollEffe.prototype.opacity = function($dom,$domParent,ease)
+  {
+    //父级到窗口上边缘的距离
+    var tempY = $(document).scrollTop()-$domParent.position().top;
+    var opacity = Math.min(tempY*0.008,1);
+    $dom.css("opacity",opacity);
+  };
+
+  scrollEffe.prototype.scale = function($dom,$domParent,ease)
+  {
+    //父级到窗口上边缘的距离
+    var tempY = $(document).scrollTop()-$domParent.position().top + $(window).height()/2;
+
+    var scale = Math.min(tempY*0.003,1);
+    if (scale < 0) {
+      scale = 0
+    }
+    $dom.css("transform","scale(" + scale + ")");
+  };
+
+
+  scrollEffe.prototype.initScroll = function  () {
+    var $this = this;
+    $(window).bind("scroll",function(){
+      for (var i = 0;  i<$this.groudEl.length ; i++) {
+        switch ($this.groudEl[i][4]) {
+        case 'moveblock':
+          $this.posMoveFun($this.$el[i],$this.$parentEl[i],$this.startPro[i]);
+        break
+        case 'opacity':
+         $this.opacity($this.$el[i],$this.$parentEl[i]);
+        case 'scale':
+         $this.scale($this.$el[i],$this.$parentEl[i]);
+        break
+        default:
+        }
+           
+      }
+    })
+  }
+
+  $(document).ready(function() {
+      //控制模块
+      if ($('body.home').length > 0) {
+        var blockSilder = [
+          [$(".server-block1"),$("#server-container"),-700,-600-300,'moveblock'],
+          [$(".server-block2"),$("#server-container"),-1500,-600+300,'moveblock'],
+          [$(".server-block3"),$("#server-container"),0,500,'moveblock'],
+          [$(".server-block4"),$("#server-container"),300,-600-300,'moveblock'],
+          [$(".server-box-top"),$("#server-container"),0, -1200,'moveblock'],
+          [$(".advantage-ct-pk"),$("#advantage-container"),0.5, 1,'scale'],
+          [$(".advantage-cir-active"),$("#advantage-container"),-500, 0,'moveblock'],
+          [$(".advantage-cir-media"),$("#advantage-container"),0, -500,'moveblock'],
+          [$(".advantage-cir-design"),$("#advantage-container"),-300, 500,'moveblock'],
+          [$(".advantage-cir-power"),$("#advantage-container"),-300, -500,'moveblock'],
+          [$(".advantage-cir-brand"),$("#advantage-container"),300, -500,'moveblock'],
+          [$(".advantage-cir-res"),$("#advantage-container"),-300, 500,'moveblock'],
+          [$(".team-box-txt"),$("#team-container"),-600, 0,'moveblock'],
+          [$(".team-ld"),$("#team-container"),600, 0,'moveblock'],
+          [$(".news-list"),$("#news-container"),0, 700,'moveblock'],
+          [$(".contact-adress"),$("#contact-container"),-500, 0,'moveblock',500],
+          [$(".share-box"),$("#contact-container"),500, 0,'moveblock',500]
+        ]
+        var $serverBlock1 = new scrollEffe(blockSilder);
+      }
+  })
+}(jQuery);
+#T=ui-scrollPic
+/** 
+* extend 图片循环
+* 
+* @package jquery
+* @author cuki13
+   $("#scrollpic").scollpic({
+    itemTag : "li",
+    itemWidth : 157,
+    itemHeight : 250,
+    bigImg : 'off',
+    scollBack : function  (img , obj) {
+      //执行完回调事件处理
+    }
+   });
+
+  //css
+  .scrolllist li{
+    float:left;
+    width:157px;
+    list-style-type:none;
+  }
+  .scrolllist img {
+    width:100%;
+    height:100%;
+  }
+  .scroll-warp {
+    width:300px;
+  }
+*/
+
++(function($){
+/**
+ * Checks for CSS support.
+ * @private
+ * @param {Array} array - The CSS properties to check for.
+ * @returns {Array} - Contains the supported CSS property name and its index or `false`.
+ */
+function isStyleSupported(array) {
+  var p, s, fake = document.createElement('div'), list = array;
+  for (p in list) {
+    s = list[p];
+    if (typeof fake.style[s] !== 'undefined') {
+      fake = null;
+      return [ s, p ];
+    }
+  }
+  return [ false ];
+}
+
+/**
+ * Checks for CSS transition support.
+ * @private
+ * @todo Realy bad design
+ * @returns {Number}
+ */
+function isTransition() {
+  return isStyleSupported([ 'transition', 'WebkitTransition', 'MozTransition', 'OTransition' ])[0];
+}
+
+/**
+ * Checks for CSS transform support.
+ * @private
+ * @returns {String} The supported property name or false.
+ */
+function isTransform() {
+  return isStyleSupported([ 'transform', 'WebkitTransform', 'MozTransform', 'OTransform', 'msTransform' ])[0];
+}
+
+$.fn.scollpic= function (options) {
+  //计算长度
+  $(this).each(function  () {
+    var $this = $(this);
+    var defualts = {
+      itemTag : "li",
+      itemWidth : 157,
+      itemHeight : 150,
+      itemCount: 4,
+      bigImg : 'off',
+      loop : true,
+      wrapClass :'scrollpic-wrap',
+      parenWidth : 'auto',
+      playSpeed : 3000,
+      autoPlay : false
+    };
+
+    var opts = $.extend({},defualts,options);
+
+   
+
+    var ifLoad = false; //是否加载
+    var currentItemIndex = 0 ; //当前item索引
+    if (opts.parenWidth == 'auto') {
+      opts.parenWidth = parseInt(opts.itemCount * opts.itemWidth);
+    }
+
+    var $wrapObj=$('<div class="' + opts.wrapClass + '"></div>');
+
+    $wrapObj.css({'position':'relative','height':opts.itemHeight});
+
+    //加载箭头
+    if (opts.itemWidth == 'auto') {
+      opts.itemWidth = $(this).find(opts.sdiv).width();
+    }
+    
+    $this.wrap($wrapObj);
+
+    var $arrowPrev=$('<a href="javascript:void(0);" class="scroll-item-list-prev endprev st"><span class="v-h">prev</span></a>');
+    var $arrowNext=$('<a href="javascript:void(0);" class="scroll-item-list-next st"><span class="v-h">next</span></a>');
+
+    $this.parent().append($arrowPrev).append($arrowNext);
+
+    $this.wrap('<div class="scroll-warp" style="overflow:hidden; position:relative; height:' + opts.itemHeight + 'px; width:' + opts.parenWidth + 'px;"></div>');
+
+    $arrowPrev.click(function  () {
+      scoll('left',$this);
+    });
+
+    $arrowNext.click(function  () {
+      scoll('right',$this);
+    });
+
+    //页码
+    var navItemCount = $this.find(opts.itemTag).length / opts.itemCount;
+    function  nav() {
+      var html = '<div class="banner-nav">';
+      for (var i = 0; i < navItemCount; i++) {
+        html += '<a class="' + (i == 0 ? 'current' : '' ) + ' sort-' + i + ' " data="'+ i +'" href="javascript:void(0);"><span>'+(i+1)+'</span></a>';
+      }
+      html += '</div>';
+      return $(html);
+    }
+    var $nav = nav();
+
+    $nav.appendTo($this.parent().parent());
+    $nav.find("a").click(function  () {
+      if ($(this).hasClass("current")) {
+        return false;
+      }else {
+        $(this).addClass("current").siblings().removeClass("current");
+        var ind = $(this).index();
+        var scrollWidth = $(this).index() * opts.itemCount * opts.itemWidth;
+        scrollWidth = scrollWidth + (opts.itemCount * opts.itemWidth);
+        console.log(scrollWidth,ind);
+        scoll('nav', $this, scrollWidth);
+      }
+    })
+
+    //如果循环
+    if (opts.loop == true) {
+      var totleCount = $this.find(opts.itemTag).length;
+      var $prevClone = $this.find(opts.itemTag + ':gt(' + (totleCount - opts.itemCount - 1) + ')').clone().addClass("clone");
+      var $nextClone = $this.find(opts.itemTag + ':lt(' + opts.itemCount + ')').clone().addClass("clone");
+      $nextClone.appendTo($this);
+      $prevClone.prependTo($this);
+    }
+
+    //总长度
+    var itemTotal=0; 
+
+    $this.find(opts.itemTag).last().css("padding-right","0");
+    $this.find(opts.itemTag).each(function  () {     
+      itemTotal+=$(this).outerWidth();
+    });
+    $this.css({'position':'relative','width':itemTotal});    
+
+    //moblie tounch手机事件
+    var currntp = 0;
+    var pageX = 0;
+    var ifchlick = false;
+      
+    $this.parents("."+opts.wrapClass).bind("touchstart",function  (e) {
+       currntp = window.event.touches[0].pageX;
+       ifchlick = true;
+       e.preventDefault();
+     });
+
+    $this.parents("."+opts.wrapClass).bind('touchend', function(e) {
+      if (pageX == 0) {
+        return false;
+      }
+      e.preventDefault();
+      ifchlick = false;
+      var widthStep = 10;
+      
+      if ((Math.abs(currntp - pageX) >= widthStep)) {
+        if (currntp - pageX >= widthStep) {
+          $arrowNext.trigger('click');          
+        } else {          
+          $arrowPrev.trigger('click');
+        }
+      }
+      currntp = 0;
+      pageX = 0;
+    });
+
+    $this.parents("."+opts.wrapClass).bind('touchmove', function(e) {
+      e.preventDefault();
+      if (ifchlick) {
+        ifchlick = false;
+        pageX = window.event.targetTouches[0].pageX;
+      }else {
+        return false;
+      }
+    });
+    
+    //点击显示大图
+    $this.find(opts.itemTag).find("a").click(function  (e) {
+      var $item = $(this);
+      if (opts.bigImg && (opts.bigImg == 'off')) {
+        return false;
+      }else{
+
+      if(ifLoad == true || $item.parent().hasClass('current')){ return false;}
+
+      currentItemIndex = $this.find(opts.itemTag + '.current').index();
+      
+      if ((currentItemIndex!= -1) && (currentItemIndex!= 0) && (currentItemIndex!= ($this.find(opts.itemTag).length-1))) {
+        var itemIndex = $item.parent().index();
+        if (currentItemIndex > itemIndex) {
+          $arrowPrev.trigger('click');
+        }else {
+          $arrowNext.trigger('click');
+        }
+      }
+
+      $item.parent().siblings('li').removeClass('current');
+      $item.parent().addClass('current');
+
+      if (opts.bigImg) {
+        showImg(opts.bigImg,$item.attr("href"),$item);
+      }      
+      e.preventDefault();
+      }
+    })
+
+    //循环
+    var onHover = false;
+    $this.hover(function  () {
+      onHover = true;
+    },function  () {
+      onHover = false;
+    })
+
+    function loopMain() {
+      if (opts.autoPlay == true) {
+        if (onHover == false) {
+          $arrowNext.trigger('click');
+        }
+      }
+    }
+    
+    var timecount = setInterval(function  () {
+      loopMain();
+    }, opts.playSpeed);
+    
+    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>加载中。。。</span></div>');
+    var showImg = function (obj,data,objlink) {
+      var img = $('<img src="' + data + '" />');
+      ajaxLoad.insertBefore(obj);
+      ifload = true;
+      
+      if (img[0].complete) {
+        if (opts.ppscollcallback) {
+          opts.ppscollcallback(obj,objlink);
+        }
+        obj.hide().attr('src', data).fadeIn();
+        ajax_load.detach();
+        ifload = false;
+
+      }else {
+        img.load(function  () {
+        if (opts.scollBack) {
+          opts.scollBack(obj,objlink);
+        }
+        obj.hide().attr('src', data).fadeIn();
+        ajaxLoad.detach();
+        ifload = false;
+        }).error(function(){
+          ajaxLoad.detach();
+          alert('很抱歉,加载失败');
+          ifload = false;
+        });
+      }
+    }
+
+    var ifScroll = false;
+
+    var scrollEg = isTransform() ? isTransform()  : 'left';
+    
+    var leftVal = 0;
+
+    //预设循环模式
+    function  loopRest() {
+      if (opts.loop == true) {
+        $this.css("transition","0"); 
+        scrollObj($this, -(opts.itemCount*opts.itemWidth),'nav', function  () {
+          $this.css("transition","0.5s");
+        });
+      }
+    }
+
+    function  loopRestEnd() {
+      if (opts.loop == true) {
+        $this.css("transition","0"); 
+        scrollObj($this, -(itemTotal - (opts.itemCount*opts.itemWidth)*2),'nav', function  () {
+          $this.css("transition","0.5s");
+        });
+      }
+    }
+
+
+    loopRest();
+
+    //滚动模式
+    function  scrollObj(obj, value, navlong, callback) {
+      if (navlong) {
+         leftVal = 0;
+      }
+      cssSet = {};
+      if (scrollEg != 'left') {
+        var noPos = obj.css("");
+
+        switch (scrollEg) {
+        case 'transform':
+            cssSet = {'transform' : 'translateX(' + (leftVal + value) + 'px)'};
+        break
+        case 'WebkitTransform':
+            cssSet = {'WebkitTransform' : 'translateX(' + (leftVal + value) + 'px)'};
+        break
+        case 'MozTransform':
+            cssSet = {'MozTransform' : 'translateX(' + (leftVal + value) + 'px)'};
+        break
+        case 'OTransform':
+            cssSet = {'OTransform' : 'translateX(' + (leftVal + value) + 'px)'};
+        break
+        case 'msTransform':
+            cssSet = {'msTransform' : 'translateX(' + (leftVal + value) + 'px)'};
+        break 
+        default:
+        }
+        obj.css(cssSet).one('bsTransitionEnd', function(){
+          ifScroll = false;
+          leftVal += value;
+          if (callback) {
+            callback();
+          }
+          checkEnd();
+        })
+        if (navlong) {
+          obj.emulateTransitionEnd(10);
+        } 
+        
+      }else {
+        obj.animate({
+          "left": (leftVal + value)
+        },function  () {
+          ifScroll = false;
+          leftVal += value;
+          checkEnd();
+        })
+      }
+    }
+
+    //滚动函数
+    function scoll(dir,obj,moveWidth) {
+      if (ifScroll == true) {
+        return false;
+      }
+      ifScroll = true;
+      if (dir=='left') {
+        if (leftVal >= 0) {
+          ifScroll = false;
+          return false;
+        }
+        scrollObj(obj,opts.itemWidth);
+      }
+
+      if (dir=='right') {
+        if (leftVal <= - (itemTotal-opts.parenWidth)) {
+          ifScroll = false;
+          return false;
+        }
+        scrollObj(obj,-opts.itemWidth);
+      }
+
+      if (dir == 'nav') {
+        scrollObj(obj, -moveWidth,'nav');
+      }
+    }
+
+    function checkEnd () {
+      $this.parents("."+opts.wrapClass).find(".scroll-item-list-next").removeClass("endnext");
+      $this.parents("."+opts.wrapClass).find(".scroll-item-list-prev").removeClass("endprev");
+
+      if ($this.position().left >= 0 ) {
+        $this.parents("."+opts.wrapClass).find(".scroll-item-list-prev").addClass("endprev");
+        if (opts.loop = true) {
+          loopRestEnd();
+        }
+      }
+      if ($this.position().left <= - (itemTotal-opts.parenWidth) ) {
+        $this.parents("."+opts.wrapClass).find(".scroll-item-list-next").addClass("endnext");
+
+        if (opts.loop == true) {
+          loopRest();
+        }
+
+      }
+    }
+  });
+};
+
+})(jQuery);
+
+
+#T=ui-snows
+///** 
+* extend 雪花效果
+* 
+* @package jquery
+* @author cuki13
+  */
+
+(function () {
+    var addEvent = function (t, c, tf) {
+        if (document.addEventListener) {
+            document.addEventListener(t, c, tf);
+        } else if (document.attachEvent) {
+            document.attachEvent('on' + t, c);
+        }
+    }
+    var app = {};
+    var js_canvas_box_id = 'js_theme_christmas_2014_canvas_snow', j;
+    var christmas_2014 = function () {
+        function r(a) {
+            return a * Math.random()
+        }
+
+        function s() {
+            return document.createElement("canvas")
+        }
+
+        function t() {
+            var a;
+            for (var d = 0; d < m; d++)a = d < m * .6 ? 0 : d < m * .8 ? 1 : d < m * .9 ? 2 : d < m * .98 ? 3 : 4, o[d] = [r(b), r(c), a]
+        }
+
+        function u() {
+            var a, d, e, f;
+            p += .01, d = Math.sin(p);
+            for (a = 0; a < m; a++) {
+                f = o[a], e = Math.sin(4 * p + a), f[1] += f[2] / 2 + (2 + e), f[0] += 6 * (d + e / 2) / (10 / f[2]), f[1] > c && (f[1] = -n, f[0] = r(b));
+                if (f[0] > b || f[0] < -n)d > 0 ? f[0] = -n : f[0] = b;
+                o[a] = f
+            }
+        }
+
+        function v() {
+            var a;
+            k.fillStyle = l, k.clearRect(0, 0, b, c), k.beginPath();
+            for (a = 0; a < m; a++) {
+                k.drawImage(i[o[a][2]], o[a][0], o[a][1]);
+            }
+
+            k.fill();
+            u();
+        }
+
+        function w(a) {
+            b = window.innerWidth,
+            c = window.innerHeight,
+            j !== undefined && (j.width = b, j.height = c, m = b * c / 6e3,
+            l = k.createLinearGradient(0, 0, 0, c), t())
+        }
+
+        function x() {
+            $(window).on('resize', function () {
+                christmas_2014.resizeHandler();
+            });
+            j = document.createElement("canvas");
+
+            j.style.position = "fixed";
+            j.style.top = "0px";
+            j.style.left = "0px";
+            j.style.pointerEvents = "none";
+            j.id = js_canvas_box_id;
+            document.querySelector(".animate-layer").appendChild(j);
+
+            k = j.getContext("2d");
+            k.strokeStyle = "none";
+            d = s(), e = s(), f = s(), g = s(), h = s(), i = [d, e, f, g, h];
+
+            y({
+                canvas: d,
+                width: n * .4,
+                height: n * .4,
+                color: "#FFF",
+                soft: .05
+            });
+
+            y({canvas: e, width: n * .5, height: n * .5, color: "#FFF", soft: .05});
+            y({
+                canvas: f,
+                width: n * .6,
+                height: n * .6,
+                color: "#FFF",
+                soft: .3
+            });
+            y({canvas: g, width: n * .8, height: n * .8, color: "#FFF", soft: .2}), y({
+                canvas: h,
+                width: n,
+                height: n,
+                color: "#FFF",
+                soft: .05
+            });
+
+            w(null);
+
+            app.snowTimer = setInterval(function () {
+                q(christmas_2014.draw)
+            }, 50);
+        }
+
+        function y(a) {
+            var b, c, d, e, f, g, h, i, j;
+            d = a.width || 30,
+                e = a.height || 30,
+                f = d / 2, g = e / 2,
+                i = a.color || "#FFF",
+                h = a.soft || 0, b = a.canvas, b.width = d, b.height = d, c = b.getContext("2d"), c.clearRect(0, 0, d, e), j = c.createRadialGradient(f, g, 0, f, g, f), j.addColorStop(0, i), j.addColorStop(.1, i), j.addColorStop(.85, z(i, h)), j.addColorStop(1, z(i, 0)), c.fillStyle = j, c.fillRect(0, 0, d, e)
+        }
+
+        function z(a, b) {
+            var c, d, e;
+            return a = a.replace(/^s*#|s*$/g, ""), a.length === 3 && (a = a.replace(/([0-9a-fA-F])/g, "$1$1")), d = parseInt(a.substr(2, 2), 16), e = parseInt(a.substr(4, 2), 16), c = parseInt(a.substr(0, 2), 16), "rgba(" + c + ", " + d + ", " + e + ", " + b + ")"
+        }
+
+        var b, c, d, e, f, g, h, i = [], j, k, l, m, n = 20, o = [], p = 0,
+            q = function () {
+                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (a) {
+                    window.setTimeout(a, 62.5)
+                }
+            }();
+        return {
+            init: x,
+            draw: v,
+            stop: function () {
+                if (app.snowTimer) window.clearInterval(app.snowTimer);
+                if(j){
+                    j.parentNode.removeChild(j);
+                    j = false;
+                }
+            },
+            resizeHandler: w}
+    }();
+
+    if (!window['THEME_SCRIPT']) {
+        window['THEME_SCRIPT'] = {};
+    }
+    window['THEME_SCRIPT'].christmas_2014 = {
+        start: function () {
+            if($.browser.mozilla || $.browser.webkit || ($.browser.msie && $.browser.version > 9) || window.navigator.userAgent.indexOf('rv:11') != -1){
+                christmas_2014.init();
+            }
+        },
+        stop: function () {
+            if($.browser.mozilla || $.browser.webkit || ($.browser.msie && $.browser.version > 9) || window.navigator.userAgent.indexOf('rv:11') != -1){
+                christmas_2014.stop();
+            }
+        }
+    }
+    christmas_2014.init();
+})();
+#T=ui-tag
+/** 
+* extend tag切换
+* 
+* @package tagshow
+* @author cuki13
+
+  $('.mysp-tag').tagshow({
+    objshow: $(this).find('.mysp-tagbox-section'),
+    taglink: $(this).find('.mysp-taglink a'),
+    current_class: 'active'
+  });
+
+*/
++(function($){  
+  $.fn.tagshow = function (options) {
+    var obj=$(this);
+
+    var defualts = {
+      objshow: obj.find('.c1'),     //展示的区域 
+      taglink: obj.find('.c2 a'),     //点击链接
+      current_class: 'current'      //当前的样式
+    };
+
+    var opts = $.extend({}, defualts, options);  
+
+    var is_fade=false;   //判断效果是否在执行
+    opts.taglink.click(function  (e) {
+      if ($(this).hasClass(opts.current_class)) {
+        return false;
+      }else {
+        if (is_fade) {
+          return false;
+        }
+        var e=$(this).attr('rel');
+        is_fade=true;
+        
+          opts.objshow.addClass('none').hide();
+          $("#"+e).fadeIn(200).removeClass('none');
+          is_fade=false;
+        
+
+        opts.taglink.removeClass(opts.current_class);
+        $(this).addClass(opts.current_class);
+      }
+      return false;
+    });
+
+    
+  };  
+})(jQuery);
+#T=ui-transition
+/* ========================================================================
+ * Bootstrap: transition.js v3.2.0
+ * http://getbootstrap.com/javascript/#transitions
+ * ========================================================================
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== 
+ $.support.transition && $parent.hasClass('fade') ?
+      $parent
+        .one('bsTransitionEnd', removeElement)
+        .emulateTransitionEnd(150) :
+removeElement()
+ 
+ */
+
+
++function ($) {
+  'use strict';
+
+  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // ============================================================
+
+  function transitionEnd() {
+    var el = document.createElement('bootstrap')
+
+    var transEndEventNames = {
+      WebkitTransition : 'webkitTransitionEnd',
+      MozTransition    : 'transitionend',
+      OTransition      : 'oTransitionEnd otransitionend',
+      transition       : 'transitionend'
+    }
+
+    for (var name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
+      }
+    }
+
+    return false // explicit for ie8 (  ._.)
+  }
+
+  // http://blog.alexmaccaw.com/css-transitions
+  $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+  }
+
+  $(function () {
+    $.support.transition = transitionEnd()
+
+    if (!$.support.transition) return
+
+    $.event.special.bsTransitionEnd = {
+      bindType: $.support.transition.end,
+      delegateType: $.support.transition.end,
+      handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
+      }
+    }
+  })
+
+}(jQuery);
 #T=ul
 <ul>
     <li>^!</li>
