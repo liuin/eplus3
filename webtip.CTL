@@ -217,9 +217,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -574,7 +574,7 @@ console.log(^!);
 container
 #T=contains
 contains(^!)
-#T=contenteditable html5 æ–‡æœ¬æ¡†ç¼–è¾‘
+#T=contenteditable html5 ÎÄ±¾¿ò±à¼­
 contenteditable="true"
 #T=contents
 contents()^!
@@ -673,7 +673,7 @@ cursor:text;
 #T=data
 data(^!)
 #T=data-form="select"
-/*-- è¡¨å•select --*/
+/*-- ±íµ¥select --*/
 +function ($) {
   'use strict';
 
@@ -877,7 +877,7 @@ font-family:sans-serif;
 #T=ff-st
 font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
-font-family:'å¾®è½¯é›…é»‘';
+font-family:'Î¢ÈíÑÅºÚ';
 #T=fieldset
 <fieldset>
   <legend>^!</legend>
@@ -908,7 +908,7 @@ firstPage(^!)
 fixed(^!)
 #T=fl
 float:^!;
-#T=flashè‡ªé€‚åº”
+#T=flash×ÔÊÊÓ¦
     <div class="wrap">
       <div class="flash">
           <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1440" height="774">
@@ -1197,6 +1197,10 @@ href="#"
 <html>^!</html>
 #T=html()
 html(^!)
+#T=html5-ie
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 #T=html-form-inline
 <!-- start form-inline -->
         <style type="text/css">
@@ -1277,8 +1281,8 @@ html(^!)
 <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
 <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg ' alt='Warning!'/></div>
 <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
-<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>å‘ç°ä½ çš„æµè§ˆå™¨(IE6)éœ€è¦å‡çº§</div>
-<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>ä¸ºè¾¾æœ€ä½³å‘ˆç°æ•ˆæœ,è¯·å‡çº§è‡³æœ€æ–°å¼æµè§ˆå™¨.</div>
+<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>·¢ÏÖÄãµÄä¯ÀÀÆ÷(IE6)ĞèÒªÉı¼¶</div>
+<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>Îª´ï×î¼Ñ³ÊÏÖĞ§¹û,ÇëÉı¼¶ÖÁ×îĞÂÊ½ä¯ÀÀÆ÷.</div>
 </div>
 
 <div style='width: 75px; float: left;'><a href='http://www.firefox.com ' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg ' style='border: none;' alt='Get Firefox 3.5'/></a></div>
@@ -1374,11 +1378,11 @@ html(^!)
         // andriod 2.3
         if(version > 2.3){
           document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', minimum-scale = ' + phoneScale + ', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
-        // andriod 2.3ï¿½ï¿½ï¿½ï¿½
+        // andriod 2.3ÒÔÉÏ
         }else{
           document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', target-densitydpi=device-dpi">');
         }
-        // ï¿½ï¿½ï¿½ï¿½ÏµÍ³
+        // ÆäËûÏµÍ³
       } else {
         document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', user-scalable=no, target-densitydpi=device-dpi">');
       }
@@ -1386,6 +1390,7 @@ html(^!)
     var newviewport = new Fixmobile();
   })();
   </script>
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -1398,7 +1403,7 @@ html(^!)
 </head>
 <body class="yh">
   <noscript>
-    <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JavaScriptï¿½ï¿½</strong><br />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JavaScriptï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã±ï¿½ï¿½ï¿½Õ¾ï¿½Ä¹ï¿½ï¿½Ü¡ï¿½ 
+    <strong>ÄãµÄä¯ÀÀÆ÷ËÆºõ½ûÓÃÁË JavaScript¡£</strong><br />Äú±ØĞëÔÚä¯ÀÀÆ÷ÖĞÆôÓÃJavaScript²ÅÄÜÊ¹ÓÃ±¾ÍøÕ¾µÄ¹¦ÄÜ¡£
   </noscript>
   <div class="container">
      
@@ -1407,10 +1412,6 @@ html(^!)
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
-#T=html5-ie
-<!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 #T=i
 <i>^!</i>
 #T=if
@@ -1662,9 +1663,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -1692,11 +1693,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2049,9 +2050,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2185,9 +2186,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2203,12 +2204,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2287,9 +2288,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2313,9 +2314,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2351,9 +2352,9 @@ style="^!"
   ^!	
 </style>
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2367,9 +2368,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2387,14 +2388,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2473,9 +2474,9 @@ table-layout:fixed;
 .list-nofl li a {text-decoration:none; padding-left:10px; display:block; }
 .list-nofl li a span {}
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2515,9 +2516,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -2551,40 +2552,40 @@ text-height:text-size;
 #T=thtml-bt1 (a > span)
 <a href="#" class="bt1"><span>^!</span></a>
 #T=thtml-bt1 (input > span >span)
-<button class="input-bt" type="button"><span class="bt1" ><span>æŒ‰é’®</span></span></button>
+<button class="input-bt" type="button"><span class="bt1" ><span>°´Å¥</span></span></button>
 #T=thtml-list (ul > li > a > span)
 <ul class="list-fl clearfix">
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
 </ul>
 #T=thtml-list (ul > li > a)
 <ul class="list-fl clearfix">
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
 </ul>
 
 #T=thtml-list-nofl (ul > li > a > span)
 <ul class="list-nofl clearfix">
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
 </ul>
 #T=thtml-list-nofl (ul > li > a)
 <ul class="list-nofl clearfix">
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
 </ul>
 #T=ti
 text-indent:^!;
@@ -2659,9 +2660,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -2683,9 +2684,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -2711,7 +2712,7 @@ typeof (^!)
 #T=ubound
 ubound(^!)
 #T=ui-autoImg
-/*ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬*/
+/*???????????*/
 function autoImg(ImgD, maxwidth, maxheight) {
   var image = new Image();
   image.src = ImgD.src;
@@ -2744,9 +2745,9 @@ function autoImg(ImgD, maxwidth, maxheight) {
     <script type="text/javascript">
     //<![CDATA[
 
-    //è¿”å›é¡¶éƒ¨
+    //·µ»Ø¶¥²¿
     (function() {
-      var $backToTopTxt = "è¿”å›é¡¶éƒ¨", 
+      var $backToTopTxt = "·µ»Ø¶¥²¿", 
         $backToTopEle = $('<div class="back-top"></div>').appendTo($("body"))
         .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
             $("html, body").animate({ scrollTop: 0 }, 300);
@@ -2762,7 +2763,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
             $backToTopEle.data('pos','scroll').stop().fadeOut()
           }
         
-          //IE6ä¸‹çš„å®šä½
+          //IE6ÏÂµÄ¶¨Î»
           if (!window.XMLHttpRequest) {
             $backToTopEle.css("top", st + winh - 166);
           }
@@ -2771,7 +2772,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
       $(function() { $backToTopFun(); });
     })();
 #T=ui-blockShow
-/*-- ï¿½ï¿½ï¿½ï¿½Ê¾ --*/
+/*-- ????? --*/
 +function ($) {
   'use strict';
    $.blockShow = function blockShow(objIn, objOut, callBack) {
@@ -2811,7 +2812,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
   }
 }(jQuery);
 #T=ui-cooki
-/*-- cookiï¿½ï¿½ï¿½ï¿½ --*/
+/*-- cooki???? --*/
 function addCookie(objName,objValue,objHours){
   var str = objName + "=" + escape(objValue);
   if(objHours > 0){
@@ -2831,7 +2832,7 @@ function getCookie(objName){
   } 
 }
 #T=ui-countTime
-//ï¿½ï¿½ï¿½ï¿½Ê±
+//?????
 jQuery(document).ready(function($) {
   var servertime = new Date("2015/01/22 23:08:28").getTime();
   var endtime = new Date("2015/01/21 17:42:00").getTime();
@@ -2840,7 +2841,7 @@ jQuery(document).ready(function($) {
   var timese = "";
 
   if (sbtime <= 0) {
-    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">Ê±</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">ï¿½ï¿½</span></li>';
+    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">??</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">?</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">??</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">??</span></li>';
     $("#timener ul").html(temp);
   } else {
     timese = setInterval(function() {
@@ -2853,7 +2854,7 @@ jQuery(document).ready(function($) {
       var minite = Math.floor(getsc / 60 % 60);
       var hour = Math.floor(getsc / 3600 % 24);
       var day = Math.floor(getsc / 3600 / 24);
-      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">Ê±</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">ï¿½ï¿½</span></li>';
+      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">??</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">?</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">??</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">??</span></li>';
       $("#timener ul").html(temp);
       sbtime--;
     } else {
@@ -2894,7 +2895,7 @@ function fixhead(obj) {
 }
 #T=ui-formCheck
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½
+* extend ???????????
 * @author cuki13  
   .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
   .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
@@ -2999,7 +3000,7 @@ $(".ckiput").prop('checked',true);
 
 })(jQuery);
 #T=ui-formRadio
-/*-- ï¿½ï¿½ï¿½radio [data-form="radio"] --*/
+/*-- ???radio [data-form="radio"] --*/
 +function ($) {
   'use strict';
   var formSting = '[data-form="radio"]';
@@ -3043,7 +3044,7 @@ $(".ckiput").prop('checked',true);
 }(jQuery); 
 #T=ui-formSelect
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½
+* extend ???????????
 * @author cuki13  
   .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
   .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
@@ -3104,7 +3105,7 @@ $(".ckiput").prop('checked',true);
 })()
 #T=ui-guagua
 /** 
-* extend ï¿½Î¹Î¿ï¿½ï¿½ï¿½ï¿½ï¿½
+* extend ?¦É¦Ï?????
 */
   function guagua() {
   //$("#canvas1").remove();
@@ -3215,7 +3216,7 @@ canvas.addEventListener('mousemove', eventMove);
 
 
 #T=ui-hoverdelay
-// ï¿½ï¿½ï¿½ï¿½Ó³ï¿½Ö´ï¿½Ğ·ï¿½ï¿½ï¿½
+// ????????§Ù???
 /*
 $(this).hoverDelay({
   hoverEvent: function(){},
@@ -3259,7 +3260,7 @@ if (img.complete) {
   })
 }
 #T=ui-inserChar
-//ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"," 112345 => 12,345
+//?????????"," 112345 => 12,345
 function  inserChar() {
   var gval = parseInt($("#result-number").data("number"));
   gval = parseInt((gval - Math.random()*100));
@@ -3294,7 +3295,7 @@ function  inserChar() {
 *   http://www.opensource.org/licenses/mit-license.php
 */
 
-// t: current time, b: begInnIng value, c: change In value, d: duration åŠ¨ç”»ç‰¹æ•ˆ
+// t: current time, b: begInnIng value, c: change In value, d: duration ¶¯»­ÌØĞ§
 
 jQuery.extend(jQuery.easing, {
   easeInQuad : function(x, t, b, c, d) {
@@ -3635,7 +3636,7 @@ jQuery.extend(jQuery.easing, {
 
 #T=ui-pop
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* extend ??????
 * @author cuki13
   $(obj).popbk();
   .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100;}
@@ -3726,18 +3727,18 @@ jQuery.extend(jQuery.easing, {
   })
 })(jQuery);
 #T=ui-randomColor
-/* È¡ï¿½ï¿½ï¿½ï¿½ï¿½É« */
+/* ??????? */
 +function ($) {
   'use strict';
   var srand = '[data-dismiss="srand"]';
   var Rand   = function () {}
   Rand.prototype.rcolor = function  () {
-    //16ï¿½ï¿½ï¿½Æ·ï¿½Ê½ï¿½ï¿½Ê¾ï¿½ï¿½É«0-F
+    //16????????????0-F
     var arrHex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     var strHex = "#";
     var index;
     for(var i = 0; i < 6; i++) {
-      //È¡ï¿½ï¿½0-15Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      //???0-15???????????
       index = Math.round(Math.random() * 15);
       strHex += arrHex[index];
     }
@@ -3749,7 +3750,7 @@ jQuery.extend(jQuery.easing, {
 }(jQuery);
 #T=ui-reload
 /** 
-* extend ï¿½ï¿½Ë¢ï¿½Â¼ï¿½ï¿½ï¿½
+* extend ????????
 * 
 * @package jquery
 * @author cuki13
@@ -3809,7 +3810,7 @@ jQuery.extend(jQuery.easing, {
         ajax = true;
       },
       error:function  () {
-        alert('ï¿½Ü±ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½Ò³ï¿½ï¿½');
+        alert('????????????????????????');
         $.blockHide($("#loading-wrap"));
       },
       beforeSend:function  () {
@@ -3860,7 +3861,7 @@ jQuery.extend(jQuery.easing, {
 })(jQuery);
 #T=ui-scollUp
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* extend ?????????????
 * @author cuki13
   $(obj).scollUp({
     speed:3000,
@@ -3910,7 +3911,7 @@ jQuery.extend(jQuery.easing, {
 })(jQuery);
 #T=ui-scrolleffect
 /* ========================================================================
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½
+????????§¹??
  */
 +function ($) {
   "use strict";
@@ -3955,7 +3956,7 @@ jQuery.extend(jQuery.easing, {
       }else {
         permb = 0;
       }
-      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ôµï¿½Ä¾ï¿½ï¿½ï¿½
+      //???????????????????
       var tempY = $(document).scrollTop()-$domParent.position().top + permb;
       var per = Math.max(-tempY/800,0);
       var targetX = $dom.data("endX")+$dom.data("tempX")*per;
@@ -3966,7 +3967,7 @@ jQuery.extend(jQuery.easing, {
 
   scrollEffe.prototype.opacity = function($dom,$domParent,ease)
   {
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ôµï¿½Ä¾ï¿½ï¿½ï¿½
+    //???????????????????
     var tempY = $(document).scrollTop()-$domParent.position().top;
     var opacity = Math.min(tempY*0.008,1);
     $dom.css("opacity",opacity);
@@ -3974,7 +3975,7 @@ jQuery.extend(jQuery.easing, {
 
   scrollEffe.prototype.scale = function($dom,$domParent,ease)
   {
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ôµï¿½Ä¾ï¿½ï¿½ï¿½
+    //???????????????????
     var tempY = $(document).scrollTop()-$domParent.position().top + $(window).height()/2;
 
     var scale = Math.min(tempY*0.003,1);
@@ -4006,7 +4007,7 @@ jQuery.extend(jQuery.easing, {
   }
 
   $(document).ready(function() {
-      //ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
+      //???????
       if ($('body.home').length > 0) {
         var blockSilder = [
           [$(".server-block1"),$("#server-container"),-700,-600-300,'moveblock'],
@@ -4033,7 +4034,7 @@ jQuery.extend(jQuery.easing, {
 }(jQuery);
 #T=ui-scrollPic
 /** 
-* extend Í¼Æ¬Ñ­ï¿½ï¿½
+* extend ?????
 * 
 * @package jquery
 * @author cuki13
@@ -4043,7 +4044,7 @@ jQuery.extend(jQuery.easing, {
     itemHeight : 250,
     bigImg : 'off',
     scollBack : function  (img , obj) {
-      //Ö´ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½
+      //??????????????
     }
    });
 
@@ -4101,7 +4102,7 @@ function isTransform() {
 }
 
 $.fn.scollpic= function (options) {
-  //ï¿½ï¿½ï¿½ã³¤ï¿½ï¿½
+  //??????
   $(this).each(function  () {
     var $this = $(this);
     var defualts = {
@@ -4121,8 +4122,8 @@ $.fn.scollpic= function (options) {
 
    
 
-    var ifLoad = false; //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
-    var currentItemIndex = 0 ; //ï¿½ï¿½Ç°itemï¿½ï¿½ï¿½ï¿½
+    var ifLoad = false; //??????
+    var currentItemIndex = 0 ; //???item????
     if (opts.parenWidth == 'auto') {
       opts.parenWidth = parseInt(opts.itemCount * opts.itemWidth);
     }
@@ -4131,7 +4132,7 @@ $.fn.scollpic= function (options) {
 
     $wrapObj.css({'position':'relative','height':opts.itemHeight});
 
-    //ï¿½ï¿½ï¿½Ø¼ï¿½Í·
+    //??????
     if (opts.itemWidth == 'auto') {
       opts.itemWidth = $(this).find(opts.sdiv).width();
     }
@@ -4153,7 +4154,7 @@ $.fn.scollpic= function (options) {
       scoll('right',$this);
     });
 
-    //Ò³ï¿½ï¿½
+    //???
     var navItemCount = $this.find(opts.itemTag).length / opts.itemCount;
     function  nav() {
       var html = '<div class="banner-nav">';
@@ -4179,7 +4180,7 @@ $.fn.scollpic= function (options) {
       }
     })
 
-    //ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
+    //??????
     if (opts.loop == true) {
       var totleCount = $this.find(opts.itemTag).length;
       var $prevClone = $this.find(opts.itemTag + ':gt(' + (totleCount - opts.itemCount - 1) + ')').clone().addClass("clone");
@@ -4188,7 +4189,7 @@ $.fn.scollpic= function (options) {
       $prevClone.prependTo($this);
     }
 
-    //ï¿½Ü³ï¿½ï¿½ï¿½
+    //?????
     var itemTotal=0; 
 
     $this.find(opts.itemTag).last().css("padding-right","0");
@@ -4197,7 +4198,7 @@ $.fn.scollpic= function (options) {
     });
     $this.css({'position':'relative','width':itemTotal});    
 
-    //moblie tounchï¿½Ö»ï¿½ï¿½Â¼ï¿½
+    //moblie tounch??????
     var currntp = 0;
     var pageX = 0;
     var ifchlick = false;
@@ -4237,7 +4238,7 @@ $.fn.scollpic= function (options) {
       }
     });
     
-    //ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Í¼
+    //?????????
     $this.find(opts.itemTag).find("a").click(function  (e) {
       var $item = $(this);
       if (opts.bigImg && (opts.bigImg == 'off')) {
@@ -4267,7 +4268,7 @@ $.fn.scollpic= function (options) {
       }
     })
 
-    //Ñ­ï¿½ï¿½
+    //???
     var onHover = false;
     $this.hover(function  () {
       onHover = true;
@@ -4287,7 +4288,7 @@ $.fn.scollpic= function (options) {
       loopMain();
     }, opts.playSpeed);
     
-    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½ï¿½</span></div>');
+    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>?????§³?????</span></div>');
     var showImg = function (obj,data,objlink) {
       var img = $('<img src="' + data + '" />');
       ajaxLoad.insertBefore(obj);
@@ -4311,7 +4312,7 @@ $.fn.scollpic= function (options) {
         ifload = false;
         }).error(function(){
           ajaxLoad.detach();
-          alert('ï¿½Ü±ï¿½Ç¸,ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½');
+          alert('????,???????');
           ifload = false;
         });
       }
@@ -4323,7 +4324,7 @@ $.fn.scollpic= function (options) {
     
     var leftVal = 0;
 
-    //Ô¤ï¿½ï¿½Ñ­ï¿½ï¿½Ä£Ê½
+    //????????
     function  loopRest() {
       if (opts.loop == true) {
         $this.css("transition","0"); 
@@ -4345,7 +4346,7 @@ $.fn.scollpic= function (options) {
 
     loopRest();
 
-    //ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+    //??????
     function  scrollObj(obj, value, navlong, callback) {
       if (navlong) {
          leftVal = 0;
@@ -4395,7 +4396,7 @@ $.fn.scollpic= function (options) {
       }
     }
 
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //????????
     function scoll(dir,obj,moveWidth) {
       if (ifScroll == true) {
         return false;
@@ -4449,7 +4450,7 @@ $.fn.scollpic= function (options) {
 
 #T=ui-snows
 ///** 
-* extend Ñ©ï¿½ï¿½Ğ§ï¿½ï¿½
+* extend ???§¹??
 * 
 * @package jquery
 * @author cuki13
@@ -4607,7 +4608,7 @@ $.fn.scollpic= function (options) {
 })();
 #T=ui-tag
 /** 
-* extend tagï¿½Ğ»ï¿½
+* extend tag?§İ?
 * 
 * @package tagshow
 * @author cuki13
@@ -4624,14 +4625,14 @@ $.fn.scollpic= function (options) {
     var obj=$(this);
 
     var defualts = {
-      objshow: obj.find('.c1'),     //Õ¹Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-      taglink: obj.find('.c2 a'),     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-      current_class: 'current'      //ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ê½
+      objshow: obj.find('.c1'),     //???????? 
+      taglink: obj.find('.c2 a'),     //???????
+      current_class: 'current'      //????????
     };
 
     var opts = $.extend({}, defualts, options);  
 
-    var is_fade=false;   //ï¿½Ğ¶ï¿½Ğ§ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
+    var is_fade=false;   //?§Ø?§¹??????????
     opts.taglink.click(function  (e) {
       if ($(this).hasClass(opts.current_class)) {
         return false;
@@ -4857,9 +4858,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
