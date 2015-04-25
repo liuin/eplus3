@@ -217,9 +217,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -1200,7 +1200,7 @@ html(^!)
 #T=html-loading
 <style type="text/css"> 
   /*-- loading --*/
-  #loading {background: transparent; position:absolute; top:0; left:0; right:0; bottom:0;}
+  #loading {background: transparent; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%;}
   #loading span {position:absolute;top:50%; left:50%; display:inline-block;width:40px; height:40px; line-height:30px; text-align:center;border:1px solid #000; border-radius:5px; background:#000; margin-left:20px; margin-top:-20px; box-shadow: 0px 0px 3px #000;}
   #loading span img {position:relative; top:9px;}
 </style>
@@ -1208,49 +1208,75 @@ html(^!)
 <div class="" id="loading">
   <span><img src="data:image/gif;base64,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" alt="加载中..."></span>
 </div><!-- /loading -->
-#T=html-media
-<style type="text/css"> 
-  .media-left {width:130px;}
-  .media-body {width:500px;}
+#T=html-loading2
+<style type="text/css">
+.loading{position:fixed;top:0;left:0;bottom:0;*position:absolute;z-index:20;right:0;background:#000}
+.spinner3{margin:200pxauto;width:60px;height:60px;position:absolute;top:50%;left:50%;margin-top:-30px;margin-left:-30px}
+.container1 > div,
+.container2 > div,
+.container3 > div {width:16px;height:16px;background-color:#fff;border-radius:100%;position:absolute;-webkit-animation:bouncedelay 1.2s infinite ease-in-out;animation:bouncedelay 1.2s infinite ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.noblack .container1 > div, 
+.noblack .container2 > div, 
+.noblack .container3 > div {background-color:#B3B2AF}
+.spinner3 .spinner-container {position:absolute;width:100%;height:100%}
+.container2 {-webkit-transform:rotateZ(45deg);transform:rotateZ(45deg)}
+.container3 {-webkit-transform:rotateZ(90deg);transform:rotateZ(90deg)}
+.circle1 {top:0;left:0}
+.circle2 {top:0;right:0}
+.circle3 {right:0;bottom:0}
+.circle4 {left:0;bottom:0}
+.container2 .circle1 {-webkit-animation-delay:-1.1s;animation-delay:-1.1s}
+.container3 .circle1 {-webkit-animation-delay:-1.0s;animation-delay:-1.0s}
+.container1 .circle2 {-webkit-animation-delay:-0.9s;animation-delay:-0.9s}
+.container2 .circle2 {-webkit-animation-delay:-0.8s;animation-delay:-0.8s}
+.container3 .circle2 {-webkit-animation-delay:-0.7s;animation-delay:-0.7s}
+.container1 .circle3 {-webkit-animation-delay:-0.8s;animation-delay:-0.8s}
+.container2 .circle3 {-webkit-animation-delay:-0.5s;animation-delay:-0.5s}
+.container3 .circle3 {-webkit-animation-delay:-0.4s;animation-delay:-0.4s}
+.container1 .circle4 {-webkit-animation-delay:-0.4s;animation-delay:-0.4s}
+.container2 .circle4 {-webkit-animation-delay:-0.2s;animation-delay:-0.2s}
+.container3 .circle4 {-webkit-animation-delay:-0.1s;animation-delay:-0.1s}
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform:scale(0.0)
+  }
+  40% {
+    -webkit-transform:scale(1.0)
+  }
+}
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform:scale(0.0);
+    -webkit-transform:scale(0.0)
+  }
+  40% {
+    transform:scale(1.0);
+    -webkit-transform:scale(1.0)
+  }
+}
 </style>
-
-<div class="media clearfix">
-  <div class="media-left fl">
-    <a href="#">
-      <img class="media-object" src="..." alt="...">
-    </a>
+<div class="loading" id="loading">
+  <div class="spinner3">
+    <div class="spinner-container container1">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
   </div>
-  <div class="media-body fl">
-    <h4 class="media-heading">Media heading</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus veritatis.</p>
-  </div>
-</div><!-- /media -->
-#T=html-swiper
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide swiper-move-first" style="background:#333;"></div>
-    <div class="swiper-slide swiper-move-first" style="background:#f00;"></div>
-    <div class="swiper-slide swiper-move-first" style="background:#f60;"></div>
-    <div class="swiper-slide swiper-move-first" style="background:#680;"></div>
-  </div>
-</div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    var mySwiper = new Swiper('.swiper-container',{
-      pagination: '.pagination1',
-      paginationClickable: true,
-      mode: 'vertical',
-      slidesPerView: 'auto',
-      //moveStartThreshold: 100
-      //followFinger : false,
-      onSlideChangeEnd: function  () {
-      },
-      onFirstInit:function  () {
-      }
-     })
-  })
-</script><!-- /swiper-container -->
+</div><!-- /loading -->
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1395,6 +1421,23 @@ html(^!)
   <li class="list-group-item"><i></i>Porta ac consectetur ac</li>
   <li class="list-group-item"><i></i>Vestibulum at eros</li>
 </ul><!-- /list-group -->
+#T=html-media
+<style type="text/css"> 
+  .media-left {width:130px;}
+  .media-body {width:500px;}
+</style>
+
+<div class="media clearfix">
+  <div class="media-left fl">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body fl">
+    <h4 class="media-heading">Media heading</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus veritatis.</p>
+  </div>
+</div><!-- /media -->
 #T=html-note-ie6
 <!--[if lte IE 6]>
 
@@ -1426,6 +1469,32 @@ html(^!)
   <div class="pos-abs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis autem.</div>
   <a href="" class="pos-abs-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat accusantium quis accusamus error quas iste fugit harum quisquam ducimus alias.</a>
 </div><!-- /pos-abs -->
+#T=html-swiper
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide swiper-move-first" style="background:#333;"></div>
+    <div class="swiper-slide swiper-move-first" style="background:#f00;"></div>
+    <div class="swiper-slide swiper-move-first" style="background:#f60;"></div>
+    <div class="swiper-slide swiper-move-first" style="background:#680;"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var mySwiper = new Swiper('.swiper-container',{
+      pagination: '.pagination1',
+      paginationClickable: true,
+      mode: 'vertical',
+      slidesPerView: 'auto',
+      //moveStartThreshold: 100
+      //followFinger : false,
+      onSlideChangeEnd: function  () {
+      },
+      onFirstInit:function  () {
+      }
+     })
+  })
+</script><!-- /swiper-container -->
 #T=html-table
 <style type="text/css">
 .table-bordered {border: 1px solid #ddd;border-collapse: collapse;border-left: 0;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;border-top:0;border-spacing: 0;}
@@ -1819,9 +1888,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -1849,11 +1918,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -1961,14 +2030,54 @@ nextAll(^!)
 nextPage(^!)
 #T=nextUntil
 nextUntil(^!)
+#T=nj-bcode-get//路由
+app.get('^!',function (req,res){
+  res.type('text/plain'); 
+  res.send('hello world');
+  res.status(404);
+  res.render('home');
+})
+#T=nj-bcode-listen //监听
+app.listen(app.get('port'),function (req,res){
+  console.log('listent' + app.get('port'));
+})
+#T=nj-bcode-static //设置静态资源
+//设置静态资源
+app.use(express.static(__dirname + '/public');
+#T=nj-bcode-ues //定制404页面
+//定制404页面
+app.use(function (req,res){
+  res.type('text/plain'); 
+  res.status(404);
+  res.send('404 - Not Found');
+})
+#T=nj-bcode-设置handlebars 视图引擎
+//设置handlebars 视图引擎
+var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
+app.engine('handlebars',handlebars.engine);
+app.set('view engine','handlebars');
 #T=nj-function (req,res)
 function (req,res){
   ^!
 }
 #T=nj-listen
 listen(^!)
+#T=nj-process
+process
+#T=nj-process-env-PORT
+process.env.PORT
 #T=nj-require
 require(^!)
+#T=nj-require('express3-handlebars')
+require('express3-handlebars');
+#T=nj-res-render(^!);
+res.render();
+#T=nj-res-send()
+res.send(^!);
+#T=nj-res-status()
+res.status(^!);
+#T=nj-res-type('text/plain')
+res.type('text/plain'); 
 #T=noConflict
 noConflict(^!)
 #T=normalize
@@ -2208,9 +2317,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2344,9 +2453,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2362,12 +2471,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2380,6 +2489,8 @@ send(^!)
 serialize()^!
 #T=serializeArray
 serializeArray()^!
+#T=set()
+set(^!)
 #T=setActive
 setActive(^!)
 #T=setAttribute
@@ -2446,9 +2557,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2472,9 +2583,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2510,9 +2621,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2526,9 +2637,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2546,14 +2657,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2593,9 +2704,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2635,9 +2746,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -2779,9 +2890,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -2803,9 +2914,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -4919,6 +5030,8 @@ unwrap()^!
 updateSettings(^!)
 #T=urns
 urns(^!)
+#T=use
+use(^!)
 #T=UTC
 UTC(^!)
 #T=v
@@ -5030,9 +5143,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
