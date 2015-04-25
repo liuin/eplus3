@@ -127,7 +127,7 @@ attr(^!)
 #T=audio
 <audio src="^!"></audio>
 #T=b
-^^
+
   ^!
 
 #T=b-a
@@ -138,11 +138,11 @@ back(^!)
 <base href="^!" />
 #T=bd
 border:^!;
-#T=bd-
+#T=bd^
 border:1px solid #000;
 #T=bdb
 border-bottom:^!;
-#T=bdb-
+#T=bdb^
 border-bottom:1px solid #000;
 #T=bdbc
 border-bottom-color:#000;
@@ -217,9 +217,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -574,7 +574,7 @@ console.log(^!);
 container
 #T=contains
 contains(^!)
-#T=contenteditable html5 æ–‡æœ¬æ¡†ç¼–è¾‘
+#T=contenteditable html5 ÎÄ±¾¿ò±à¼­
 contenteditable="true"
 #T=contents
 contents()^!
@@ -673,7 +673,7 @@ cursor:text;
 #T=data
 data(^!)
 #T=data-form="select"
-/*-- è¡¨å•select --*/
+/*-- ±íµ¥select --*/
 +function ($) {
   'use strict';
 
@@ -877,7 +877,7 @@ font-family:sans-serif;
 #T=ff-st
 font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
-font-family:'å¾®è½¯é›…é»‘';
+font-family:'Î¢ÈíÑÅºÚ';
 #T=fieldset
 <fieldset>
   <legend>^!</legend>
@@ -908,7 +908,7 @@ firstPage(^!)
 fixed(^!)
 #T=fl
 float:^!;
-#T=flashè‡ªé€‚åº”
+#T=flash×ÔÊÊÓ¦
     <div class="wrap">
       <div class="flash">
           <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1440" height="774">
@@ -1197,78 +1197,204 @@ href="#"
 <html>^!</html>
 #T=html()
 html(^!)
+#T=html-loading
+<style type="text/css"> 
+  /*-- loading --*/
+  #loading {background: transparent; position:absolute; top:0; left:0; right:0; bottom:0;}
+  #loading span {position:absolute;top:50%; left:50%; display:inline-block;width:40px; height:40px; line-height:30px; text-align:center;border:1px solid #000; border-radius:5px; background:#000; margin-left:20px; margin-top:-20px; box-shadow: 0px 0px 3px #000;}
+  #loading span img {position:relative; top:9px;}
+</style>
+
+<div class="" id="loading">
+  <span><img src="data:image/gif;base64,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" alt="¼ÓÔØÖĞ..."></span>
+</div><!-- /loading -->
+#T=html-media
+<style type="text/css"> 
+  .media-left {width:130px;}
+  .media-body {width:500px;}
+</style>
+
+<div class="media clearfix">
+  <div class="media-left fl">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body fl">
+    <h4 class="media-heading">Media heading</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus veritatis.</p>
+  </div>
+</div><!-- /media -->
+#T=html-swiper
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide swiper-move-first" style="background:#333;"></div>
+    <div class="swiper-slide swiper-move-first" style="background:#f00;"></div>
+    <div class="swiper-slide swiper-move-first" style="background:#f60;"></div>
+    <div class="swiper-slide swiper-move-first" style="background:#680;"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var mySwiper = new Swiper('.swiper-container',{
+      pagination: '.pagination1',
+      paginationClickable: true,
+      mode: 'vertical',
+      slidesPerView: 'auto',
+      //moveStartThreshold: 100
+      //followFinger : false,
+      onSlideChangeEnd: function  () {
+      },
+      onFirstInit:function  () {
+      }
+     })
+  })
+</script><!-- /swiper-container -->
+#T=html5-ie
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+#T=html-block-col
+<style type="text/css">
+  /*-- block-col --*/
+  .block-col1 {width:320px; margin-right:10px;}
+  .block-col2 {width:300px;}
+</style>
+
+<div class="block-col clearfix">
+  <div class="block-col1 fl">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab qui?
+  </div>
+  <div class="block-col2 fl">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed pariatur earum non reiciendis assumenda voluptatibus vitae atque natus omnis itaque.
+  </div>
+</div><!-- /block-col -->
+#T=html-form-horizontal
+<style type="text/css">
+  .form-horizontal .form-group {padding:5px; font-size:14px;}
+  .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
+  .form-horizontal .form-control {border:1px solid #000; width:100%; height:30px; line-height:30px;  }
+  .form-horizontal .checkbox {font-size:12px;}
+</style>
+<form class="form-horizontal yh">
+  <div class="form-group clearfix">
+    <label for="inputEmail3" class="col-1 control-label fl">Email</label>
+    <div class="fl col-2">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="inputPassword3" class="col-1 control-label fl">Password</label>
+    <div class="fl col-2">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="inputPassword3" class="col-1 control-label fl">Biz</label>
+    <div class="fl col-2">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-3">
+      <label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-3">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form><!-- /form-horizontal -->
 #T=html-form-inline
 <!-- start form-inline -->
-        <style type="text/css">
-          .form-inline .form-group{display: inline-block; margin-bottom: 0; vertical-align: middle; _display:inline;}
-          .form-inline .form-control {display:inline-block; height: 20px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;}
-          .form-inline .sr-only {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;}
-          .form-inline .radio, .form-inline .checkbox { display: inline-block; padding-left: 0; margin-top: 0; margin-bottom: 0; _display:inline; }
-          .form-inline .checkbox input,.form-inline .radio input{position:relative;top:2px;}
-          .form-inline .btn {display: inline-block;  padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle;}
-        </style>
-        <form class="form-inline" >
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputEmail2">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="exampleInputPassword2">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-            </div>
-            <div class="checkbox">
-              <label>
-              <input type="checkbox"> Remember me
-              </label>
-          </div>
-          <div class="radio">
-              <label>
-              <input type="radio"> Remember me
-              </label>
-          </div>
-            <button type="submit" class="btn btn-default">Sign in</button>
-        </form>
-        <!-- end form-inline -->
+<style type="text/css">
+  .form-inline .form-group{display: inline-block; margin-bottom: 0; vertical-align: middle; _display:inline;}
+  .form-inline .form-control {display:inline-block; height: 20px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;}
+  .form-inline .sr-only {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;}
+  .form-inline .radio, 
+  .form-inline .checkbox { display: inline-block; padding-left: 0; margin-top: 0; margin-bottom: 0; _display:inline; }
+  .form-inline .checkbox input,
+  .form-inline .radio input{position:relative;top:2px;}
+  .form-inline .btn {display: inline-block;  padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle;}
+</style>
+<form class="form-inline" >
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputPassword2">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+    </div>
+    <div class="checkbox">
+      <label>
+      <input type="checkbox"> Remember me
+      </label>
+  </div>
+  <div class="radio">
+      <label>
+      <input type="radio"> Remember me
+      </label>
+  </div>
+    <button type="submit" class="btn btn-default">Sign in</button>
+</form>
+<!-- end form-inline -->
 #T=html-form-v
-        <!-- start form-v -->
-        <style type="text/css">
-          .form-v {font-size:14px;}
-          .form-v .form-group {margin-bottom:15px;}
-          .form-v .form-group label {display:inline-block;margin-bottom:5px; font-weight:bold;}
-          .form-v .form-control,.form-v .file{display:block;width:100%;height: 20px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;}
-          .form-v .file {border:0;padding:0;}
-          .form-v .help-block { display: block; margin-top: 5px; margin-bottom: 10px; color: #737373; line-height:2;}
-          .form-v .checkbox,.form-v .radio {display: block; min-height: 20px;  margin-top: 10px; margin-bottom: 10px; vertical-align: middle;}
-          .form-v .checkbox input,.form-v .radio input{ line-height: normal;padding: 0; box-sizing: border-box; float:left; margin-right:5px;}
-          .form-v .btn {display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle;}
-        </style>
-        <form action="#" class="form-v">
-          <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-          <label for="exampleInputFile">File input</label>
-          <input class="file" type="file" id="exampleInputFile">
-          <p class="help-block">Example block-level help text here.</p>
-          </div>
-          <div class="checkbox">
-          <label>
-            <input type="checkbox"> Check me out
-          </label>
-          </div>
-          <div class="radio">
-          <label>
-            <input type="radio"> Check me out
-          </label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <!-- end form-ver -->
+<!-- start form-v -->
+<style type="text/css">
+  .form-v {font-size:14px;}
+  .form-v .form-group {margin-bottom:15px;}
+  .form-v .form-group label {display:inline-block;margin-bottom:5px; font-weight:bold;}
+  .form-v .form-control,.form-v .file{display:block;width:100%;height: 20px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;}
+  .form-v .file {border:0;padding:0;}
+  .form-v .help-block { display: block; margin-top: 5px; margin-bottom: 10px; color: #737373; line-height:2;}
+  .form-v .checkbox,.form-v .radio {display: block; min-height: 20px;  margin-top: 10px; margin-bottom: 10px; vertical-align: middle;}
+  .form-v .checkbox input,.form-v .radio input{ line-height: normal;padding: 0; box-sizing: border-box; float:left; margin-right:5px;}
+  .form-v .btn {display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle;}
+</style>
+<form action="#" class="form-v">
+  <div class="form-group">
+  <label for="exampleInputEmail1">Email address</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+  <label for="exampleInputPassword1">Password</label>
+  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+  <label for="exampleInputFile">File input</label>
+  <input class="file" type="file" id="exampleInputFile">
+  <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+  <label>
+    <input type="checkbox"> Check me out
+  </label>
+  </div>
+  <div class="radio">
+  <label>
+    <input type="radio"> Check me out
+  </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<!-- end form-ver -->
+#T=html-list-group
+<style type="text/css">
+  .list-group .list-group-item { display:block; line-height:20px; margin-bottom:5px;}
+  .list-group .list-group-item i {display:inline-block;width:10px;height:10px;background:#000; border-radius:50%; margin-right:10px;}
+</style>
+<ul class="list-group clearfix">
+  <li class="list-group-item"><i></i>Cras justo odio</li>
+  <li class="list-group-item"><i></i>Dapibus ac facilisis in</li>
+  <li class="list-group-item"><i></i>Morbi leo risus</li>
+  <li class="list-group-item"><i></i>Porta ac consectetur ac</li>
+  <li class="list-group-item"><i></i>Vestibulum at eros</li>
+</ul><!-- /list-group -->
 #T=html-note-ie6
 <!--[if lte IE 6]>
 
@@ -1277,8 +1403,8 @@ html(^!)
 <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
 <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg ' alt='Warning!'/></div>
 <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
-<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>å‘ç°ä½ çš„æµè§ˆå™¨(IE6)éœ€è¦å‡çº§</div>
-<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>ä¸ºè¾¾æœ€ä½³å‘ˆç°æ•ˆæœ,è¯·å‡çº§è‡³æœ€æ–°å¼æµè§ˆå™¨.</div>
+<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>·¢ÏÖÄãµÄä¯ÀÀÆ÷(IE6)ĞèÒªÉı¼¶</div>
+<div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>Îª´ï×î¼Ñ³ÊÏÖĞ§¹û,ÇëÉı¼¶ÖÁ×îĞÂÊ½ä¯ÀÀÆ÷.</div>
 </div>
 
 <div style='width: 75px; float: left;'><a href='http://www.firefox.com ' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg ' style='border: none;' alt='Get Firefox 3.5'/></a></div>
@@ -1289,6 +1415,17 @@ html(^!)
 </div>
 <![endif]-->
 
+#T=html-pos-abs
+<style type="text/css">
+  .pos-abs {position:relative;}
+  .pos-abs-1 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
+  .pos-abs-2 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
+</style>
+
+<div class="pos-abs">
+  <div class="pos-abs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis autem.</div>
+  <a href="" class="pos-abs-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat accusantium quis accusamus error quas iste fugit harum quisquam ducimus alias.</a>
+</div><!-- /pos-abs -->
 #T=html-table
 <style type="text/css">
 .table-bordered {border: 1px solid #ddd;border-collapse: collapse;border-left: 0;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;border-top:0;border-spacing: 0;}
@@ -1374,11 +1511,11 @@ html(^!)
         // andriod 2.3
         if(version > 2.3){
           document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', minimum-scale = ' + phoneScale + ', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
-        // andriod 2.3ï¿½ï¿½ï¿½ï¿½
+        // andriod 2.3ÒÔÉÏ
         }else{
           document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', target-densitydpi=device-dpi">');
         }
-        // ï¿½ï¿½ï¿½ï¿½ÏµÍ³
+        // ÆäËûÏµÍ³
       } else {
         document.write('<meta name="viewport" content="width=' + Fixmobile.width + ', user-scalable=no, target-densitydpi=device-dpi">');
       }
@@ -1386,6 +1523,7 @@ html(^!)
     var newviewport = new Fixmobile();
   })();
   </script>
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="renderer" content="webkit">
@@ -1398,7 +1536,7 @@ html(^!)
 </head>
 <body class="yh">
   <noscript>
-    <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ JavaScriptï¿½ï¿½</strong><br />ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JavaScriptï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã±ï¿½ï¿½ï¿½Õ¾ï¿½Ä¹ï¿½ï¿½Ü¡ï¿½ 
+    <strong>ÄãµÄä¯ÀÀÆ÷ËÆºõ½ûÓÃÁË JavaScript¡£</strong><br />Äú±ØĞëÔÚä¯ÀÀÆ÷ÖĞÆôÓÃJavaScript²ÅÄÜÊ¹ÓÃ±¾ÍøÕ¾µÄ¹¦ÄÜ¡£
   </noscript>
   <div class="container">
      
@@ -1407,10 +1545,31 @@ html(^!)
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
-#T=html5-ie
-<!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+#T=html-thumbnail
+<style type="text/css">
+  /*-- thumbnail-block --*/
+  .thumbnail-block {}
+  .thumbnail-block .thumbnail { margin:0 10px;}
+</style>
+
+<div class="thumbnail-block clearfix">
+  <div class="thumbnail fl">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" alt="img" >
+    <div class="caption">
+      <h3>Thumbnail label</h3>
+      <p>...</p>
+      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    </div>
+  </div>
+  <div class="thumbnail fl">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" alt="img" >
+    <div class="caption">
+      <h3>Thumbnail label</h3>
+      <p>...</p>
+      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+    </div>
+  </div>
+</div><!-- /thumbnail -->
 #T=i
 <i>^!</i>
 #T=if
@@ -1583,8 +1742,6 @@ keyup(^!)
 "^!"
 #T=kk
 "^!"
-#T=l
-(^!)
 #T=l-a
 left:auto;
 #T=label
@@ -1662,9 +1819,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -1692,11 +1849,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -1804,12 +1961,14 @@ nextAll(^!)
 nextPage(^!)
 #T=nextUntil
 nextUntil(^!)
-#T=ng-controller
-ng-controller
-#T=ng-model
-ng-model
-#T=ng-repeat
-ng-repeat
+#T=nj-function (req,res)
+function (req,res){
+  ^!
+}
+#T=nj-listen
+listen(^!)
+#T=nj-require
+require(^!)
 #T=noConflict
 noConflict(^!)
 #T=normalize
@@ -2049,9 +2208,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2185,9 +2344,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2203,12 +2362,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2287,9 +2446,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2313,9 +2472,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2344,16 +2503,16 @@ strike(^!)
 var /*string*/ ^!
 #T=strong
 <strong>^!</strong>
-#T=style=""
-style="^!"
-#T=style-wrap
+#T=style-
 <style type="text/css">
   ^!	
 </style>
-#T=sub
-sub(^!)
+#T=style=""
+style="^!"
 #T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2367,9 +2526,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2387,14 +2546,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2433,49 +2592,10 @@ table-layout:auto;
 table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
-#T=tbool
-/*bool*/ 
-#T=tchar
-/*char*/ 
-#T=tclass
-/* class */ 
-#T=tconst
-/*const*/ 
-#T=tcss-bt1 (a > span || button > span > span)
-/*-- button --*/
-.input-bt {margin:0; padding:0; border:0; background:none; width:100px;}
-.input-bt .bt1 {position:relative;}
-.bt1 { background:url("../images/bt.png") 0 0 no-repeat; padding-left:5px; display:inline-block;text-decoration:none; line-height:41px; border:none; margin:0; padding:0;}
-.bt1 span {background:url("../images/bt.png") right 0 no-repeat; display:block; text-align:center; position:relative; left:5px; padding-right:5px; color:#fff; text-decoration:none; width:100px; font-size:20px; font-family:'\5B8B\4F53',Arial; cursor:pointer;}
-#T=tcss-cols2 (wrap-left,wrap-center)
-/*-- col2 --*/
-.wrap-left {float:left;width:210px; margin-right:20px;}
-.wrap-center {float:left; width:600px;}
-#T=tcss-cols3 (wrap-left,wrap-center,wrap-right)
-/*-- col3 --*/
-.wrap-left {float:left;width:210px; margin-right:20px;}
-.wrap-center {float:left; width:480px; margin-right:10px;}
-.wrap-right {float:left; width:210px;}
-#T=tcss-footer-link (foot-link > a)
-/*-- footer-link --*/
-.foot-link {text-align:center;}
-.foot-link a {padding:0 5px; text-decoration:none;}
-#T=tcss-list (float ul > li > a)
-/*-- list float --*/
-.list-fl {width:auto;}
-.list-fl li {float:left;  font-weight: 800;}
-.list-fl li a {color:#219A44;text-decoration:none; display:block;margin:12px 20px 0 0; word-break:keep-all;}
-.list-fl li span {}
-#T=tcss-list (nofloat ul > li > a >span)
-/*-- list nofloat --*/
-.list-nofl{width:auto;}
-.list-nofl li{background:url("") 0 0 no-repeat;}
-.list-nofl li a {text-decoration:none; padding-left:10px; display:block; }
-.list-nofl li a span {}
-#T=td
-<td>^!</td>
 #T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2515,9 +2635,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -2551,40 +2671,40 @@ text-height:text-size;
 #T=thtml-bt1 (a > span)
 <a href="#" class="bt1"><span>^!</span></a>
 #T=thtml-bt1 (input > span >span)
-<button class="input-bt" type="button"><span class="bt1" ><span>æŒ‰é’®</span></span></button>
+<button class="input-bt" type="button"><span class="bt1" ><span>°´Å¥</span></span></button>
 #T=thtml-list (ul > li > a > span)
 <ul class="list-fl clearfix">
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
-  <li><a href="#"><span>è±†ç“£è¯»ä¹¦</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
+  <li><a href="#"><span>¶¹°ê¶ÁÊé</span></a></li>
 </ul>
 #T=thtml-list (ul > li > a)
 <ul class="list-fl clearfix">
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
-  <li><a href="#">è±†ç“£è¯»ä¹¦</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
+  <li><a href="#">¶¹°ê¶ÁÊé</a></li>
 </ul>
 
 #T=thtml-list-nofl (ul > li > a > span)
 <ul class="list-nofl clearfix">
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
-  <li><a href="#"><span>ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
+  <li><a href="#"><span>ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</span></a></li>
 </ul>
 #T=thtml-list-nofl (ul > li > a)
 <ul class="list-nofl clearfix">
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
-  <li><a href="#">ç¾å›½å¤«å¦‡åœ¨åæ•‘åŠ©æ•°åƒå­¤æ®‹å„¿ç«¥ å–„æ¬¾å¤šæ¥è‡ªç¾å›½</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
+  <li><a href="#">ÃÀ¹ú·ò¸¾ÔÚ»ª¾ÈÖúÊıÇ§¹Â²Ğ¶ùÍ¯ ÉÆ¿î¶àÀ´×ÔÃÀ¹ú</a></li>
 </ul>
 #T=ti
 text-indent:^!;
@@ -2659,9 +2779,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -2683,9 +2803,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -2711,7 +2831,7 @@ typeof (^!)
 #T=ubound
 ubound(^!)
 #T=ui-autoImg
-/*ï¿½È±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬*/
+/*µÈ±ÈÀıËõ·ÅÍ¼Æ¬*/
 function autoImg(ImgD, maxwidth, maxheight) {
   var image = new Image();
   image.src = ImgD.src;
@@ -2744,9 +2864,9 @@ function autoImg(ImgD, maxwidth, maxheight) {
     <script type="text/javascript">
     //<![CDATA[
 
-    //è¿”å›é¡¶éƒ¨
+    //·µ»Ø¶¥²¿
     (function() {
-      var $backToTopTxt = "è¿”å›é¡¶éƒ¨", 
+      var $backToTopTxt = "·µ»Ø¶¥²¿", 
         $backToTopEle = $('<div class="back-top"></div>').appendTo($("body"))
         .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
             $("html, body").animate({ scrollTop: 0 }, 300);
@@ -2762,7 +2882,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
             $backToTopEle.data('pos','scroll').stop().fadeOut()
           }
         
-          //IE6ä¸‹çš„å®šä½
+          //IE6ÏÂµÄ¶¨Î»
           if (!window.XMLHttpRequest) {
             $backToTopEle.css("top", st + winh - 166);
           }
@@ -2771,7 +2891,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
       $(function() { $backToTopFun(); });
     })();
 #T=ui-blockShow
-/*-- ï¿½ï¿½ï¿½ï¿½Ê¾ --*/
+/*-- ²ãÏÔÊ¾ --*/
 +function ($) {
   'use strict';
    $.blockShow = function blockShow(objIn, objOut, callBack) {
@@ -2811,7 +2931,7 @@ function autoImg(ImgD, maxwidth, maxheight) {
   }
 }(jQuery);
 #T=ui-cooki
-/*-- cookiï¿½ï¿½ï¿½ï¿½ --*/
+/*-- cooki²Ù×÷ --*/
 function addCookie(objName,objValue,objHours){
   var str = objName + "=" + escape(objValue);
   if(objHours > 0){
@@ -2831,29 +2951,31 @@ function getCookie(objName){
   } 
 }
 #T=ui-countTime
-//ï¿½ï¿½ï¿½ï¿½Ê±
+//µ¹¼ÆÊ±
 jQuery(document).ready(function($) {
   var servertime = new Date("2015/01/22 23:08:28").getTime();
   var endtime = new Date("2015/01/21 17:42:00").getTime();
+
   var sbtime = (endtime - servertime) / 1e3;		
   var temp = "";
   var timese = "";
 
   if (sbtime <= 0) {
-    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">Ê±</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">ï¿½ï¿½</span></li>';
+    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">Ìì</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">Ê±</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">·Ö</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">Ãë</span></li>';
     $("#timener ul").html(temp);
   } else {
     timese = setInterval(function() {
       timmer(sbtime);
     }, 1e3);
   }
+
   function timmer(getsc) {
     if (getsc > 0) {
       var second = Math.floor(getsc % 60);
       var minite = Math.floor(getsc / 60 % 60);
       var hour = Math.floor(getsc / 3600 % 24);
       var day = Math.floor(getsc / 3600 / 24);
-      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">Ê±</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">ï¿½ï¿½</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">ï¿½ï¿½</span></li>';
+      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">Ìì</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">Ê±</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">·Ö</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">Ãë</span></li>';
       $("#timener ul").html(temp);
       sbtime--;
     } else {
@@ -2863,7 +2985,7 @@ jQuery(document).ready(function($) {
   }
 })
 #T=ui-fixtable
-/*
+/*¹Ì¶¨±í¸ñ
 fixhead($(".fixhead"));
 <style type="text/css">
   .fixhead-box {width:800px; position:relative; border:1px solid #000;
@@ -2894,7 +3016,7 @@ function fixhead(obj) {
 }
 #T=ui-formCheck
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½
+* extend ±íµ¥¿Ø¼ş×Ô¶¨Òå
 * @author cuki13  
   .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
   .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
@@ -2999,7 +3121,7 @@ $(".ckiput").prop('checked',true);
 
 })(jQuery);
 #T=ui-formRadio
-/*-- ï¿½ï¿½ï¿½radio [data-form="radio"] --*/
+/*-- ±íµ¥radio [data-form="radio"] --*/
 +function ($) {
   'use strict';
   var formSting = '[data-form="radio"]';
@@ -3043,7 +3165,7 @@ $(".ckiput").prop('checked',true);
 }(jQuery); 
 #T=ui-formSelect
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½
+* extend ±íµ¥¿Ø¼ş×Ô¶¨Òå
 * @author cuki13  
   .selectstyle {position:relative; border:1px solid #ccc; height:30px;display:inline-block;line-height:30px; width:100px; overflow:hidden;}
   .selectstyle select {position:absolute;left:0; top:0px; height:30px; margin:0; padding:0; width:100%; height:38px; }
@@ -3104,7 +3226,7 @@ $(".ckiput").prop('checked',true);
 })()
 #T=ui-guagua
 /** 
-* extend ï¿½Î¹Î¿ï¿½ï¿½ï¿½ï¿½ï¿½
+* extend ¹Î¹Î¿´´úÂë
 */
   function guagua() {
   //$("#canvas1").remove();
@@ -3215,7 +3337,7 @@ canvas.addEventListener('mousemove', eventMove);
 
 
 #T=ui-hoverdelay
-// ï¿½ï¿½ï¿½ï¿½Ó³ï¿½Ö´ï¿½Ğ·ï¿½ï¿½ï¿½
+// Êó±êÑÓ³ÙÖ´ĞĞ·½·¨
 /*
 $(this).hoverDelay({
   hoverEvent: function(){},
@@ -3259,7 +3381,7 @@ if (img.complete) {
   })
 }
 #T=ui-inserChar
-//ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"," 112345 => 12,345
+//×Ö·û´®²åÈë"," 112345 => 12,345
 function  inserChar() {
   var gval = parseInt($("#result-number").data("number"));
   gval = parseInt((gval - Math.random()*100));
@@ -3294,7 +3416,7 @@ function  inserChar() {
 *   http://www.opensource.org/licenses/mit-license.php
 */
 
-// t: current time, b: begInnIng value, c: change In value, d: duration åŠ¨ç”»ç‰¹æ•ˆ
+// t: current time, b: begInnIng value, c: change In value, d: duration ¶¯»­ÌØĞ§
 
 jQuery.extend(jQuery.easing, {
   easeInQuad : function(x, t, b, c, d) {
@@ -3635,7 +3757,7 @@ jQuery.extend(jQuery.easing, {
 
 #T=ui-pop
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* extend µ¯³ö¿ò
 * @author cuki13
   $(obj).popbk();
   .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100;}
@@ -3726,18 +3848,18 @@ jQuery.extend(jQuery.easing, {
   })
 })(jQuery);
 #T=ui-randomColor
-/* È¡ï¿½ï¿½ï¿½ï¿½ï¿½É« */
+/* ??????? */
 +function ($) {
   'use strict';
   var srand = '[data-dismiss="srand"]';
   var Rand   = function () {}
   Rand.prototype.rcolor = function  () {
-    //16ï¿½ï¿½ï¿½Æ·ï¿½Ê½ï¿½ï¿½Ê¾ï¿½ï¿½É«0-F
+    //16????????????0-F
     var arrHex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     var strHex = "#";
     var index;
     for(var i = 0; i < 6; i++) {
-      //È¡ï¿½ï¿½0-15Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      //???0-15???????????
       index = Math.round(Math.random() * 15);
       strHex += arrHex[index];
     }
@@ -3749,7 +3871,7 @@ jQuery.extend(jQuery.easing, {
 }(jQuery);
 #T=ui-reload
 /** 
-* extend ï¿½ï¿½Ë¢ï¿½Â¼ï¿½ï¿½ï¿½
+/* È¡Ëæ»úÑÕÉ« */
 * 
 * @package jquery
 * @author cuki13
@@ -3809,7 +3931,7 @@ jQuery.extend(jQuery.easing, {
         ajax = true;
       },
       error:function  () {
-        alert('ï¿½Ü±ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½Ò³ï¿½ï¿½');
+        alert('????????????????????????');
         $.blockHide($("#loading-wrap"));
       },
       beforeSend:function  () {
@@ -3860,7 +3982,7 @@ jQuery.extend(jQuery.easing, {
 })(jQuery);
 #T=ui-scollUp
 /** 
-* extend ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* extend ÏòÉÏÃ¿¸ô¼¸Ãë¹ö¶¯
 * @author cuki13
   $(obj).scollUp({
     speed:3000,
@@ -3910,7 +4032,7 @@ jQuery.extend(jQuery.easing, {
 })(jQuery);
 #T=ui-scrolleffect
 /* ========================================================================
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½
+¹ö¶¯¿ØÖÆĞ§¹û
  */
 +function ($) {
   "use strict";
@@ -3955,7 +4077,7 @@ jQuery.extend(jQuery.easing, {
       }else {
         permb = 0;
       }
-      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ôµï¿½Ä¾ï¿½ï¿½ï¿½
+      //¸¸¼¶µ½´°¿ÚÉÏ±ßÔµµÄ¾àÀë
       var tempY = $(document).scrollTop()-$domParent.position().top + permb;
       var per = Math.max(-tempY/800,0);
       var targetX = $dom.data("endX")+$dom.data("tempX")*per;
@@ -3966,7 +4088,7 @@ jQuery.extend(jQuery.easing, {
 
   scrollEffe.prototype.opacity = function($dom,$domParent,ease)
   {
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ôµï¿½Ä¾ï¿½ï¿½ï¿½
+    //¸¸¼¶µ½´°¿ÚÉÏ±ßÔµµÄ¾àÀë
     var tempY = $(document).scrollTop()-$domParent.position().top;
     var opacity = Math.min(tempY*0.008,1);
     $dom.css("opacity",opacity);
@@ -3974,7 +4096,7 @@ jQuery.extend(jQuery.easing, {
 
   scrollEffe.prototype.scale = function($dom,$domParent,ease)
   {
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½Ôµï¿½Ä¾ï¿½ï¿½ï¿½
+    //¸¸¼¶µ½´°¿ÚÉÏ±ßÔµµÄ¾àÀë
     var tempY = $(document).scrollTop()-$domParent.position().top + $(window).height()/2;
 
     var scale = Math.min(tempY*0.003,1);
@@ -4006,7 +4128,7 @@ jQuery.extend(jQuery.easing, {
   }
 
   $(document).ready(function() {
-      //ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
+      //¿ØÖÆÄ£¿é
       if ($('body.home').length > 0) {
         var blockSilder = [
           [$(".server-block1"),$("#server-container"),-700,-600-300,'moveblock'],
@@ -4033,7 +4155,7 @@ jQuery.extend(jQuery.easing, {
 }(jQuery);
 #T=ui-scrollPic
 /** 
-* extend Í¼Æ¬Ñ­ï¿½ï¿½
+* extend Í¼Æ¬Ñ­»·
 * 
 * @package jquery
 * @author cuki13
@@ -4043,7 +4165,7 @@ jQuery.extend(jQuery.easing, {
     itemHeight : 250,
     bigImg : 'off',
     scollBack : function  (img , obj) {
-      //Ö´ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½
+      //Ö´ĞĞÍê»Øµ÷ÊÂ¼ş´¦Àí
     }
    });
 
@@ -4101,7 +4223,7 @@ function isTransform() {
 }
 
 $.fn.scollpic= function (options) {
-  //ï¿½ï¿½ï¿½ã³¤ï¿½ï¿½
+  //??????
   $(this).each(function  () {
     var $this = $(this);
     var defualts = {
@@ -4121,8 +4243,8 @@ $.fn.scollpic= function (options) {
 
    
 
-    var ifLoad = false; //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
-    var currentItemIndex = 0 ; //ï¿½ï¿½Ç°itemï¿½ï¿½ï¿½ï¿½
+    var ifLoad = false; //ÊÇ·ñ¼ÓÔØ
+    var currentItemIndex = 0 ; //µ±Ç°itemË÷Òı
     if (opts.parenWidth == 'auto') {
       opts.parenWidth = parseInt(opts.itemCount * opts.itemWidth);
     }
@@ -4131,7 +4253,7 @@ $.fn.scollpic= function (options) {
 
     $wrapObj.css({'position':'relative','height':opts.itemHeight});
 
-    //ï¿½ï¿½ï¿½Ø¼ï¿½Í·
+    //¼ÓÔØ¼ıÍ·
     if (opts.itemWidth == 'auto') {
       opts.itemWidth = $(this).find(opts.sdiv).width();
     }
@@ -4153,7 +4275,7 @@ $.fn.scollpic= function (options) {
       scoll('right',$this);
     });
 
-    //Ò³ï¿½ï¿½
+    //Ò³Âë
     var navItemCount = $this.find(opts.itemTag).length / opts.itemCount;
     function  nav() {
       var html = '<div class="banner-nav">';
@@ -4179,7 +4301,7 @@ $.fn.scollpic= function (options) {
       }
     })
 
-    //ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
+    //Èç¹ûÑ­»·
     if (opts.loop == true) {
       var totleCount = $this.find(opts.itemTag).length;
       var $prevClone = $this.find(opts.itemTag + ':gt(' + (totleCount - opts.itemCount - 1) + ')').clone().addClass("clone");
@@ -4188,7 +4310,7 @@ $.fn.scollpic= function (options) {
       $prevClone.prependTo($this);
     }
 
-    //ï¿½Ü³ï¿½ï¿½ï¿½
+    //×Ü³¤¶È
     var itemTotal=0; 
 
     $this.find(opts.itemTag).last().css("padding-right","0");
@@ -4197,7 +4319,7 @@ $.fn.scollpic= function (options) {
     });
     $this.css({'position':'relative','width':itemTotal});    
 
-    //moblie tounchï¿½Ö»ï¿½ï¿½Â¼ï¿½
+    //moblie tounchÊÖ»úÊÂ¼ş
     var currntp = 0;
     var pageX = 0;
     var ifchlick = false;
@@ -4237,7 +4359,7 @@ $.fn.scollpic= function (options) {
       }
     });
     
-    //ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Í¼
+    //µã»÷ÏÔÊ¾´óÍ¼
     $this.find(opts.itemTag).find("a").click(function  (e) {
       var $item = $(this);
       if (opts.bigImg && (opts.bigImg == 'off')) {
@@ -4267,7 +4389,7 @@ $.fn.scollpic= function (options) {
       }
     })
 
-    //Ñ­ï¿½ï¿½
+    //Ñ­»·
     var onHover = false;
     $this.hover(function  () {
       onHover = true;
@@ -4287,7 +4409,7 @@ $.fn.scollpic= function (options) {
       loopMain();
     }, opts.playSpeed);
     
-    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½ï¿½</span></div>');
+    var ajaxLoad = $('<div id="loading" class="loading yh"><i></i><span>?????§³?????</span></div>');
     var showImg = function (obj,data,objlink) {
       var img = $('<img src="' + data + '" />');
       ajaxLoad.insertBefore(obj);
@@ -4311,7 +4433,7 @@ $.fn.scollpic= function (options) {
         ifload = false;
         }).error(function(){
           ajaxLoad.detach();
-          alert('ï¿½Ü±ï¿½Ç¸,ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½');
+          alert('????,???????');
           ifload = false;
         });
       }
@@ -4323,7 +4445,7 @@ $.fn.scollpic= function (options) {
     
     var leftVal = 0;
 
-    //Ô¤ï¿½ï¿½Ñ­ï¿½ï¿½Ä£Ê½
+    //Ô¤ÉèÑ­»·Ä£Ê½
     function  loopRest() {
       if (opts.loop == true) {
         $this.css("transition","0"); 
@@ -4345,7 +4467,7 @@ $.fn.scollpic= function (options) {
 
     loopRest();
 
-    //ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+    //¹ö¶¯Ä£Ê½
     function  scrollObj(obj, value, navlong, callback) {
       if (navlong) {
          leftVal = 0;
@@ -4395,7 +4517,7 @@ $.fn.scollpic= function (options) {
       }
     }
 
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //¹ö¶¯º¯Êı
     function scoll(dir,obj,moveWidth) {
       if (ifScroll == true) {
         return false;
@@ -4449,7 +4571,7 @@ $.fn.scollpic= function (options) {
 
 #T=ui-snows
 ///** 
-* extend Ñ©ï¿½ï¿½Ğ§ï¿½ï¿½
+* extend Ñ©»¨Ğ§¹û
 * 
 * @package jquery
 * @author cuki13
@@ -4605,9 +4727,60 @@ $.fn.scollpic= function (options) {
     }
     christmas_2014.init();
 })();
+#T=ui-swpirajax¼ÓÔØ
+/** 
+* extend swpierajax¼ÓÔØ
+* 
+* @package jquery
+* @author cuki13
+  */
++(function($){
+  'use strict';
+  function loadAjax(obj,callback) {    
+    var getUrl = obj.data('ajax');
+    var getArr = obj.data('imgload').split(',');
+    var parentAp = obj.$('.fix-block');
+
+    $.ajax({
+      type: "GET",
+      url: getUrl,
+      //data: getdata,
+      dataType: 'html',
+      async:true, //Òì²½
+      success: function(data){
+        var $data = $(data);
+        var imgCount = 0;
+        for (var i = 0;  i<getArr.length ; i++) {
+          var $img = $('<img src=' + getArr[i] + ' />');
+          $img.load(function  () {
+            imgCount ++;
+            if (imgCount == getArr.length) {
+              parentAp.append($data);
+              obj.data('loadcomp','true');
+              $('#loading-wrap').fadeOut(function  () {
+                $('#loading-wrap').css('z-index','10');
+              });
+              if (callback) {
+                callback(data);
+              }
+            }
+          }).error(function  () {
+            alert('ºÜ±§Ç¸,¼ÓÔØÍ¼Æ¬´íÎó,ÇëÖØĞÂË¢ĞÂÒ³Ãæ');
+          })
+        }
+      },
+      error:function  () {
+      },
+      beforeSend:function  () {
+          //alert('1212');
+      }
+    });
+  }
+  $.loadAjax = loadAjax;
+})(jQuery);
 #T=ui-tag
 /** 
-* extend tagï¿½Ğ»ï¿½
+* extend tagÇĞ»»
 * 
 * @package tagshow
 * @author cuki13
@@ -4624,14 +4797,14 @@ $.fn.scollpic= function (options) {
     var obj=$(this);
 
     var defualts = {
-      objshow: obj.find('.c1'),     //Õ¹Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
-      taglink: obj.find('.c2 a'),     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-      current_class: 'current'      //ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ê½
+      objshow: obj.find('.c1'),      
+      taglink: obj.find('.c2 a'),     
+      current_class: 'current'      
     };
 
     var opts = $.extend({}, defualts, options);  
 
-    var is_fade=false;   //ï¿½Ğ¶ï¿½Ğ§ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
+    var is_fade=false;   //?§Ø?§¹??????????
     opts.taglink.click(function  (e) {
       if ($(this).hasClass(opts.current_class)) {
         return false;
@@ -4857,9 +5030,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
