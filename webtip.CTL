@@ -217,9 +217,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -1139,6 +1139,8 @@ getVarDate(^!)
 getYear(^!)
 #T=go
 go(^!)
+#T=grobal
+grobal
 #T=h
 height:^!;
 #T=h1
@@ -1199,6 +1201,41 @@ href="#"
 <html>^!</html>
 #T=html()
 html(^!)
+#T=html-byd-footer
+  <style type="text/css">
+  /* footer网站底部样式 */
+  .footer {height: 182px; background: url("../images/bg3.jpg") center 0 no-repeat; padding-top:50px;}
+  .footer-p1 { color: #333333; font-size: 12px; text-align: center;}
+
+  .qqbk {width: 355px; height: 143px; padding-left: 0; margin: 0 auto;}
+  .qqbk .link {margin-top:13px;}
+  .qqbk .hd {width: 300px;   margin-bottom:20px;}
+  .qqbk .hd img {margin-right:18px;}
+  .qqbk .hd p { padding-top: 9px; font-size: 18px; margin-top: 0;} 
+  </style>
+  <div class="footer">
+    <div class="w1000">
+      <div class="qqbk  yh">
+        <div class="hd clearfix">
+          <img class="fl png" width="70" src="http://mall.bydauto.com.cn/skin/frontend/default/test/2014xian/images/qqft.png" alt="" />
+          <div class="link">
+            <script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA0OTQ4Nl82NTgyM184MDAwNDk0ODZf"></script>
+          </div>
+          <p>请联系QQ在线客服 !</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+#T=html-byd-header
+<style>
+  .logo a {display: inline-block;width: 135px;height: 84px;}
+  .topnav { font-size: 14px; color: #fff;  right: 0; top:10px; }
+  .topnav a {color: #fff; text-decoration:none; }
+  .topnav a.home {margin-left:20px;}
+</style>
+<div class="fl logo"><a href="http://mall.bydauto.com.cn/index.php/home"><span class="none">比亚迪</span></a></div>
+<div class="topnav yh">
+  <a href="http://mall.bydauto.com.cn/index.php/customer/account/login/?referer=20150520">登录</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/customer/account/create/?referer=20150520">注册</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/home">返回商城</a></div>
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1892,9 +1929,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -1922,11 +1959,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2323,9 +2360,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2459,9 +2496,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2477,12 +2514,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2563,9 +2600,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2589,9 +2626,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2627,9 +2664,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2643,9 +2680,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2663,14 +2700,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2710,9 +2747,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2752,9 +2789,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -2896,9 +2933,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -2920,9 +2957,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5149,9 +5186,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
