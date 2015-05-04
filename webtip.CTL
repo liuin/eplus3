@@ -217,9 +217,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -1201,6 +1201,25 @@ href="#"
 <html>^!</html>
 #T=html()
 html(^!)
+#T=html5-ie
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+#T=html-block-col
+<style type="text/css">
+  /*-- block-col --*/
+  .block-col1 {width:320px; margin-right:10px;}
+  .block-col2 {width:300px;}
+</style>
+
+<div class="block-col clearfix">
+  <div class="block-col1 fl">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab qui?
+  </div>
+  <div class="block-col2 fl">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed pariatur earum non reiciendis assumenda voluptatibus vitae atque natus omnis itaque.
+  </div>
+</div><!-- /block-col -->
 #T=html-byd-footer
   <style type="text/css">
   /* footer网站底部样式 */
@@ -1236,25 +1255,8 @@ html(^!)
 <div class="fl logo"><a href="http://mall.bydauto.com.cn/index.php/home"><span class="none">比亚迪</span></a></div>
 <div class="topnav yh">
   <a href="http://mall.bydauto.com.cn/index.php/customer/account/login/?referer=20150520">登录</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/customer/account/create/?referer=20150520">注册</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/home">返回商城</a></div>
-#T=html5-ie
-<!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-#T=html-block-col
-<style type="text/css">
-  /*-- block-col --*/
-  .block-col1 {width:320px; margin-right:10px;}
-  .block-col2 {width:300px;}
-</style>
-
-<div class="block-col clearfix">
-  <div class="block-col1 fl">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab qui?
-  </div>
-  <div class="block-col2 fl">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed pariatur earum non reiciendis assumenda voluptatibus vitae atque natus omnis itaque.
-  </div>
-</div><!-- /block-col -->
+#T=html-byd-imglink
+<?=$this->getSkinUrl('t20150520/images/images/order5000.png')?>
 #T=html-form-horizontal
 <style type="text/css">
   .form-horizontal .form-group {padding:5px; font-size:14px;}
@@ -1370,15 +1372,16 @@ html(^!)
 <!-- end form-ver -->
 #T=html-list-group
 <style type="text/css">
+  .list-group {margin-top:0;}
   .list-group .list-group-item { display:block; line-height:20px; margin-bottom:5px;}
   .list-group .list-group-item i {display:inline-block;width:10px;height:10px;background:#000; border-radius:50%; margin-right:10px;}
 </style>
 <ul class="list-group clearfix">
-  <li class="list-group-item"><i></i>Cras justo odio</li>
-  <li class="list-group-item"><i></i>Dapibus ac facilisis in</li>
-  <li class="list-group-item"><i></i>Morbi leo risus</li>
-  <li class="list-group-item"><i></i>Porta ac consectetur ac</li>
-  <li class="list-group-item"><i></i>Vestibulum at eros</li>
+  <li class="list-group-item"><i></i>Crasjustoodio</li>
+  <li class="list-group-item"><i></i>Dapibusacfacilisisin</li>
+  <li class="list-group-item"><i></i>Morbileorisus</li>
+  <li class="list-group-item"><i></i>Portaacconsecteturac</li>
+  <li class="list-group-item"><i></i>Vestibulumateros</li>
 </ul><!-- /list-group -->
 #T=html-loading
 <style type="text/css"> 
@@ -1684,7 +1687,7 @@ html(^!)
 if (^!) {
 }
 #T=iframe
-<iframe src="^!"></iframe>
+<iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 #T=img
 <img src="^!" alt="" />
 #T=indexj
@@ -1929,9 +1932,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -1959,11 +1962,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2360,9 +2363,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2496,9 +2499,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2514,12 +2517,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2600,9 +2603,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2626,9 +2629,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2664,9 +2667,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2680,9 +2683,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2700,14 +2703,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2747,9 +2750,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2789,9 +2792,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -2933,9 +2936,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -2957,9 +2960,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3742,6 +3745,38 @@ jQuery.extend(jQuery.easing, {
       return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * .5 + c * .5 + b;
   }
 });
+#T=ui-ltIE9
+ <script type="text/javascript">
+  <!--
+    var ie9lt = false;
+  //-->
+  </script>
+  <!--[if lt IE 9]>
+    <script type="text/javascript">
+      //<![CDATA[
+       ie9lt = true;
+    //]]></script>
+  <![endif]-->
+
+
+   if (ie9lt) {
+    $(".form-order-inp").each(function () {
+      var dfVal = $(this).attr("placeholder");
+      
+      $(this).val(dfVal);
+      
+      $(this).on('focus',function  () {
+        if ($(this).val() == dfVal) {
+          $(this).val("");
+        }
+      })
+      .on('blur',function  () {
+        if ($(this).val() == '') {
+          $(this).val(dfVal);
+        }
+      })
+    })
+  }
 #T=ui-mobileTouch
 +(function ($) {
   'use strict';
@@ -5186,9 +5221,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
