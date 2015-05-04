@@ -1261,7 +1261,7 @@ html(^!)
 <style type="text/css">
   .form-horizontal .form-group {padding:5px; font-size:14px;}
   .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
-  .form-horizontal .form-control {border:1px solid #000; width:100%; height:30px; line-height:30px;  }
+  .form-horizontal .form-control {padding:0;border:1px solid #000; width:100%; height:30px; line-height:30px;  }
   .form-horizontal .checkbox {font-size:12px;}
 </style>
 <form class="form-horizontal yh">
@@ -1806,6 +1806,11 @@ focusout(function(){^!})
 join(^!)
 #T=jq
 $(^!)
+#T=jq-plugin
++(function() {
+  'use strict';
+
+})(jQuery);
 #T=jqextendz
 /** 
 * extend ^!
@@ -2988,32 +2993,75 @@ typeof (^!)
 #T=ubound
 ubound(^!)
 #T=ui-autoImg
-/*等比例缩放图片*/
-function autoImg(ImgD, maxwidth, maxheight) {
-  var image = new Image();
-  image.src = ImgD.src;
-  if (image.width > 0 && image.height > 0) {
-    flag = true;
-    if (image.width / image.height >= maxwidth / maxheight) {
-      if (image.width > maxwidth) {
-        ImgD.width = maxwidth;
-        ImgD.height = (image.height * maxwidth) / image.width;
-        } else {
-          ImgD.width = image.width;
-          ImgD.height = image.height;
-        }
+    /*
+      data-img = "autoIn" //框内适应
+      data-img = "autoOut" //框外适应
+    */
+    +(function() {
+      'use strict';
+      var string = '[data-img]';
+      function autoImg (el) {}
+      autoImg.prototype.autoIn = function  (el,maxwidth,maxheight) {
+        var $this = $(el);
+        $this.load(function  () {
+          var zoom = $this.width()/$this.height();
+          var zoom1 = maxwidth/maxheight;
+          if (zoom > zoom1) {
+            var style = {
+              'width' : maxwidth,
+              'height': maxwidth/zoom,
+              'margin-top' : (maxheight - maxwidth/zoom) / 2
+            }
+            $this.css(style);
+          }else {
+            var style = {
+              'width' : maxheight*zoom,
+              'height': maxheight,
+              'margin-left' : (maxwidth - maxheight*zoom) / 2
+            }
+            $this.css(style);
+          }
+        })
       }
-    else {
-       if (image.height > maxheight) {
-         ImgD.height = maxheight;
-         ImgD.width = (image.width * maxheight) / image.height;
-       }else {
-          ImgD.width = image.width;
-          ImgD.height = image.height;
-       }
-    } 
-  }
-}
+      autoImg.prototype.autoOut = function  (el,maxwidth,maxheight) {
+        var $this = $(el);
+        $this.load(function  () {
+          var zoom = $this.width()/$this.height();
+          var zoom1 = maxwidth/maxheight;
+          if (zoom > zoom1) {
+            var style = {
+              'width' : maxheight*zoom,
+              'height': maxheight,
+              'margin-left' : (maxwidth - maxheight*zoom) / 2
+            }
+            $this.css(style);
+          }else {            
+            var style = {
+              'width' : maxwidth,
+              'height': maxwidth/zoom,
+              'margin-top' : (maxheight - maxwidth/zoom) / 2
+            }
+            $this.css(style);
+          }
+        })
+      }
+
+     $(document).ready(function() {    
+       var autoImg1 = new autoImg();
+       $(string).each(function () {         
+         var getType = $(this).attr('data-img');
+         switch (getType) {
+         case 'autoIn':
+           autoImg1.autoIn($(this),100,200);
+         break
+         case 'autoOut':
+           autoImg1.autoOut($(this),100,200);
+         break
+         default:
+         }
+       })
+      })
+    })(jQuery);
 #T=ui-back-top
     <style type="text/css">
     .back-top {display: none;width: 18px;line-height: 1.2;padding: 5px 0;background-color: #000;color: #fff;font-size: 12px;text-align: center;position: fixed;_position:absolute;right: 112px;_right: 92px;bottom: 100px;_bottom: "auto";cursor: pointer;opacity: 0.6;filter: Alpha(opacity=60);}
@@ -3970,7 +4018,6 @@ jQuery.extend(jQuery.easing, {
   Popbk.defualts = {};
 
   Popbk.prototype.build = function  (el) {
-    
     var $this = $(el);
     $this.wrap('<div class="popbk-wrap-'+ this.id +' popbk-wrap fade" ></div>');
     $this.wrap('<div class="popbk-'+ this.id +' popbk" ></div>');
@@ -3980,16 +4027,15 @@ jQuery.extend(jQuery.easing, {
     sClose.insertAfter($this);
     var ml = $this.width()/2;     
     $this.parent(".popbk").css("margin-left",-ml);
-    
     var wh = $this.height();
-    if ($(window).height < wh) {
+    if ($(window).height() < wh) {
       $this.parent(".popbk").css("top","30px");
     }else {
       $this.parent(".popbk").css({
         "margin-top":-wh/2,
         "top":'50%'
       });
-    }
+    } 
     $this.parent(".popbk").find(".close").on('click',function  () {
       $this.data('ck.pokbk').close();
     })    
@@ -4003,10 +4049,19 @@ jQuery.extend(jQuery.easing, {
       $this.parents(".popbk-wrap").show();
       $this.parents(".popbk-wrap")[0].offsetWidth;
       $this.parents(".popbk-wrap").addClass("in");
+
+      var wh = $this.height();
+      if ($(window).height() < wh) {
+        $('body').css('overflow','hidden');
+      }else {
+        $('body').css('overflow','auto');
+      }
+      
     }
   }
 
   Popbk.prototype.close = function  () {
+    $('body').css('overflow','auto');
     var $this = this.el;
     var $parent = $this.parents(".popbk-wrap");
     if ($.support.transition && $parent.hasClass('fade')) {
@@ -5084,6 +5139,197 @@ removeElement()
     }
   })
 
+}(jQuery);
+#T=ui-valid-form
+/*-- 
+验证 [valid-form="tel"] 
+@author cuki13
+valid-form = "tel" 验证手机
+valid-form = "req" 不能为空 
+  
+--*/
++function ($) {
+  'use strict';
+  var selectString = '[valid-form]';
+  
+  var validForm = function  (number) {
+    this.id = number;
+  }
+
+  validForm.loadimg = $("#form-loading");
+  validForm.prototype.loadShow = function  (el) {
+    var style = {
+        'top': el.offset().top + (el.height()-16)/2,
+        'left':el.offset().left + el.outerWidth() - 20,
+        'position':'absolute',
+        'background': '#fff',
+        'border-radius': '10px'
+      }
+    if ($('#form-loading').length < 1) {
+      $(validForm.loadimg).appendTo($('body'));
+    }
+    $('#form-loading').css(style).show();
+  }
+
+  validForm.prototype.validTel = function  (el) {
+    var $el = el;
+    var phone = el.val();
+    var $this = this;
+    var url = el.data('ajaxtel');
+    if(phone && phone.match(/^1[3|4|5|7|8][0-9]\d{8}$/g) ){
+        if (el.data('errotxt')) {
+           el.data('errotxt').hide();
+        }
+
+        this.loadShow(el);
+        
+        var getdata = {'phone':phone, 't':(new Date().getTime())};
+        $.ajax({
+            type: "GET",
+            url: url,
+            data: getdata,
+            dataType: 'json',
+            async:false, //异步
+            success: function(data,textStatus){ 
+             
+              setTimeout(
+                function(){
+                   $('#form-loading').hide();
+                }, 500)
+              if (data == '0') {
+                el.removeClass('valid-erro');
+              }
+              if (data == '1') {
+                $this.showTxt(el,"您填写的手机已经报名");
+                el.data('errotxt').show();
+              }
+            },
+            error:function  () {
+              alert('很抱歉,暂时无法检测手机是否可用');
+              $('#form-loading').hide();
+            },
+            beforeSend:function  () {
+            }
+        });
+    }else {
+      el.addClass('valid-erro');
+      this.showTxt(el,el.attr('error-txt'));  
+    }
+  }
+
+  validForm.prototype.validReq = function  (el) {
+     if (el.val() == '' || el.val() == 'none') {       
+       el.addClass('valid-erro');
+       el.data('errotxt') ? el.data('errotxt').show() : this.showTxt(el,el.attr('error-txt'));
+     }else {
+       el.removeClass('valid-erro');
+       el.data('errotxt') ? el.data('errotxt').hide() : " ";
+     }
+  }
+
+  validForm.prototype.showTxt = function  (el, errotxt) {
+    var style = {
+      'top': el.offset().top + el.outerHeight() + 5,
+      'left':el.offset().left,
+      'position':'absolute'
+    }
+    if (!el.data('errotxt')) {
+      el.data('errotxt', $('<span class="errortxt">' + errotxt + '</span>').css(style));
+      el.data('errotxt').appendTo($('body'));
+    }else {
+      el.data('errotxt').html(errotxt).show();
+    }
+
+  }
+
+  function Plugin() {
+    var validEl = new validForm();
+    return this.each(function (n) {
+      var getType = $(this).attr('valid-form');
+      switch (getType) {
+      case 'tel':
+        $(this).on('blur',function  () {
+          validEl.validTel($(this));
+        })
+      break
+      case 'req':
+        $(this).on('blur',function  () {
+          validEl.validReq($(this));
+        })       
+      break
+      case 'submit':
+        var $form = $(this).parents('form');
+        var $this = $(this);
+        $form.on('submit',function  () {
+          var elGround = $(this).find('[valid-form]').not('[valid-form="submit"]');
+          var allPass = true;
+          elGround.each(function () {
+            if (!$(this).data('errotxt') || $(this)) {
+              $(this).trigger('blur')
+            }
+
+            if ($(this).data('errotxt') && $(this).data('errotxt').is(':visible')) {
+              allPass = false;
+            }
+          });
+          if (!allPass) {
+            return false;
+          }
+
+          //提交数据
+          var url = $form.attr('action');
+          var frmdata = $form.serialize();
+          
+          $.ajax({
+              type: "POST",
+              url: url,
+              data: frmdata,
+              dataType: 'json',
+              async:true, //异步
+              success: function(data,textStatus, jqXHR){
+                $('#form-loading').hide();
+                if( ('success' == textStatus) && data){
+                  if(data['id']){
+                    $('input[name=posted]').val("1");
+                      alert('您已成功参与此次活动，谢谢您的支持！');
+                    }else{
+                      alert('提交预约数据失败，请尝试重新填写数据后再次预约，或联系客服！');
+                    }
+                }
+              },
+              error:function  () {
+                $('#form-loading').hide();
+                alert('提交失败,请刷新页面');
+              },
+              beforeSend:function  () {
+                var style = {
+                    'top': $this.offset().top + ($this.height()-16)/2,
+                    'left':$this.offset().left + $this.outerWidth() - 20,
+                    'position':'absolute',
+                    'background': '#fff',
+                    'border-radius': '10px'
+                  }
+                if ($('#form-loading').length < 1) {
+                  $(validForm.loadimg).appendTo($('body'));
+                }
+                $('#form-loading').css(style).show();
+              }
+          });
+
+          return false;
+        })
+
+      break
+      default:
+      }
+    })
+  }
+
+  $(document).on('ready.ck.form', function (e) {
+    var $this = $(selectString);
+    Plugin.call($this);
+  })
+  
 }(jQuery);
 #T=ul
 <ul>
