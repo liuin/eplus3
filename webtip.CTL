@@ -92,6 +92,8 @@ anchor(^!)
 andSelf()^!
 #T=animate
 animate(^!)
+#T=animated
+animated
 #T=append
 append(^!)
 #T=appendChild
@@ -217,9 +219,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -632,6 +634,43 @@ createTFoot(^!)
 createTHead(^!)
 #T=css
 css(^!)
+#T=css-//弹性滚动条
+//弹性滚动条
+-webkit-overflow-scrolling:touch;
+#T=css-表单 placeholder
+/*-- 表单 placeholder --*/
+input:-moz-placeholder {  
+      color: green;  
+}
+input::-webkit-input-placeholder {  
+      color: green;  
+    }  
+input:-ms-input-placeholder {  
+      color: green;  
+    }
+#T=css-滚动条
+/*-- 滚动条 --*/
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 5px solid transparent;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 #T=ct
 content:^!;
 #T=ct-a
@@ -1636,13 +1675,17 @@ html(^!)
   </script>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="renderer" content="webkit">
   <meta name="description" content="">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="css/style.css">
+  <!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
   <title>website name</title>
 </head>
 <body class="yh">
@@ -1694,6 +1737,8 @@ if (^!) {
 index(^!)
 #T=indexOf
 indexOf(^!)
+#T=infinite
+infinite
 #T=innerHeight
 innerHeight()^!
 #T=innerHTML
@@ -1806,11 +1851,6 @@ focusout(function(){^!})
 join(^!)
 #T=jq
 $(^!)
-#T=jq-plugin
-+(function() {
-  'use strict';
-
-})(jQuery);
 #T=jqextendz
 /** 
 * extend ^!
@@ -1831,6 +1871,11 @@ $(^!)
         var opts = $.extend({}, defualts, options);  
         var obj = $(this);
     };  
+})(jQuery);
+#T=jq-plugin
++(function() {
+  'use strict';
+
 })(jQuery);
 #T=js
 show()^!
@@ -1937,9 +1982,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -1967,11 +2012,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2079,30 +2124,48 @@ nextAll(^!)
 nextPage(^!)
 #T=nextUntil
 nextUntil(^!)
+#T=nj-bcode-400 //定制404页面
+//定制404页面
+app.use(function(req, res, next){
+  res.status(404);
+  res.render('404');
+});
+#T=nj-bcode-500 //定制500页面
+app.use(function(err, req, res, next){
+  console.error(err.stack);
+  res.status(500);
+  res.render('500');
+});
 #T=nj-bcode-get//路由
-app.get('^!',function (req,res){
+app.get('/root',function (req,res){
   res.type('text/plain'); 
   res.send('hello world');
   res.status(404);
-  res.render('home');
+  res.render('home',{fortune: randomFortune });
 })
 #T=nj-bcode-listen //监听
+var app = express();
 app.listen(app.get('port'),function (req,res){
   console.log('listent' + app.get('port'));
 })
 #T=nj-bcode-static //设置静态资源
 //设置静态资源
 app.use(express.static(__dirname + '/public');
-#T=nj-bcode-ues //定制404页面
-//定制404页面
-app.use(function (req,res){
-  res.type('text/plain'); 
-  res.status(404);
-  res.send('404 - Not Found');
-})
 #T=nj-bcode-设置handlebars 视图引擎
 //设置handlebars 视图引擎
-var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
+var handlebars = require('express3-handlebars').create({
+  defaultLayout:'main',
+  helpers: {
+    section: function(name, options){
+        if(!this._sections) this._sections = {};
+        this._sections[name] = options.fn(this);
+        return null;
+    },
+    static: function(name) {
+        return require('./lib/static.js').map(name);
+    }
+  }
+});
 app.engine('handlebars',handlebars.engine);
 app.set('view engine','handlebars');
 #T=nj-function (req,res)
@@ -2368,9 +2431,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2504,9 +2567,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2522,12 +2585,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2608,9 +2671,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2634,9 +2697,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2672,9 +2735,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2688,9 +2751,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2708,14 +2771,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2755,9 +2818,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2797,9 +2860,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -2941,9 +3004,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -2965,9 +3028,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3158,8 +3221,11 @@ function getCookie(objName){
 #T=ui-countTime
 //倒计时
 jQuery(document).ready(function($) {
-  var servertime = new Date("2015/01/22 23:08:28").getTime();
-  var endtime = new Date("2015/01/21 17:42:00").getTime();
+  //var servertime = new Date("2015/01/22 23:08:28").getTime();
+  //var endtime = new Date("2015/01/21 17:42:00").getTime();
+
+  var servertime = new Date("<?php date_default_timezone_set('Asia/Shanghai'); echo date('Y/m/d H:i:s'); ?>").getTime();
+  var endtime = new Date("<?=str_replace('-', '/', $btime)?>").getTime();
 
   var sbtime = (endtime - servertime) / 1e3;		
   var temp = "";
@@ -5467,9 +5533,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
