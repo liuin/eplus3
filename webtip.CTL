@@ -9,9 +9,6 @@ New Cliptext library
 <!-- ^! -->
 #T=!doctype
 <!doctype html>
-#T=-webkit-animation-duration //播放时间
--webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
 #T=@f
 @font-face {font-family:^!;src:url();}
 #T=@i
@@ -99,6 +96,8 @@ animate(^!)
 animated
 #T=animation-direction //反响播放
 animation-direction:alternate; -webkit-animation-direction:alternate;
+#T=animation-duration //播放时间
+-webkit-animation-duration: 1s;animation-duration: 1s;
 #T=animation-timing-function //播放曲线
 animation-timing-function:ease-in; -webkit-animation-timing-function:ease-in; 
 #T=append
@@ -226,9 +225,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -2007,9 +2006,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2037,11 +2036,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2456,9 +2455,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2592,9 +2591,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2610,12 +2609,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2696,9 +2695,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2722,9 +2721,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2760,9 +2759,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2776,9 +2775,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2796,14 +2795,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2843,9 +2842,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2885,9 +2884,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3029,9 +3028,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -3053,9 +3052,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5429,6 +5428,8 @@ valid-form = "req" 不能为空
 </ul>
 #T=unbind
 unbind(^!)
+#T=undefined
+undefined
 #T=undelegate
 undelegate(^!)
 #T=unescape
@@ -5503,6 +5504,9 @@ visibility:visible;
 width:^!;
 #T=w-a
 width:auto;
+#T=-webkit-animation-duration //播放时间
+-webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 #T=-webkit-box-flex: 2;
 -webkit-box-flex: 2;
 #T=while
@@ -5564,9 +5568,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
@@ -5586,4 +5590,56 @@ zoom:1;
 
 #T=zs-ze
 <!-- /^! -->
+#T=视频全屏
+/*-- 视频全屏 --*/
++(function($) {
+   var selectString = '[video-fullscreen="true"]'
+   var fullscreen = function(elem) {
+        var prefix = 'webkit';
+          if ( elem[prefix + 'EnterFullScreen'] ) {
+            return prefix + 'EnterFullScreen';
+          } else if( elem[prefix + 'RequestFullScreen'] ) {
+            return prefix + 'RequestFullScreen';
+          };
+        return false;
+    };
+    function autoFullScrenn(v){
+        $this = v;
+        var ua   = navigator.userAgent.toLowerCase();  
+        var Android = String(ua.match(/android/i)) == "android";
+        // if(!Android) return;//非android系统不使用;
+        var video  = v[0],doc = document;
+        var fullscreenvideo = fullscreen(doc.createElement("video"));
+        if(!fullscreen) {
+            //alert("不支持全屏模式");
+            return;
+        }
+        video.addEventListener("webkitfullscreenchange",function(e){
+            if(!doc.webkitIsFullScreen){//退出全屏暂停视频
+                this.pause();
+              
+            };
+        }, false);
+        video.addEventListener("click", function(){
+            this.play();
+            $this.data('change','true');
+            video[fullscreenvideo]();
+        }, false);
+
+        video.addEventListener('ended',function(){
+            doc.webkitCancelFullScreen(); //播放完毕自动退出全屏
+        },false);
+
+    };
+    $(document).ready(function() {
+      $('video').each(function (n) {
+          $(this).on('click',function  () {
+//            $(this)[0].webkitRequestFullScreen();
+//            $(this)[0].play();
+              autoFullScrenn($(this));
+          })      
+      })
+    })
+    
+    })(jQuery);
 #
