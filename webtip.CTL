@@ -94,10 +94,14 @@ andSelf()^!
 animate(^!)
 #T=animated
 animated
+#T=animation-delay
+-webkit-animation-delay: .5s;animation-delay: .5s;
 #T=animation-direction //反响播放
 animation-direction:alternate; -webkit-animation-direction:alternate;
 #T=animation-duration //播放时间
 -webkit-animation-duration: 1s;animation-duration: 1s;
+#T=animation-fill //最后一帧停留
+-webkit-animation-fill-mode:both;animation-fill-mode:both
 #T=animation-timing-function //播放曲线
 animation-timing-function:ease-in; -webkit-animation-timing-function:ease-in; 
 #T=append
@@ -435,7 +439,7 @@ bubbleEvent(^!)
 #T=button
 <button type="button">^!</button>
 #T=bxsh
-box-shadow:^!;
+box-shadow:0 0 ^!px #A16534;
 #T=bxsh-n
 box-shadow:none;
 #T=bxz
@@ -1260,10 +1264,19 @@ hover(^!)
 href="javascript:void(0);"
 #T=href-n
 href="#"
-#T=html
-<html>^!</html>
 #T=html()
 html(^!)
+#T=html-pos-abs
+<style type="text/css">
+  .pos-abs {position:relative;}
+  .pos-abs-1 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
+  .pos-abs-2 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
+</style>
+
+<div class="pos-abs">
+  <div class="pos-abs-1">autem.</div>
+  <a href="" class="pos-abs-2">fsf</a>
+</div><!-- /pos-abs -->
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1563,17 +1576,6 @@ html(^!)
 </div>
 <![endif]-->
 
-#T=html-pos-abs
-<style type="text/css">
-  .pos-abs {position:relative;}
-  .pos-abs-1 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
-  .pos-abs-2 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
-</style>
-
-<div class="pos-abs">
-  <div class="pos-abs-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis autem.</div>
-  <a href="" class="pos-abs-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat accusantium quis accusamus error quas iste fugit harum quisquam ducimus alias.</a>
-</div><!-- /pos-abs -->
 #T=html-swiper
 <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -1757,6 +1759,8 @@ if (^!) {
 <iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 #T=img
 <img src="^!" alt="" />
+#T=in-out-class //切换两个层
+in-out-class="inClass inTarget outClass outClassTarget outtime event"
 #T=indexj
 index(^!)
 #T=indexOf
@@ -3031,6 +3035,10 @@ toUTCString(^!)
 <tr>^!</tr>
 #T=tr
 text-replace:^!;
+#T=transform-translate //位移
+transform: translate(100%); -webkit-transform: translate(100%);
+#T=transition- //时间 
+-webkit-transition:1s; transition:1s;
 #T=tregexp
 /*RegExp*/ 
 #T=trigger
@@ -3222,6 +3230,38 @@ ubound(^!)
     }).emulateTransitionEnd(350);
   }
 }(jQuery);
+#T=ui-change-class //切换class名字
+/*-- 
+  change-class="changeclass even" 
+  changeclass: //改变的class
+  even: //触发事件 click tap hover
+--*/
++(function() {
+  'use strict';
+  var selectString = '[change-class]';
+  selectString =  $(selectString);
+  selectString.each(function () {
+    var attrPro = $(this).attr('change-class').split(' ');
+    $(this).on('removeClass',function  () {
+      $(this).removeClass(attrPro[0]);
+    })
+    $(this).on('addClass',function  () {
+      $(this).addClass(attrPro[0]);
+    })
+    
+    if (attrPro[1]) {
+      $(this).on(attrPro[1],function  () {
+        if ($(this).hasClass(attrPro[0])) {
+          $(this).trigger('removeClass');
+        }else {
+          $(this).trigger('addClass');
+        }
+      })      
+    }
+
+  })
+
+})(jQuery);
 #T=ui-cooki
 /*-- cooki操作 --*/
 function addCookie(objName,objValue,objHours){
@@ -3279,6 +3319,18 @@ jQuery(document).ready(function($) {
     }
   }
 })
+#T=ui-empty
+/*-- 
+  anchor:cuki13
+  use:
+ --*/
+
++(function() {
+  'use strict';
+
+
+})(jQuery);
+
 #T=ui-fixtable
 /*固定表格
 fixhead($(".fixhead"));
@@ -3675,6 +3727,44 @@ if (img.complete) {
 
   })
 }
+#T=ui-in-out-class //两个层重复切换
+/*-- 
+  anchor:cuki13
+  两个层重复切换
+  use: in-out-class="inClass inTarget outClass outClassTarget intime outtime event"
+  
+  event:hover tap click;
+  回调:
+  inTarget开始函数:inClassCall;
+  outTarget开始函数:outClassCall;
+ --*/
+
++(function(){
+  'use strict';
+  var selectString = '[in-out-class]';
+
+  
+  $(selectString).each(function () {
+
+    var attrPro = $(this).attr('in-out-class').split(' ');
+    var inClass = attrPro[0];
+    var outClass = attrPro[2];
+
+    $(this).on(attrPro[6],function  () {
+      $(attrPro[3]).trigger('inClassCall').addClass(outClass);
+      $(attrPro[1]).removeClass(inClass).hide();
+      setTimeout(
+        function(){
+          $(attrPro[3]).removeClass(outClass).hide();
+          $(attrPro[1]).addClass(inClass).show();
+          setTimeout(
+            function(){
+              $(attrPro[1]).removeClass(inClass);
+            }, attrPro[5])
+        }, attrPro[4]);
+    })
+  })
+})(jQuery);
 #T=ui-inserChar
 //字符串插入"," 112345 => 12,345
 function  inserChar() {
@@ -5163,6 +5253,37 @@ $.fn.scollpic= function (options) {
     
   };  
 })(jQuery);
+#T=ui-target-changeclass  //改变目标的class
+/*-- 
+  target-changeclass="classname targetObj even";
+  changeclass://改变的class
+  targetObj://目标改变的class
+  even://触发事件 click tap hover
+--*/
++(function() {
+  'use strict';
+  var selectString = '[target-changeclass]';
+  $(selectString).each(function () {    
+     var attrPro = $(this).attr('target-changeclass').split(' ');
+     var targetObj = $(attrPro[1]);
+
+     targetObj.on('targetRemoveClass',function  () {
+       $(this).removeClass(attrPro[0]);
+     })
+     targetObj.on('targetAddClass',function  () {
+       $(this).addClass(attrPro[0]);
+     })
+    if (attrPro[2]) {
+     $(this).on(attrPro[2],function  () {
+        if (targetObj.hasClass(attrPro[0])) {
+          targetObj.trigger('targetRemoveClass');
+        }else {
+          targetObj.trigger('targetAddClass');
+        }          
+     })
+    }
+  })
+})(jQuery);
 #T=ui-transition
 /* ========================================================================
  * Bootstrap: transition.js v3.2.0
@@ -5487,11 +5608,15 @@ visibility:hidden;
 #T=video
 <video>^!</video>
 #T=video- //html5
-<video  width="200" height="150" controls autoplay  >
-              <source src="images/oceans.mp4" type="video/mp4">
-              <source src="images/mov_bbb.ogg" type="video/ogg">
-              Your browser does not support HTML5 video.
-            </video>         
+<video  width="200" height="150" controls autoplay poster="loadurl" webkit-playsinline="true" >
+  <source src="images/oceans.mp4" type="video/mp4">
+  <source src="images/mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>         
+video api:
+$('#video1')[0].load();
+$('#video1')[0].pause();
+$('#video1')[0].play();   
 #T=visible
 visible
 #T=vobject
