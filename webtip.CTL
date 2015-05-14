@@ -229,9 +229,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -1266,17 +1266,6 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
-#T=html-pos-abs
-<style type="text/css">
-  .pos-abs {position:relative;}
-  .pos-abs-1 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
-  .pos-abs-2 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
-</style>
-
-<div class="pos-abs">
-  <div class="pos-abs-1">autem.</div>
-  <a href="" class="pos-abs-2">fsf</a>
-</div><!-- /pos-abs -->
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1576,6 +1565,17 @@ html(^!)
 </div>
 <![endif]-->
 
+#T=html-pos-abs
+<style type="text/css">
+  .pos-abs {position:relative;}
+  .pos-abs-1 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
+  .pos-abs-2 {position:absolute; width:100px; height:100px; background:orange; left:0px; top:0;}
+</style>
+
+<div class="pos-abs">
+  <div class="pos-abs-1">autem.</div>
+  <a href="" class="pos-abs-2">fsf</a>
+</div><!-- /pos-abs -->
 #T=html-swiper
 <div class="swiper-container">
   <div class="swiper-wrapper">
@@ -1759,8 +1759,6 @@ if (^!) {
 <iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 #T=img
 <img src="^!" alt="" />
-#T=in-out-class //切换两个层
-in-out-class="inClass inTarget outClass outClassTarget outtime event"
 #T=indexj
 index(^!)
 #T=indexOf
@@ -1773,6 +1771,8 @@ innerHeight()^!
 innerHTML
 #T=innerWidth
 innerWidth()^!
+#T=in-out-class //切换两个层
+in-out-class="inClass inTarget outClass outClassTarget outtime event"
 #T=input
 <input type="^!" name="" />
 #T=input-b
@@ -2010,9 +2010,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2040,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2459,9 +2459,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2595,9 +2595,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2613,12 +2613,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2699,9 +2699,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2725,9 +2725,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2763,9 +2763,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2779,9 +2779,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2799,14 +2799,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2846,9 +2846,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2888,9 +2888,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3032,9 +3032,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3060,9 +3060,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3263,25 +3263,65 @@ ubound(^!)
 
 })(jQuery);
 #T=ui-cooki
-/*-- cooki操作 --*/
-function addCookie(objName,objValue,objHours){
-  var str = objName + "=" + escape(objValue);
-  if(objHours > 0){
-    var date = new Date();
-    var ms = objHours*3600*1000;
-    date.setTime(date.getTime() + ms);
-    str += "; expires=" + date.toGMTString();
-  }
-  document.cookie = str;
-}
+/*-- 
+  anchor:cuki13
+  addCookie = "cookiename cookval cookhous even"
+  removeCookie = "cookiename even"
+  
+  use:
+ --*/
 
-function getCookie(objName){
-  var arrStr = document.cookie.split("; ");
-  for(var i = 0;i < arrStr.length;i ++){
-    var temp = arrStr[i].split("=");
-    if(temp[0] == objName) return unescape(temp[1]);
-  } 
-}
++(function() {
+  'use strict';
+  /*-- cooki操作 --*/
+    
+  var addCookie = '[addCookie]';
+  var removeCookie = '[removeCookie]';
+
+  function Cookie () {
+  }
+
+  Cookie.prototype.addCookie = function  (objName,objValue,objHours) {
+    var str = objName + "=" + escape(objValue);
+    if(objHours > 0){
+      var date = new Date();
+      var ms = objHours*3600*1000;
+      date.setTime(date.getTime() + ms);
+      str += "; expires=" + date.toGMTString();
+    }
+    document.cookie = str;
+  }
+
+  Cookie.prototype.removeCookie = function  (objName) {
+    setCookie(name,"",0)
+  }
+
+  Cookie.prototype.getCookie = function  (objName){
+    var arrStr = document.cookie.split("; ");
+    for(var i = 0;i < arrStr.length;i ++){
+      var temp = arrStr[i].split("=");
+      if(temp[0] == objName) return unescape(temp[1]);
+    }
+  }
+
+  var newCookie = new Cookie();
+  console.log(newCookie.getCookie('mycooki'));
+  $(addCookie).each(function () {
+    var getattr = $(this).attr('addCookie').split(' ');
+    $(this).on(getattr[3],function  () {
+      newCookie.addCookie(getattr[0],getattr[1],getattr[2]);
+
+    })
+  })
+
+  $(removeCookie).each(function () {
+    var getattr = $(this).attr('removeCookie').split(',');
+    $(this).on(getattr[1],function  () {
+      newCookie.removeCookie(getattr[0]);
+    })
+  })
+  
+})(jQuery);
 #T=ui-countTime
 //倒计时
 jQuery(document).ready(function($) {
@@ -5693,9 +5733,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
