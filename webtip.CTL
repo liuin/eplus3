@@ -229,9 +229,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -2010,9 +2010,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2040,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2459,9 +2459,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2595,9 +2595,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2613,12 +2613,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2699,9 +2699,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2725,9 +2725,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2763,9 +2763,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2779,9 +2779,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2799,14 +2799,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2846,9 +2846,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2888,9 +2888,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3032,9 +3032,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3060,9 +3060,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3322,43 +3322,90 @@ ubound(^!)
   })
   
 })(jQuery);
-#T=ui-countTime
-//倒计时
-jQuery(document).ready(function($) {
-  //var servertime = new Date("2015/01/22 23:08:28").getTime();
-  //var endtime = new Date("2015/01/21 17:42:00").getTime();
+#T=ui-countTime //时间倒计时
+/*-- 
+  anchor:cuki13
+  countTime = "startTime endTime"
+  bydtime:
+  var startTime = new Date("<?php date_default_timezone_set('Asia/Shanghai'); echo date('Y/m/d H:i:s'); ?>").getTime();
+  var endTime = new Date("<?=str_replace('-', '/', $btime)?>").getTime();
 
-  var servertime = new Date("<?php date_default_timezone_set('Asia/Shanghai'); echo date('Y/m/d H:i:s'); ?>").getTime();
-  var endtime = new Date("<?=str_replace('-', '/', $btime)?>").getTime();
+  exmaple:
+  <div class="counttime" countTime="2015/05/14 14:40:53,2015/05/08 11:00:00">
+    <span countDay ></span>
+    <span countHour ></span>
+    <span countMin ></span>
+    <span countSec ></span>
+  </div>
 
-  var sbtime = (endtime - servertime) / 1e3;		
-  var temp = "";
-  var timese = "";
+  use:
+ --*/
 
-  if (sbtime <= 0) {
-    temp = '<li class="cl1"><span style="color:#999;">00</span><span class="xq-zz none">天</span></li><li class="cl2" ><span style="color:#999;">00</span><span class="xq-zz none">时</span></li><li class="cl3"><span style="color:#999;">00</span><span class="xq-zz none">分</span></li><li class="cl4"><span style="color:#999;">00</span><span class="xq-zz none">秒</span></li>';
-    $("#timener ul").html(temp);
-  } else {
-    timese = setInterval(function() {
-      timmer(sbtime);
-    }, 1e3);
++(function() {
+  'use strict';
+
+  var selectString = '[countTime]';
+
+  function CountTime (startTime,endTime,obj) {
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.sbTime = Math.floor((this.endTime - this.startTime) / 1e3);
+    this.second = obj.find('[countSec]');
+    this.minite = obj.find('[countMin]');
+    this.hour = obj.find('[countHour]');
+    this.day = obj.find('[countDay]');
+    this.el = obj;
   }
 
-  function timmer(getsc) {
-    if (getsc > 0) {
-      var second = Math.floor(getsc % 60);
-      var minite = Math.floor(getsc / 60 % 60);
-      var hour = Math.floor(getsc / 3600 % 24);
-      var day = Math.floor(getsc / 3600 / 24);
-      temp = '<li class="cl1"><span>' + day + '</span><span class="xq-zz none">天</span></li><li class="cl2"><span>' + hour + '</span><span class="xq-zz none">时</span></li><li class="cl3"><span>' + minite + '</span><span class="xq-zz none">分</span></li><li class="cl4"><span>' + second + '</span><span class="xq-zz none">秒</span></li>';
-      $("#timener ul").html(temp);
-      sbtime--;
-    } else {
-      window.clearInterval(timese);
-      location.reload();
+  CountTime.prototype.countPro = function  () {
+
+    this.el.trigger('countPro');
+    var getSbTime = this.sbTime;
+    this.second.html(Math.floor(getSbTime % 60));
+    this.minite.html(Math.floor(getSbTime / 60 % 60));
+    this.hour.html(Math.floor(getSbTime / 3600 % 24));
+    this.day.html(Math.floor(getSbTime / 3600 / 24));
+    if (this.sbTime == 0) {
+      this.el.trigger('countEnd');
+    }
+    this.sbTime--;
+
+  }
+
+  CountTime.prototype.end = function  () {
+    this.el.trigger('countEnd');
+    this.second.html(0);
+    this.minite.html(0);
+    this.hour.html(0);
+    this.day.html(0);
+  }
+
+  CountTime.prototype.init = function  () {
+    if (this.sbTime <= 0) {
+      this.end();
+    }else {
+      var $this = this;
+      setInterval(
+        function(){
+          $this.countPro();        
+        },1e3
+      )
     }
   }
-})
+
+  $(selectString).each(function () {
+    var attrpro = $(this).attr('countTime').split(',');
+    for (var i = 0;  i<attrpro.length ; i++) {
+      if (attrpro[i] == 'now') {
+        attrpro[i] = new Date().getTime();
+      }else {
+        attrpro[i] = new Date(attrpro[i]).getTime();
+      }
+    }
+    var timmer = new CountTime(attrpro[0],attrpro[1],$(this));
+    timmer.init();
+  })
+})(jQuery);
 #T=ui-empty
 /*-- 
   anchor:cuki13
@@ -3756,17 +3803,6 @@ $(this).hoverDelay({
     });
   }      
 })(jQuery);
-#T=ui-imgload
-var img = '<img />';
-img = $("img");
-img.attr("src","images/pic-fp.png");
-if (img.complete) {
-  
-}else {
-  img.load(function  () {
-
-  })
-}
 #T=ui-in-out-class //两个层重复切换
 /*-- 
   anchor:cuki13
@@ -5733,9 +5769,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
