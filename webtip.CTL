@@ -229,9 +229,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -2010,9 +2010,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2040,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2459,9 +2459,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2595,9 +2595,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2613,12 +2613,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2699,9 +2699,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2725,9 +2725,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2763,9 +2763,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2779,9 +2779,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2799,14 +2799,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2846,9 +2846,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2888,9 +2888,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3032,9 +3032,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3060,9 +3060,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3803,7 +3803,7 @@ $(this).hoverDelay({
     });
   }      
 })(jQuery);
-#T=ui-in-out-class //两个层重复切换
+#T=ui-in-out-class //两个目标层重复切换
 /*-- 
   anchor:cuki13
   两个层重复切换
@@ -5069,6 +5069,75 @@ $.fn.scollpic= function (options) {
 })(jQuery);
 
 
+#T=ui-showInClass  or showInClass 切换单个目标的class
+/*-- 
+  showInClass="showInclass tagetObj outtime even" 
+  showOutClass="showOutclass tagetObj outtime even" 
+  showinclass: //显示出来的class
+  even: //触发事件 click tap hover
+
+  tagetObj 触发事件 showIn showOut
+--*/
++(function() {
+  'use strict';
+  var selectString = '[showInClass]';
+  var selectString1 = '[showOutClass]';
+
+  function changeClass () {}
+  
+  changeClass.prototype.showIn = function  () {
+    var $this = this;
+    $this.tagerObj.show().addClass($this.changeClass);
+    $this.tagerObj.trigger('showIn');
+    setTimeout(
+      function(){
+        $this.tagerObj.removeClass($this.changeClass);
+      }, $this.outTime);
+  }
+
+  changeClass.prototype.showOut = function  () {
+    var $this = this;
+    $this.tagerObj.addClass($this.changeClass);
+    $this.tagerObj.trigger('showOut');
+    setTimeout(
+      function(){
+        $this.tagerObj.hide().removeClass($this.changeClass);
+      }, $this.outTime);
+  }
+
+  changeClass.prototype.init = function  (addClass,tagerObj,outTime,even,obj) {
+      this.changeClass = addClass;
+      this.tagerObj = $(tagerObj);
+      this.even = even;
+      this.outTime = outTime;
+      this.el = obj;
+
+      var $this = this;
+      $this.el.on(this.even,function  () {
+        if ($(this).attr('showInClass') === undefined) {
+          $this.showOut();
+        }else {
+          $this.showIn();
+        }
+      })
+    }
+
+  var changeClass = new changeClass();
+  
+  //in
+  $(selectString).each(function () {
+    var attrpro = $(this).attr('showInClass').split(' ');
+    changeClass.init(attrpro[0],attrpro[1],attrpro[2],attrpro[3],$(this));
+  })
+  //out
+  $(selectString1).each(function () {
+    var attrpro = $(this).attr('showOutClass').split(' ');
+    changeClass.init(attrpro[0],attrpro[1],attrpro[2],attrpro[3],$(this));
+  })
+
+
+
+})(jQuery);
 #T=ui-snows
 ///** 
 * extend 雪花效果
@@ -5769,9 +5838,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
