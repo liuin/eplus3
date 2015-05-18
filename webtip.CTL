@@ -229,9 +229,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -2010,9 +2010,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2040,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2459,9 +2459,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2595,9 +2595,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2613,12 +2613,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2699,9 +2699,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2725,9 +2725,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2763,9 +2763,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2779,9 +2779,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2799,14 +2799,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2846,9 +2846,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2888,9 +2888,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3032,9 +3032,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3060,9 +3060,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3422,32 +3422,49 @@ ubound(^!)
 /*固定表格
 fixhead($(".fixhead"));
 <style type="text/css">
-  .fixhead-box {width:800px; position:relative; border:1px solid #000;
-  }
+  .fixhead-box {width:800px; position:relative; border:1px solid #000;}
   .fixhead {width:800px;}
   .fixhead td,.fixhead th{border-bottom:1px solid #000;border-left:1px solid #000;}
+  .fixhead .fixhead-box {table-layout:fixed;}
 
   .fixhead-ct {height:170px; overflow:auto; overflow-x:hidden;}
   .fixhead-ct .trhd {visibility:hidden; display:none;}
-  .fixhead-hd {height:22px; overflow:hidden; background:#fff; position:relative;}
+  .fixhead-hd {height:22px; overflow:hidden; background:#fff; position: absolute;width: 100%;}
 </style>
 */
-function fixhead(obj) {
-  var clonetb = '';
-  obj.find("th").each(function (n) {
+/*-- 
+  anchor:cuki13
+  use:fixetable
+ --*/
+
++(function() {
+  'use strict';
+  var selectString = '[tablefixheade]';
+
+  function fixhead(obj) {
+    var clonetb = '';
+    var hd = obj.find('tr').eq(0).find('td') || obj.find('tr').eq(0).find('th');
+    console.log(hd);
+    hd.each(function (n) {
       $(this).outerWidth($(this).outerWidth());
-    obj.find("tr:eq(1) td:eq("+n+")").outerWidth($(this).outerWidth());
-    if (n == obj.find("th").length-1) {
-      clonetb = obj.clone();      
-      obj.wrap('<div class="fixhead-box"></div>');
-      obj.wrap('<div class="fixhead-ct"></div>');
-            
-      clonetb.insertBefore(obj.parent());
-      clonetb.wrap('<div class="fixhead-hd"></div>');
-      obj.find("tr").last().find("td").css("border-bottom","0");
-    }
-  })      
-}
+      obj.find("tr:eq(1) td:eq("+n+")").outerWidth($(this).outerWidth());
+      if (n == hd.length-1) {
+        clonetb = obj.clone();      
+        obj.wrap('<div class="fixhead-box"></div>');
+        obj.wrap('<div class="fixhead-ct"></div>');
+              
+        clonetb.insertBefore(obj.parent());
+        clonetb.wrap('<div class="fixhead-hd"></div>');
+        obj.find("tr").last().find("td").css("border-bottom","0");
+      }
+    })      
+  }
+
+  $(selectString).each(function () {
+      fixhead($(this));
+  })
+
+})(jQuery);
 #T=ui-formCheck
 /** 
 * extend 表单控件自定义
@@ -3658,6 +3675,47 @@ $(".ckiput").prop('checked',true);
   }
 
 })()
+#T=ui-fullscreen //元素全屏
+/*-- 元素全屏 
+  fullscreen="even"
+  even :触发事件 hover click tap
+--*/
++(function($) {
+   var selectString = '[fullscreen]'
+   function fullscreen () {
+   }
+
+   fullscreen.prototype.getdect = function  (elem) {
+      var prefix = 'webkit';
+      if ( elem[prefix + 'EnterFullScreen'] ) {
+        return prefix + 'EnterFullScreen';
+      } else if( elem[prefix + 'RequestFullScreen'] ) {
+        return prefix + 'RequestFullScreen';
+      };
+        return false;
+   }
+   
+   fullscreen.prototype.open = function  () {
+     var $this = this;
+     var fullscreenapi =  $this.getdect(document.createElement(this.el[0].tagName));
+     $this.el[0][fullscreenapi]();
+
+   }
+
+   fullscreen.prototype.init = function  (obj) {
+     this.el = obj;
+   }
+  
+  var fullScrenn1 = new fullscreen();
+  $(selectString).each(function () {
+    var attpro = $(this).attr('fullscreen');
+    $(this).on(attpro,function  () {
+      fullScrenn1.init($(this));
+      fullScrenn1.open();
+    })      
+  })
+
+})(jQuery);
 #T=ui-guagua
 /** 
 * extend 刮刮看代码
@@ -3842,30 +3900,42 @@ $(this).hoverDelay({
   })
 })(jQuery);
 #T=ui-inserChar
-//字符串插入"," 112345 => 12,345
-function  inserChar() {
-  var gval = parseInt($("#result-number").data("number"));
-  gval = parseInt((gval - Math.random()*100));
+/*-- 
+  anchor:cuki13
+  use://字符串插入"," 112345 => 12,345
+ --*/
 
-  gvalString = gval.toString();
++(function() {
+  'use strict';
+  var selectString = '[inserChar]';
 
-  var long = gvalString.length;
-  var mo = long%3 - 1;
+  function  inserChar(obj) {
+    var gval = parseInt(obj.html());
+    var gvalString = gval.toString();
 
-  var string = '';
-  for (var i = 0;  i<long ; i++) {
-    string += gvalString.charAt(i);
+    var long = gvalString.length;
+    var mo = long%3 - 1;
+    console.log(gval,gvalString);
+    var string = '';
+    for (var i = 0;  i<long ; i++) {
+      string += gvalString.charAt(i);
 
-    if (i == (mo)) {
-      string += ',';
+      if (i == (mo)) {
+        string += ',';
+      }
+
+      if (((i - mo)>0) && ((i - mo)%3) == 0 && (i<(long-1))) {
+        string += ',';
+      }                        
     }
-
-    if (((i - mo)>0) && ((i - mo)%3) == 0 && (i<(long-1))) {
-      string += ',';
-    }                        
+    obj.html(string);
   }
-}
 
+  $(selectString).each(function () {
+     inserChar($(this));
+  })
+
+})(jQuery);
 #T=ui-Jseasing
 /* jQuery EasIng v1.1.2 - http://gsgd.co.uk/sandbox/jquery.easIng.php
 *
@@ -4049,38 +4119,28 @@ jQuery.extend(jQuery.easing, {
       return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * .5 + c * .5 + b;
   }
 });
-#T=ui-ltIE9
- <script type="text/javascript">
-  <!--
-    var ie9lt = false;
-  //-->
-  </script>
-  <!--[if lt IE 9]>
-    <script type="text/javascript">
-      //<![CDATA[
-       ie9lt = true;
-    //]]></script>
-  <![endif]-->
+#T=ui-ltIE9 //placeholder 低版本生效
+ +(function() {
+  'use strict';
+  if (!('placeholder' in document.createElement('input'))) {
+    var selectString = '[placeholder]';
 
-
-   if (ie9lt) {
-    $(".form-order-inp").each(function () {
+    $(selectString).each(function () {
       var dfVal = $(this).attr("placeholder");
-      
       $(this).val(dfVal);
-      
       $(this).on('focus',function  () {
-        if ($(this).val() == dfVal) {
+        if ($.trim($(this).val()) == dfVal) {
           $(this).val("");
         }
       })
       .on('blur',function  () {
-        if ($(this).val() == '') {
+        if ($.trim($(this).val()) == '') {
           $(this).val(dfVal);
         }
       })
     })
   }
+})(jQuery);
 #T=ui-mobileTouch
 +(function ($) {
   'use strict';
@@ -4348,18 +4408,18 @@ jQuery.extend(jQuery.easing, {
   })
 })(jQuery);
 #T=ui-randomColor
-/* ??????? */
+/* 取随机数 */
 +function ($) {
   'use strict';
   var srand = '[data-dismiss="srand"]';
   var Rand   = function () {}
   Rand.prototype.rcolor = function  () {
-    //16????????????0-F
+    //字符
     var arrHex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     var strHex = "#";
     var index;
     for(var i = 0; i < 6; i++) {
-      //???0-15???????????
+      //0-15
       index = Math.round(Math.random() * 15);
       strHex += arrHex[index];
     }
@@ -5687,6 +5747,58 @@ valid-form = "req" 不能为空
   })
   
 }(jQuery);
+#T=ui-video//视频全屏
+/*-- 视频全屏 --*/
++(function($) {
+   var selectString = '[video-fullscreen="true"]'
+   var fullscreen = function(elem) {
+        var prefix = 'webkit';
+          if ( elem[prefix + 'EnterFullScreen'] ) {
+            return prefix + 'EnterFullScreen';
+          } else if( elem[prefix + 'RequestFullScreen'] ) {
+            return prefix + 'RequestFullScreen';
+          };
+        return false;
+    };
+    function autoFullScrenn(v){
+        $this = v;
+        var ua   = navigator.userAgent.toLowerCase();  
+        var Android = String(ua.match(/android/i)) == "android";
+        // if(!Android) return;//非android系统不使用;
+        var video  = v[0],doc = document;
+        var fullscreenvideo = fullscreen(doc.createElement("video"));
+        if(!fullscreen) {
+            //alert("不支持全屏模式");
+            return;
+        }
+        video.addEventListener("webkitfullscreenchange",function(e){
+            if(!doc.webkitIsFullScreen){//退出全屏暂停视频
+                this.pause();
+              
+            };
+        }, false);
+        video.addEventListener("click", function(){
+            this.play();
+            $this.data('change','true');
+            video[fullscreenvideo]();
+        }, false);
+
+        video.addEventListener('ended',function(){
+            doc.webkitCancelFullScreen(); //播放完毕自动退出全屏
+        },false);
+
+    };
+    $(document).ready(function() {
+      $('video').each(function (n) {
+          $(this).on('click',function  () {
+//            $(this)[0].webkitRequestFullScreen();
+//            $(this)[0].play();
+              autoFullScrenn($(this));
+          })      
+      })
+    })
+    
+    })(jQuery);
 #T=ul
 <ul>
     <li>^!</li>
@@ -5838,9 +5950,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
@@ -5860,56 +5972,4 @@ zoom:1;
 
 #T=zs-ze
 <!-- /^! -->
-#T=视频全屏
-/*-- 视频全屏 --*/
-+(function($) {
-   var selectString = '[video-fullscreen="true"]'
-   var fullscreen = function(elem) {
-        var prefix = 'webkit';
-          if ( elem[prefix + 'EnterFullScreen'] ) {
-            return prefix + 'EnterFullScreen';
-          } else if( elem[prefix + 'RequestFullScreen'] ) {
-            return prefix + 'RequestFullScreen';
-          };
-        return false;
-    };
-    function autoFullScrenn(v){
-        $this = v;
-        var ua   = navigator.userAgent.toLowerCase();  
-        var Android = String(ua.match(/android/i)) == "android";
-        // if(!Android) return;//非android系统不使用;
-        var video  = v[0],doc = document;
-        var fullscreenvideo = fullscreen(doc.createElement("video"));
-        if(!fullscreen) {
-            //alert("不支持全屏模式");
-            return;
-        }
-        video.addEventListener("webkitfullscreenchange",function(e){
-            if(!doc.webkitIsFullScreen){//退出全屏暂停视频
-                this.pause();
-              
-            };
-        }, false);
-        video.addEventListener("click", function(){
-            this.play();
-            $this.data('change','true');
-            video[fullscreenvideo]();
-        }, false);
-
-        video.addEventListener('ended',function(){
-            doc.webkitCancelFullScreen(); //播放完毕自动退出全屏
-        },false);
-
-    };
-    $(document).ready(function() {
-      $('video').each(function (n) {
-          $(this).on('click',function  () {
-//            $(this)[0].webkitRequestFullScreen();
-//            $(this)[0].play();
-              autoFullScrenn($(this));
-          })      
-      })
-    })
-    
-    })(jQuery);
 #
