@@ -229,9 +229,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -2010,9 +2010,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2040,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2202,6 +2202,55 @@ function (req,res){
 }
 #T=nj-listen
 listen(^!)
+#T=nj-mail //邮件发送
+// mail support   
+// "nodemailer": "~0.7.1"  //邮件版本
+var nodemailer = require('nodemailer');
+var mailTransport = nodemailer.createTransport('SMTP',{
+    host: 'smtp.qq.com',
+    secureConnection: true, // 使用 SSL
+    port: 465, // SMTP 端口
+    auth: {
+      user: "20893791@qq.com", // 账号
+      pass: "02164643ln" // 密码
+    }
+});
+
+mailTransport.sendMail({
+    from: '20893791@qq.com',
+    to: '20893791@qq.com',
+    subject: 'Your Meadowlark Travel Tour',
+    html: 'Thank you for booking your trip with Meadowlark Travel.  ' +
+        'We look forward to your visit!'
+}, function(err){
+    if(err) {console.error( 'Unable to send email: ' + err )}else {
+      console.log('发送成功');
+    };
+});
+
+#T=nj-module//模块
+module.exports = {
+	checkWaivers: function(req, res, next){
+		var cart = req.session.cart;
+		if(!cart) return next();
+		if(cart.some(function(item){ return item.product.requiresWaiver; })){
+			if(!cart.warnings) cart.warnings = [];
+			cart.warnings.push('One or more of your selected tours requires a waiver.');
+		}
+		next();
+	},
+
+	checkGuestCounts: function(req, res, next){
+		var cart = req.session.cart;
+		if(!cart) return next();
+		if(cart.some(function(item){ return item.guests > item.product.maximumGuests; })){
+			if(!cart.errors) cart.errors = [];
+			cart.errors.push('One or more of your selected tours cannot accmodate the ' +
+				'number of guests you have selected.');
+		}
+		next();
+	}
+}
 #T=nj-process
 process
 #T=nj-process-env-PORT
@@ -2459,9 +2508,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2595,9 +2644,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2613,12 +2662,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2699,9 +2748,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2725,9 +2774,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2763,9 +2812,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2779,9 +2828,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2799,14 +2848,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -2846,9 +2895,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -2888,9 +2937,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3032,9 +3081,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3060,9 +3109,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -3088,75 +3137,120 @@ typeof (^!)
 #T=ubound
 ubound(^!)
 #T=ui-autoImg
-    /*
-      data-img = "autoIn" //框内适应
-      data-img = "autoOut" //框外适应
-    */
-    +(function() {
-      'use strict';
-      var string = '[data-img]';
-      function autoImg (el) {}
-      autoImg.prototype.autoIn = function  (el,maxwidth,maxheight) {
-        var $this = $(el);
-        $this.load(function  () {
-          var zoom = $this.width()/$this.height();
-          var zoom1 = maxwidth/maxheight;
-          if (zoom > zoom1) {
-            var style = {
-              'width' : maxwidth,
-              'height': maxwidth/zoom,
-              'margin-top' : (maxheight - maxwidth/zoom) / 2
-            }
-            $this.css(style);
-          }else {
-            var style = {
-              'width' : maxheight*zoom,
-              'height': maxheight,
-              'margin-left' : (maxwidth - maxheight*zoom) / 2
-            }
-            $this.css(style);
-          }
-        })
+/*
+  data-img = "autoIn" //框内适应
+  data-img = "autoOut maxwidth maxheight imgwidth imgheight nofix resize" //框外适应
+  maxwidth 框长度 window  以窗口为准
+  maxheight 框高度 window 以窗口为准
+  nofix 最大到图片原图
+  fix 最大到框
+  resize 当改变屏幕时候自动适用
+*/
++(function() {
+  'use strict';
+  var string = '[data-img]';
+  function autoImg (el) {}
+  autoImg.prototype.autoIn = function  (el,maxwidth,maxheight) {
+    var $this = $(el);
+   // $this.load(function  () {
+      var zoom = $this.width()/$this.height();
+      var zoom1 = maxwidth/maxheight;
+      if (zoom > zoom1) {
+        var style = {
+          'width' : maxwidth,
+          'height': maxwidth/zoom,
+          'margin-top' : (maxheight - maxwidth/zoom) / 2
+        }
+        $this.css(style);
+      }else {
+        var style = {
+          'width' : maxheight*zoom,
+          'height': maxheight,
+          'margin-left' : (maxwidth - maxheight*zoom) / 2
+        }
+        $this.css(style);
       }
-      autoImg.prototype.autoOut = function  (el,maxwidth,maxheight) {
-        var $this = $(el);
-        $this.load(function  () {
-          var zoom = $this.width()/$this.height();
-          var zoom1 = maxwidth/maxheight;
-          if (zoom > zoom1) {
-            var style = {
-              'width' : maxheight*zoom,
-              'height': maxheight,
-              'margin-left' : (maxwidth - maxheight*zoom) / 2
-            }
-            $this.css(style);
-          }else {            
-            var style = {
-              'width' : maxwidth,
-              'height': maxwidth/zoom,
-              'margin-top' : (maxheight - maxwidth/zoom) / 2
-            }
-            $this.css(style);
-          }
-        })
-      }
+   // })
+  }
+  autoImg.prototype.autoOut = function  (el,maxwidth,maxheight,ifFix) {
+    var $this = $(el);
+   // $this.load(function  () {
+      var zoom = $this.width()/$this.height();
+      var zoom1 = maxwidth/maxheight;
+      var imgWidth = $this.attr('width');
+      var imgHeight = $this.attr('height');
+      var fixWdith = 0;
+      var fixHeight = 0;
+      if (zoom > zoom1) {
+        
+        if (ifFix == 'nofix') {
+          fixHeight =  (imgHeight > maxheight) ? maxheight : imgHeight; 
+        }else {
+          fixHeight = maxheight;
+        }
 
-     $(document).ready(function() {    
-       var autoImg1 = new autoImg();
-       $(string).each(function () {         
-         var getType = $(this).attr('data-img');
-         switch (getType) {
-         case 'autoIn':
-           autoImg1.autoIn($(this),100,200);
-         break
-         case 'autoOut':
-           autoImg1.autoOut($(this),100,200);
-         break
-         default:
-         }
-       })
-      })
-    })(jQuery);
+        var style = {
+          'width' : fixHeight*zoom,
+          'height': fixHeight,
+          'margin-left' : (maxwidth - fixHeight*zoom) / 2,
+          'margin-top' : (maxheight - fixHeight ) /2
+        }
+        $this.css(style);
+      }else {
+      
+        if (ifFix == 'nofix') {
+          fixWdith =  (imgWidth > maxwidth) ? maxwidth : imgWidth; 
+        }else {
+          fixWdith = maxwidth;
+        }
+
+        var style = {
+          'width' : fixWdith,
+          'height': fixWdith/zoom,
+          'margin-top' : (maxheight - fixWdith/zoom) / 2,
+          'margin-left' : (maxwidth - fixWdith ) /2
+        }
+        $this.css(style);
+      }
+  }
+
+ $(document).ready(function() {    
+   var autoImg1 = new autoImg();
+   $(string).each(function () {    
+     var $this = $(this);
+     var attrpro = $(this).attr('data-img').split(' ');
+            
+     var getWidth = (attrpro[1] == 'window') ? $(window).width() : attrpro[1];
+     var getHeight = (attrpro[2] == 'window') ? $(window).height() : attrpro[2];
+
+     switch (attrpro[0]) {
+     case 'autoIn':
+       autoImg1.autoIn($(this),getWidth,getHeight,attrpro[3]);
+       if (attrpro[4] == 'resize') {
+        $(window).resize(function(){
+           getWidth = (attrpro[1] == 'window') ? $(window).width() : attrpro[1];
+           getHeight = (attrpro[2] == 'window') ? $(window).height() : attrpro[2];
+
+           autoImg1.autoIn($this,getWidth,getHeight,attrpro[3]);          
+        })
+       }
+     break
+     case 'autoOut':
+       autoImg1.autoOut($(this),getWidth,getHeight,attrpro[3]);
+       if (attrpro[4] == 'resize') {
+          $(window).resize(function(){
+            getWidth = (attrpro[1] == 'window') ? $(window).width() : attrpro[1];
+            getHeight = (attrpro[2] == 'window') ? $(window).height() : attrpro[2];
+
+            autoImg1.autoOut($this,getWidth,getHeight,attrpro[3]);          
+          })
+       }
+     break
+     default:
+     }
+   })
+  })
+})(jQuery);
 #T=ui-back-top
     <style type="text/css">
     .back-top {display: none;width: 18px;line-height: 1.2;padding: 5px 0;background-color: #000;color: #fff;font-size: 12px;text-align: center;position: fixed;_position:absolute;right: 112px;_right: 92px;bottom: 100px;_bottom: "auto";cursor: pointer;opacity: 0.6;filter: Alpha(opacity=60);}
@@ -5950,9 +6044,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
