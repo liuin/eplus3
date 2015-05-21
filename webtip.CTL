@@ -2251,6 +2251,103 @@ module.exports = {
 		next();
 	}
 }
+#T=nj-mongo //mongo数据库运用
+//建立数据库
+var mongoose = require('mongoose');
+
+var vacationSchema = mongoose.Schema({
+    name: String,
+    slug: String,
+    category: String,
+    sku: String,
+    description: String,
+    priceInCents: Number,
+    tags: [String],
+    inSeason: Boolean,
+    available: Boolean,
+    requiresWaiver: Boolean,
+    maximumGuests: Number,
+    notes: String,
+    packagesSold: Number,
+});
+vacationSchema.methods.getDisplayPrice = function(){
+    return '$' + (this.priceInCents / 100).toFixed(2);
+};
+var Vacation = mongoose.model('Vacation', vacationSchema);
+module.exports = Vacation;
+
+// 添加数据库信息
+Vacation.find(function(err, vacations){
+    if(vacations.length) return;
+
+    new Vacation({
+        name: 'Hood River Day Trip',
+        slug: 'hood-river-day-trip',
+        category: 'Day Trip',
+        sku: 'HR199',
+        description: 'Spend a day sailing on the Columbia and ' + 
+            'enjoying craft beers in Hood River!',
+        priceInCents: 9995,
+        tags: ['day trip', 'hood river', 'sailing', 'windsurfing', 'breweries'],
+        inSeason: true,
+        maximumGuests: 16,
+        available: true,
+        packagesSold: 0,
+    }).save();
+
+    new Vacation({
+        name: 'Oregon Coast Getaway',
+        slug: 'oregon-coast-getaway',
+        category: 'Weekend Getaway',
+        sku: 'OC39',
+        description: 'Enjoy the ocean air and quaint coastal towns!',
+        priceInCents: 269995,
+        tags: ['weekend getaway', 'oregon coast', 'beachcombing'],
+        inSeason: false,
+        maximumGuests: 8,
+        available: true,
+        packagesSold: 0,
+    }).save();
+
+    new Vacation({
+        name: 'Rock Climbing in Bend',
+        slug: 'rock-climbing-in-bend',
+        category: 'Adventure',
+        sku: 'B99',
+        description: 'Experience the thrill of rock climbing in the high desert.',
+        priceInCents: 289995,
+        tags: ['weekend getaway', 'bend', 'high desert', 'rock climbing', 'hiking', 'skiing'],
+        inSeason: true,
+        requiresWaiver: true,
+        maximumGuests: 4,
+        available: false,
+        packagesSold: 0,
+        notes: 'The tour guide is currently recovering from a skiing accident.',
+    }).save();
+});
+
+//查找数据库的内容
+    Vacation.findOne({ sku: req.body.purchaseSku }, function(err, vacation){
+        if(err || !vacation) {
+            req.session.flash = {
+                type: 'warning',
+                intro: 'Ooops!',
+                message: 'Something went wrong with your reservation; ' +
+                    'please <a href="/contact">contact us</a>.',
+            };
+            return res.redirect(303, '/vacations');
+        }
+        vacation.packagesSold++;
+        vacation.save();
+        req.session.flash = {
+            type: 'success',
+            intro: 'Thank you!',
+            message: 'Your vacation has been booked.',
+        };
+        res.redirect(303, '/vacations');
+    });
+#T=nj-mongo //数据库开启命令
+mongod --dbpath=D:\mongodb\data --logpath=D:\mongodb\logs\mongod.log
 #T=nj-process
 process
 #T=nj-process-env-PORT
