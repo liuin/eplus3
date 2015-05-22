@@ -229,9 +229,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -2010,9 +2010,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2040,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2196,6 +2196,40 @@ var handlebars = require('express3-handlebars').create({
 });
 app.engine('handlebars',handlebars.engine);
 app.set('view engine','handlebars');
+#T=nj-file post //表单提交,文件上传
+ app.post('/file-upload', function(req, res) {
+   // 获得文件的临时路径
+
+   var form = new formidable.IncomingForm();
+   form.uploadDir = "./tmp";
+   
+     form.parse(req, function(err, fields, files){
+      if(err) return res.redirect(303, '/error');
+      console.log('received fields:');
+      console.log(fields);
+      console.log('received files:');
+      console.log(files.thumbnail.path);
+
+      var tmp_path = files.thumbnail.path;
+//      return false;
+      var fileAttr = files.thumbnail.name.split('.');
+      var date = new Date();
+      var ms = Date.parse(date);
+
+      var target_path = './public/img/' + ms + "." + String(fileAttr[fileAttr.length-1]);
+
+      fs.renameSync(tmp_path, target_path, function(err) {
+        if (err) throw err;
+
+        fs.unlink(tmp_path, function() {
+           if (err) throw err;
+           res.send('File uploaded to: ' + target_path + ' - ' + req.files.thumbnail.size + ' bytes');
+        });
+      });
+
+      res.redirect(303, '/thank-you');
+    }); 
+  });
 #T=nj-function (req,res)
 function (req,res){
   ^!
@@ -2387,6 +2421,22 @@ res.send(^!);
 res.status(^!);
 #T=nj-res-type('text/plain')
 res.type('text/plain'); 
+#T=nj-session // session操作
+app.use(require('express-session')());
+
+app.use(function(req, res, next){
+  // if there's a flash message, transfer
+  // it to the context, then clear it
+  res.locals.flash = req.session.flash;
+  delete req.session.flash;
+
+  req.session.flash = {
+    type: 'danger',
+    intro: 'Validation error!',
+    message: 'The email address you entered was  not valid.',
+  };
+  next();
+});
 #T=noConflict
 noConflict(^!)
 #T=normalize
@@ -2628,9 +2678,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2764,9 +2814,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2782,12 +2832,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selectedIndex
 selectedIndex
 
@@ -2868,9 +2918,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2894,9 +2944,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -2932,9 +2982,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -2948,9 +2998,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -2968,14 +3018,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3015,9 +3065,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3057,9 +3107,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3201,9 +3251,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3229,9 +3279,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -6164,9 +6214,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
