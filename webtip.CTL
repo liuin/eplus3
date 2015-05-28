@@ -9,12 +9,68 @@ New Cliptext library
 <!-- ^! -->
 #T=!doctype
 <!doctype html>
+#T=::selection
+selection
+#T=:active
+active
+#T=:after
+after
+#T=:before
+before
+#T=:checked
+checked
+#T=:default
+default
+#T=:disabled
+disabled
+#T=:empty
+empty
+#T=:enabled
+enabled
+#T=:first-child
+first-child
+#T=:first-letter
+first-letter
+#T=:first-line
+first-line
+#T=:focus
+focus
+#T=:hover
+hover
+#T=:indeterminate
+indeterminate
+#T=:in-range
+in-range
+#T=:invalid
+invalid
+#T=:last-child
+last-child
+#T=:nth-
+nth-child(5n)
+#T=:nth-child(2n-1)
+nth-child(2n-1)
+#T=:nth-last-child(-n+5)
+nth-last-child(-n+5)
+#T=:out-of-range
+out-of-range
+#T=:read-only
+read-only
+#T=:read-write
+read-write
+#T=:target
+:target
+#T=:valid
+valid
 #T=@f
 @font-face {font-family:^!;src:url();}
 #T=@i
 @import url(^!);
 #T=@m
 @media print {^!}
+#T=@media screen
+@media screen and (min-width: 640px) and (max-width: 999px) {
+
+}
 #T=a
 <a href="#">^!</a>
 #T=abbr
@@ -138,6 +194,8 @@ attachEvent(^!)
 attr(^!)
 #T=audio
 <audio src="^!"></audio>
+#T=autofocus
+autofocus
 #T=b
 
   ^!
@@ -229,9 +287,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -450,28 +508,28 @@ box-sizing:border-box;
 box-sizing:content-box;
 #T=c
 color:#000;
-#T=caarc
+#T=ca-arc
 arc(this.pos.x,this.pos.y,this.size,0,Math.PI*2,true);
-#T=cabp
+#T=ca-bp
 beginPath();
-#T=cacp
+#T=ca-cp
 closePath();
-#T=cacr
+#T=ca-cr
 clearRect(0, 0, c.width, c.height);
-#T=cadi
+#T=ca-di
 drawImage(img_link, 0, 0);
 this.ctx.drawImage('images/moon.png', 150, 150);
-#T=caf
+#T=ca-f
 fill();
-#T=caft
+#T=ca-ft
 fillStyle();
-#T=cagco-l
+#T=ca-gco-l
 globalCompositeOperation = 'lighter'
-#T=calc-b
+#T=ca-lc-b
 lineCap = 'butt';
-#T=calc-r
+#T=ca-lc-r
 lineCap = 'round';
-#T=calc-s
+#T=ca-lc-s
 lineCap = 'square';
 #T=call
 call(^!)
@@ -514,6 +572,8 @@ change(^!)
 charAt(^!)
 #T=charCodeAt
 charCodeAt(^!)
+#T=checked
+checked
 #T=childrenj
 children(^!)
 #T=cite
@@ -586,8 +646,6 @@ console.log(^!);
 container
 #T=contains
 contains(^!)
-#T=contenteditable html5 文本框编辑
-contenteditable="true"
 #T=contents
 contents()^!
 #T=context
@@ -967,10 +1025,6 @@ findText(^!)
 fireEvent(^!)
 #T=first
 first()^!
-#T=first-c
-first-child
-#T=first-child
-first-child
 #T=firstPage
 firstPage(^!)
 #T=fixed
@@ -1220,6 +1274,325 @@ height:^!;
 <h4>^!</h4>
 #T=h5
 <h5>^!</h5>
+#T=h5-checkValidity() //html5表单控件判断是否正确
+checkValidity()
+#T=h5-contenteditable html5 文本框编辑
+contenteditable="true"
+#T=h5-draw //拖放
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>拖放示例</title>
+<script type="text/javascript">
+function init() 
+{
+    var source = document.getElementById("dragme");
+    var dest = document.getElementById("text");
+    // (1) 拖放开始
+    source.addEventListener("dragstart", function(ev) 
+    {
+        // 向dataTransfer对象追加数据
+        var dt = ev.dataTransfer;
+        dt.effectAllowed = 'all';    
+       //(2) 拖动元素为dt.setData("text/plain", this.id); 
+        dt.setData("text/plain", "你好"); 
+    }, false);
+    // (3) dragend：拖放结束
+    dest.addEventListener("dragend", function(ev) 
+    {
+        //不执行默认处理（拒绝被拖放）
+        ev.preventDefault();
+    }, false);
+    // (4) drop:被拖放
+    dest.addEventListener("drop", function(ev) 
+    {
+        // 从DataTransfer对象那里取得数据
+        var dt = ev.dataTransfer;
+        var text = dt.getData("text/plain");
+        dest.textContent += text;
+        //(5) 不执行默认处理（拒绝被拖放）
+        ev.preventDefault();
+        //停止事件传播
+        ev.stopPropagation();
+    }, false);
+}
+//(6) 设置页面属性，不执行默认处理（拒绝被拖放）
+document.ondragover = function(e){e.preventDefault();};
+document.ondrop = function(e){e.preventDefault();};
+</script>
+</head>
+<body onload="init()">
+<h1>简单拖放示例</h1>
+<!-- (7) 把draggable属性设为true -->
+<div id="dragme" draggable="true" style="width: 200px; border: 1px solid gray;">
+  请拖放
+</div>
+<div id="text" style="width: 200px; height: 200px; border: 1px solid gray;"></div>
+</body>
+
+#T=h5-fileReader //读取本地文件形式
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>fileReader方法示例</title>
+</head>
+<script language=javascript>
+var result=document.getElementById("result");
+var file=document.getElementById("file");
+if (typeof FileReader == 'undefined' )
+{
+   result.innerHTML = "<p>抱歉，你的浏览器不支持 FileReader</p>";
+   file.setAttribute( 'disabled','disabled' );
+}
+//将文件以Data URL形式进行读入页面
+function readAsDataURL()
+{
+    //检查是否为图像文件
+    var file = document.getElementById("file").files[0];
+    if(!/image\/\w+/.test(file.type))
+    {
+        alert("请确保文件为图像类型");
+        return false;
+    }    
+    var reader = new FileReader();
+    //将文件以Data URL形式进行读入页面
+    reader.readAsDataURL(file);
+    reader.onload = function(e)
+    {
+       var result=document.getElementById("result");
+       //在页面上显示文件
+       result.innerHTML = '<img src="'+this.result+'" alt=""/>'
+    }
+}
+//将文件以二进制形式进行读入页面
+function readAsBinaryString()
+{
+    var file = document.getElementById("file").files[0];
+    var reader = new FileReader();
+    //将文件以二进制形式进行读入页面
+    reader.readAsBinaryString(file);
+    reader.onload = function(f)
+    {
+        var result=document.getElementById("result");
+        //在页面上显示二进制数据
+        result.innerHTML=this.result;
+    }
+}
+//将文件以文本形式进行读入页面
+function readAsText()
+{
+    var file = document.getElementById("file").files[0];
+    var reader = new FileReader();
+    //将文件以文本形式进行读入页面
+    reader.readAsText(file);
+    reader.onload = function(f)
+    {
+        var result=document.getElementById("result");
+        //在页面上显示读入文本
+        result.innerHTML=this.result;
+    }
+}
+</script>
+<p>
+    <label>请选择一个文件：</label>
+    <input type="file" id="file" />
+    <input type="button" value="读取图像" onclick="readAsDataURL()"/>
+    <input type="button" value="读取二进制数据" onclick="readAsBinaryString()"/>
+    <input type="button" value="读取文本文件" onclick="readAsText()"/>
+</p> 
+<div name="result" id="result">
+      <!-- 这里用来显示读取结果 -->
+</div>
+
+#T=h5-formaction="s1.jsp" //html5 表单提交到其他地址
+formaction="s1.jsp"
+#T=h5-formenctype="multipart/form-data"
+formenctype="multipart/form-data"
+#T=h5-formtarget //_self _blank 提交的格式
+formtarget
+#T=h5-getselect() //使用选择的文字
+function rangeTest()
+{
+    var html,
+    showRangeDiv=document.getElementById("showRange"),
+    selection=document.getSelection();
+    if(selection.rangeCount>0)
+    {
+        html="您选取了"+selection.rangeCount+"段内容<br/>";
+        for(var i=0;i<selection.rangeCount;i++)
+        {
+            var range=selection.getRangeAt(i);
+            html+="第"+(i+1)+"段的内容为："+range+"<br/>";
+        }
+        showRangeDiv.innerHTML=html;
+    }
+}
+#T=h5-indexedDB //本地数据库
+<!DOCTYPE html>
+<html>	
+<head>		
+<title>连接indexedDB数据库</title>
+<script>	
+window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+window.IDBKeyRange = window.IDBKeyRange|| window.webkitIDBKeyRange || window.msIDBKeyRange;
+window.IDBCursor = window.IDBCursor || window.webkitIDBCursor || window.msIDBCursor;		 
+function connectDatabase(){
+    var dbName = 'indexedDBTest';//数据库名
+    var dbVersion =20120603; //版本号
+    var idb;
+    /*连接数据库，dbConnect对象为一个IDBOpenDBRequest对象，代表数据库连接
+    的请求对象*/
+    var dbConnect = indexedDB.open(dbName, dbVersion); 
+    dbConnect.onsuccess = function(e){//连接成功
+        //e.target.result为一个IDBDatabase对象，代表连接成功的数据库对象
+        idb = e.target.result; 
+        alert('数据库连接成功');
+    };
+    dbConnect.onerror = function(){
+        alert('数据库连接失败');
+    };	
+}	
+</script>		
+</head>	
+<body>						
+<input type="button" value="连接数据库" onclick="connectDatabase();"/>
+</body>
+</html>
+
+#T=h5-localStorage 本地储存
+localStorage
+#T=h5-queryCommandValue //获取选中文字的值
+<!DOCTYPE html>   
+<head>   
+<meta charset="UTF-8">  
+<title>queryCommandValue方法的使用示例</title>
+<script type="text/javascript">
+function getColor () {
+    alert (document.queryCommandValue('foreColor'));
+}
+</script>
+</head>
+<body>
+<div contenteditable="true">
+    <span style="color:red;">示例文字</span>
+    <br/>
+    <span style="color:blue;">示例文字</span>
+</div>
+<button onclick="getColor();">获取选取文字的颜色</button>
+</body>
+#T=h5-rangeTest //选择的文字
+function rangeTest()
+{
+    var html,
+    showRangeDiv=document.getElementById("showRange"),
+    selection=document.getSelection();
+    if(selection.rangeCount>0)
+    {
+        html="您选取了"+selection.rangeCount+"段内容<br/>";
+        for(var i=0;i<selection.rangeCount;i++)
+        {
+            var range=selection.getRangeAt(i);
+            html+="第"+(i+1)+"段的内容为："+range+"<br/>";
+        }
+        showRangeDiv.innerHTML=html;
+    }
+}
+#T=h5-RemoveSelection // 取消选择的内容
+<!DOCTYPE html>   
+<head>   
+<meta charset="UTF-8">  
+<title>Selection对象的removeAllRanges方法的使用示例</title>  
+<script type="text/javascript">
+function RemoveSelection () {
+    var selection = window.getSelection ();                                        
+    selection.removeAllRanges ();
+}
+</script>
+</head>
+<body>
+示例文字
+<button onclick="RemoveSelection ()">取消选取</button>
+</body>
+#T=h5-reversed //ol顺序倒序
+h5-reversed
+#T=h5-SelectFirstLine //选取第一行字
+<!DOCTYPE html>   
+<head>   
+<meta charset="UTF-8">  
+<title>Selection对象的addRange方法的使用示例</title>  
+<script type="text/javascript">
+function SelectFirstLine () {
+    var elemToSelect = document.getElementById ("firstLine");
+    var selection = window.getSelection ();
+    var rangeToSelect = document.createRange ();
+    rangeToSelect.selectNodeContents (elemToSelect);
+    selection.removeAllRanges ();
+    selection.addRange (rangeToSelect);
+}
+</script>
+</head>
+<body>
+<button onclick="SelectFirstLine ();">选取第一行文字</button>
+<div id="firstLine">第一行文字</div>
+<div>第二行文字</div>
+</body>
+#T=h5-start=num //h5 ol属性开始位置
+start=3
+#T=h5-TestPlacement//选择文字的位置
+<!DOCTYPE html>   
+<head>   
+<meta charset="UTF-8">  
+<title>Range对象的compareNode方法的使用示例</title>  
+<head>
+<script type="text/javascript">
+function TestPlacement () {
+    var boldText = document.getElementById ("boldText");
+    var selection = document.getSelection ();
+    if (selection.rangeCount > 0) {
+        var selRange = selection.getRangeAt (0);
+        var placement = selRange.compareNode (boldText);
+        switch (placement) {
+            case Range.NODE_BEFORE:
+                alert ("选取文字在粗体文字之后。");
+                break;
+            case Range.NODE_AFTER:
+                alert ("选取文字在粗体文字之前。");
+                break;
+            case Range.NODE_BEFORE_AND_AFTER:
+                alert ("选取文字在粗体文字内部。");
+                break;
+            case Range.NODE_INSIDE:
+                alert ("选取文字中包含粗体文字。");
+                break;
+        };
+    }
+    else {
+        alert ("请选取一些文字。");
+    }
+}
+</script>
+</head>
+<body>
+选取页面中的一些文字后单击“位置比较”按钮，将选取文字与<b id="boldText">粗体文字</b>进行前后位置的比较，并且在弹出提示信息框中显示比较结果。
+<br/>
+<button onclick="TestPlacement ();">Test placement</button>
+</body>
+
+#T=h5-选中文字加粗
+<!DOCTYPE html>   
+<head>   
+<meta charset="UTF-8">  
+<title>execCommand方法的使用示例</title> 
+<script type="text/javascript">
+function SetToBold () {
+    document.execCommand ('bold', false, null);
+}
+</script>
+</head>
+<body>
+<div contenteditable="true" onmouseup="SetToBold ();">示例文字</div>
+</body>
 #T=h6
 <h6>^!</h6>
 #T=h-a
@@ -1794,7 +2167,7 @@ in-out-class="inClass inTarget outClass outClassTarget outtime event"
 #T=input-email
 <input type="email" name="" id="" />
 #T=input-f
-<input type="file" name="" id="" />
+<input type="file" name="" multiple id="" />
 #T=input-file
 <input type="file" name="" id="" />
 #T=input-h
@@ -1921,6 +2294,36 @@ justify
 key(^!)
 #T=keydown
 keydown(^!)
+#T=keyframes
+@-webkit-keyframes name{
+    0%{
+           background-color: red;
+    }
+    40%{
+            background-color: darkblue;
+    }
+    70%{
+            background-color: yellow;
+    }
+    100%{
+            background-color: red;
+    }
+}
+
+keyframes name{
+    0%{
+           background-color: red;
+    }
+    40%{
+            background-color: darkblue;
+    }
+    70%{
+            background-color: yellow;
+    }
+    100%{
+            background-color: red;
+    }
+}
 #T=keygen
 <keygen name="^!"></keygen>
 #T=keypress
@@ -1937,10 +2340,6 @@ left:auto;
 <label for="">^!</label>
 #T=last
 last()^!
-#T=last-c
-last-child
-#T=last-child
-last-child
 #T=lastIndexOf
 lastIndexOf(^!)
 #T=lastPage
@@ -2010,9 +2409,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2040,11 +2439,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2445,12 +2844,6 @@ normalize(^!)
 <noscript>^!</noscript>
 #T=not
 not(^!)
-#T=nth-
-nth-child(5n)
-#T=nth-child(2n-1)
-nth-child(2n-1)
-#T=nth-last-child(-n+5)
-nth-last-child(-n+5)
 #T=o
 outline:^!;
 #T=object
@@ -2678,9 +3071,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -2711,6 +3104,8 @@ right:auto;
 raiseEvent(^!)
 #T=random
 random(^!)
+#T=readonly
+readonly
 #T=ready
 ready(function(){^!})
 #T=recalc
@@ -2797,6 +3192,8 @@ resize:none;
 resize:vertical;
 #T=samp
 <samp>^!</samp>
+#T=scale()
+scale(^!)
 #T=script
 <script type="text/javascript">
   ^!
@@ -2814,9 +3211,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -2832,12 +3229,14 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
+#T=selected
+selected
 #T=selectedIndex
 selectedIndex
 
@@ -2918,9 +3317,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -2944,9 +3343,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -2982,9 +3381,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -2998,9 +3397,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3018,14 +3417,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3065,9 +3464,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3107,9 +3506,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3251,9 +3650,11 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
+#T=transform-rotate //45deg
+-webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
 transform: translate(100%); -webkit-transform: translate(100%);
 #T=transition- //时间 
@@ -3279,9 +3680,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5907,6 +6308,31 @@ valid-form = "req" 不能为空
      }
   }
 
+  validForm.prototype.valRadio = function  (el) {
+     if (el.is(':checked') == true) {
+       el.removeClass('valid-erro');
+       el.data('errotxt') ? el.data('errotxt').hide() : " ";
+     }else {
+       el.addClass('valid-erro');
+       el.data('errotxt') ? el.data('errotxt').show() : this.showTxt(el,el.attr('error-txt'));
+     }
+
+  }
+
+  validForm.prototype.validNumber = function  (el) {
+    var valTxt = $.trim(el.val());
+    var isNum = /^\d+(\.\d)?$/;
+    if (valTxt.match(isNum) && valTxt != '') {
+      el.removeClass('valid-erro');
+      el.data('errotxt') ? el.data('errotxt').hide() : " ";
+    }else {
+      el.addClass('valid-erro');
+      el.data('errotxt') ? el.data('errotxt').show() : this.showTxt(el,el.attr('error-txt'));
+    }
+
+  }
+
+
   validForm.prototype.showTxt = function  (el, errotxt) {
     var style = {
       'top': el.offset().top + el.outerHeight() + 5,
@@ -5935,6 +6361,18 @@ valid-form = "req" 不能为空
       case 'req':
         $(this).on('blur',function  () {
           validEl.validReq($(this));
+        })       
+      break
+      case 'radio-req':
+        var getName = $(this).attr('ipname');
+
+        $('[name=' + getName + ']').on('blur click',function  () {
+          validEl.valRadio($('[name=' + getName + ']'));
+        })      
+      break
+      case 'number':
+        $(this).on('blur',function  () {
+          validEl.validNumber($(this));
         })       
       break
       case 'submit':
@@ -6214,9 +6652,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
