@@ -287,9 +287,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -1048,9 +1048,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1689,6 +1689,58 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
+#T=html-loading3
+  <style type="text/css">
+    .spinner1 {
+      margin: 100px auto 0;
+      width: 150px;
+      text-align: center;
+    }
+     
+    .spinner1 > div {
+      width: 30px;
+      height: 30px;
+      background-color: #67CF22;
+     
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+      animation: bouncedelay 1.4s infinite ease-in-out;
+      /* Prevent first frame from flickering when animation starts */
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+     
+    .spinner1 .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+     
+    .spinner1 .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+     
+    @-webkit-keyframes bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0.0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+     
+    @keyframes bouncedelay {
+      0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
+  </style>
+  <div class="spinner1">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -2461,9 +2513,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2491,11 +2543,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3123,9 +3175,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3263,9 +3315,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3281,12 +3333,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
+select(^!)
+#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
-#T=select
-select(^!)
 #T=selected
 selected
 #T=selectedIndex
@@ -3369,9 +3421,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3395,9 +3447,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -3433,9 +3485,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -3449,9 +3501,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3469,14 +3521,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3516,9 +3568,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3558,9 +3610,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3702,9 +3754,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -3732,9 +3784,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5846,6 +5898,50 @@ $.fn.scollpic= function (options) {
 })(jQuery);
 
 
+#T=ui-scrollpubu //新闻翻页瀑布流
+    //新闻翻页滚动
+    if ($('#newslist').length > 0) {
+      var islood = false;
+      var isEnd = false;
+      function scollIn(obj, getlong) {
+        var getheight = $('body').height() - $(window).scrollTop() - $(window).height();
+       // console.log(getheight);
+ 
+        if (getheight < 200 && islood == false && isEnd == false) { 
+          islood = true ;
+          $('#loadicon').removeClass('none');
+          $.ajax({
+              type: "GET",
+              url: "ajax/newlist.php",
+              //data: getdata,
+              dataType: 'html',
+              success: function(data){
+                $('#loadicon').addClass('none');
+                var getData = $(data);
+                getData.hide().appendTo(obj);
+                getData.fadeIn();
+                if ($(data).find('#endpage').length > 0) {
+                  isEnd = true;
+                }
+                islood = false;
+              },
+              error:function  () {
+                alert('很抱歉,加载错误');
+                $('#loadicon').addClass('none');
+              },
+              beforeSend:function  () {
+                  //alert('1212');
+              }
+          });
+        }
+      }
+
+      $(window).scroll(function(){
+        //var getlong = $('#newslist li').last().offset().top;
+        scollIn($('#newslist'));
+      })
+      scollIn($('#newslist'));
+    }
 #T=ui-showInClass  or showInClass 切换单个目标的class
 /*-- 
   showInClass="showInclass tagetObj outtime even" 
@@ -6718,9 +6814,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
