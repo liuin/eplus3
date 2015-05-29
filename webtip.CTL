@@ -287,9 +287,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -488,6 +488,15 @@ bold(^!)
 var /*bool*/ 
 #T=bottom
 bottom:^!;
+#T=box-align //模型盒上下位置
+-webkit-box-align: center;box-align: center;
+#T=box-flex
+box-flex:1;
+-moz-box-flex:1;
+-webkit-box-flex:1;
+
+#T=box-pack //模型盒左右位置
+-webkit-box-pack: center; box-pack: center;
 #T=bp-j
 -webkit-box-pack: justify;
 #T=br
@@ -705,6 +714,18 @@ css(^!)
 #T=css-//弹性滚动条
 //弹性滚动条
 -webkit-overflow-scrolling:touch;
+#T=css-arrow //border 右箭头
+border-left: 10px solid #b50001;
+border-top: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid transparent;
+height: 0px;
+width: 0px;
+position: absolute;
+#T=css-arrow //css3border 箭头上
+content: " ";border-left: 10px solid transparent;border-top: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 16px solid #fff;height: 0px;width: 0px;position: absolute;left: -23px;top: -2px;
+#T=css-arrow-bottom //css下箭头
+content: " ";border-left: 10px solid transparent;border-top: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #fff;height: 0px;width: 0px;position: absolute;bottom: 0;margin-left: -5px;
 #T=css-blockcenter //层内元素居中
 .block-center {
   text-align: center;
@@ -723,6 +744,23 @@ css(^!)
   -webkit-align-items: center;
   align-items: center;
 }
+#T=css-color //颜色渐变
+.toLeft {
+  background-image:-webkit-linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
+}
+.toRight {
+  background-image:-webkit-linear-gradient(to right, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(to right, red, orange,yellow,green,blue,indigo,violet);
+}
+.toTop {
+  background-image:-webkit-linear-gradient(to top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(to top, red, orange,yellow,green,blue,indigo,violet);
+}
+.toBottom {
+  background-image:-webkit-linear-gradient(to bottom, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(to bottom, red, orange,yellow,green,blue,indigo,violet);
+}	
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
 input:-moz-placeholder {  
@@ -795,6 +833,8 @@ cursor:pointer;
 cursor:text;
 #T=d
 '^!'
+#T=dashed
+dashed
 #T=data
 data(^!)
 #T=data-form="select"
@@ -860,6 +900,10 @@ display:inline-block;
 die(^!)
 #T=display
 display:^!;
+#T=display:box
+display:box;
+display: -webkit-box;
+display: -ms-flexbox;
 #T=d-itb
 display:inline-table;
 #T=div
@@ -876,6 +920,8 @@ display:none;
 #T=do
 do {
 } while (^!);
+#T=dotted
+dotted
 #T=d-rb
 display:ruby;
 #T=d-rbb
@@ -989,6 +1035,8 @@ fadeOut(^!)
 fadeTo(^!)
 #T=ff
 font-family:^!;
+#T=ff-ar
+font-family:"Arial"
 #T=ff-c
 font-family:cursive;
 #T=ff-f
@@ -999,6 +1047,8 @@ font-family:monospace;
 font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-st
 font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
@@ -2340,6 +2390,8 @@ left:auto;
 <label for="">^!</label>
 #T=last
 last()^!
+#T=last-child
+last-child
 #T=lastIndexOf
 lastIndexOf(^!)
 #T=lastPage
@@ -2409,9 +2461,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2439,11 +2491,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3071,9 +3123,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3211,9 +3263,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3229,12 +3281,12 @@ search(^!)
 #T=section
 <section>^!</section>
 #T=select
-select(^!)
-#T=select
 <select name="^!">
   <option></option>
   <option></option>
 </select>
+#T=select
+select(^!)
 #T=selected
 selected
 #T=selectedIndex
@@ -3317,9 +3369,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3343,9 +3395,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -3381,9 +3433,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -3397,9 +3449,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3417,14 +3469,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3464,9 +3516,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3506,9 +3558,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3650,9 +3702,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -3680,9 +3732,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5800,7 +5852,6 @@ $.fn.scollpic= function (options) {
   showOutClass="showOutclass tagetObj outtime even" 
   showinclass: //显示出来的class
   even: //触发事件 click tap hover
-
   tagetObj 触发事件 showIn showOut
 --*/
 +(function() {
@@ -5808,37 +5859,52 @@ $.fn.scollpic= function (options) {
   var selectString = '[showInClass]';
   var selectString1 = '[showOutClass]';
 
+  var annimtIn = false;
+
   function changeClass () {}
   
   changeClass.prototype.showIn = function  () {
+    if (annimtIn) {
+      return false;
+    }
+    annimtIn = true;
     var $this = this;
     $this.tagerObj.show().addClass($this.changeClass);
     $this.tagerObj.trigger('showIn');
     setTimeout(
       function(){
         $this.tagerObj.removeClass($this.changeClass);
+        annimtIn = false;
       }, $this.outTime);
   }
 
   changeClass.prototype.showOut = function  () {
+    if (annimtIn) {
+      return false;
+    }
+    annimtIn = true;
     var $this = this;
     $this.tagerObj.addClass($this.changeClass);
     $this.tagerObj.trigger('showOut');
     setTimeout(
       function(){
         $this.tagerObj.hide().removeClass($this.changeClass);
+        annimtIn = false;
       }, $this.outTime);
   }
 
   changeClass.prototype.init = function  (addClass,tagerObj,outTime,even,obj) {
-      this.changeClass = addClass;
-      this.tagerObj = $(tagerObj);
-      this.even = even;
-      this.outTime = outTime;
-      this.el = obj;
-
       var $this = this;
+      $this.even = even;
+      $this.el = obj; 
+         
       $this.el.on(this.even,function  () {
+
+        $this.changeClass = addClass;
+        $this.tagerObj = $(tagerObj);
+        
+        $this.outTime = outTime;
+
         if ($(this).attr('showInClass') === undefined) {
           $this.showOut();
         }else {
@@ -6652,9 +6718,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
