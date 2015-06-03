@@ -9,58 +9,6 @@ New Cliptext library
 <!-- ^! -->
 #T=!doctype
 <!doctype html>
-#T=::selection
-selection
-#T=:active
-active
-#T=:after
-after
-#T=:before
-before
-#T=:checked
-checked
-#T=:default
-default
-#T=:disabled
-disabled
-#T=:empty
-empty
-#T=:enabled
-enabled
-#T=:first-child
-first-child
-#T=:first-letter
-first-letter
-#T=:first-line
-first-line
-#T=:focus
-focus
-#T=:hover
-hover
-#T=:indeterminate
-indeterminate
-#T=:in-range
-in-range
-#T=:invalid
-invalid
-#T=:last-child
-last-child
-#T=:nth-
-nth-child(5n)
-#T=:nth-child(2n-1)
-nth-child(2n-1)
-#T=:nth-last-child(-n+5)
-nth-last-child(-n+5)
-#T=:out-of-range
-out-of-range
-#T=:read-only
-read-only
-#T=:read-write
-read-write
-#T=:target
-:target
-#T=:valid
-valid
 #T=@f
 @font-face {font-family:^!;src:url();}
 #T=@i
@@ -81,6 +29,8 @@ abort(^!)
 abs(^!)
 #T=acos
 acos(^!)
+#T=active
+active
 #T=add
 add(^!)
 #T=addBehavior
@@ -99,6 +49,8 @@ addReadRequest(^!)
 addRule(^!)
 #T=a-email
 <a href="mailto:^!">
+#T=after
+after
 #T=after
 after(^!)
 #T=afunc
@@ -160,6 +112,8 @@ animation-direction:alternate; -webkit-animation-direction:alternate;
 -webkit-animation-fill-mode:both;animation-fill-mode:both
 #T=animation-timing-function //²¥·ÅÇúÏß
 animation-timing-function:ease-in; -webkit-animation-timing-function:ease-in; 
+#T=appearance: inherit
+-webkit-appearance: inherit;appearance: inherit
 #T=append
 append(^!)
 #T=appendChild
@@ -287,9 +241,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -398,6 +352,8 @@ border-top-style:none;
 border-top-width:^!;
 #T=bdw
 border-width:^!;
+#T=before
+before
 #T=before
 before(^!)
 #T=bg
@@ -581,6 +537,8 @@ change(^!)
 charAt(^!)
 #T=charCodeAt
 charCodeAt(^!)
+#T=checked
+checked
 #T=checked
 checked
 #T=childrenj
@@ -862,6 +820,8 @@ decodeURI(^!)
 decodeURIComponent(^!)
 #T=default
 default
+#T=default
+default
 #T=del
 <del>^!</del>
 #T=delay
@@ -898,6 +858,8 @@ display:inline;
 display:inline-block;
 #T=die
 die(^!)
+#T=disabled
+disabled
 #T=display
 display:^!;
 #T=display:box
@@ -982,7 +944,11 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
+empty
+#T=empty
 empty(^!)
+#T=enabled
+enabled
 #T=encodeURI
 encodeURI(^!)
 #T=encodeURIComponent
@@ -1048,9 +1014,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:'\5B8B\4F53',Arial;
-#T=ff-st
 font-family:"\5B8B\4F53"
+#T=ff-st
+font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
 font-family:'Î¢ÈíÑÅºÚ';
 #T=fieldset
@@ -1075,6 +1041,12 @@ findText(^!)
 fireEvent(^!)
 #T=first
 first()^!
+#T=first-child
+first-child
+#T=first-letter
+first-letter
+#T=first-line
+first-line
 #T=firstPage
 firstPage(^!)
 #T=fixed
@@ -1135,6 +1107,8 @@ float:none;
 floor(^!)
 #T=fl-r
 float:right;
+#T=focus
+focus
 #T=focus
 focus(^!)
 #T=fontcolor
@@ -1680,6 +1654,8 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
+hover
+#T=hover
 hover(^!)
 #T=hr
 <hr />^!
@@ -1689,58 +1665,45 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
-#T=html-loading3
-  <style type="text/css">
-    .spinner1 {
-      margin: 100px auto 0;
-      width: 150px;
-      text-align: center;
-    }
-     
-    .spinner1 > div {
-      width: 30px;
-      height: 30px;
-      background-color: #67CF22;
-     
-      border-radius: 100%;
-      display: inline-block;
-      -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
-      animation: bouncedelay 1.4s infinite ease-in-out;
-      /* Prevent first frame from flickering when animation starts */
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
-    }
-     
-    .spinner1 .bounce1 {
-      -webkit-animation-delay: -0.32s;
-      animation-delay: -0.32s;
-    }
-     
-    .spinner1 .bounce2 {
-      -webkit-animation-delay: -0.16s;
-      animation-delay: -0.16s;
-    }
-     
-    @-webkit-keyframes bouncedelay {
-      0%, 80%, 100% { -webkit-transform: scale(0.0) }
-      40% { -webkit-transform: scale(1.0) }
-    }
-     
-    @keyframes bouncedelay {
-      0%, 80%, 100% {
-        transform: scale(0.0);
-        -webkit-transform: scale(0.0);
-      } 40% {
-        transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-      }
-    }
-  </style>
-  <div class="spinner1">
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
+#T=html-form-horizontal
+<style type="text/css">
+  .form-horizontal .form-group {padding:5px; font-size:14px;}
+  .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
+  .form-horizontal .form-control {padding:0;border:1px solid #000; width:100%; height:30px; line-height:30px;  }
+  .form-horizontal .checkbox {font-size:12px;}
+</style>
+<form class="form-horizontal yh">
+  <div class="form-group clearfix">
+    <label for="inputEmail3" class="col-1 control-label fl">Email</label>
+    <div class="fl col-2">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
   </div>
+  <div class="form-group clearfix">
+    <label for="inputPassword3" class="col-1 control-label fl">Password</label>
+    <div class="fl col-2">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="inputPassword3" class="col-1 control-label fl">Biz</label>
+    <div class="fl col-2">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-3">
+      <label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-3">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form><!-- /form-horizontal -->
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1797,45 +1760,6 @@ html(^!)
   <a href="http://mall.bydauto.com.cn/index.php/customer/account/login/?referer=20150520">µÇÂ¼</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/customer/account/create/?referer=20150520">×¢²á</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/home">·µ»ØÉÌ³Ç</a></div>
 #T=html-byd-imglink
 <?=$this->getSkinUrl('t20150520/images/images/order5000.png')?>
-#T=html-form-horizontal
-<style type="text/css">
-  .form-horizontal .form-group {padding:5px; font-size:14px;}
-  .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
-  .form-horizontal .form-control {padding:0;border:1px solid #000; width:100%; height:30px; line-height:30px;  }
-  .form-horizontal .checkbox {font-size:12px;}
-</style>
-<form class="form-horizontal yh">
-  <div class="form-group clearfix">
-    <label for="inputEmail3" class="col-1 control-label fl">Email</label>
-    <div class="fl col-2">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <label for="inputPassword3" class="col-1 control-label fl">Password</label>
-    <div class="fl col-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <label for="inputPassword3" class="col-1 control-label fl">Biz</label>
-    <div class="fl col-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <div class="col-3">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <div class="col-3">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form><!-- /form-horizontal -->
 #T=html-form-inline
 <!-- start form-inline -->
 <style type="text/css">
@@ -2003,6 +1927,58 @@ html(^!)
     </div>
   </div>
 </div><!-- /loading -->
+#T=html-loading3
+  <style type="text/css">
+    .spinner1 {
+      margin: 100px auto 0;
+      width: 150px;
+      text-align: center;
+    }
+     
+    .spinner1 > div {
+      width: 30px;
+      height: 30px;
+      background-color: #67CF22;
+     
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+      animation: bouncedelay 1.4s infinite ease-in-out;
+      /* Prevent first frame from flickering when animation starts */
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+     
+    .spinner1 .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+     
+    .spinner1 .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+     
+    @-webkit-keyframes bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0.0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+     
+    @keyframes bouncedelay {
+      0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
+  </style>
+  <div class="spinner1">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
 #T=html-media
 <style type="text/css"> 
   .media-left {width:130px;}
@@ -2182,6 +2158,7 @@ html(^!)
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -2196,7 +2173,7 @@ html(^!)
   <div class="container">
      
   </div>
-  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/asset.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
@@ -2234,6 +2211,8 @@ if (^!) {
 <iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 #T=img
 <img src="^!" alt="" />
+#T=indeterminate
+indeterminate
 #T=indexj
 index(^!)
 #T=indexOf
@@ -2312,6 +2291,8 @@ in-out-class="inClass inTarget outClass outClassTarget outtime event"
 <input type="week" name="" id="" />
 #T=inRange
 inRange(^!)
+#T=in-range
+in-range
 #T=ins
 <ins>^!</ins>
 #T=insertAdjacentElement
@@ -2334,6 +2315,8 @@ insertData(^!)
 insertRow(^!)
 #T=int
 var /*int*/ 
+#T=invalid
+invalid
 #T=isEqual
 isEqual(^!)
 #T=isFinite
@@ -2444,6 +2427,8 @@ left:auto;
 last()^!
 #T=last-child
 last-child
+#T=last-child
+last-child
 #T=lastIndexOf
 lastIndexOf(^!)
 #T=lastPage
@@ -2513,9 +2498,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2543,11 +2528,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2948,6 +2933,12 @@ normalize(^!)
 <noscript>^!</noscript>
 #T=not
 not(^!)
+#T=nth-
+nth-child(5n)
+#T=nth-child(2n-1)
+nth-child(2n-1)
+#T=nth-last-child(-n+5)
+nth-last-child(-n+5)
 #T=o
 outline:^!;
 #T=object
@@ -3006,6 +2997,8 @@ outerHeight(^!)
 outerHTML
 #T=outerWidth
 outerWidth(^!)
+#T=out-of-range
+out-of-range
 #T=output
 <output>^!</output>
 #T=ov
@@ -3175,9 +3168,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3210,6 +3203,10 @@ raiseEvent(^!)
 random(^!)
 #T=readonly
 readonly
+#T=read-only
+read-only
+#T=read-write
+read-write
 #T=ready
 ready(function(){^!})
 #T=recalc
@@ -3315,9 +3312,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3334,7 +3331,7 @@ search(^!)
 <section>^!</section>
 #T=select
 select(^!)
-#T=select
+#T=select //add option
 <select name="^!">
   <option></option>
   <option></option>
@@ -3347,6 +3344,8 @@ selectedIndex
 
 
 
+#T=selection //::
+selection
 #T=send
 send(^!)
 #T=serialize
@@ -3421,9 +3420,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3447,9 +3446,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -3485,9 +3484,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -3501,9 +3500,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3521,14 +3520,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3555,6 +3554,8 @@ tan(^!)
 text-align:right;
 #T=target
 target
+#T=target
+target
 #T=target-b
 target="_blank"
 #T=tarray
@@ -3568,9 +3569,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3610,9 +3611,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3754,9 +3755,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //Î»ÒÆ
@@ -3784,9 +3785,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -6702,6 +6703,8 @@ vertical-align:bottom;
 vertical-align:baseline;
 #T=val
 val(^!)
+#T=valid
+valid
 #T=valueOf
 valueOf(^!)
 #T=va-m
@@ -6814,9 +6817,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
