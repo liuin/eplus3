@@ -50,9 +50,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after
-#T=after
 after(^!)
+#T=after
+after
 #T=afunc
 function (^!) {
 }
@@ -241,9 +241,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -353,9 +353,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before
-#T=before
 before(^!)
+#T=before
+before
 #T=bg
 background:^!;
 #T=bg-
@@ -613,6 +613,8 @@ console.log(^!);
 container
 #T=contains
 contains(^!)
+#T=content
+content
 #T=contents
 contents()^!
 #T=context
@@ -944,9 +946,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty
-#T=empty
 empty(^!)
+#T=empty
+empty
 #T=enabled
 enabled
 #T=encodeURI
@@ -1014,9 +1016,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'Î¢ÈíÑÅºÚ';
 #T=fieldset
@@ -1108,9 +1110,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus
-#T=focus
 focus(^!)
+#T=focus
+focus
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -1654,9 +1656,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover
-#T=hover
 hover(^!)
+#T=hover
+hover
 #T=hr
 <hr />^!
 #T=href-j
@@ -1665,45 +1667,6 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
-#T=html-form-horizontal
-<style type="text/css">
-  .form-horizontal .form-group {padding:5px; font-size:14px;}
-  .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
-  .form-horizontal .form-control {padding:0;border:1px solid #000; width:100%; height:30px; line-height:30px;  }
-  .form-horizontal .checkbox {font-size:12px;}
-</style>
-<form class="form-horizontal yh">
-  <div class="form-group clearfix">
-    <label for="inputEmail3" class="col-1 control-label fl">Email</label>
-    <div class="fl col-2">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <label for="inputPassword3" class="col-1 control-label fl">Password</label>
-    <div class="fl col-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <label for="inputPassword3" class="col-1 control-label fl">Biz</label>
-    <div class="fl col-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <div class="col-3">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-    </div>
-  </div>
-  <div class="form-group clearfix">
-    <div class="col-3">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form><!-- /form-horizontal -->
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -1760,6 +1723,45 @@ html(^!)
   <a href="http://mall.bydauto.com.cn/index.php/customer/account/login/?referer=20150520">µÇÂ¼</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/customer/account/create/?referer=20150520">×¢²á</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/home">·µ»ØÉÌ³Ç</a></div>
 #T=html-byd-imglink
 <?=$this->getSkinUrl('t20150520/images/images/order5000.png')?>
+#T=html-form-horizontal
+<style type="text/css">
+  .form-horizontal .form-group {padding:5px; font-size:14px;}
+  .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
+  .form-horizontal .form-control {padding:0;border:1px solid #000; width:100%; height:30px; line-height:30px;  }
+  .form-horizontal .checkbox {font-size:12px;}
+</style>
+<form class="form-horizontal yh">
+  <div class="form-group clearfix">
+    <label for="inputEmail3" class="col-1 control-label fl">Email</label>
+    <div class="fl col-2">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="inputPassword3" class="col-1 control-label fl">Password</label>
+    <div class="fl col-2">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <label for="inputPassword3" class="col-1 control-label fl">Biz</label>
+    <div class="fl col-2">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-3">
+      <label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+  </div>
+  <div class="form-group clearfix">
+    <div class="col-3">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form><!-- /form-horizontal -->
 #T=html-form-inline
 <!-- start form-inline -->
 <style type="text/css">
@@ -2498,9 +2500,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2528,11 +2530,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -2997,6 +2999,8 @@ outerHeight(^!)
 outerHTML
 #T=outerWidth
 outerWidth(^!)
+#T=outline
+outline
 #T=out-of-range
 out-of-range
 #T=output
@@ -3168,9 +3172,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3261,6 +3265,8 @@ replaceData(^!)
 replaceNode(^!)
 #T=replaceWith
 replaceWith(^!)
+#T=required
+required="required"
 #T=reset
 reset(^!)
 #T=resize
@@ -3312,9 +3318,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3420,9 +3426,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3446,9 +3452,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -3484,9 +3490,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -3500,9 +3506,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3520,14 +3526,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3569,9 +3575,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3611,9 +3617,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3755,9 +3761,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //Î»ÒÆ
@@ -3785,9 +3791,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -6817,9 +6823,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
