@@ -706,20 +706,20 @@ content: " ";border-left: 10px solid transparent;border-top: 10px solid transpar
 }
 #T=css-color //颜色渐变
 .toLeft {
-  background-image:-webkit-linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }
 .toRight {
-  background-image:-webkit-linear-gradient(to right, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to right, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }
 .toTop {
-  background-image:-webkit-linear-gradient(to top, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }
 .toBottom {
-  background-image:-webkit-linear-gradient(to bottom, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to bottom, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }	
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
@@ -1687,26 +1687,27 @@ html(^!)
   </div>
 </div><!-- /block-col -->
 #T=html-byd-footer
-  <style type="text/css">
-  /* footer网站底部样式 */
-  .footer {height: 182px; background: url("../images/bg3.jpg") center 0 no-repeat; padding-top:50px;}
-  .footer-p1 { color: #333333; font-size: 12px; text-align: center;}
+<style type="text/css">
+/* footer网站底部样式 */
+.footer {height: 182px; background: url("../images/bg3.jpg") center 0 no-repeat; padding-top:50px;}
+.footer-p1 { color: #333333; font-size: 12px; text-align: center;}
 
-  .qqbk {width: 355px; height: 143px; padding-left: 0; margin: 0 auto;}
-  .qqbk .link {margin-top:13px;}
-  .qqbk .hd {width: 300px;   margin-bottom:20px;}
-  .qqbk .hd img {margin-right:18px;}
-  .qqbk .hd p { padding-top: 9px; font-size: 18px; margin-top: 0;} 
-  </style>
+.qqbk {width: 355px; height: 143px; padding-left: 0; margin: 0 auto;}
+.qqbk .link {margin-top:13px;}
+.qqbk .hd {width: 300px;   margin-bottom:20px;text-align: center;}
+.qqbk .hd img {margin-right:18px;}
+.qqbk .hd p { padding-top: 9px; font-size: 18px; margin-top: 0;}  
+</style>
   <div class="footer">
     <div class="w1000">
       <div class="qqbk  yh">
         <div class="hd clearfix">
-          <img class="fl png" width="70" src="http://mall.bydauto.com.cn/skin/frontend/default/test/2014xian/images/qqft.png" alt="" />
+          <b>各位亲！</b><br />
+          有任何问题请联系QQ在线客服
           <div class="link">
             <script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA0OTQ4Nl82NTgyM184MDAwNDk0ODZf"></script>
           </div>
-          <p>请联系QQ在线客服 !</p>
+          
         </div>
       </div>
     </div>
