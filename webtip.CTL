@@ -706,20 +706,20 @@ content: " ";border-left: 10px solid transparent;border-top: 10px solid transpar
 }
 #T=css-color //颜色渐变
 .toLeft {
-  background-image:-webkit-linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }
 .toRight {
-  background-image:-webkit-linear-gradient(to right, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to right, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }
 .toTop {
-  background-image:-webkit-linear-gradient(to top, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }
 .toBottom {
-  background-image:-webkit-linear-gradient(to bottom, red, orange,yellow,green,blue,indigo,violet);
-  background-image:linear-gradient(to bottom, red, orange,yellow,green,blue,indigo,violet);
+  background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
+  background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }	
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
@@ -1687,26 +1687,27 @@ html(^!)
   </div>
 </div><!-- /block-col -->
 #T=html-byd-footer
-  <style type="text/css">
-  /* footer网站底部样式 */
-  .footer {height: 182px; background: url("../images/bg3.jpg") center 0 no-repeat; padding-top:50px;}
-  .footer-p1 { color: #333333; font-size: 12px; text-align: center;}
+<style type="text/css">
+/* footer网站底部样式 */
+.footer {height: 182px; background: url("../images/bg3.jpg") center 0 no-repeat; padding-top:50px;}
+.footer-p1 { color: #333333; font-size: 12px; text-align: center;}
 
-  .qqbk {width: 355px; height: 143px; padding-left: 0; margin: 0 auto;}
-  .qqbk .link {margin-top:13px;}
-  .qqbk .hd {width: 300px;   margin-bottom:20px;}
-  .qqbk .hd img {margin-right:18px;}
-  .qqbk .hd p { padding-top: 9px; font-size: 18px; margin-top: 0;} 
-  </style>
+.qqbk {width: 355px; height: 143px; padding-left: 0; margin: 0 auto;}
+.qqbk .link {margin-top:13px;}
+.qqbk .hd {width: 300px;   margin-bottom:20px;text-align: center;}
+.qqbk .hd img {margin-right:18px;}
+.qqbk .hd p { padding-top: 9px; font-size: 18px; margin-top: 0;}  
+</style>
   <div class="footer">
     <div class="w1000">
       <div class="qqbk  yh">
         <div class="hd clearfix">
-          <img class="fl png" width="70" src="http://mall.bydauto.com.cn/skin/frontend/default/test/2014xian/images/qqft.png" alt="" />
+          <b>各位亲！</b><br />
+          有任何问题请联系QQ在线客服
           <div class="link">
             <script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA0OTQ4Nl82NTgyM184MDAwNDk0ODZf"></script>
           </div>
-          <p>请联系QQ在线客服 !</p>
+          
         </div>
       </div>
     </div>
@@ -2989,6 +2990,8 @@ filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 </optgroup>
 #T=option
 <option>^!</option>
+#T=originalEvent
+e.originalEvent 
 #T=orp
 orphans:^!;
 #T=os
@@ -3143,10 +3146,10 @@ prepend(^!)
 prependTo(^!)
 #T=prev
 prev(^!)
+#T=prev- //preventDefault()
+preventDefault()
 #T=prevAll
 prevAll(^!)
-#T=preventDefault
-preventDefault()
 #T=previousPage
 previousPage(^!)
 #T=prevUntil
@@ -4918,172 +4921,234 @@ jQuery.extend(jQuery.easing, {
   }
 })(jQuery);
 #T=ui-mobileTouch
-+(function ($) {
-  'use strict';
-  var touch = {},
-      touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
-      longTapDelay = 750,
-      gesture
-
-  function swipeDirection(x1, x2, y1, y2) {
-    return Math.abs(x1 - x2) >=
-    Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
-  }
-
-  function longTap() {
-    longTapTimeout = null
-    if (touch.last) {
-      touch.el.trigger('longTap')
+  <!--
+  +(function ($) {
+    'use strict';
+    var touch = {},
+        touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
+        longTapDelay = 750,
+        gesture
+  
+    function swipeDirection(x1, x2, y1, y2) {
+      return Math.abs(x1 - x2) >=
+      Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
+    }
+  
+    function longTap() {
+      longTapTimeout = null
+      if (touch.last) {
+        touch.el.trigger('longTap')
+        touch = {}
+      }
+    }
+  
+    function cancelLongTap() {
+      if (longTapTimeout) clearTimeout(longTapTimeout)
+      longTapTimeout = null
+    }
+  
+    function cancelAll() {
+      if (touchTimeout) clearTimeout(touchTimeout)
+      if (tapTimeout) clearTimeout(tapTimeout)
+      if (swipeTimeout) clearTimeout(swipeTimeout)
+      if (longTapTimeout) clearTimeout(longTapTimeout)
+      touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null
       touch = {}
     }
-  }
-
-  function cancelLongTap() {
-    if (longTapTimeout) clearTimeout(longTapTimeout)
-    longTapTimeout = null
-  }
-
-  function cancelAll() {
-    if (touchTimeout) clearTimeout(touchTimeout)
-    if (tapTimeout) clearTimeout(tapTimeout)
-    if (swipeTimeout) clearTimeout(swipeTimeout)
-    if (longTapTimeout) clearTimeout(longTapTimeout)
-    touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null
-    touch = {}
-  }
-
-  function isPrimaryTouch(event) {
-    return (event.pointerType == 'touch' ||
-    event.pointerType == event.MSPOINTER_TYPE_TOUCH)
-    && event.isPrimary
-  }
-
-  function isPointerEventType(e, type) {
-    return (e.type == 'pointer' + type ||
-    e.type.toLowerCase() == 'mspointer' + type)
-  }
-
-  $(document).ready(function () {
-    var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType
-
-    if ('MSGesture' in window) {
-      gesture = new MSGesture()
-      gesture.target = document.body
+  
+    function isPrimaryTouch(event) {
+      return (event.pointerType == 'touch' ||
+      event.pointerType == event.MSPOINTER_TYPE_TOUCH)
+      && event.isPrimary
     }
-
-    $(document)
-        .bind('MSGestureEnd', function (e) {
-          var swipeDirectionFromVelocity =
-              e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
-          if (swipeDirectionFromVelocity) {
-            touch.el.trigger('swipe')
-            touch.el.trigger('swipe' + swipeDirectionFromVelocity)
-          }
-        })
-        .on('touchstart MSPointerDown pointerdown', function (e) {
-          if ((_isPointerType = isPointerEventType(e, 'down')) && !isPrimaryTouch(e)) return
-
-          firstTouch = _isPointerType ? e : window.event.touches[0]
-          if (e.touches && e.touches.length === 1 && touch.x2) {
-            // Clear out touch movement data if we have it sticking around
-            // This can occur if touchcancel doesn't fire due to preventDefault, etc.
-            touch.x2 = undefined
-            touch.y2 = undefined
-          }
-          now = Date.now()
-          delta = now - (touch.last || now)
-          touch.el = $('tagName' in firstTouch.target ?
-              firstTouch.target : firstTouch.target.parentNode)
-          touchTimeout && clearTimeout(touchTimeout)
-          touch.x1 = firstTouch.pageX
-          touch.y1 = firstTouch.pageY
-          if (delta > 0 && delta <= 250) touch.isDoubleTap = true
-          touch.last = now
-          longTapTimeout = setTimeout(longTap, longTapDelay)
-          // adds the current touch contact for IE gesture recognition
-          if (gesture && _isPointerType) gesture.addPointer(e.pointerId);
-        })
-        .on('touchmove MSPointerMove pointermove', function (e) {
-          if ((_isPointerType = isPointerEventType(e, 'move')) && !isPrimaryTouch(e)) return
-          firstTouch = _isPointerType ? e : window.event.touches[0]
-          cancelLongTap()
-          touch.x2 = firstTouch.pageX
-          touch.y2 = firstTouch.pageY
-
-          deltaX += Math.abs(touch.x1 - touch.x2)
-          deltaY += Math.abs(touch.y1 - touch.y2)
-          e.preventDefault();
-        })
-        .on('touchend MSPointerUp pointerup', function (e) {
-          if ((_isPointerType = isPointerEventType(e, 'up')) && !isPrimaryTouch(e)) return
-          cancelLongTap()
-
-          // swipe
-          if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > 30) ||
-              (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
-
-            swipeTimeout = setTimeout(function () {
+  
+    function isPointerEventType(e, type) {
+      return (e.type == 'pointer' + type ||
+      e.type.toLowerCase() == 'mspointer' + type)
+    }
+  
+    $(document).ready(function () {
+      var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType
+  
+      if ('MSGesture' in window) {
+        gesture = new MSGesture()
+        gesture.target = document.body
+      }
+  
+      $(document)
+          .bind('MSGestureEnd', function (e) {
+            var swipeDirectionFromVelocity =
+                e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
+            if (swipeDirectionFromVelocity) {
               touch.el.trigger('swipe')
-              touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
-              touch = {}
-            }, 0)
-
-          // normal tap
-          else if ('last' in touch)
-          // don't fire tap when delta position changed by more than 30 pixels,
-          // for instance when moving to a point and back to origin
-            if (deltaX < 30 && deltaY < 30) {
-              // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
-              // ('tap' fires before 'scroll')
-              tapTimeout = setTimeout(function () {
-
-                // trigger universal 'tap' with the option to cancelTouch()
-                // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
-                var event = $.Event('tap')
-                event.cancelTouch = cancelAll
-                touch.el.trigger(event)
-
-                // trigger double tap immediately
-                if (touch.isDoubleTap) {
-                  if (touch.el) touch.el.trigger('doubleTap')
-                  touch = {}
-                }
-
-                // trigger single tap after 250ms of inactivity
-                else {
-                  touchTimeout = setTimeout(function () {
-                    touchTimeout = null
-                    if (touch.el) touch.el.trigger('singleTap')
-                    touch = {}
-                  }, 250)
-                }
-              }, 0)
-            } else {
-              touch = {}
+              touch.el.trigger('swipe' + swipeDirectionFromVelocity)
             }
-          deltaX = deltaY = 0
-
+          })
+          .on('touchstart MSPointerDown pointerdown', function (e) {
+            if ((_isPointerType = isPointerEventType(e, 'down')) && !isPrimaryTouch(e)) return
+            
+            firstTouch = _isPointerType ? e : e.originalEvent.touches[0]
+            if (e.touches && e.touches.length === 1 && touch.x2) {
+              // Clear out touch movement data if we have it sticking around
+              // This can occur if touchcancel doesn't fire due to preventDefault, etc.
+              touch.x2 = undefined
+              touch.y2 = undefined
+            }
+            now = Date.now()
+            delta = now - (touch.last || now)
+            touch.el = $('tagName' in firstTouch.target ?
+                firstTouch.target : firstTouch.target.parentNode)
+            touchTimeout && clearTimeout(touchTimeout)
+            touch.x1 = firstTouch.pageX
+            touch.y1 = firstTouch.pageY
+            if (delta > 0 && delta <= 250) touch.isDoubleTap = true
+            touch.last = now
+            longTapTimeout = setTimeout(longTap, longTapDelay)
+            // adds the current touch contact for IE gesture recognition
+            if (gesture && _isPointerType) gesture.addPointer(e.pointerId);
+          })
+          .on('touchmove MSPointerMove pointermove', function (e) {
+            if ((_isPointerType = isPointerEventType(e, 'move')) && !isPrimaryTouch(e)) return
+            firstTouch = _isPointerType ? e : e.originalEvent.touches[0]
+            cancelLongTap()
+            touch.x2 = firstTouch.pageX
+            touch.y2 = firstTouch.pageY
+  
+            deltaX += Math.abs(touch.x1 - touch.x2)
+            deltaY += Math.abs(touch.y1 - touch.y2)
+            e.preventDefault();
+          })
+          .on('touchend MSPointerUp pointerup', function (e) {
+            if ((_isPointerType = isPointerEventType(e, 'up')) && !isPrimaryTouch(e)) return
+            cancelLongTap()
+  
+            // swipe
+            if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > 30) ||
+                (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
+  
+              swipeTimeout = setTimeout(function () {
+                touch.el.trigger('swipe')
+                touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
+                touch = {}
+              }, 0)
+  
+            // normal tap
+            else if ('last' in touch)
+            // don't fire tap when delta position changed by more than 30 pixels,
+            // for instance when moving to a point and back to origin
+              if (deltaX < 30 && deltaY < 30) {
+                // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
+                // ('tap' fires before 'scroll')
+                tapTimeout = setTimeout(function () {
+  
+                  // trigger universal 'tap' with the option to cancelTouch()
+                  // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
+                  var event = $.Event('tap')
+                  event.cancelTouch = cancelAll
+                  touch.el.trigger(event)
+  
+                  // trigger double tap immediately
+                  if (touch.isDoubleTap) {
+                    if (touch.el) touch.el.trigger('doubleTap')
+                    touch = {}
+                  }
+  
+                  // trigger single tap after 250ms of inactivity
+                  else {
+                    touchTimeout = setTimeout(function () {
+                      touchTimeout = null
+                      if (touch.el) touch.el.trigger('singleTap')
+                      touch = {}
+                    }, 250)
+                  }
+                }, 0)
+              } else {
+                touch = {}
+              }
+            deltaX = deltaY = 0
+  
+          })
+        // when the browser window loses focus,
+        // for example when a modal dialog is shown,
+        // cancel all ongoing events
+          .on('touchcancel MSPointerCancel pointercancel', cancelAll)
+  
+      // scrolling the window indicates intention of the user
+      // to scroll, not tap or swipe, so cancel all ongoing events
+      $(window).on('scroll', cancelAll)
+    })
+  
+    ;
+    ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
+      'doubleTap', 'tap', 'singleTap', 'longTap'].forEach(function (eventName) {
+          $.fn[eventName] = function (callback) {
+            return this.on(eventName, callback)
+          }
         })
-      // when the browser window loses focus,
-      // for example when a modal dialog is shown,
-      // cancel all ongoing events
-        .on('touchcancel MSPointerCancel pointercancel', cancelAll)
+  
+  })(jQuery);
+#T=ui-moblietouch //滚动座位
+      //滚动座位
+      var currntp = 0;
+      var pageX = 0;
+      var pageY = 0;
+      var ifchlick = false;
+      var widthStep = 15;
+      var wpscrollLeft = 0;
+      var wpscrollTop = 0;
+      var clicksettime = 0;
+      var touchtap = true;
 
-    // scrolling the window indicates intention of the user
-    // to scroll, not tap or swipe, so cancel all ongoing events
-    $(window).on('scroll', cancelAll)
-  })
+      $('#block-site-map').on('touchstart MSPointerDown pointerdown',function  (e) {
 
-  ;
-  ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
-    'doubleTap', 'tap', 'singleTap', 'longTap'].forEach(function (eventName) {
-        $.fn[eventName] = function (callback) {
-          return this.on(eventName, callback)
-        }
+        e.stopPropagation();
+        e.preventDefault();
+        currntpX = window.event.touches[0].pageX;
+        currntpY = window.event.touches[0].pageY;
+        ifchlick = true;
+        touchtap = true;
       })
 
-})(jQuery);
+      $('#block-site-map').on('touchmove MSPointerMove pointermove',function  (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        if (ifchlick) {
+          pageX = window.event.targetTouches[0].pageX;
+          pageY = window.event.targetTouches[0].pageY;
+          if (Math.abs(currntpX - pageX) > Math.abs(currntpY - pageY)) {
+            if (Math.abs(currntpX - pageX) > widthStep) {
+              var getsroll = $('#block-site-map').scrollLeft();
+              $('#block-site-map').scrollLeft(getsroll += (currntpX - pageX));
+              //clearTimeout(clicksettime);
+              touchtap = false;
+            }
+          }else{
+            if (Math.abs(currntpY - pageY) > widthStep) {
+              var getsroll = $('#block-site-wrap1').scrollTop();;
+              $('#block-site-wrap1').scrollTop(getsroll += (currntpY - pageY));
+              touchtap = false;
+              //clearTimeout(clicksettime);
+            }
+          }
+          currntpX = pageX;
+          currntpY = pageY;          
+        }
 
+      })
+
+      $('#block-site-map').on('touchend MSPointerUp pointerup',function  (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        ifchlick = false;
+        pageX = 0;
+        pageY = 0;
+        if (touchtap) {
+          if ($(e.target).hasClass('site')) {
+            $(e.target).trigger('sitein');
+          }
+        }
+
+      })
 #T=ui-pop
 /** 
 * extend 弹出框
