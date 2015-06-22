@@ -1,7 +1,7 @@
 #TITLE=webtip
 #INFO
 New Cliptext library
-#SORT=y
+#SORT=n
 
 #T=!
 !important
@@ -465,39 +465,171 @@ bubbleEvent(^!)
 box-shadow:0 0 ^!px #A16534;
 #T=bxsh-n
 box-shadow:none;
+#T=ca-fillText() //设置文字
+font= 'italic 30px sans-serif';
+textAlign = 'start|end|left|right|center';
+textBaseline = 'top|hanging|middle|alphabetic|ideographic|bottom'
+fillText(text,x,y,[maxWidth]);
 #T=bxz
 box-sizing:^!;
 #T=bxz-bb
 box-sizing:border-box;
+#T=ca-clip() //路径截取
+clip()
 #T=bxz-cb
 box-sizing:content-box;
 #T=c
 color:#000;
-#T=ca-arc
+#T=ca-measureText() //获取文字的长高
+measureText(txt)
+#T=ca-getImageData //取得区域的像素
+getImageData(sx,sy,sw,sh);
+#T=ca-drawImage() //绘制图像
+//img = new Image(); 
+//img.src = "img.jpg";
+drawImage(img,x,y|img,x,y,w,h|img,sx,sy,sw,sh,dx,dy,dw,dh);
+#T=ca-addColorStop(0,'blue') //颜色渐变
+addColorStop(0,'blue')
+#T=ca-arc() //角度
 arc(this.pos.x,this.pos.y,this.size,0,Math.PI*2,true);
-#T=ca-bp
+#T=ca-beginPath()
 beginPath();
-#T=ca-cp
+#T=ca-putImageData() //重新绘制图片像素
+putImageData(imagedata, 0, 0[,dx,dy,dw,dh]);
+#T=ca-bezierCurveTo() //绘制贝济埃曲线
+ca.bezierCurveTo(150 + 100 * x,150 + 100 * y - 100,150 + 100 * x,150 + 100 * y + 100, 150, 150);
+#T=ca-save() //保存图形
+save()
+#T=ca-toDataURL() //保存成图像url
+toDataURL("image/jpeg")
+#T=ca-createPattern //图像平铺
+createPattern(image,'repeat|no-repeat|repeat-x|repeat-y'); 
+#T=ca-closePath() //关闭路径
+closePath()
+#T=ca-restore() //恢复图形
+restore()
+#T=ca-cp //closePath();
 closePath();
-#T=ca-cr
+#T=ca-cr //clearRect(0, 0, c.width, c.height);
 clearRect(0, 0, c.width, c.height);
-#T=ca-di
+#T=ca-createLinearGradient() //颜色渐变
+createLinearGradient(x1,y1,x2,y2)
+#T=ca-createRadialGradient() //圆心渐变
+createRadialGradient(xStart,yStart,radiusStart,xEnd,yEnd,radiusEnd);
+
+#T=ca-di //drawImage
 drawImage(img_link, 0, 0);
-this.ctx.drawImage('images/moon.png', 150, 150);
-#T=ca-f
+#T=ca-fill()
 fill();
-#T=ca-ft
-fillStyle();
-#T=ca-gco-l
-globalCompositeOperation = 'lighter'
-#T=ca-lc-b
+#T=ca-fillRect(0,0,400,300) //填充矩形
+fillRect(0,0,400,300)
+#T=ca-fillStyle=
+fillStyle="#fff ^!";
+#T=ca-fn-create5Start //创建5角星
+function create5Star(context)
+{  
+    var n = 0;  
+    var dx = 100;  
+    var dy = 0;  
+    var s = 50;  
+    // 创建路径  
+    context.beginPath();  
+    context.fillStyle = 'rgba(255,0,0,0.5)';  
+
+    var dig = Math.PI / 5 * 4;  
+    for(var i = 0; i < 5; i++) 
+    {  
+        var x = Math.sin(i * dig);  
+        var y = Math.cos(i * dig);  
+        context.lineTo( dx + x * s,dy + y * s);  
+    }     
+    context.closePath();  
+    context.fill();
+}
+#T=ca-fn-drawArc //绘制圆形
+    function drawArc () {
+      ca.beginPath();
+      ca.arc(canvas.width/2,canvas.height/2,80,0,Math.PI*2,true);
+      ca.closePath();
+      ca.fillStyle="#ddd";
+      ca.fill();
+    }
+#T=ca-fn-drawArcLine //复杂图像 贝级埃曲线
+function drawArcLine () {
+      ca.fillStyle="#eef";
+      ca.fillRect(0,0,400,300);
+      ca.beginPath();
+      ca.fillStyle="#f60";
+      ca.strokeStyle = "#333";
+      var x = Math.sin(0); 
+      var y = Math.cos(0);
+      ca.moveTo(150 + 100 * x,150 + 100 * y);     
+      //var dig = 15* Math.PI/11;
+      var dig = 360/4* Math.PI/180;
+      for (var i = 0;  i<4 ; i++) {
+        var x = Math.sin(dig * i); 
+        var y = Math.cos(dig * i);
+        //ca.lineTo(150 + 100 * x,150 + 100 * y);
+        ca.bezierCurveTo(150 + 100 * x,150 + 100 * y - 100,150 + 100 * x,150 + 100 * y + 100, 150, 150);
+      }
+      ca.closePath();
+      ca.fill();
+      ca.stroke();
+    }
+#T=ca-fn-drawRect //画矩形
+    function drawRect () {
+      ca.fillStyle = "#eeeeef";
+      ca.fillRect(0,0,400,300);
+      ca.fillStyle = "red";
+      ca.strokeStyle = "blue";
+      ca.lineWidth=1;
+      ca.fillRect(50,50,100,100);
+      ca.strokeRect(50,50,100,100);
+    }
+#T=ca-fn-linearGrad //线性渐变
+    function linearGrad () {
+      var g1 = ca.createLinearGradient(0,0,400,300);
+      g1.addColorStop(0,'blue');
+      g1.addColorStop(0.5,'red');
+      g1.addColorStop(1,'green');
+      ca.fillStyle=g1;
+      ca.fillRect(0,0,400,300);
+    }
+#T=ca-getContext('2d')
+getContext('2d')
+#T=ca-globalCompositeOperation //图像重叠方式
+globalCompositeOperation = 'source-atop|source-in|source-out|source-over|destination-atop|destination-in|destination-out|destination-over|lighter|copy|xor'
+#T=ca-lc-b //lineCap = 'butt';
 lineCap = 'butt';
-#T=ca-lc-r
+#T=ca-lc-r //lineCap = 'round';
 lineCap = 'round';
-#T=ca-lc-s
+#T=ca-lc-s //lineCap = 'square';
 lineCap = 'square';
+#T=ca-lineTo() //划线
+lineTo(0,0)
+#T=ca-lineWidth //线粗度
+lineWidth=1
+#T=ca-quadraticCurveTo() //二次样曲线
+quadraticCurveTo(dx + x * s,dy + y * s - 100,dx + x * s + 100,dy + y * s);  
+#T=ca-rotate();//旋转
+rotate(Math.PI / 11);
+#T=ca-scale() //缩放
+scale(0.95,0.95);
+#T=ca-setTransform //设置坐标移动后的位置
+setTransform(m11, m12, m21, m22, dx, dy);
+#T=ca-shadow //图形绘制阴影
+shadowOffsetX = 10;  
+shadowOffsetY = 10;  
+shadowColor = 'rgba(100,100,100,0.5)';  
+shadowBlur = 7.5;  //模糊范围
+#T=ca-transform() //矩阵变行
+transform(m11, m12, m21, m22, dx, dy);
+#T=ca-translate //位移
+translate(25,25)
 #T=call
 call(^!)
+#T=ca-moveTo() //移动坐标
+moveTo(0,0)
 #T=canvas
 <canvas>^!</canvas>
 #T=cap
@@ -510,6 +642,12 @@ stroke();
 case ^!:
 #T=cass
 strokeStyle
+#T=ca-stroke() //填充路径
+stroke();
+#T=ca-strokeRect(50,50,100,100) //填充矩形边框
+strokeRect(50,50,100,100)
+#T=ca-strokeStyle = "blue";
+strokeStyle = "blue";
 #T=catch
 catch (^!) {
 }
@@ -884,6 +1022,8 @@ display:none;
 #T=do
 do {
 } while (^!);
+#T=document
+document
 #T=dotted
 dotted
 #T=d-rb
@@ -2540,6 +2680,10 @@ map(^!)
 <mark>^!</mark>
 #T=match
 match(^!)
+#T=Math.cos(0);
+Math.cos(0);
+#T=Math.sin(0)
+Math.sin(0)
 #T=maw
 max-width:^!;
 #T=maw-n
@@ -3282,6 +3426,8 @@ resizeTo(^!)
 return ^!;
 #T=reverse
 reverse(^!)
+#T=rgba(255,0,0,0.5)
+rgba(255,0,0,0.5)
 #T=round
 round(^!)
 #T=rp
