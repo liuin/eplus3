@@ -2186,6 +2186,7 @@ html(^!)
       pagination: '.pagination1',
       paginationClickable: true,
       mode: 'vertical',
+      direction:'vertical',//3.1++
       slidesPerView: 'auto',
       //moveStartThreshold: 100
       //followFinger : false,
