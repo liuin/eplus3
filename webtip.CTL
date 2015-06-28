@@ -1,7 +1,7 @@
 #TITLE=webtip
 #INFO
 New Cliptext library
-#SORT=n
+#SORT=y
 
 #T=!
 !important
@@ -50,9 +50,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after
-#T=after
 after(^!)
+#T=after
+after
 #T=afunc
 function (^!) {
 }
@@ -241,9 +241,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -353,9 +353,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before
-#T=before
 before(^!)
+#T=before
+before
 #T=bg
 background:^!;
 #T=bg-
@@ -465,66 +465,54 @@ bubbleEvent(^!)
 box-shadow:0 0 ^!px #A16534;
 #T=bxsh-n
 box-shadow:none;
-#T=ca-fillText() //设置文字
-font= 'italic 30px sans-serif';
-textAlign = 'start|end|left|right|center';
-textBaseline = 'top|hanging|middle|alphabetic|ideographic|bottom'
-fillText(text,x,y,[maxWidth]);
 #T=bxz
 box-sizing:^!;
 #T=bxz-bb
 box-sizing:border-box;
-#T=ca-clip() //路径截取
-clip()
 #T=bxz-cb
 box-sizing:content-box;
 #T=c
 color:#000;
-#T=ca-measureText() //获取文字的长高
-measureText(txt)
-#T=ca-getImageData //取得区域的像素
-getImageData(sx,sy,sw,sh);
-#T=ca-drawImage() //绘制图像
-//img = new Image(); 
-//img.src = "img.jpg";
-drawImage(img,x,y|img,x,y,w,h|img,sx,sy,sw,sh,dx,dy,dw,dh);
 #T=ca-addColorStop(0,'blue') //颜色渐变
 addColorStop(0,'blue')
 #T=ca-arc() //角度
 arc(this.pos.x,this.pos.y,this.size,0,Math.PI*2,true);
 #T=ca-beginPath()
 beginPath();
-#T=ca-putImageData() //重新绘制图片像素
-putImageData(imagedata, 0, 0[,dx,dy,dw,dh]);
 #T=ca-bezierCurveTo() //绘制贝济埃曲线
 ca.bezierCurveTo(150 + 100 * x,150 + 100 * y - 100,150 + 100 * x,150 + 100 * y + 100, 150, 150);
-#T=ca-save() //保存图形
-save()
-#T=ca-toDataURL() //保存成图像url
-toDataURL("image/jpeg")
-#T=ca-createPattern //图像平铺
-createPattern(image,'repeat|no-repeat|repeat-x|repeat-y'); 
+#T=ca-clip() //路径截取
+clip()
 #T=ca-closePath() //关闭路径
 closePath()
-#T=ca-restore() //恢复图形
-restore()
 #T=ca-cp //closePath();
 closePath();
 #T=ca-cr //clearRect(0, 0, c.width, c.height);
 clearRect(0, 0, c.width, c.height);
 #T=ca-createLinearGradient() //颜色渐变
 createLinearGradient(x1,y1,x2,y2)
+#T=ca-createPattern //图像平铺
+createPattern(image,'repeat|no-repeat|repeat-x|repeat-y'); 
 #T=ca-createRadialGradient() //圆心渐变
 createRadialGradient(xStart,yStart,radiusStart,xEnd,yEnd,radiusEnd);
 
 #T=ca-di //drawImage
 drawImage(img_link, 0, 0);
+#T=ca-drawImage() //绘制图像
+//img = new Image(); 
+//img.src = "img.jpg";
+drawImage(img,x,y|img,x,y,w,h|img,sx,sy,sw,sh,dx,dy,dw,dh);
 #T=ca-fill()
 fill();
 #T=ca-fillRect(0,0,400,300) //填充矩形
 fillRect(0,0,400,300)
 #T=ca-fillStyle=
 fillStyle="#fff ^!";
+#T=ca-fillText() //设置文字
+font= 'italic 30px sans-serif';
+textAlign = 'start|end|left|right|center';
+textBaseline = 'top|hanging|middle|alphabetic|ideographic|bottom'
+fillText(text,x,y,[maxWidth]);
 #T=ca-fn-create5Start //创建5角星
 function create5Star(context)
 {  
@@ -586,6 +574,12 @@ function drawArcLine () {
       ca.fillRect(50,50,100,100);
       ca.strokeRect(50,50,100,100);
     }
+#T=ca-fn-fps //帧
+function calculateFps(now) {
+   var fps = 1000 / (now - lastTime);
+   lastTime = now;
+   return fps; 
+}
 #T=ca-fn-linearGrad //线性渐变
     function linearGrad () {
       var g1 = ca.createLinearGradient(0,0,400,300);
@@ -595,8 +589,125 @@ function drawArcLine () {
       ca.fillStyle=g1;
       ca.fillRect(0,0,400,300);
     }
+#T=ca-fn-window.requestNextAnimationFrame
+/*
+ * Copyright (C) 2012 David Geary. This code is from the book
+ * Core HTML5 Canvas, published by Prentice-Hall in 2012.
+ *
+ * License:
+ *
+ * Permission is hereby granted, free of charge, to any person 
+ * obtaining a copy of this software and associated documentation files
+ * (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * The Software may not be used to create training material of any sort,
+ * including courses, books, instructional videos, presentations, etc.
+ * without the express written consent of David Geary.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+window.requestNextAnimationFrame =
+   (function () {
+      var originalWebkitRequestAnimationFrame = undefined,
+          wrapper = undefined,
+          callback = undefined,
+          geckoVersion = 0,
+          userAgent = navigator.userAgent,
+          index = 0,
+          self = this;
+
+      // Workaround for Chrome 10 bug where Chrome
+      // does not pass the time to the animation function
+      
+      if (window.webkitRequestAnimationFrame) {
+         // Define the wrapper
+
+         wrapper = function (time) {
+           if (time === undefined) {
+              time = +new Date();
+           }
+           self.callback(time);
+         };
+
+         // Make the switch
+          
+         originalWebkitRequestAnimationFrame = window.webkitRequestAnimationFrame;    
+
+         window.webkitRequestAnimationFrame = function (callback, element) {
+            self.callback = callback;
+
+            // Browser calls the wrapper and wrapper calls the callback
+            
+            originalWebkitRequestAnimationFrame(wrapper, element);
+         }
+      }
+
+      // Workaround for Gecko 2.0, which has a bug in
+      // mozRequestAnimationFrame() that restricts animations
+      // to 30-40 fps.
+
+      if (window.mozRequestAnimationFrame) {
+         // Check the Gecko version. Gecko is used by browsers
+         // other than Firefox. Gecko 2.0 corresponds to
+         // Firefox 4.0.
+         
+         index = userAgent.indexOf('rv:');
+
+         if (userAgent.indexOf('Gecko') != -1) {
+            geckoVersion = userAgent.substr(index + 3, 3);
+
+            if (geckoVersion === '2.0') {
+               // Forces the return statement to fall through
+               // to the setTimeout() function.
+
+               window.mozRequestAnimationFrame = undefined;
+            }
+         }
+      }
+      
+      return window.requestAnimationFrame   ||
+         window.webkitRequestAnimationFrame ||
+         window.mozRequestAnimationFrame    ||
+         window.oRequestAnimationFrame      ||
+         window.msRequestAnimationFrame     ||
+
+         function (callback, element) {
+            var start,
+                finish;
+
+            window.setTimeout( function () {
+               start = +new Date();
+               callback(start);
+               finish = +new Date();
+
+               self.timeout = 1000 / 60 - (finish - start);
+
+            }, self.timeout);
+         };
+      }
+   )
+();
+
+
 #T=ca-getContext('2d')
 getContext('2d')
+#T=ca-getImageData //取得区域的像素
+getImageData(sx,sy,sw,sh);
 #T=ca-globalCompositeOperation //图像重叠方式
 globalCompositeOperation = 'source-atop|source-in|source-out|source-over|destination-atop|destination-in|destination-out|destination-over|lighter|copy|xor'
 #T=ca-lc-b //lineCap = 'butt';
@@ -609,25 +720,14 @@ lineCap = 'square';
 lineTo(0,0)
 #T=ca-lineWidth //线粗度
 lineWidth=1
-#T=ca-quadraticCurveTo() //二次样曲线
-quadraticCurveTo(dx + x * s,dy + y * s - 100,dx + x * s + 100,dy + y * s);  
-#T=ca-rotate();//旋转
-rotate(Math.PI / 11);
-#T=ca-scale() //缩放
-scale(0.95,0.95);
-#T=ca-setTransform //设置坐标移动后的位置
-setTransform(m11, m12, m21, m22, dx, dy);
-#T=ca-shadow //图形绘制阴影
-shadowOffsetX = 10;  
-shadowOffsetY = 10;  
-shadowColor = 'rgba(100,100,100,0.5)';  
-shadowBlur = 7.5;  //模糊范围
-#T=ca-transform() //矩阵变行
-transform(m11, m12, m21, m22, dx, dy);
-#T=ca-translate //位移
-translate(25,25)
+#T=ca-restore() //恢复画布环境
+restore()
+#T=ca-save() //保存画布环境
+save()
 #T=call
 call(^!)
+#T=ca-measureText() //获取文字的长高
+measureText(txt)
 #T=ca-moveTo() //移动坐标
 moveTo(0,0)
 #T=canvas
@@ -636,10 +736,25 @@ moveTo(0,0)
 (Math.PI/180)*270
 #T=caption
 <caption>^!</caption>
+#T=ca-putImageData() //重新绘制图片像素
+putImageData(imagedata, 0, 0[,dx,dy,dw,dh]);
+#T=ca-quadraticCurveTo() //二次样曲线
+quadraticCurveTo(dx + x * s,dy + y * s - 100,dx + x * s + 100,dy + y * s);  
+#T=ca-rotate();//旋转
+rotate(Math.PI / 11);
 #T=cas
 stroke();
+#T=ca-scale() //缩放
+scale(0.95,0.95);
 #T=case
 case ^!:
+#T=ca-setTransform //设置坐标移动后的位置
+setTransform(m11, m12, m21, m22, dx, dy);
+#T=ca-shadow //图形绘制阴影
+shadowOffsetX = 10;  
+shadowOffsetY = 10;  
+shadowColor = 'rgba(100,100,100,0.5)';  
+shadowBlur = 7.5;  //模糊范围
 #T=cass
 strokeStyle
 #T=ca-stroke() //填充路径
@@ -651,8 +766,14 @@ strokeStyle = "blue";
 #T=catch
 catch (^!) {
 }
+#T=ca-toDataURL() //保存成图像url
+toDataURL("image/jpeg")
 #T=catran
 translate(0,0);
+#T=ca-transform() //矩阵变行
+transform(m11, m12, m21, m22, dx, dy);
+#T=ca-translate //位移
+translate(25,25)
 #T=cc-ie
 <!--[if IE]>
   ^!		
@@ -1086,9 +1207,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty
-#T=empty
 empty(^!)
+#T=empty
+empty
 #T=enabled
 enabled
 #T=encodeURI
@@ -1156,9 +1277,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1250,9 +1371,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus
-#T=focus
 focus(^!)
+#T=focus
+focus
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -1796,9 +1917,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover
-#T=hover
 hover(^!)
+#T=hover
+hover
 #T=hr
 <hr />^!
 #T=href-j
@@ -2641,9 +2762,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2671,11 +2792,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3319,9 +3440,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3467,9 +3588,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3575,9 +3696,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3601,9 +3722,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -3639,9 +3760,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -3655,9 +3776,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3675,14 +3796,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3724,9 +3845,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3766,9 +3887,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -3910,9 +4031,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -3940,9 +4061,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -7104,9 +7225,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
