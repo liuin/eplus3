@@ -31,10 +31,35 @@ abs(^!)
 acos(^!)
 #T=active
 active
+#T=html-tr-footer //传祺footer
+  <div class="footer"><div class="w1000">
+    <a href="#"><i></i>广汽乘用车 </a>
+    <span class="copy">版权所有? 2012 广州汽车集团乘用车有限公司 粤ICP备09202250号</span>
+    <a href="#"><i></i>经销商查询</a>
+    <span class="wb-txt">关注广汽传祺微博</span>
+    <a href="http://weibo.com/gacchuanqi" class="wb-xl"><img src="images/icon.png" alt="新浪"></a>
+    <a href="http://t.qq.com/gacchuanqi" class="wb-tx"><img src="images/icon-02.png" alt="腾讯"></a>
+    <span class="share-txt">分享好友</span>
+<!--     <a href="#" class="share-wx"><img src="images/icon.png" alt="微信"></a> -->
+    <a href="http://v.t.sina.com.cn/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;appkey=1261318687" class="share-xl"><img src="images/icon.png" alt="新浪"></a>
+    <a href="http://v.t.qq.com/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！
+&amp;ralateUid=1779938885" class="share-tx"><img src="images/icon-02.png" alt="腾讯"></a>
+    <a href="http://www.douban.com/recommend/?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;comment=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-db"><img src="images/icon-05.png" alt="豆瓣"></a>
+    <a href="http://www.kaixin001.com/repaste/share.php?rtitle=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;rurl=http://trumpchi.gacmotor.com/&amp;rcontent=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-kx"><img src="images/icon-06.png" alt="开心"></a>
+    <a href="http://share.renren.com/share/buttonshare.do?link=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-rr"><img src="images/icon-03.png" alt="人人"></a>
+  </div></div><!-- /传祺footer -->
 #T=add
 add(^!)
 #T=addBehavior
 addBehavior(^!)
+#T=ui-jScrollPane //滚动条
+  $('.scroll-pane').jScrollPane({
+      verticalDragMinHeight: 10,
+      verticalDragMaxHeight: 10,
+      horizontalDragMinWidth: 20,
+      horizontalDragMaxWidth: 20
+      //autoReinitialise: true    如果包含图片则加上 给图片加上高度
+  });
 #T=addClass
 addClass(^!)
 #T=addImport
@@ -1006,6 +1031,7 @@ display:^!;
 display:box;
 display: -webkit-box;
 display: -ms-flexbox;
+display: -moz-box;
 #T=d-itb
 display:inline-table;
 #T=div
