@@ -31,35 +31,10 @@ abs(^!)
 acos(^!)
 #T=active
 active
-#T=html-tr-footer //传祺footer
-  <div class="footer"><div class="w1000">
-    <a href="#"><i></i>广汽乘用车 </a>
-    <span class="copy">版权所有? 2012 广州汽车集团乘用车有限公司 粤ICP备09202250号</span>
-    <a href="#"><i></i>经销商查询</a>
-    <span class="wb-txt">关注广汽传祺微博</span>
-    <a href="http://weibo.com/gacchuanqi" class="wb-xl"><img src="images/icon.png" alt="新浪"></a>
-    <a href="http://t.qq.com/gacchuanqi" class="wb-tx"><img src="images/icon-02.png" alt="腾讯"></a>
-    <span class="share-txt">分享好友</span>
-<!--     <a href="#" class="share-wx"><img src="images/icon.png" alt="微信"></a> -->
-    <a href="http://v.t.sina.com.cn/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;appkey=1261318687" class="share-xl"><img src="images/icon.png" alt="新浪"></a>
-    <a href="http://v.t.qq.com/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！
-&amp;ralateUid=1779938885" class="share-tx"><img src="images/icon-02.png" alt="腾讯"></a>
-    <a href="http://www.douban.com/recommend/?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;comment=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-db"><img src="images/icon-05.png" alt="豆瓣"></a>
-    <a href="http://www.kaixin001.com/repaste/share.php?rtitle=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;rurl=http://trumpchi.gacmotor.com/&amp;rcontent=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-kx"><img src="images/icon-06.png" alt="开心"></a>
-    <a href="http://share.renren.com/share/buttonshare.do?link=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-rr"><img src="images/icon-03.png" alt="人人"></a>
-  </div></div><!-- /传祺footer -->
 #T=add
 add(^!)
 #T=addBehavior
 addBehavior(^!)
-#T=ui-jScrollPane //滚动条
-  $('.scroll-pane').jScrollPane({
-      verticalDragMinHeight: 10,
-      verticalDragMaxHeight: 10,
-      horizontalDragMinWidth: 20,
-      horizontalDragMaxWidth: 20
-      //autoReinitialise: true    如果包含图片则加上 给图片加上高度
-  });
 #T=addClass
 addClass(^!)
 #T=addImport
@@ -75,9 +50,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after
-#T=after
 after(^!)
+#T=after
+after
 #T=afunc
 function (^!) {
 }
@@ -269,9 +244,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -381,9 +356,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before
-#T=before
 before(^!)
+#T=before
+before
 #T=bg
 background:^!;
 #T=bg-
@@ -1236,9 +1211,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty
-#T=empty
 empty(^!)
+#T=empty
+empty
 #T=enabled
 enabled
 #T=encodeURI
@@ -1306,9 +1281,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1400,9 +1375,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus
-#T=focus
 focus(^!)
+#T=focus
+focus
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -1946,9 +1921,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover
-#T=hover
 hover(^!)
+#T=hover
+hover
 #T=hr
 <hr />^!
 #T=href-j
@@ -2496,6 +2471,23 @@ html(^!)
     </div>
   </div>
 </div><!-- /thumbnail -->
+#T=html-tr-footer //传祺footer
+  <div class="footer"><div class="w1000">
+    <a href="#"><i></i>广汽乘用车 </a>
+    <span class="copy">版权所有? 2012 广州汽车集团乘用车有限公司 粤ICP备09202250号</span>
+    <a href="#"><i></i>经销商查询</a>
+    <span class="wb-txt">关注广汽传祺微博</span>
+    <a href="http://weibo.com/gacchuanqi" class="wb-xl"><img src="images/icon.png" alt="新浪"></a>
+    <a href="http://t.qq.com/gacchuanqi" class="wb-tx"><img src="images/icon-02.png" alt="腾讯"></a>
+    <span class="share-txt">分享好友</span>
+<!--     <a href="#" class="share-wx"><img src="images/icon.png" alt="微信"></a> -->
+    <a href="http://v.t.sina.com.cn/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;appkey=1261318687" class="share-xl"><img src="images/icon.png" alt="新浪"></a>
+    <a href="http://v.t.qq.com/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！
+&amp;ralateUid=1779938885" class="share-tx"><img src="images/icon-02.png" alt="腾讯"></a>
+    <a href="http://www.douban.com/recommend/?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;comment=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-db"><img src="images/icon-05.png" alt="豆瓣"></a>
+    <a href="http://www.kaixin001.com/repaste/share.php?rtitle=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;rurl=http://trumpchi.gacmotor.com/&amp;rcontent=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-kx"><img src="images/icon-06.png" alt="开心"></a>
+    <a href="http://share.renren.com/share/buttonshare.do?link=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-rr"><img src="images/icon-03.png" alt="人人"></a>
+  </div></div><!-- /传祺footer -->
 #T=i
 <i>^!</i>
 #T=if
@@ -2792,9 +2784,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2822,11 +2814,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3470,9 +3462,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3618,9 +3610,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3726,9 +3718,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3752,9 +3744,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -3790,9 +3782,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -3806,9 +3798,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3826,14 +3818,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3875,9 +3867,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3917,9 +3909,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4061,9 +4053,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4091,9 +4083,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5012,6 +5004,14 @@ $(this).hoverDelay({
   })
 
 })(jQuery);
+#T=ui-jScrollPane //滚动条
+  $('.scroll-pane').jScrollPane({
+      verticalDragMinHeight: 10,
+      verticalDragMaxHeight: 10,
+      horizontalDragMinWidth: 20,
+      horizontalDragMaxWidth: 20
+      //autoReinitialise: true    如果包含图片则加上 给图片加上高度
+  });
 #T=ui-Jseasing
 /* jQuery EasIng v1.1.2 - http://gsgd.co.uk/sandbox/jquery.easIng.php
 *
@@ -5446,7 +5446,7 @@ jQuery.extend(jQuery.easing, {
         }
 
       })
-#T=ui-pop
+#T=ui-pop //弹出框
 /** 
 * extend 弹出框
 * @author cuki13
@@ -5505,7 +5505,7 @@ jQuery.extend(jQuery.easing, {
       $this.parents(".popbk-wrap").addClass("in");
 
       var wh = $this.height();
-      if ($(window).height() < wh) {
+      if ($(window).height() > wh) {
         $('body').css('overflow','hidden');
       }else {
         $('body').css('overflow','auto');
@@ -5677,6 +5677,259 @@ jQuery.extend(jQuery.easing, {
    blink.jump();
  }
 
+})(jQuery);
+#T=ui-scbanner //菲亚特滚动
+ /** 
+* extend 图片滚动插件
+* 
+* @package scbanner
+* @author k-night
+
+var sl = $('#slider1').scbanner({
+    showType: 'scroll',
+    scrollWidth: 1680,
+    loop: true
+  });
+
+*/
+;(function($){  
+  $.fn.scbanner = function (options) {  
+    var defualts = { 
+      scrollWidth: 980,     //滚动距离
+      warpcss: 'banner1', //外部包含CSS
+      auto:	false,     //是否自动,
+      speed:	5000,     //间隔5秒
+      showType: 'scroll',
+      slderafter : function  () {
+      },
+      loop:false
+      
+    };  
+    var opts = $.extend({}, defualts, options);  
+    var obj = $(this);
+
+    //生成控制器
+    obj.wrap('<div class="'+opts.warpcss+'"></div>');
+    //如果循环
+    if (opts.loop == true) {
+      var cprev = obj.find('li').first().clone().addClass("clone");
+      var cnext = obj.find('li').last().clone().addClass("clone");
+      obj.append(cprev);
+      obj.prepend(cnext);
+    }
+    //生成页码
+    function  nav(obj) {
+      var nav_html = '<div class="banner-nav">';
+      for (var i = 0; i < obj.find('li').length; i++) {
+        nav_html += '<a class="'+(i == 0 ? 'current' : '')+' sort-'+ i +' " data="'+i+'" href="javascript:void(0);"><span>'+(i+1)+'</span></a>';
+      }
+      nav_html += '</div>';
+      return nav_html;
+    }
+
+    
+    
+
+    obj.css('width',opts.scrollWidth*obj.find('li').length);
+    var timecount = '';
+
+    
+
+    var nav=$(nav(obj));
+    var lgnav = nav.length;
+    
+    
+    nav.find('a').click(function  (e) {
+      if ($(this).hasClass('current')) {
+        return false;
+      }else {
+        var w = $(this).attr('data');
+        var that = $(this);
+        obj_scroll(obj,-w,opts.showType,function  () {
+          
+          that.siblings('.current').removeClass('current'); 
+          that.addClass('current');
+          if (opts.slderafter) {
+            
+            var ind = that.attr("data");
+            var gli = obj.find('li').eq(ind);
+            opts.slderafter(gli);
+            
+          }
+          
+          if (opts.showType == 'fade') {
+            return false;
+          }
+          
+          
+
+          if (w == '0') {
+            
+            opts.showType = 'noanmate';
+            
+            var gind = nav.find("a").length-2;
+            nav.find("a").eq(gind).trigger('click');
+            opts.showType = 'scroll';
+            
+          }
+
+          if (w == nav.find("a").length - 1 ) {						
+            opts.showType = 'noanmate';
+            nav.find("a").eq(1).trigger('click');
+            opts.showType = 'scroll';
+          }
+
+        });
+        
+      }
+      e.preventDefault();	
+    })
+    var wpauto = false;
+    //自动滚动函数
+
+    obj.parent().parent().delegate('.'+opts.warpcss,'mouseenter',function  () {
+        wpauto = false;
+        clearInterval(timecount);
+      }).delegate('.'+opts.warpcss,'mouseleave',function  () {
+        wpauto = true;
+          timecount = setInterval(function  () {
+          loop_main();
+        }, opts.speed);
+    })
+
+    function loop_main() {
+      if (wpauto) {
+        click_next();
+      }
+    }
+    //循环
+
+    timecount = setInterval(function  () {
+      if (wpauto) {
+        //loop_main();
+      }
+      
+    }, opts.speed);
+    
+    function click_next() {
+      var n = nav.find('a.current').next();
+      if (n.length > 0) {
+        n.trigger('click');
+      }else {
+        if (opts.loop == false){
+        nav.find('a').eq(0).trigger('click');
+        }
+      }
+    }
+
+    function click_prev() {
+      var n = nav.find('a.current').prev();
+      if (n.length > 0) {
+        n.trigger('click');
+      }else {
+        if (opts.loop == false){
+        nav.find('a').last().trigger('click');
+        }
+      }
+    }
+
+    
+    
+    //moblie tounch
+    var currntp = 0;
+    var pageX;
+    var ifchlick = false;
+    
+    $("."+opts.warpcss).bind("touchstart",function  (e) {
+      $("."+opts.warpcss).trigger("mouseenter");
+      currntp = window.event.touches[0].pageX;
+      ifchlick = true;
+    });
+
+     $("."+opts.warpcss).bind('touchend', function(e) {
+      ifchlick = false;
+      var width_step = 5;
+      if (Math.abs(currntp - pageX) >= width_step) {
+        if (currntp - pageX >= width_step) {
+          click_prev();
+          //$(".show-pic .prev").trigger('click');
+        } else {
+          click_next();
+          //$(".show-pic .next").trigger('click');
+        }
+        $("."+opts.warpcss).trigger("mouseleave");
+      }
+    });
+
+    $("."+opts.warpcss).bind('touchmove', function(e) {
+      if (ifchlick) {
+        ifchlick = false;
+        pageX = window.event.targetTouches[0].pageX;					
+      }else {
+        return false;
+      }
+    });
+    
+    nav.insertAfter(obj);
+
+    //显示
+    function obj_scroll(obj,w,type,callback) {
+      switch (type) {
+      case 'scroll':
+        
+        obj.stop().animate({'left':opts.scrollWidth*w},800,'easeInOutExpo',function  () {
+          if (callback) {
+            callback();
+          }
+        });
+      break
+      case 'fade':
+        /*
+        obj.css({'left':opts.scrollWidth*w}).hide().fadeIn(function  () {
+          if (callback){
+            callback();
+          }
+        });
+        */
+        
+      case 'noanmate':
+        
+        obj.stop().css({'left':opts.scrollWidth*w});
+          if (callback) {
+            callback();
+          }
+      break
+      default:
+      }
+    }
+
+    if (opts.loop == true) {
+      opts.showType = 'noanmate';
+      nav.find("a").eq(1).trigger('click');
+    
+      opts.showType = 'scroll';
+    }
+    
+    var contr = {
+      "prev": function  () {
+        click_prev();
+      },
+      "next": function  () {
+        click_next();
+      },
+      "scroll": function  (val) {
+        wpauto = val;
+        if (val == 'false') {
+          wpauto = false;
+          clearInterval(timecount);
+        }
+        
+      }
+      
+    }
+    
+    return contr;
+  };  
 })(jQuery);
 #T=ui-scollUp
 /** 
@@ -6311,6 +6564,179 @@ $.fn.scollpic= function (options) {
       })
       scollIn($('#newslist'));
     }
+#T=ui-ScrollSpy //滚动监听
+/* ========================================================================
+ * Bootstrap: scrollspy.js v3.2.0
+ * http://getbootstrap.com/javascript/#scrollspy
+ * ========================================================================
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+ * ======================================================================== */
+
+// 调用: <body class="yh" data-spy="scroll" data-target="#bar-nav"
++function ($) {
+  'use strict';
+
+  // SCROLLSPY CLASS DEFINITION
+  // ==========================
+
+  function ScrollSpy(element, options) {
+    var process  = $.proxy(this.process, this)
+
+    this.$body          = $('body')
+    this.$scrollElement = $(element).is('body') ? $(window) : $(element)
+    this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+    this.selector       = (this.options.target || '') + ' .nav li > a'
+    this.offsets        = []
+    this.targets        = []
+    this.activeTarget   = null
+    this.scrollHeight   = 0
+
+    this.$scrollElement.on('scroll.bs.scrollspy', process)
+    this.refresh()
+    this.process()
+  }
+
+  ScrollSpy.VERSION  = '3.2.0'
+
+  ScrollSpy.DEFAULTS = {
+    offset: 10
+  }
+
+  ScrollSpy.prototype.getScrollHeight = function () {
+    return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+  }
+
+  ScrollSpy.prototype.refresh = function () {
+    var offsetMethod = 'offset'
+    var offsetBase   = 0
+
+    if (!$.isWindow(this.$scrollElement[0])) {
+      offsetMethod = 'position'
+      offsetBase   = this.$scrollElement.scrollTop()
+    }
+
+    this.offsets = []
+    this.targets = []
+    this.scrollHeight = this.getScrollHeight()
+
+    var self     = this
+
+    this.$body
+      .find(this.selector)
+      .map(function () {
+        var $el   = $(this)
+        var href  = $el.data('target') || $el.attr('href')
+        var $href = /^#./.test(href) && $(href)
+
+        return ($href
+          && $href.length
+          && $href.is(':visible')
+          && $el.is(':visible')
+          && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+      })
+      .sort(function (a, b) { return a[0] - b[0] })
+      .each(function () {
+        self.offsets.push(this[0])
+        self.targets.push(this[1])
+      })
+  }
+
+  ScrollSpy.prototype.process = function () {
+    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+    var scrollHeight = this.getScrollHeight()
+    var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+    var offsets      = this.offsets
+    var targets      = this.targets
+    var activeTarget = this.activeTarget
+    var i
+
+    if (this.scrollHeight != scrollHeight) {
+      this.refresh()
+    }
+
+    if (scrollTop >= maxScroll) {
+      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+    }
+
+    if (activeTarget && scrollTop <= offsets[0]) {
+      return activeTarget != (i = targets[0]) && this.activate(i)
+    }
+
+    for (i = offsets.length; i--;) {
+      activeTarget != targets[i]
+        && scrollTop >= offsets[i]
+        && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+        && this.activate(targets[i])
+    }
+  }
+
+  ScrollSpy.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .parentsUntil(this.options.target, '.active')
+      .removeClass('active')
+
+    var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+    var active = $(selector)
+      .parents('li')
+      .addClass('active')
+
+    if (active.parent('.dropdown-menu').length) {
+      active = active
+        .closest('li.dropdown')
+        .addClass('active')
+    }
+
+    active.trigger('activate.bs.scrollspy')
+  }
+
+
+  // SCROLLSPY PLUGIN DEFINITION
+  // ===========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.scrollspy')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.scrollspy
+
+  $.fn.scrollspy             = Plugin
+  $.fn.scrollspy.Constructor = ScrollSpy
+
+
+  // SCROLLSPY NO CONFLICT
+  // =====================
+
+  $.fn.scrollspy.noConflict = function () {
+    $.fn.scrollspy = old
+    return this
+  }
+
+
+  // SCROLLSPY DATA-API
+  // ==================
+
+  $(window).on('load.bs.scrollspy.data-api', function () {
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this)
+      Plugin.call($spy, $spy.data())
+    })
+  })
+
+}(jQuery);
 #T=ui-showInClass  or showInClass 切换单个目标的class
 /*-- 
   showInClass="showInclass tagetObj outtime even" 
@@ -7255,9 +7681,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
