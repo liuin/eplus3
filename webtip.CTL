@@ -52,9 +52,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after(^!)
-#T=after
 after
+#T=after
+after(^!)
 #T=afunc
 function (^!) {
 }
@@ -246,9 +246,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -358,9 +358,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before(^!)
-#T=before
 before
+#T=before
+before(^!)
 #T=bg
 background:^!;
 #T=bg-
@@ -843,14 +843,14 @@ clearRequest(^!)
 clearTimeout(^!)
 #T=click
 click(^!)
-#T=cl-l
-clear:left;
-#T=cl-n
-clear:none;
 #T=clientX
 clientX
 #T=clientY
 clientY
+#T=cl-l
+clear:left;
+#T=cl-n
+clear:none;
 #T=clone
 clone(^!)
 #T=cloneall
@@ -1229,9 +1229,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty(^!)
-#T=empty
 empty
+#T=empty
+empty(^!)
 #T=enabled
 enabled
 #T=encodeURI
@@ -1299,9 +1299,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:'\5B8B\4F53',Arial;
-#T=ff-st
 font-family:"\5B8B\4F53"
+#T=ff-st
+font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
 font-family:'Î¢ÈíÑÅºÚ';
 #T=fieldset
@@ -1393,9 +1393,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus(^!)
-#T=focus
 focus
+#T=focus
+focus(^!)
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -1939,9 +1939,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover(^!)
-#T=hover
 hover
+#T=hover
+hover(^!)
 #T=hr
 <hr />^!
 #T=href-j
@@ -2802,9 +2802,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2832,11 +2832,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3480,9 +3480,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3628,9 +3628,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3736,9 +3736,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3762,9 +3762,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -3800,9 +3800,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -3816,9 +3816,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -3836,14 +3836,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -3885,9 +3885,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -3927,9 +3927,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4071,9 +4071,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //Î»ÒÆ
@@ -4101,9 +4101,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -5468,12 +5468,14 @@ jQuery.extend(jQuery.easing, {
 /** 
 * extend µ¯³ö¿ò
 * @author cuki13
-  $(obj).popbk();
-  .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100;}
-  .popbk {position: absolute; top:0; left:50%;}
+  .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100; background:rgba(0, 0, 0, 0.5);}
+  .popbk {position: absolute; top:0; left:50%; -webkit-transition:0.5s; transition:0.5s;  -webkit-transform: scale(0); transform: scale(0);}
   .popbk .close {position:absolute;right:0;top:0;}
   .fade.in { opacity: 1; }
+  .fade.in .popbk {-webkit-transform: scale(1); transform: scale(1);}
   .fade{opacity: 0;-webkit-transition: opacity .15s linear;-o-transition: opacity .15s linear;transition: opacity .15s linear;}
+
+  $(obj).popbk();
   $("#popbk2").data('ck.pokbk').open();
   $("#popbk2").data('ck.pokbk').close();
 */
@@ -5491,6 +5493,7 @@ jQuery.extend(jQuery.easing, {
 
   Popbk.prototype.build = function  (el) {
     var $this = $(el);
+    $this.show();
     $this.wrap('<div class="popbk-wrap-'+ this.id +' popbk-wrap fade" ></div>');
     $this.wrap('<div class="popbk-'+ this.id +' popbk" ></div>');
 
@@ -5511,7 +5514,11 @@ jQuery.extend(jQuery.easing, {
     $this.parent(".popbk").find(".close").on('click',function  () {
       $this.data('ck.pokbk').close();
     })    
-    $this.parents(".popbk-wrap").hide();
+    $this.parents(".popbk-wrap").hide().on('click',function  (e) {
+      if ($(e.target).hasClass('popbk-wrap')) {
+        $this.data('ck.pokbk').close();      
+      }
+    });
   }
 
   Popbk.prototype.open = function  () {
@@ -5521,14 +5528,8 @@ jQuery.extend(jQuery.easing, {
       $this.parents(".popbk-wrap").show();
       $this.parents(".popbk-wrap")[0].offsetWidth;
       $this.parents(".popbk-wrap").addClass("in");
+      $('body').css('overflow','hidden');
 
-      var wh = $this.height();
-      if ($(window).height() > wh) {
-        $('body').css('overflow','hidden');
-      }else {
-        $('body').css('overflow','auto');
-      }
-      
     }
   }
 
@@ -5544,6 +5545,7 @@ jQuery.extend(jQuery.easing, {
     }else {
       $parent.hide();
     }
+    $('body').css('overflow','auto');
   }
 
   function Plugin(option) {
@@ -7699,9 +7701,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
