@@ -457,7 +457,7 @@ box-flex:1;
 -webkit-box-flex:1;
 
 #T=box-pack //Ä£ĞÍºĞ×óÓÒÎ»ÖÃ
--webkit-box-pack: center;-moz-box-pack: center; box-pack: center;
+-webkit-box-pack: center; -moz-box-pack: center; box-pack: center;
 #T=bp-j
 -webkit-box-pack: justify;
 #T=br
