@@ -1,7 +1,7 @@
 #TITLE=webtip
 #INFO
 New Cliptext library
-#SORT=y
+#SORT=n
 
 #T=!
 !important
@@ -21,6 +21,8 @@ New Cliptext library
 }
 #T=a
 <a href="#">^!</a>
+#T=cubic-bezier(1,-0.39,.36,1.44)
+cubic-bezier(1,-0.39,.36,1.44)
 #T=abbr
 <abbr>^!</abbr>
 #T=abort
@@ -2383,7 +2385,7 @@ html(^!)
 <!-- end table -->
 #T=html-temp5
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <script type="text/javascript">
     function browserRedirect() {
@@ -4819,10 +4821,11 @@ $(".ckiput").prop('checked',true);
 
 
     $this.on("change.resize",function  () {
+      var $parents = $this.parents('.form-select-ui');
       var vl = $(this).find("option:selected").html();
-      $(this).prev('.val').html(vl);
-      $(this).parents(".selectstyle").find('.val').html(vl);
+      $parents.find('.val-ins').html(vl);     
     })
+
     $this.trigger('change.resize');
   }
 
@@ -7885,4 +7888,6 @@ zoom:1;
 
 #T=zs-ze
 <!-- /^! -->
+#T=thinkphp-__STATIC__
+__STATIC__
 #
