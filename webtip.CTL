@@ -21,6 +21,9 @@ New Cliptext library
 }
 #T=a
 <a href="#">^!</a>
+#T=a:tel
+<a href="tel:139xxxxxxxx">一键拨打号码</a>
+<a href="sms:139xxxxxxx">一键发送短信</a>
 #T=abbr
 <abbr>^!</abbr>
 #T=abort
@@ -2383,7 +2386,7 @@ html(^!)
 <!-- end table -->
 #T=html-temp5
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <script type="text/javascript">
     function browserRedirect() {
