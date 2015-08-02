@@ -2921,14 +2921,14 @@ moveToPoint(^!)
 margin-right:^!;
 #T=mr-a
 margin-right:auto;
+#T=ms-{
+{{^!}}
 #T=ms-controller
 ms-controller="^!"
 #T=ms-each
 ms-each="^!"
 #T=ms-with
 ms-with="^!"
-#T=ms-{
-{{^!}}
 #T=msWriteProfilerMark
 msWriteProfilerMark(^!)
 #T=mt
@@ -4818,6 +4818,44 @@ $(".ckiput").prop('checked',true);
       $this.prev().prev('.val').find('.val-ins').html($(this).html());
       $this.trigger('changeVal');
       $this.trigger('change');
+        // wk
+      if ($this.attr('id') == "Month") {
+          //alert($('#zYear').val() + "--" + parseInt($("#zMonth").val()));
+          var yearValue = parseInt($("#Year").val());
+          var monthValue = parseInt($("#Month").val());
+          if (monthValue == 1 || monthValue == 3 || monthValue == 5 || monthValue == 7 || monthValue == 8 || monthValue == 10 || monthValue == 12) {
+              dayvalue = 31;
+          } else if (monthValue == 4 || monthValue == 6 || monthValue == 11 || monthValue == 9) {
+              dayvalue = 30;
+          } else if (monthValue == 2) {
+              if (yearValue % 4 == 0 && (yearValue % 4 != 0 || yearValue % 400 == 0)) { //»ÚƒÍ
+                  dayvalue = 29;
+              } else {
+                  dayvalue = 28;
+              }
+          }
+          $this.parent().next().next().find('ul').each(function () {
+              $(this).html("");
+              for (var i = 1; i <= dayvalue; i++) {
+                  if (i < 10) {
+                      if (i == 0)
+                          $(this).append('<li>»’</li>');
+                      else
+                          $(this).append('<li>0' + i.toString() + '</li>');
+                  }
+                  else
+                      $(this).append('<li>' + i.toString() + '</li>');
+              }
+
+              $(this).find('li').on('click', function () {
+                  var ind = $(this).index();
+                  $(this).addClass('active').siblings().removeClass('active');
+                  $(this).parent().next().find('option').eq(ind).prop('selected', 'selected');
+                  $(this).parent().prev().find('.val-ins').html($(this).html());
+              })
+          });
+      }
+        // end
     })
 
     option.insertBefore($this);
@@ -4834,6 +4872,11 @@ $(".ckiput").prop('checked',true);
       var $parents = $this.parents('.form-select-ui');
       var vl = $(this).find("option:selected").html();
       $parents.find('.val-ins').html(vl);     
+      option.find('li').each(function () {
+          if ($(this).html() == vl) {
+            $(this).addClass('active').siblings().removeClass('active');
+          }
+      })
     })
 
     $this.on('rbluid',function  () {
@@ -5734,6 +5777,7 @@ jQuery.extend(jQuery.easing, {
     }else {
       $parent.hide();
     }
+    $this.trigger('callbackClose');
     $('body').css('overflow','auto');
   }
 
@@ -5748,10 +5792,12 @@ jQuery.extend(jQuery.easing, {
       else if (option) data.setState(option)
     })
   }
-
-  $(document).on('ready.popbk', function  () {
+  $(document).on('ready.popbk poprb', function  () {
     var $this = $(dataString);
-    Plugin.call($this,'build');
+    
+    if ($this.data('ck.pokbk') == undefined) {
+      Plugin.call($this,'build');
+    }
   })
 })(jQuery);
 #T=ui-randomColor
