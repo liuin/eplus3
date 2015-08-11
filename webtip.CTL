@@ -2923,12 +2923,22 @@ moveToPoint(^!)
 margin-right:^!;
 #T=mr-a
 margin-right:auto;
+#T=ms-avalon.define //
+avalon.define({
+ $id: "header",
+ nav: false,
+ toggleNav:function  () {
+   littlestar.header.nav = !littlestar.header.nav;
+ }
+})
 #T=ms-{
 {{^!}}
 #T=ms-controller
 ms-controller="^!"
 #T=ms-each
 ms-each="^!"
+#T=ms-hidden //.ms-controller
+.ms-controller,.ms-important,[ms-controller],[ms-important]{visibility: hidden; }
 #T=ms-with
 ms-with="^!"
 #T=msWriteProfilerMark
