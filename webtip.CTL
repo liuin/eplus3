@@ -3847,6 +3847,10 @@ default:
 }
 #T=t
 top:^!;
+#T=t7-pagein
+myApp.onPageInit('^!', function (page) {
+  
+})
 #T=ta
 text-align:^!;
 #T=t-a
@@ -4111,7 +4115,7 @@ try {
 catch () {
 }
 #T=tsh
-text-shadow:^!;
+text-shadow:^!; 
 #T=tsh-
 text-shadow:0 0 0 #000;
 #T=tsh-n
