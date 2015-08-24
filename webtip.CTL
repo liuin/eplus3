@@ -107,7 +107,7 @@ animate(^!)
 #T=animated
 animated
 #T=animation- //animation缩写
-animation: name duration timing-function delay iteration-count direction;
+animation: name duration timing-function delay iteration-count direction; 
 -webkit-animation: name duration timing-function delay iteration-count direction;
 #T=animation-delay
 -webkit-animation-delay: .5s;animation-delay: .5s;
@@ -2865,6 +2865,8 @@ margin-bottom:auto;
 <menu>^!</menu>
 #T=mergeAttributes
 mergeAttributes(^!)
+#T=meta telephone=no //取消网页自动拨号
+<meta name="format-detection" content="telephone=no">
 #T=meta-com
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 #T=meta-edge
@@ -3932,6 +3934,8 @@ text-emphasis:dot;
 text-emphasis:none;
 #T=test
 test(^!)
+#T=text
+text
 #T=textarea
 <textarea name="^!"></textarea>
 #T=textj
@@ -4565,6 +4569,34 @@ fixhead($(".fixhead"));
   })
 
 })(jQuery);
+#T=ui-footerfix//固定底部
+$(window).load(function () {
+  //底部固定
+  function resetbt() {
+    var getwd = $(window).height();
+    var hd = $('.footer').offset().top + $('.footer').height() - getwd;
+    if (hd < 0) {
+      var style = {
+        'padding-top': -hd,
+        'width': '100%',
+        'bottom': '0'
+      }
+    } else {
+      var style = {
+        'position': 'static',
+        'width': '100%',
+        'bottom': '0'
+      }
+      
+    }
+    $('.footer').css(style);
+  }
+  resetbt();
+  $(document).on('footerReset', function () {
+    resetbt();
+  })
+  
+})
 #T=ui-formCheck
 /** 
 * extend 表单控件自定义
