@@ -1,2 +1,6 @@
-old files/
-ftp2_u.ini
+/*
+*.ctl
+*.exe
+!.gitignore
+!asset.CTL
+!webtip.CTL
