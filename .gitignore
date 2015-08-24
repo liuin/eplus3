@@ -1,2 +1,11 @@
 old files/
 ftp2_u.ini
+*.ini
+license-kr.txt
+license.txt
+readme.txt
+remove.exe
+/
+/*
+!asset.CTL
+!webtip.CTL
