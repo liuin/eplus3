@@ -1126,3 +1126,1337 @@ ka.date=function(t,n){var r,a,i=ka.date.locate,c="",u=[];if(n=n||"mediumDate",n=
 
 !function(a){function b(){}function c(a){function c(b){b.prototype.option||(b.prototype.option=function(b){a.isPlainObject(b)&&(this.options=a.extend(!0,this.options,b))})}function e(b,c){a.fn[b]=function(e){if("string"==typeof e){for(var g=d.call(arguments,1),h=0,i=this.length;i>h;h++){var j=this[h],k=a.data(j,b);if(k)if(a.isFunction(k[e])&&"_"!==e.charAt(0)){var l=k[e].apply(k,g);if(void 0!==l)return l}else f("no such method '"+e+"' for "+b+" instance");else f("cannot call methods on "+b+" prior to initialization; attempted to call '"+e+"'")}return this}return this.each(function(){var d=a.data(this,b);d?(d.option(e),d._init()):(d=new c(this,e),a.data(this,b,d))})}}if(a){var f="undefined"==typeof console?b:function(a){console.error(a)};return a.bridget=function(a,b){c(b),e(a,b)},a.bridget}}var d=Array.prototype.slice;"function"==typeof define&&define.amd?define("jquery-bridget/jquery.bridget",["jquery"],c):c("object"==typeof exports?require("jquery"):a.jQuery)}(window),function(a){function b(b){var c=a.event;return c.target=c.target||c.srcElement||b,c}var c=document.documentElement,d=function(){};c.addEventListener?d=function(a,b,c){a.addEventListener(b,c,!1)}:c.attachEvent&&(d=function(a,c,d){a[c+d]=d.handleEvent?function(){var c=b(a);d.handleEvent.call(d,c)}:function(){var c=b(a);d.call(a,c)},a.attachEvent("on"+c,a[c+d])});var e=function(){};c.removeEventListener?e=function(a,b,c){a.removeEventListener(b,c,!1)}:c.detachEvent&&(e=function(a,b,c){a.detachEvent("on"+b,a[b+c]);try{delete a[b+c]}catch(d){a[b+c]=void 0}});var f={bind:d,unbind:e};"function"==typeof define&&define.amd?define("eventie/eventie",f):"object"==typeof exports?module.exports=f:a.eventie=f}(window),function(){"use strict";function a(){}function b(a,b){for(var c=a.length;c--;)if(a[c].listener===b)return c;return-1}function c(a){return function(){return this[a].apply(this,arguments)}}var d=a.prototype,e=this,f=e.EventEmitter;d.getListeners=function(a){var b,c,d=this._getEvents();if(a instanceof RegExp){b={};for(c in d)d.hasOwnProperty(c)&&a.test(c)&&(b[c]=d[c])}else b=d[a]||(d[a]=[]);return b},d.flattenListeners=function(a){var b,c=[];for(b=0;b<a.length;b+=1)c.push(a[b].listener);return c},d.getListenersAsObject=function(a){var b,c=this.getListeners(a);return c instanceof Array&&(b={},b[a]=c),b||c},d.addListener=function(a,c){var d,e=this.getListenersAsObject(a),f="object"==typeof c;for(d in e)e.hasOwnProperty(d)&&-1===b(e[d],c)&&e[d].push(f?c:{listener:c,once:!1});return this},d.on=c("addListener"),d.addOnceListener=function(a,b){return this.addListener(a,{listener:b,once:!0})},d.once=c("addOnceListener"),d.defineEvent=function(a){return this.getListeners(a),this},d.defineEvents=function(a){for(var b=0;b<a.length;b+=1)this.defineEvent(a[b]);return this},d.removeListener=function(a,c){var d,e,f=this.getListenersAsObject(a);for(e in f)f.hasOwnProperty(e)&&(d=b(f[e],c),-1!==d&&f[e].splice(d,1));return this},d.off=c("removeListener"),d.addListeners=function(a,b){return this.manipulateListeners(!1,a,b)},d.removeListeners=function(a,b){return this.manipulateListeners(!0,a,b)},d.manipulateListeners=function(a,b,c){var d,e,f=a?this.removeListener:this.addListener,g=a?this.removeListeners:this.addListeners;if("object"!=typeof b||b instanceof RegExp)for(d=c.length;d--;)f.call(this,b,c[d]);else for(d in b)b.hasOwnProperty(d)&&(e=b[d])&&("function"==typeof e?f.call(this,d,e):g.call(this,d,e));return this},d.removeEvent=function(a){var b,c=typeof a,d=this._getEvents();if("string"===c)delete d[a];else if(a instanceof RegExp)for(b in d)d.hasOwnProperty(b)&&a.test(b)&&delete d[b];else delete this._events;return this},d.removeAllListeners=c("removeEvent"),d.emitEvent=function(a,b){var c,d,e,f,g=this.getListenersAsObject(a);for(e in g)if(g.hasOwnProperty(e))for(d=g[e].length;d--;)c=g[e][d],c.once===!0&&this.removeListener(a,c.listener),f=c.listener.apply(this,b||[]),f===this._getOnceReturnValue()&&this.removeListener(a,c.listener);return this},d.trigger=c("emitEvent"),d.emit=function(a){var b=Array.prototype.slice.call(arguments,1);return this.emitEvent(a,b)},d.setOnceReturnValue=function(a){return this._onceReturnValue=a,this},d._getOnceReturnValue=function(){return this.hasOwnProperty("_onceReturnValue")?this._onceReturnValue:!0},d._getEvents=function(){return this._events||(this._events={})},a.noConflict=function(){return e.EventEmitter=f,a},"function"==typeof define&&define.amd?define("eventEmitter/EventEmitter",[],function(){return a}):"object"==typeof module&&module.exports?module.exports=a:e.EventEmitter=a}.call(this),function(a){function b(a){if(a){if("string"==typeof d[a])return a;a=a.charAt(0).toUpperCase()+a.slice(1);for(var b,e=0,f=c.length;f>e;e++)if(b=c[e]+a,"string"==typeof d[b])return b}}var c="Webkit Moz ms Ms O".split(" "),d=document.documentElement.style;"function"==typeof define&&define.amd?define("get-style-property/get-style-property",[],function(){return b}):"object"==typeof exports?module.exports=b:a.getStyleProperty=b}(window),function(a,b){function c(a){var b=parseFloat(a),c=-1===a.indexOf("%")&&!isNaN(b);return c&&b}function d(){}function e(){for(var a={width:0,height:0,innerWidth:0,innerHeight:0,outerWidth:0,outerHeight:0},b=0,c=h.length;c>b;b++){var d=h[b];a[d]=0}return a}function f(b){function d(){if(!m){m=!0;var d=a.getComputedStyle;if(j=function(){var a=d?function(a){return d(a,null)}:function(a){return a.currentStyle};return function(b){var c=a(b);return c||g("Style returned "+c+". Are you running this code in a hidden iframe on Firefox? See http://bit.ly/getsizebug1"),c}}(),k=b("boxSizing")){var e=document.createElement("div");e.style.width="200px",e.style.padding="1px 2px 3px 4px",e.style.borderStyle="solid",e.style.borderWidth="1px 2px 3px 4px",e.style[k]="border-box";var f=document.body||document.documentElement;f.appendChild(e);var h=j(e);l=200===c(h.width),f.removeChild(e)}}}function f(a){if(d(),"string"==typeof a&&(a=document.querySelector(a)),a&&"object"==typeof a&&a.nodeType){var b=j(a);if("none"===b.display)return e();var f={};f.width=a.offsetWidth,f.height=a.offsetHeight;for(var g=f.isBorderBox=!(!k||!b[k]||"border-box"!==b[k]),m=0,n=h.length;n>m;m++){var o=h[m],p=b[o];p=i(a,p);var q=parseFloat(p);f[o]=isNaN(q)?0:q}var r=f.paddingLeft+f.paddingRight,s=f.paddingTop+f.paddingBottom,t=f.marginLeft+f.marginRight,u=f.marginTop+f.marginBottom,v=f.borderLeftWidth+f.borderRightWidth,w=f.borderTopWidth+f.borderBottomWidth,x=g&&l,y=c(b.width);y!==!1&&(f.width=y+(x?0:r+v));var z=c(b.height);return z!==!1&&(f.height=z+(x?0:s+w)),f.innerWidth=f.width-(r+v),f.innerHeight=f.height-(s+w),f.outerWidth=f.width+t,f.outerHeight=f.height+u,f}}function i(b,c){if(a.getComputedStyle||-1===c.indexOf("%"))return c;var d=b.style,e=d.left,f=b.runtimeStyle,g=f&&f.left;return g&&(f.left=b.currentStyle.left),d.left=c,c=d.pixelLeft,d.left=e,g&&(f.left=g),c}var j,k,l,m=!1;return f}var g="undefined"==typeof console?d:function(a){console.error(a)},h=["paddingLeft","paddingRight","paddingTop","paddingBottom","marginLeft","marginRight","marginTop","marginBottom","borderLeftWidth","borderRightWidth","borderTopWidth","borderBottomWidth"];"function"==typeof define&&define.amd?define("get-size/get-size",["get-style-property/get-style-property"],f):"object"==typeof exports?module.exports=f(require("desandro-get-style-property")):a.getSize=f(a.getStyleProperty)}(window),function(a){function b(a){"function"==typeof a&&(b.isReady?a():g.push(a))}function c(a){var c="readystatechange"===a.type&&"complete"!==f.readyState;b.isReady||c||d()}function d(){b.isReady=!0;for(var a=0,c=g.length;c>a;a++){var d=g[a];d()}}function e(e){return"complete"===f.readyState?d():(e.bind(f,"DOMContentLoaded",c),e.bind(f,"readystatechange",c),e.bind(a,"load",c)),b}var f=a.document,g=[];b.isReady=!1,"function"==typeof define&&define.amd?define("doc-ready/doc-ready",["eventie/eventie"],e):"object"==typeof exports?module.exports=e(require("eventie")):a.docReady=e(a.eventie)}(window),function(a){"use strict";function b(a,b){return a[g](b)}function c(a){if(!a.parentNode){var b=document.createDocumentFragment();b.appendChild(a)}}function d(a,b){c(a);for(var d=a.parentNode.querySelectorAll(b),e=0,f=d.length;f>e;e++)if(d[e]===a)return!0;return!1}function e(a,d){return c(a),b(a,d)}var f,g=function(){if(a.matches)return"matches";if(a.matchesSelector)return"matchesSelector";for(var b=["webkit","moz","ms","o"],c=0,d=b.length;d>c;c++){var e=b[c],f=e+"MatchesSelector";if(a[f])return f}}();if(g){var h=document.createElement("div"),i=b(h,"div");f=i?b:e}else f=d;"function"==typeof define&&define.amd?define("matches-selector/matches-selector",[],function(){return f}):"object"==typeof exports?module.exports=f:window.matchesSelector=f}(Element.prototype),function(a,b){"use strict";"function"==typeof define&&define.amd?define("fizzy-ui-utils/utils",["doc-ready/doc-ready","matches-selector/matches-selector"],function(c,d){return b(a,c,d)}):"object"==typeof exports?module.exports=b(a,require("doc-ready"),require("desandro-matches-selector")):a.fizzyUIUtils=b(a,a.docReady,a.matchesSelector)}(window,function(a,b,c){var d={};d.extend=function(a,b){for(var c in b)a[c]=b[c];return a},d.modulo=function(a,b){return(a%b+b)%b};var e=Object.prototype.toString;d.isArray=function(a){return"[object Array]"==e.call(a)},d.makeArray=function(a){var b=[];if(d.isArray(a))b=a;else if(a&&"number"==typeof a.length)for(var c=0,e=a.length;e>c;c++)b.push(a[c]);else b.push(a);return b},d.indexOf=Array.prototype.indexOf?function(a,b){return a.indexOf(b)}:function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},d.removeFrom=function(a,b){var c=d.indexOf(a,b);-1!=c&&a.splice(c,1)},d.isElement="function"==typeof HTMLElement||"object"==typeof HTMLElement?function(a){return a instanceof HTMLElement}:function(a){return a&&"object"==typeof a&&1==a.nodeType&&"string"==typeof a.nodeName},d.setText=function(){function a(a,c){b=b||(void 0!==document.documentElement.textContent?"textContent":"innerText"),a[b]=c}var b;return a}(),d.getParent=function(a,b){for(;a!=document.body;)if(a=a.parentNode,c(a,b))return a},d.getQueryElement=function(a){return"string"==typeof a?document.querySelector(a):a},d.handleEvent=function(a){var b="on"+a.type;this[b]&&this[b](a)},d.filterFindElements=function(a,b){a=d.makeArray(a);for(var e=[],f=0,g=a.length;g>f;f++){var h=a[f];if(d.isElement(h))if(b){c(h,b)&&e.push(h);for(var i=h.querySelectorAll(b),j=0,k=i.length;k>j;j++)e.push(i[j])}else e.push(h)}return e},d.debounceMethod=function(a,b,c){var d=a.prototype[b],e=b+"Timeout";a.prototype[b]=function(){var a=this[e];a&&clearTimeout(a);var b=arguments,f=this;this[e]=setTimeout(function(){d.apply(f,b),delete f[e]},c||100)}},d.toDashed=function(a){return a.replace(/(.)([A-Z])/g,function(a,b,c){return b+"-"+c}).toLowerCase()};var f=a.console;return d.htmlInit=function(c,e){b(function(){for(var b=d.toDashed(e),g=document.querySelectorAll(".js-"+b),h="data-"+b+"-options",i=0,j=g.length;j>i;i++){var k,l=g[i],m=l.getAttribute(h);try{k=m&&JSON.parse(m)}catch(n){f&&f.error("Error parsing "+h+" on "+l.nodeName.toLowerCase()+(l.id?"#"+l.id:"")+": "+n);continue}var o=new c(l,k),p=a.jQuery;p&&p.data(l,e,o)}})},d}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("outlayer/item",["eventEmitter/EventEmitter","get-size/get-size","get-style-property/get-style-property","fizzy-ui-utils/utils"],function(c,d,e,f){return b(a,c,d,e,f)}):"object"==typeof exports?module.exports=b(a,require("wolfy87-eventemitter"),require("get-size"),require("desandro-get-style-property"),require("fizzy-ui-utils")):(a.Outlayer={},a.Outlayer.Item=b(a,a.EventEmitter,a.getSize,a.getStyleProperty,a.fizzyUIUtils))}(window,function(a,b,c,d,e){"use strict";function f(a){for(var b in a)return!1;return b=null,!0}function g(a,b){a&&(this.element=a,this.layout=b,this.position={x:0,y:0},this._create())}function h(a){return a.replace(/([A-Z])/g,function(a){return"-"+a.toLowerCase()})}var i=a.getComputedStyle,j=i?function(a){return i(a,null)}:function(a){return a.currentStyle},k=d("transition"),l=d("transform"),m=k&&l,n=!!d("perspective"),o={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"otransitionend",transition:"transitionend"}[k],p=["transform","transition","transitionDuration","transitionProperty"],q=function(){for(var a={},b=0,c=p.length;c>b;b++){var e=p[b],f=d(e);f&&f!==e&&(a[e]=f)}return a}();e.extend(g.prototype,b.prototype),g.prototype._create=function(){this._transn={ingProperties:{},clean:{},onEnd:{}},this.css({position:"absolute"})},g.prototype.handleEvent=function(a){var b="on"+a.type;this[b]&&this[b](a)},g.prototype.getSize=function(){this.size=c(this.element)},g.prototype.css=function(a){var b=this.element.style;for(var c in a){var d=q[c]||c;b[d]=a[c]}},g.prototype.getPosition=function(){var a=j(this.element),b=this.layout.options,c=b.isOriginLeft,d=b.isOriginTop,e=a[c?"left":"right"],f=a[d?"top":"bottom"],g=parseInt(e,10),h=parseInt(f,10),i=this.layout.size;g=-1!=e.indexOf("%")?g/100*i.width:g,h=-1!=f.indexOf("%")?h/100*i.height:h,g=isNaN(g)?0:g,h=isNaN(h)?0:h,g-=c?i.paddingLeft:i.paddingRight,h-=d?i.paddingTop:i.paddingBottom,this.position.x=g,this.position.y=h},g.prototype.layoutPosition=function(){var a=this.layout.size,b=this.layout.options,c={},d=b.isOriginLeft?"paddingLeft":"paddingRight",e=b.isOriginLeft?"left":"right",f=b.isOriginLeft?"right":"left",g=this.position.x+a[d];c[e]=this.getXValue(g),c[f]="";var h=b.isOriginTop?"paddingTop":"paddingBottom",i=b.isOriginTop?"top":"bottom",j=b.isOriginTop?"bottom":"top",k=this.position.y+a[h];c[i]=this.getYValue(k),c[j]="",this.css(c),this.emitEvent("layout",[this])},g.prototype.getXValue=function(a){var b=this.layout.options;return b.percentPosition&&!b.isHorizontal?a/this.layout.size.width*100+"%":a+"px"},g.prototype.getYValue=function(a){var b=this.layout.options;return b.percentPosition&&b.isHorizontal?a/this.layout.size.height*100+"%":a+"px"},g.prototype._transitionTo=function(a,b){this.getPosition();var c=this.position.x,d=this.position.y,e=parseInt(a,10),f=parseInt(b,10),g=e===this.position.x&&f===this.position.y;if(this.setPosition(a,b),g&&!this.isTransitioning)return void this.layoutPosition();var h=a-c,i=b-d,j={};j.transform=this.getTranslate(h,i),this.transition({to:j,onTransitionEnd:{transform:this.layoutPosition},isCleaning:!0})},g.prototype.getTranslate=function(a,b){var c=this.layout.options;return a=c.isOriginLeft?a:-a,b=c.isOriginTop?b:-b,a=this.getXValue(a),b=this.getYValue(b),n?"translate3d("+a+", "+b+", 0)":"translate("+a+", "+b+")"},g.prototype.goTo=function(a,b){this.setPosition(a,b),this.layoutPosition()},g.prototype.moveTo=m?g.prototype._transitionTo:g.prototype.goTo,g.prototype.setPosition=function(a,b){this.position.x=parseInt(a,10),this.position.y=parseInt(b,10)},g.prototype._nonTransition=function(a){this.css(a.to),a.isCleaning&&this._removeStyles(a.to);for(var b in a.onTransitionEnd)a.onTransitionEnd[b].call(this)},g.prototype._transition=function(a){if(!parseFloat(this.layout.options.transitionDuration))return void this._nonTransition(a);var b=this._transn;for(var c in a.onTransitionEnd)b.onEnd[c]=a.onTransitionEnd[c];for(c in a.to)b.ingProperties[c]=!0,a.isCleaning&&(b.clean[c]=!0);if(a.from){this.css(a.from);var d=this.element.offsetHeight;d=null}this.enableTransition(a.to),this.css(a.to),this.isTransitioning=!0};var r="opacity,"+h(q.transform||"transform");g.prototype.enableTransition=function(){this.isTransitioning||(this.css({transitionProperty:r,transitionDuration:this.layout.options.transitionDuration}),this.element.addEventListener(o,this,!1))},g.prototype.transition=g.prototype[k?"_transition":"_nonTransition"],g.prototype.onwebkitTransitionEnd=function(a){this.ontransitionend(a)},g.prototype.onotransitionend=function(a){this.ontransitionend(a)};var s={"-webkit-transform":"transform","-moz-transform":"transform","-o-transform":"transform"};g.prototype.ontransitionend=function(a){if(a.target===this.element){var b=this._transn,c=s[a.propertyName]||a.propertyName;if(delete b.ingProperties[c],f(b.ingProperties)&&this.disableTransition(),c in b.clean&&(this.element.style[a.propertyName]="",delete b.clean[c]),c in b.onEnd){var d=b.onEnd[c];d.call(this),delete b.onEnd[c]}this.emitEvent("transitionEnd",[this])}},g.prototype.disableTransition=function(){this.removeTransitionStyles(),this.element.removeEventListener(o,this,!1),this.isTransitioning=!1},g.prototype._removeStyles=function(a){var b={};for(var c in a)b[c]="";this.css(b)};var t={transitionProperty:"",transitionDuration:""};return g.prototype.removeTransitionStyles=function(){this.css(t)},g.prototype.removeElem=function(){this.element.parentNode.removeChild(this.element),this.css({display:""}),this.emitEvent("remove",[this])},g.prototype.remove=function(){if(!k||!parseFloat(this.layout.options.transitionDuration))return void this.removeElem();var a=this;this.once("transitionEnd",function(){a.removeElem()}),this.hide()},g.prototype.reveal=function(){delete this.isHidden,this.css({display:""});var a=this.layout.options,b={},c=this.getHideRevealTransitionEndProperty("visibleStyle");b[c]=this.onRevealTransitionEnd,this.transition({from:a.hiddenStyle,to:a.visibleStyle,isCleaning:!0,onTransitionEnd:b})},g.prototype.onRevealTransitionEnd=function(){this.isHidden||this.emitEvent("reveal")},g.prototype.getHideRevealTransitionEndProperty=function(a){var b=this.layout.options[a];if(b.opacity)return"opacity";for(var c in b)return c},g.prototype.hide=function(){this.isHidden=!0,this.css({display:""});var a=this.layout.options,b={},c=this.getHideRevealTransitionEndProperty("hiddenStyle");b[c]=this.onHideTransitionEnd,this.transition({from:a.visibleStyle,to:a.hiddenStyle,isCleaning:!0,onTransitionEnd:b})},g.prototype.onHideTransitionEnd=function(){this.isHidden&&(this.css({display:"none"}),this.emitEvent("hide"))},g.prototype.destroy=function(){this.css({position:"",left:"",right:"",top:"",bottom:"",transition:"",transform:""})},g}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("outlayer/outlayer",["eventie/eventie","eventEmitter/EventEmitter","get-size/get-size","fizzy-ui-utils/utils","./item"],function(c,d,e,f,g){return b(a,c,d,e,f,g)}):"object"==typeof exports?module.exports=b(a,require("eventie"),require("wolfy87-eventemitter"),require("get-size"),require("fizzy-ui-utils"),require("./item")):a.Outlayer=b(a,a.eventie,a.EventEmitter,a.getSize,a.fizzyUIUtils,a.Outlayer.Item)}(window,function(a,b,c,d,e,f){"use strict";function g(a,b){var c=e.getQueryElement(a);if(!c)return void(h&&h.error("Bad element for "+this.constructor.namespace+": "+(c||a)));this.element=c,i&&(this.$element=i(this.element)),this.options=e.extend({},this.constructor.defaults),this.option(b);var d=++k;this.element.outlayerGUID=d,l[d]=this,this._create(),this.options.isInitLayout&&this.layout()}var h=a.console,i=a.jQuery,j=function(){},k=0,l={};return g.namespace="outlayer",g.Item=f,g.defaults={containerStyle:{position:"relative"},isInitLayout:!0,isOriginLeft:!0,isOriginTop:!0,isResizeBound:!0,isResizingContainer:!0,transitionDuration:"0.4s",hiddenStyle:{opacity:0,transform:"scale(0.001)"},visibleStyle:{opacity:1,transform:"scale(1)"}},e.extend(g.prototype,c.prototype),g.prototype.option=function(a){e.extend(this.options,a)},g.prototype._create=function(){this.reloadItems(),this.stamps=[],this.stamp(this.options.stamp),e.extend(this.element.style,this.options.containerStyle),this.options.isResizeBound&&this.bindResize()},g.prototype.reloadItems=function(){this.items=this._itemize(this.element.children)},g.prototype._itemize=function(a){for(var b=this._filterFindItemElements(a),c=this.constructor.Item,d=[],e=0,f=b.length;f>e;e++){var g=b[e],h=new c(g,this);d.push(h)}return d},g.prototype._filterFindItemElements=function(a){return e.filterFindElements(a,this.options.itemSelector)},g.prototype.getItemElements=function(){for(var a=[],b=0,c=this.items.length;c>b;b++)a.push(this.items[b].element);return a},g.prototype.layout=function(){this._resetLayout(),this._manageStamps();var a=void 0!==this.options.isLayoutInstant?this.options.isLayoutInstant:!this._isLayoutInited;this.layoutItems(this.items,a),this._isLayoutInited=!0},g.prototype._init=g.prototype.layout,g.prototype._resetLayout=function(){this.getSize()},g.prototype.getSize=function(){this.size=d(this.element)},g.prototype._getMeasurement=function(a,b){var c,f=this.options[a];f?("string"==typeof f?c=this.element.querySelector(f):e.isElement(f)&&(c=f),this[a]=c?d(c)[b]:f):this[a]=0},g.prototype.layoutItems=function(a,b){a=this._getItemsForLayout(a),this._layoutItems(a,b),this._postLayout()},g.prototype._getItemsForLayout=function(a){for(var b=[],c=0,d=a.length;d>c;c++){var e=a[c];e.isIgnored||b.push(e)}return b},g.prototype._layoutItems=function(a,b){if(this._emitCompleteOnItems("layout",a),a&&a.length){for(var c=[],d=0,e=a.length;e>d;d++){var f=a[d],g=this._getItemLayoutPosition(f);g.item=f,g.isInstant=b||f.isLayoutInstant,c.push(g)}this._processLayoutQueue(c)}},g.prototype._getItemLayoutPosition=function(){return{x:0,y:0}},g.prototype._processLayoutQueue=function(a){for(var b=0,c=a.length;c>b;b++){var d=a[b];this._positionItem(d.item,d.x,d.y,d.isInstant)}},g.prototype._positionItem=function(a,b,c,d){d?a.goTo(b,c):a.moveTo(b,c)},g.prototype._postLayout=function(){this.resizeContainer()},g.prototype.resizeContainer=function(){if(this.options.isResizingContainer){var a=this._getContainerSize();a&&(this._setContainerMeasure(a.width,!0),this._setContainerMeasure(a.height,!1))}},g.prototype._getContainerSize=j,g.prototype._setContainerMeasure=function(a,b){if(void 0!==a){var c=this.size;c.isBorderBox&&(a+=b?c.paddingLeft+c.paddingRight+c.borderLeftWidth+c.borderRightWidth:c.paddingBottom+c.paddingTop+c.borderTopWidth+c.borderBottomWidth),a=Math.max(a,0),this.element.style[b?"width":"height"]=a+"px"}},g.prototype._emitCompleteOnItems=function(a,b){function c(){e.dispatchEvent(a+"Complete",null,[b])}function d(){g++,g===f&&c()}var e=this,f=b.length;if(!b||!f)return void c();for(var g=0,h=0,i=b.length;i>h;h++){var j=b[h];j.once(a,d)}},g.prototype.dispatchEvent=function(a,b,c){var d=b?[b].concat(c):c;if(this.emitEvent(a,d),i)if(this.$element=this.$element||i(this.element),b){var e=i.Event(b);e.type=a,this.$element.trigger(e,c)}else this.$element.trigger(a,c)},g.prototype.ignore=function(a){var b=this.getItem(a);b&&(b.isIgnored=!0)},g.prototype.unignore=function(a){var b=this.getItem(a);b&&delete b.isIgnored},g.prototype.stamp=function(a){if(a=this._find(a)){this.stamps=this.stamps.concat(a);for(var b=0,c=a.length;c>b;b++){var d=a[b];this.ignore(d)}}},g.prototype.unstamp=function(a){if(a=this._find(a))for(var b=0,c=a.length;c>b;b++){var d=a[b];e.removeFrom(this.stamps,d),this.unignore(d)}},g.prototype._find=function(a){return a?("string"==typeof a&&(a=this.element.querySelectorAll(a)),a=e.makeArray(a)):void 0},g.prototype._manageStamps=function(){if(this.stamps&&this.stamps.length){this._getBoundingRect();for(var a=0,b=this.stamps.length;b>a;a++){var c=this.stamps[a];this._manageStamp(c)}}},g.prototype._getBoundingRect=function(){var a=this.element.getBoundingClientRect(),b=this.size;this._boundingRect={left:a.left+b.paddingLeft+b.borderLeftWidth,top:a.top+b.paddingTop+b.borderTopWidth,right:a.right-(b.paddingRight+b.borderRightWidth),bottom:a.bottom-(b.paddingBottom+b.borderBottomWidth)}},g.prototype._manageStamp=j,g.prototype._getElementOffset=function(a){var b=a.getBoundingClientRect(),c=this._boundingRect,e=d(a),f={left:b.left-c.left-e.marginLeft,top:b.top-c.top-e.marginTop,right:c.right-b.right-e.marginRight,bottom:c.bottom-b.bottom-e.marginBottom};return f},g.prototype.handleEvent=function(a){var b="on"+a.type;this[b]&&this[b](a)},g.prototype.bindResize=function(){this.isResizeBound||(b.bind(a,"resize",this),this.isResizeBound=!0)},g.prototype.unbindResize=function(){this.isResizeBound&&b.unbind(a,"resize",this),this.isResizeBound=!1},g.prototype.onresize=function(){function a(){b.resize(),delete b.resizeTimeout}this.resizeTimeout&&clearTimeout(this.resizeTimeout);var b=this;this.resizeTimeout=setTimeout(a,100)},g.prototype.resize=function(){this.isResizeBound&&this.needsResizeLayout()&&this.layout()},g.prototype.needsResizeLayout=function(){var a=d(this.element),b=this.size&&a;return b&&a.innerWidth!==this.size.innerWidth},g.prototype.addItems=function(a){var b=this._itemize(a);return b.length&&(this.items=this.items.concat(b)),b},g.prototype.appended=function(a){var b=this.addItems(a);b.length&&(this.layoutItems(b,!0),this.reveal(b))},g.prototype.prepended=function(a){var b=this._itemize(a);if(b.length){var c=this.items.slice(0);this.items=b.concat(c),this._resetLayout(),this._manageStamps(),this.layoutItems(b,!0),this.reveal(b),this.layoutItems(c)}},g.prototype.reveal=function(a){this._emitCompleteOnItems("reveal",a);for(var b=a&&a.length,c=0;b&&b>c;c++){var d=a[c];d.reveal()}},g.prototype.hide=function(a){this._emitCompleteOnItems("hide",a);for(var b=a&&a.length,c=0;b&&b>c;c++){var d=a[c];d.hide()}},g.prototype.revealItemElements=function(a){var b=this.getItems(a);this.reveal(b)},g.prototype.hideItemElements=function(a){var b=this.getItems(a);this.hide(b)},g.prototype.getItem=function(a){for(var b=0,c=this.items.length;c>b;b++){var d=this.items[b];if(d.element===a)return d}},g.prototype.getItems=function(a){a=e.makeArray(a);for(var b=[],c=0,d=a.length;d>c;c++){var f=a[c],g=this.getItem(f);g&&b.push(g)}return b},g.prototype.remove=function(a){var b=this.getItems(a);if(this._emitCompleteOnItems("remove",b),b&&b.length)for(var c=0,d=b.length;d>c;c++){var f=b[c];f.remove(),e.removeFrom(this.items,f)}},g.prototype.destroy=function(){var a=this.element.style;a.height="",a.position="",a.width="";for(var b=0,c=this.items.length;c>b;b++){var d=this.items[b];d.destroy()}this.unbindResize();var e=this.element.outlayerGUID;delete l[e],delete this.element.outlayerGUID,i&&i.removeData(this.element,this.constructor.namespace)},g.data=function(a){a=e.getQueryElement(a);var b=a&&a.outlayerGUID;return b&&l[b]},g.create=function(a,b){function c(){g.apply(this,arguments)}return Object.create?c.prototype=Object.create(g.prototype):e.extend(c.prototype,g.prototype),c.prototype.constructor=c,c.defaults=e.extend({},g.defaults),e.extend(c.defaults,b),c.prototype.settings={},c.namespace=a,c.data=g.data,c.Item=function(){f.apply(this,arguments)},c.Item.prototype=new f,e.htmlInit(c,a),i&&i.bridget&&i.bridget(a,c),c},g.Item=f,g}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("isotope/js/item",["outlayer/outlayer"],b):"object"==typeof exports?module.exports=b(require("outlayer")):(a.Isotope=a.Isotope||{},a.Isotope.Item=b(a.Outlayer))}(window,function(a){"use strict";function b(){a.Item.apply(this,arguments)}b.prototype=new a.Item,b.prototype._create=function(){this.id=this.layout.itemGUID++,a.Item.prototype._create.call(this),this.sortData={}},b.prototype.updateSortData=function(){if(!this.isIgnored){this.sortData.id=this.id,this.sortData["original-order"]=this.id,this.sortData.random=Math.random();var a=this.layout.options.getSortData,b=this.layout._sorters;for(var c in a){var d=b[c];this.sortData[c]=d(this.element,this)}}};var c=b.prototype.destroy;return b.prototype.destroy=function(){c.apply(this,arguments),this.css({display:""})},b}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("isotope/js/layout-mode",["get-size/get-size","outlayer/outlayer"],b):"object"==typeof exports?module.exports=b(require("get-size"),require("outlayer")):(a.Isotope=a.Isotope||{},a.Isotope.LayoutMode=b(a.getSize,a.Outlayer))}(window,function(a,b){"use strict";function c(a){this.isotope=a,a&&(this.options=a.options[this.namespace],this.element=a.element,this.items=a.filteredItems,this.size=a.size)}return function(){function a(a){return function(){return b.prototype[a].apply(this.isotope,arguments)}}for(var d=["_resetLayout","_getItemLayoutPosition","_manageStamp","_getContainerSize","_getElementOffset","needsResizeLayout"],e=0,f=d.length;f>e;e++){var g=d[e];c.prototype[g]=a(g)}}(),c.prototype.needsVerticalResizeLayout=function(){var b=a(this.isotope.element),c=this.isotope.size&&b;return c&&b.innerHeight!=this.isotope.size.innerHeight},c.prototype._getMeasurement=function(){this.isotope._getMeasurement.apply(this,arguments)},c.prototype.getColumnWidth=function(){this.getSegmentSize("column","Width")},c.prototype.getRowHeight=function(){this.getSegmentSize("row","Height")},c.prototype.getSegmentSize=function(a,b){var c=a+b,d="outer"+b;if(this._getMeasurement(c,d),!this[c]){var e=this.getFirstItemSize();this[c]=e&&e[d]||this.isotope.size["inner"+b]}},c.prototype.getFirstItemSize=function(){var b=this.isotope.filteredItems[0];return b&&b.element&&a(b.element)},c.prototype.layout=function(){this.isotope.layout.apply(this.isotope,arguments)},c.prototype.getSize=function(){this.isotope.getSize(),this.size=this.isotope.size},c.modes={},c.create=function(a,b){function d(){c.apply(this,arguments)}return d.prototype=new c,b&&(d.options=b),d.prototype.namespace=a,c.modes[a]=d,d},c}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("masonry/masonry",["outlayer/outlayer","get-size/get-size","fizzy-ui-utils/utils"],b):"object"==typeof exports?module.exports=b(require("outlayer"),require("get-size"),require("fizzy-ui-utils")):a.Masonry=b(a.Outlayer,a.getSize,a.fizzyUIUtils)}(window,function(a,b,c){var d=a.create("masonry");return d.prototype._resetLayout=function(){this.getSize(),this._getMeasurement("columnWidth","outerWidth"),this._getMeasurement("gutter","outerWidth"),this.measureColumns();var a=this.cols;for(this.colYs=[];a--;)this.colYs.push(0);this.maxY=0},d.prototype.measureColumns=function(){if(this.getContainerWidth(),!this.columnWidth){var a=this.items[0],c=a&&a.element;this.columnWidth=c&&b(c).outerWidth||this.containerWidth}var d=this.columnWidth+=this.gutter,e=this.containerWidth+this.gutter,f=e/d,g=d-e%d,h=g&&1>g?"round":"floor";f=Math[h](f),this.cols=Math.max(f,1)},d.prototype.getContainerWidth=function(){var a=this.options.isFitWidth?this.element.parentNode:this.element,c=b(a);this.containerWidth=c&&c.innerWidth},d.prototype._getItemLayoutPosition=function(a){a.getSize();var b=a.size.outerWidth%this.columnWidth,d=b&&1>b?"round":"ceil",e=Math[d](a.size.outerWidth/this.columnWidth);e=Math.min(e,this.cols);for(var f=this._getColGroup(e),g=Math.min.apply(Math,f),h=c.indexOf(f,g),i={x:this.columnWidth*h,y:g},j=g+a.size.outerHeight,k=this.cols+1-f.length,l=0;k>l;l++)this.colYs[h+l]=j;return i},d.prototype._getColGroup=function(a){if(2>a)return this.colYs;for(var b=[],c=this.cols+1-a,d=0;c>d;d++){var e=this.colYs.slice(d,d+a);b[d]=Math.max.apply(Math,e)}return b},d.prototype._manageStamp=function(a){var c=b(a),d=this._getElementOffset(a),e=this.options.isOriginLeft?d.left:d.right,f=e+c.outerWidth,g=Math.floor(e/this.columnWidth);g=Math.max(0,g);var h=Math.floor(f/this.columnWidth);h-=f%this.columnWidth?0:1,h=Math.min(this.cols-1,h);for(var i=(this.options.isOriginTop?d.top:d.bottom)+c.outerHeight,j=g;h>=j;j++)this.colYs[j]=Math.max(i,this.colYs[j])},d.prototype._getContainerSize=function(){this.maxY=Math.max.apply(Math,this.colYs);var a={height:this.maxY};return this.options.isFitWidth&&(a.width=this._getContainerFitWidth()),a},d.prototype._getContainerFitWidth=function(){for(var a=0,b=this.cols;--b&&0===this.colYs[b];)a++;return(this.cols-a)*this.columnWidth-this.gutter},d.prototype.needsResizeLayout=function(){var a=this.containerWidth;return this.getContainerWidth(),a!==this.containerWidth},d}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("isotope/js/layout-modes/masonry",["../layout-mode","masonry/masonry"],b):"object"==typeof exports?module.exports=b(require("../layout-mode"),require("masonry-layout")):b(a.Isotope.LayoutMode,a.Masonry)}(window,function(a,b){"use strict";function c(a,b){for(var c in b)a[c]=b[c];return a}var d=a.create("masonry"),e=d.prototype._getElementOffset,f=d.prototype.layout,g=d.prototype._getMeasurement;
 c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,d.prototype._getMeasurement=g;var h=d.prototype.measureColumns;d.prototype.measureColumns=function(){this.items=this.isotope.filteredItems,h.call(this)};var i=d.prototype._manageStamp;return d.prototype._manageStamp=function(){this.options.isOriginLeft=this.isotope.options.isOriginLeft,this.options.isOriginTop=this.isotope.options.isOriginTop,i.apply(this,arguments)},d}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("isotope/js/layout-modes/fit-rows",["../layout-mode"],b):"object"==typeof exports?module.exports=b(require("../layout-mode")):b(a.Isotope.LayoutMode)}(window,function(a){"use strict";var b=a.create("fitRows");return b.prototype._resetLayout=function(){this.x=0,this.y=0,this.maxY=0,this._getMeasurement("gutter","outerWidth")},b.prototype._getItemLayoutPosition=function(a){a.getSize();var b=a.size.outerWidth+this.gutter,c=this.isotope.size.innerWidth+this.gutter;0!==this.x&&b+this.x>c&&(this.x=0,this.y=this.maxY);var d={x:this.x,y:this.y};return this.maxY=Math.max(this.maxY,this.y+a.size.outerHeight),this.x+=b,d},b.prototype._getContainerSize=function(){return{height:this.maxY}},b}),function(a,b){"use strict";"function"==typeof define&&define.amd?define("isotope/js/layout-modes/vertical",["../layout-mode"],b):"object"==typeof exports?module.exports=b(require("../layout-mode")):b(a.Isotope.LayoutMode)}(window,function(a){"use strict";var b=a.create("vertical",{horizontalAlignment:0});return b.prototype._resetLayout=function(){this.y=0},b.prototype._getItemLayoutPosition=function(a){a.getSize();var b=(this.isotope.size.innerWidth-a.size.outerWidth)*this.options.horizontalAlignment,c=this.y;return this.y+=a.size.outerHeight,{x:b,y:c}},b.prototype._getContainerSize=function(){return{height:this.y}},b}),function(a,b){"use strict";"function"==typeof define&&define.amd?define(["outlayer/outlayer","get-size/get-size","matches-selector/matches-selector","fizzy-ui-utils/utils","isotope/js/item","isotope/js/layout-mode","isotope/js/layout-modes/masonry","isotope/js/layout-modes/fit-rows","isotope/js/layout-modes/vertical"],function(c,d,e,f,g,h){return b(a,c,d,e,f,g,h)}):"object"==typeof exports?module.exports=b(a,require("outlayer"),require("get-size"),require("desandro-matches-selector"),require("fizzy-ui-utils"),require("./item"),require("./layout-mode"),require("./layout-modes/masonry"),require("./layout-modes/fit-rows"),require("./layout-modes/vertical")):a.Isotope=b(a,a.Outlayer,a.getSize,a.matchesSelector,a.fizzyUIUtils,a.Isotope.Item,a.Isotope.LayoutMode)}(window,function(a,b,c,d,e,f,g){function h(a,b){return function(c,d){for(var e=0,f=a.length;f>e;e++){var g=a[e],h=c.sortData[g],i=d.sortData[g];if(h>i||i>h){var j=void 0!==b[g]?b[g]:b,k=j?1:-1;return(h>i?1:-1)*k}}return 0}}var i=a.jQuery,j=String.prototype.trim?function(a){return a.trim()}:function(a){return a.replace(/^\s+|\s+$/g,"")},k=document.documentElement,l=k.textContent?function(a){return a.textContent}:function(a){return a.innerText},m=b.create("isotope",{layoutMode:"masonry",isJQueryFiltering:!0,sortAscending:!0});m.Item=f,m.LayoutMode=g,m.prototype._create=function(){this.itemGUID=0,this._sorters={},this._getSorters(),b.prototype._create.call(this),this.modes={},this.filteredItems=this.items,this.sortHistory=["original-order"];for(var a in g.modes)this._initLayoutMode(a)},m.prototype.reloadItems=function(){this.itemGUID=0,b.prototype.reloadItems.call(this)},m.prototype._itemize=function(){for(var a=b.prototype._itemize.apply(this,arguments),c=0,d=a.length;d>c;c++){var e=a[c];e.id=this.itemGUID++}return this._updateItemsSortData(a),a},m.prototype._initLayoutMode=function(a){var b=g.modes[a],c=this.options[a]||{};this.options[a]=b.options?e.extend(b.options,c):c,this.modes[a]=new b(this)},m.prototype.layout=function(){return!this._isLayoutInited&&this.options.isInitLayout?void this.arrange():void this._layout()},m.prototype._layout=function(){var a=this._getIsInstant();this._resetLayout(),this._manageStamps(),this.layoutItems(this.filteredItems,a),this._isLayoutInited=!0},m.prototype.arrange=function(a){function b(){d.reveal(c.needReveal),d.hide(c.needHide)}this.option(a),this._getIsInstant();var c=this._filter(this.items);this.filteredItems=c.matches;var d=this;this._bindArrangeComplete(),this._isInstant?this._noTransition(b):b(),this._sort(),this._layout()},m.prototype._init=m.prototype.arrange,m.prototype._getIsInstant=function(){var a=void 0!==this.options.isLayoutInstant?this.options.isLayoutInstant:!this._isLayoutInited;return this._isInstant=a,a},m.prototype._bindArrangeComplete=function(){function a(){b&&c&&d&&e.dispatchEvent("arrangeComplete",null,[e.filteredItems])}var b,c,d,e=this;this.once("layoutComplete",function(){b=!0,a()}),this.once("hideComplete",function(){c=!0,a()}),this.once("revealComplete",function(){d=!0,a()})},m.prototype._filter=function(a){var b=this.options.filter;b=b||"*";for(var c=[],d=[],e=[],f=this._getFilterTest(b),g=0,h=a.length;h>g;g++){var i=a[g];if(!i.isIgnored){var j=f(i);j&&c.push(i),j&&i.isHidden?d.push(i):j||i.isHidden||e.push(i)}}return{matches:c,needReveal:d,needHide:e}},m.prototype._getFilterTest=function(a){return i&&this.options.isJQueryFiltering?function(b){return i(b.element).is(a)}:"function"==typeof a?function(b){return a(b.element)}:function(b){return d(b.element,a)}},m.prototype.updateSortData=function(a){var b;a?(a=e.makeArray(a),b=this.getItems(a)):b=this.items,this._getSorters(),this._updateItemsSortData(b)},m.prototype._getSorters=function(){var a=this.options.getSortData;for(var b in a){var c=a[b];this._sorters[b]=n(c)}},m.prototype._updateItemsSortData=function(a){for(var b=a&&a.length,c=0;b&&b>c;c++){var d=a[c];d.updateSortData()}};var n=function(){function a(a){if("string"!=typeof a)return a;var c=j(a).split(" "),d=c[0],e=d.match(/^\[(.+)\]$/),f=e&&e[1],g=b(f,d),h=m.sortDataParsers[c[1]];return a=h?function(a){return a&&h(g(a))}:function(a){return a&&g(a)}}function b(a,b){var c;return c=a?function(b){return b.getAttribute(a)}:function(a){var c=a.querySelector(b);return c&&l(c)}}return a}();m.sortDataParsers={parseInt:function(a){return parseInt(a,10)},parseFloat:function(a){return parseFloat(a)}},m.prototype._sort=function(){var a=this.options.sortBy;if(a){var b=[].concat.apply(a,this.sortHistory),c=h(b,this.options.sortAscending);this.filteredItems.sort(c),a!=this.sortHistory[0]&&this.sortHistory.unshift(a)}},m.prototype._mode=function(){var a=this.options.layoutMode,b=this.modes[a];if(!b)throw new Error("No layout mode: "+a);return b.options=this.options[a],b},m.prototype._resetLayout=function(){b.prototype._resetLayout.call(this),this._mode()._resetLayout()},m.prototype._getItemLayoutPosition=function(a){return this._mode()._getItemLayoutPosition(a)},m.prototype._manageStamp=function(a){this._mode()._manageStamp(a)},m.prototype._getContainerSize=function(){return this._mode()._getContainerSize()},m.prototype.needsResizeLayout=function(){return this._mode().needsResizeLayout()},m.prototype.appended=function(a){var b=this.addItems(a);if(b.length){var c=this._filterRevealAdded(b);this.filteredItems=this.filteredItems.concat(c)}},m.prototype.prepended=function(a){var b=this._itemize(a);if(b.length){this._resetLayout(),this._manageStamps();var c=this._filterRevealAdded(b);this.layoutItems(this.filteredItems),this.filteredItems=c.concat(this.filteredItems),this.items=b.concat(this.items)}},m.prototype._filterRevealAdded=function(a){var b=this._filter(a);return this.hide(b.needHide),this.reveal(b.matches),this.layoutItems(b.matches,!0),b.matches},m.prototype.insert=function(a){var b=this.addItems(a);if(b.length){var c,d,e=b.length;for(c=0;e>c;c++)d=b[c],this.element.appendChild(d.element);var f=this._filter(b).matches;for(c=0;e>c;c++)b[c].isLayoutInstant=!0;for(this.arrange(),c=0;e>c;c++)delete b[c].isLayoutInstant;this.reveal(f)}};var o=m.prototype.remove;return m.prototype.remove=function(a){a=e.makeArray(a);var b=this.getItems(a);o.call(this,a);var c=b&&b.length;if(c)for(var d=0;c>d;d++){var f=b[d];e.removeFrom(this.filteredItems,f)}},m.prototype.shuffle=function(){for(var a=0,b=this.items.length;b>a;a++){var c=this.items[a];c.sortData.random=Math.random()}this.options.sortBy="random",this._sort(),this._layout()},m.prototype._noTransition=function(a){var b=this.options.transitionDuration;this.options.transitionDuration=0;var c=a.call(this);return this.options.transitionDuration=b,c},m.prototype.getFilteredItemElements=function(){for(var a=[],b=0,c=this.filteredItems.length;c>b;b++)a.push(this.filteredItems[b].element);return a},m});
+
+#T=val表单验证
+/*
+    通用表单验证方法
+    Validform version 5.3.2
+	By sean during April 7, 2010 - March 26, 2013
+	For more information, please visit http://validform.rjboy.cn
+	Validform is available under the terms of the MIT license.
+	
+	Demo:
+	$(".demoform").Validform({//$(".demoform")指明是哪一表单需要验证,名称需加在form表单上;
+		btnSubmit:"#btn_sub", //#btn_sub是该表单下要绑定点击提交表单事件的按钮;如果form内含有submit按钮该参数可省略;
+		btnReset:".btn_reset",//可选项 .btn_reset是该表单下要绑定点击重置表单事件的按钮;
+		tiptype:1, //可选项 1=>pop box,2=>side tip(parent.next.find; with default pop),3=>side tip(siblings; with default pop),4=>side tip(siblings; none pop)，默认为1，也可以传入一个function函数，自定义提示信息的显示方式（可以实现你想要的任何效果，具体参见demo页）;
+		ignoreHidden:false,//可选项 true | false 默认为false，当为true时对:hidden的表单元素将不做验证;
+		dragonfly:false,//可选项 true | false 默认false，当为true时，值为空时不做验证；
+		tipSweep:true,//可选项 true | false 默认为false，只在表单提交时触发检测，blur事件将不会触发检测（实时验证会在后台进行，不会显示检测结果）;
+		label:".label",//可选项 选择符，在没有绑定nullmsg时查找要显示的提示文字，默认查找".Validform_label"下的文字;
+		showAllError:false,//可选项 true | false，true：提交表单时所有错误提示信息都会显示，false：一碰到验证不通过的就停止检测后面的元素，只显示该元素的错误信息;
+		postonce:true, //可选项 表单是否只能提交一次，true开启，不填则默认关闭;
+		ajaxPost:true, //使用ajax方式提交表单数据，默认false，提交地址就是action指定地址;
+		datatype:{//传入自定义datatype类型，可以是正则，也可以是函数（函数内会传入一个参数）;
+			"*6-20": /^^[^^\s]{6,20}$/,
+			"z2-4" : /^^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/,
+			"username":function(gets,obj,curform,regxp){
+				//参数gets是获取到的表单元素值，obj为当前表单元素，curform为当前验证的表单，regxp为内置的一些正则表达式的引用;
+				var reg1=/^^[\w\.]{4,16}$/,
+					reg2=/^^[\u4E00-\u9FA5\uf900-\ufa2d]{2,8}$/;
+				
+				if(reg1.test(gets)){return true;}
+				if(reg2.test(gets)){return true;}
+				return false;
+				
+				//注意return可以返回true 或 false 或 字符串文字，true表示验证通过，返回字符串表示验证失败，字符串作为错误提示显示，返回false则用errmsg或默认的错误提示;
+			},
+			"phone":function(){
+				// 5.0 版本之后，要实现二选一的验证效果，datatype 的名称 不 需要以 "option_" 开头;	
+			}
+		},
+		usePlugin:{
+			swfupload:{},
+			datepicker:{},
+			passwordstrength:{},
+			jqtransform:{
+				selector:"select,input"
+			}
+		},
+		beforeCheck:function(curform){
+			//在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+			//这里明确return false的话将不会继续执行验证操作;	
+		},
+		beforeSubmit:function(curform){
+			//在验证成功后，表单提交前执行的函数，curform参数是当前表单对象。
+			//这里明确return false的话表单将不会提交;	
+		},
+		callback:function(data){
+			//返回数据data是json格式，{"info":"demo info","status":"y"}
+			//info: 输出提示信息;
+			//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+			//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+			//ajax遇到服务端错误时也会执行回调，这时的data是{ status:**, statusText:**, readyState:**, responseText:** }；
+			
+			//这里执行回调操作;
+			//注意：如果不是ajax方式提交表单，传入callback，这时data参数是当前表单对象，回调函数会在表单验证全部通过后执行，然后判断是否提交表单，如果callback里明确return false，则表单不会提交，如果return true或没有return，则会提交表单。
+		}
+	});
+	
+	Validform对象的方法和属性：
+	tipmsg：自定义提示信息，通过修改Validform对象的这个属性值来让同一个页面的不同表单使用不同的提示文字；
+	dataType：获取内置的一些正则；
+	eq(n)：获取Validform对象的第n个元素;
+	ajaxPost(flag,sync,url)：以ajax方式提交表单。flag为true时，跳过验证直接提交，sync为true时将以同步的方式进行ajax提交，传入了url地址时，表单会提交到这个地址；
+	abort()：终止ajax的提交；
+	submitForm(flag,url)：以参数里设置的方式提交表单，flag为true时，跳过验证直接提交，传入了url地址时，表单会提交到这个地址；
+	resetForm()：重置表单；
+	resetStatus()：重置表单的提交状态。传入了postonce参数的话，表单成功提交后状态会设置为"posted"，重置提交状态可以让表单继续可以提交；
+	getStatus()：获取表单的提交状态，normal：未提交，posting：正在提交，posted：已成功提交过；
+	setStatus(status)：设置表单的提交状态，可以设置normal，posting，posted三种状态，不传参则设置状态为posting，这个状态表单可以验证，但不能提交；
+	ignore(selector)：忽略对所选择对象的验证；
+	unignore(selector)：将ignore方法所忽略验证的对象重新获取验证效果；
+	addRule(rule)：可以通过Validform对象的这个方法来给表单元素绑定验证规则；
+	check(bool,selector):对指定对象进行验证(默认验证当前整个表单)，通过返回true，否则返回false（绑定实时验证的对象，格式符合要求时返回true，而不会等ajax的返回结果），bool为true时则只验证不显示提示信息；
+	config(setup):可以通过这个方法来修改初始化参数，指定表单的提交地址，给表单ajax和实时验证的ajax里设置参数；
+*/
+
+(function($,win,undef){
+	var errorobj=null,//指示当前验证失败的表单元素;
+		msgobj=null,//pop box object 
+		msghidden=true;//msgbox hidden?
+
+	var tipmsg={//默认提示文字;
+		tit:"提示信息",
+		w:{
+			"*":"不能为空！",
+			"*6-16":"请填写6到16位任意字符！",
+			"n":"请填写数字！",
+			"n6-16":"请填写6到16位数字！",
+			"s":"不能输入特殊字符！",
+			"s6-18":"请填写6到18位字符！",
+			"p":"请填写邮政编码！",
+			"m":"请填写手机号码！",
+			"e":"邮箱地址格式不对！",
+			"url":"请填写网址！"
+		},
+		def:"请填写正确信息！",
+		undef:"datatype未定义！",
+		reck:"两次输入的内容不一致！",
+		r:"通过信息验证！",
+		c:"正在检测信息…",
+		s:"请{填写|选择}{0|信息}！",
+		v:"所填信息没有经过验证，请稍后…",
+		p:"正在提交数据…"
+	}
+	$.Tipmsg=tipmsg;
+	
+	var Validform=function(forms,settings,inited){
+		var settings=$.extend({},Validform.defaults,settings);
+		settings.datatype && $.extend(Validform.util.dataType,settings.datatype);
+		
+		var brothers=this;
+		brothers.tipmsg={w:{}};
+		brothers.forms=forms;
+		brothers.objects=[];
+		
+		//创建子对象时不再绑定事件;
+		if(inited===true){
+			return false;
+		}
+		
+		forms.each(function(){
+			//已经绑定事件时跳过，避免事件重复绑定;
+			if(this.validform_inited=="inited"){return true;}
+			this.validform_inited="inited";
+			
+			var curform=this;
+			curform.settings=$.extend({},settings);
+			
+			var $this=$(curform);
+			
+			//防止表单按钮双击提交两次;
+			curform.validform_status="normal"; //normal | posting | posted;
+			
+			//让每个Validform对象都能自定义tipmsg;	
+			$this.data("tipmsg",brothers.tipmsg);
+
+			//bind the blur event;
+			$this.delegate("[datatype]","blur",function(){
+				//判断是否是在提交表单操作时触发的验证请求；
+				var subpost=arguments[1];
+				Validform.util.check.call(this,$this,subpost);
+			});
+			
+			$this.delegate(":text","keypress",function(event){
+				if(event.keyCode==13 && $this.find(":submit").length==0){
+					$this.submit();
+				}
+			});
+			
+			//点击表单元素，默认文字消失效果;
+			//表单元素值比较时的信息提示增强;
+			//radio、checkbox提示信息增强;
+			//外调插件初始化;
+			Validform.util.enhance.call($this,curform.settings.tiptype,curform.settings.usePlugin,curform.settings.tipSweep);
+			
+			curform.settings.btnSubmit && $this.find(curform.settings.btnSubmit).bind("click",function(){
+				$this.trigger("submit");
+				return false;
+			});
+						
+			$this.submit(function(){
+				var subflag=Validform.util.submitForm.call($this,curform.settings);
+				subflag === undef && (subflag=true);
+				return subflag;
+			});
+			
+			$this.find("[type='reset']").add($this.find(curform.settings.btnReset)).bind("click",function(){
+				Validform.util.resetForm.call($this);
+			});
+			
+		});
+		
+		//预创建pop box;
+		if( settings.tiptype==1 || (settings.tiptype==2 || settings.tiptype==3) && settings.ajaxPost ){		
+			creatMsgbox();
+		}
+	}
+	
+	Validform.defaults={
+		tiptype:1,
+		tipSweep:false,
+		showAllError:false,
+		postonce:false,
+		ajaxPost:false
+	}
+	
+	Validform.util={
+		dataType:{
+			"*":/[\w\W]+/,
+			"*6-16":/^^[\w\W]{6,16}$/,
+			"n":/^^\d+$/,
+			"n6-16":/^^\d{6,16}$/,
+			"s":/^^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
+			"s6-18":/^^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{6,18}$/,
+			"p":/^^[0-9]{6}$/,
+			"m":/^^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}$|18[0-9]{9}$/,
+			"e":/^^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
+			"url":/^^(\w+:\/\/)?\w+(\.\w+)+.*$/
+		},
+		
+		toString:Object.prototype.toString,
+		
+		isEmpty:function(val){
+			return val==="" || val===$.trim(this.attr("tip"));
+		},
+		
+		getValue:function(obj){
+			var inputval,
+				curform=this;
+				
+			if(obj.is(":radio")){
+				inputval=curform.find(":radio[name='"+obj.attr("name")+"']:checked").val();
+				inputval= inputval===undef ? "" : inputval;
+			}else if(obj.is(":checkbox")){
+				inputval="";
+				curform.find(":checkbox[name='"+obj.attr("name")+"']:checked").each(function(){ 
+					inputval +=$(this).val()+','; 
+				})
+				inputval= inputval===undef ? "" : inputval;
+			}else{
+				inputval=obj.val();
+			}
+			inputval=$.trim(inputval);
+			
+			return Validform.util.isEmpty.call(obj,inputval) ? "" : inputval;
+		},
+		
+		enhance:function(tiptype,usePlugin,tipSweep,addRule){
+			var curform=this;
+			
+			//页面上不存在提示信息的标签时，自动创建;
+			curform.find("[datatype]").each(function(){
+				if(tiptype==2){
+					if($(this).parent().next().find(".Validform_checktip").length==0){
+						$(this).parent().next().append("<span class='Validform_checktip' />");
+						$(this).siblings(".Validform_checktip").remove();
+					}
+				}else if(tiptype==3 || tiptype==4){
+					if($(this).siblings(".Validform_checktip").length==0){
+						$(this).parent().append("<span class='Validform_checktip' />");
+						$(this).parent().next().find(".Validform_checktip").remove();
+					}
+				}
+			})
+			
+			//表单元素值比较时的信息提示增强;
+			curform.find("input[recheck]").each(function(){
+				//已经绑定事件时跳过;
+				if(this.validform_inited=="inited"){return true;}
+				this.validform_inited="inited";
+				
+				var _this=$(this);
+				var recheckinput=curform.find("input[name='"+$(this).attr("recheck")+"']");
+				recheckinput.bind("keyup",function(){
+					if(recheckinput.val()==_this.val() && recheckinput.val() != ""){
+						if(recheckinput.attr("tip")){
+							if(recheckinput.attr("tip") == recheckinput.val()){return false;}
+						}
+						_this.trigger("blur");
+					}
+				}).bind("blur",function(){
+					if(recheckinput.val()!=_this.val() && _this.val()!=""){
+						if(_this.attr("tip")){
+							if(_this.attr("tip") == _this.val()){return false;}	
+						}
+						_this.trigger("blur");
+					}
+				});
+			});
+			
+			//hasDefaultText;
+			curform.find("[tip]").each(function(){//tip是表单元素的默认提示信息,这是点击清空效果;
+				//已经绑定事件时跳过;
+				if(this.validform_inited=="inited"){return true;}
+				this.validform_inited="inited";
+				
+				var defaultvalue=$(this).attr("tip");
+				var altercss=$(this).attr("altercss");
+				$(this).focus(function(){
+					if($(this).val()==defaultvalue){
+						$(this).val('');
+						if(altercss){$(this).removeClass(altercss);}
+					}
+				}).blur(function(){
+					if($.trim($(this).val())===''){
+						$(this).val(defaultvalue);
+						if(altercss){$(this).addClass(altercss);}
+					}
+				});
+			});
+			
+			//enhance info feedback for checkbox & radio;
+			curform.find(":checkbox[datatype],:radio[datatype]").each(function(){
+				//已经绑定事件时跳过;
+				if(this.validform_inited=="inited"){return true;}
+				this.validform_inited="inited";
+				
+				var _this=$(this);
+				var name=_this.attr("name");
+				curform.find("[name='"+name+"']").filter(":checkbox,:radio").bind("click",function(){
+					//避免多个事件绑定时的取值滞后问题;
+					setTimeout(function(){
+						_this.trigger("blur");
+					},0);
+				});
+				
+			});
+			
+			//select multiple;
+			curform.find("select[datatype][multiple]").bind("click",function(){
+				var _this=$(this);
+				setTimeout(function(){
+					_this.trigger("blur");
+				},0);
+			});
+			
+			//plugins here to start;
+			Validform.util.usePlugin.call(curform,usePlugin,tiptype,tipSweep,addRule);
+		},
+		
+		usePlugin:function(plugin,tiptype,tipSweep,addRule){
+			/*
+				plugin:settings.usePlugin;
+				tiptype:settings.tiptype;
+				tipSweep:settings.tipSweep;
+				addRule:是否在addRule时触发;
+			*/
+
+			var curform=this,
+				plugin=plugin || {};
+			//swfupload;
+			if(curform.find("input[plugin='swfupload']").length && typeof(swfuploadhandler) != "undefined"){
+				
+				var custom={
+						custom_settings:{
+							form:curform,
+							showmsg:function(msg,type,obj){
+								Validform.util.showmsg.call(curform,msg,tiptype,{obj:curform.find("input[plugin='swfupload']"),type:type,sweep:tipSweep});	
+							}	
+						}	
+					};
+
+				custom=$.extend(true,{},plugin.swfupload,custom);
+				
+				curform.find("input[plugin='swfupload']").each(function(n){
+					if(this.validform_inited=="inited"){return true;}
+					this.validform_inited="inited";
+					
+					$(this).val("");
+					swfuploadhandler.init(custom,n);
+				});
+				
+			}
+			
+			//datepicker;
+			if(curform.find("input[plugin='datepicker']").length && $.fn.datePicker){
+				plugin.datepicker=plugin.datepicker || {};
+				
+				if(plugin.datepicker.format){
+					Date.format=plugin.datepicker.format; 
+					delete plugin.datepicker.format;
+				}
+				if(plugin.datepicker.firstDayOfWeek){
+					Date.firstDayOfWeek=plugin.datepicker.firstDayOfWeek; 
+					delete plugin.datepicker.firstDayOfWeek;
+				}
+
+				curform.find("input[plugin='datepicker']").each(function(n){
+					if(this.validform_inited=="inited"){return true;}
+					this.validform_inited="inited";
+					
+					plugin.datepicker.callback && $(this).bind("dateSelected",function(){
+						var d=new Date( $.event._dpCache[this._dpId].getSelected()[0] ).asString(Date.format);
+						plugin.datepicker.callback(d,this);
+					});
+					$(this).datePicker(plugin.datepicker);
+				});
+			}
+			
+			//passwordstrength;
+			if(curform.find("input[plugin*='passwordStrength']").length && $.fn.passwordStrength){
+				plugin.passwordstrength=plugin.passwordstrength || {};
+				plugin.passwordstrength.showmsg=function(obj,msg,type){
+					Validform.util.showmsg.call(curform,msg,tiptype,{obj:obj,type:type,sweep:tipSweep});
+				};
+				
+				curform.find("input[plugin='passwordStrength']").each(function(n){
+					if(this.validform_inited=="inited"){return true;}
+					this.validform_inited="inited";
+					
+					$(this).passwordStrength(plugin.passwordstrength);
+				});
+			}
+			
+			//jqtransform;
+			if(addRule!="addRule" && plugin.jqtransform && $.fn.jqTransSelect){
+				if(curform[0].jqTransSelected=="true"){return;};
+				curform[0].jqTransSelected="true";
+				
+				var jqTransformHideSelect = function(oTarget){
+					var ulVisible = $('.jqTransformSelectWrapper ul:visible');
+					ulVisible.each(function(){
+						var oSelect = $(this).parents(".jqTransformSelectWrapper:first").find("select").get(0);
+						//do not hide if click on the label object associated to the select
+						if( !(oTarget && oSelect.oLabel && oSelect.oLabel.get(0) == oTarget.get(0)) ){$(this).hide();}
+					});
+				};
+				
+				/* Check for an external click */
+				var jqTransformCheckExternalClick = function(event) {
+					if ($(event.target).parents('.jqTransformSelectWrapper').length === 0) { jqTransformHideSelect($(event.target)); }
+				};
+				
+				var jqTransformAddDocumentListener = function (){
+					$(document).mousedown(jqTransformCheckExternalClick);
+				};
+				
+				if(plugin.jqtransform.selector){
+					curform.find(plugin.jqtransform.selector).filter('input:submit, input:reset, input[type="button"]').jqTransInputButton();
+					curform.find(plugin.jqtransform.selector).filter('input:text, input:password').jqTransInputText();			
+					curform.find(plugin.jqtransform.selector).filter('input:checkbox').jqTransCheckBox();
+					curform.find(plugin.jqtransform.selector).filter('input:radio').jqTransRadio();
+					curform.find(plugin.jqtransform.selector).filter('textarea').jqTransTextarea();
+					if(curform.find(plugin.jqtransform.selector).filter("select").length > 0 ){
+						 curform.find(plugin.jqtransform.selector).filter("select").jqTransSelect();
+						 jqTransformAddDocumentListener();
+					}
+					
+				}else{
+					curform.jqTransform();
+				}
+				
+				curform.find(".jqTransformSelectWrapper").find("li a").click(function(){
+					$(this).parents(".jqTransformSelectWrapper").find("select").trigger("blur");	
+				});
+			}
+
+		},
+		
+		getNullmsg:function(curform){
+			var obj=this;
+			var reg=/[\u4E00-\u9FA5\uf900-\ufa2da-zA-Z\s]+/g;
+			var nullmsg;
+			
+			var label=curform[0].settings.label || ".Validform_label";
+			label=obj.siblings(label).eq(0).text() || obj.siblings().find(label).eq(0).text() || obj.parent().siblings(label).eq(0).text() || obj.parent().siblings().find(label).eq(0).text();
+			label=label.replace(/\s(?![a-zA-Z])/g,"").match(reg);
+			label=label? label.join("") : [""];
+
+			reg=/\{(.+)\|(.+)\}/;
+			nullmsg=curform.data("tipmsg").s || tipmsg.s;
+			
+			if(label != ""){
+				nullmsg=nullmsg.replace(/\{0\|(.+)\}/,label);
+				if(obj.attr("recheck")){
+					nullmsg=nullmsg.replace(/\{(.+)\}/,"");
+					obj.attr("nullmsg",nullmsg);
+					return nullmsg;
+				}
+			}else{
+				nullmsg=obj.is(":checkbox,:radio,select") ? nullmsg.replace(/\{0\|(.+)\}/,"") : nullmsg.replace(/\{0\|(.+)\}/,"$1");
+			}
+			nullmsg=obj.is(":checkbox,:radio,select") ? nullmsg.replace(reg,"$2") : nullmsg.replace(reg,"$1");
+			
+			obj.attr("nullmsg",nullmsg);
+			return nullmsg;
+		},
+		
+		getErrormsg:function(curform,datatype,recheck){
+			var regxp=/^^(.+?)((\d+)-(\d+))?$/,
+				regxp2=/^^(.+?)(\d+)-(\d+)$/,
+				regxp3=/(.*?)\d+(.+?)\d+(.*)/,
+				mac=datatype.match(regxp),
+				temp,str;
+			
+			//如果是值不一样而报错;
+			if(recheck=="recheck"){
+				str=curform.data("tipmsg").reck || tipmsg.reck;
+				return str;
+			}
+			
+			var tipmsg_w_ex=$.extend({},tipmsg.w,curform.data("tipmsg").w);
+			
+			//如果原来就有，直接显示该项的提示信息;
+			if(mac[0] in tipmsg_w_ex){
+				return curform.data("tipmsg").w[mac[0]] || tipmsg.w[mac[0]];
+			}
+			
+			//没有的话在提示对象里查找相似;
+			for(var name in tipmsg_w_ex){
+				if(name.indexOf(mac[1])!=-1 && regxp2.test(name)){
+					str=(curform.data("tipmsg").w[name] || tipmsg.w[name]).replace(regxp3,"$1"+mac[3]+"$2"+mac[4]+"$3");
+					curform.data("tipmsg").w[mac[0]]=str;
+					
+					return str;
+				}
+				
+			}
+			
+			return curform.data("tipmsg").def || tipmsg.def;
+		},
+
+		_regcheck:function(datatype,gets,obj,curform){
+			var curform=curform,
+				info=null,
+				passed=false,
+				reg=/\/.+\//g,
+				regex=/^^(.+?)(\d+)-(\d+)$/,
+				type=3;//default set to wrong type, 2,3,4;
+				
+			//datatype有三种情况：正则，函数和直接绑定的正则;
+			
+			//直接是正则;
+			if(reg.test(datatype)){
+				var regstr=datatype.match(reg)[0].slice(1,-1);
+				var param=datatype.replace(reg,"");
+				var rexp=RegExp(regstr,param);
+
+				passed=rexp.test(gets);
+
+			//function;
+			}else if(Validform.util.toString.call(Validform.util.dataType[datatype])=="[object Function]"){
+				passed=Validform.util.dataType[datatype](gets,obj,curform,Validform.util.dataType);
+				if(passed === true || passed===undef){
+					passed = true;
+				}else{
+					info= passed;
+					passed=false;
+				}
+			
+			//自定义正则;	
+			}else{
+				//自动扩展datatype;
+				if(!(datatype in Validform.util.dataType)){
+					var mac=datatype.match(regex),
+						temp;
+						
+					if(!mac){
+						passed=false;
+						info=curform.data("tipmsg").undef||tipmsg.undef;
+					}else{
+						for(var name in Validform.util.dataType){
+							temp=name.match(regex);
+							if(!temp){continue;}
+							if(mac[1]===temp[1]){
+								var str=Validform.util.dataType[name].toString(),
+									param=str.match(/\/[mgi]*/g)[1].replace("\/",""),
+									regxp=new RegExp("\\{"+temp[2]+","+temp[3]+"\\}","g");
+								str=str.replace(/\/[mgi]*/g,"\/").replace(regxp,"{"+mac[2]+","+mac[3]+"}").replace(/^^\//,"").replace(/\/$/,"");
+								Validform.util.dataType[datatype]=new RegExp(str,param);
+								break;
+							}	
+						}
+					}
+				}
+				
+				if(Validform.util.toString.call(Validform.util.dataType[datatype])=="[object RegExp]"){
+					passed=Validform.util.dataType[datatype].test(gets);
+				}
+					
+			}
+			
+			
+			if(passed){
+				type=2;
+				info=obj.attr("sucmsg") || curform.data("tipmsg").r||tipmsg.r;
+				
+				//规则验证通过后，还需要对绑定recheck的对象进行值比较;
+				if(obj.attr("recheck")){
+					var theother=curform.find("input[name='"+obj.attr("recheck")+"']:first");
+					if(gets!=theother.val()){
+						passed=false;
+						type=3;
+						info=obj.attr("errormsg")  || Validform.util.getErrormsg.call(obj,curform,datatype,"recheck");
+					}
+				}
+			}else{
+				info=info || obj.attr("errormsg") || Validform.util.getErrormsg.call(obj,curform,datatype);
+				
+				//验证不通过且为空时;
+				if(Validform.util.isEmpty.call(obj,gets)){
+					info=obj.attr("nullmsg") || Validform.util.getNullmsg.call(obj,curform);
+				}
+			}
+			
+			return{
+					passed:passed,
+					type:type,
+					info:info
+			};
+			
+		},
+		
+		regcheck:function(datatype,gets,obj){
+			/*
+				datatype:datatype;
+				gets:inputvalue;
+				obj:input object;
+			*/
+			var curform=this,
+				info=null,
+				passed=false,
+				type=3;//default set to wrong type, 2,3,4;
+				
+			//ignore;
+			if(obj.attr("ignore")==="ignore" && Validform.util.isEmpty.call(obj,gets)){				
+				if(obj.data("cked")){
+					info="";	
+				}
+				
+				return {
+					passed:true,
+					type:4,
+					info:info
+				};
+			}
+
+			obj.data("cked","cked");//do nothing if is the first time validation triggered;
+			
+			var dtype=Validform.util.parseDatatype(datatype);
+			var res;
+			for(var eithor=0; eithor<dtype.length; eithor++){
+				for(var dtp=0; dtp<dtype[eithor].length; dtp++){
+					res=Validform.util._regcheck(dtype[eithor][dtp],gets,obj,curform);
+					if(!res.passed){
+						break;
+					}
+				}
+				if(res.passed){
+					break;
+				}
+			}
+			return res;
+			
+		},
+		
+		parseDatatype:function(datatype){
+			/*
+				字符串里面只能含有一个正则表达式;
+				Datatype名称必须是字母，数字、下划线或*号组成;
+				datatype="/regexp/|phone|tel,s,e|f,e";
+				==>[["/regexp/"],["phone"],["tel","s","e"],["f","e"]];
+			*/
+
+			var reg=/\/.+?\/[mgi]*(?=(,|$|\||\s))|[\w\*-]+/g,
+				dtype=datatype.match(reg),
+				sepor=datatype.replace(reg,"").replace(/\s*/g,"").split(""),
+				arr=[],
+				m=0;
+				
+			arr[0]=[];
+			arr[0].push(dtype[0]);
+			for(var n=0;n<sepor.length;n++){
+				if(sepor[n]=="|"){
+					m++;
+					arr[m]=[];
+				}
+				arr[m].push(dtype[n+1]);
+			}
+			
+			return arr;
+		},
+
+		showmsg:function(msg,type,o,triggered){
+			/*
+				msg:提示文字;
+				type:提示信息显示方式;
+				o:{obj:当前对象, type:1=>正在检测 | 2=>通过, sweep:true | false}, 
+				triggered:在blur或提交表单触发的验证中，有些情况不需要显示提示文字，如自定义弹出提示框的显示方式，不需要每次blur时就马上弹出提示;
+				
+				tiptype:1\2\3时都有坑能会弹出自定义提示框
+				tiptype:1时在triggered bycheck时不弹框
+				tiptype:2\3时在ajax时弹框
+				tipSweep为true时在triggered bycheck时不触发showmsg，但ajax出错的情况下要提示
+			*/
+			
+			//如果msg为undefined，那么就没必要执行后面的操作，ignore有可能会出现这情况;
+			if(msg==undef){return;}
+			
+			//tipSweep为true，且当前不是处于错误状态时，blur事件不触发信息显示;
+			if(triggered=="bycheck" && o.sweep && (o.obj && !o.obj.is(".Validform_error") || typeof type == "function")){return;}
+
+			$.extend(o,{curform:this});
+				
+			if(typeof type == "function"){
+				type(msg,o,Validform.util.cssctl);
+				return;
+			}
+			
+			if(type==1 || triggered=="byajax" && type!=4){
+				msgobj.find(".Validform_info").html(msg);
+			}
+			
+			//tiptypt=1时，blur触发showmsg，验证是否通过都不弹框，提交表单触发的话，只要验证出错，就弹框;
+			if(type==1 && triggered!="bycheck" && o.type!=2 || triggered=="byajax" && type!=4){
+				msghidden=false;
+				msgobj.find(".iframe").css("height",msgobj.outerHeight());
+				msgobj.show();
+				setCenter(msgobj,100);
+			}
+
+			if(type==2 && o.obj){
+				o.obj.parent().next().find(".Validform_checktip").html(msg);
+				Validform.util.cssctl(o.obj.parent().next().find(".Validform_checktip"),o.type);
+			}
+			
+			if((type==3 || type==4) && o.obj){
+				o.obj.siblings(".Validform_checktip").html(msg);
+				Validform.util.cssctl(o.obj.siblings(".Validform_checktip"),o.type);
+			}
+
+		},
+
+		cssctl:function(obj,status){
+			switch(status){
+				case 1:
+					obj.removeClass("Validform_right Validform_wrong").addClass("Validform_checktip Validform_loading");//checking;
+					break;
+				case 2:
+					obj.removeClass("Validform_wrong Validform_loading").addClass("Validform_checktip Validform_right");//passed;
+					break;
+				case 4:
+					obj.removeClass("Validform_right Validform_wrong Validform_loading").addClass("Validform_checktip");//for ignore;
+					break;
+				default:
+					obj.removeClass("Validform_right Validform_loading").addClass("Validform_checktip Validform_wrong");//wrong;
+			}
+		},
+		
+		check:function(curform,subpost,bool){
+			/*
+				检测单个表单元素;
+				验证通过返回true，否则返回false、实时验证返回值为ajax;
+				bool，传入true则只检测不显示提示信息;
+			*/
+			var settings=curform[0].settings;
+			var subpost=subpost || "";
+			var inputval=Validform.util.getValue.call(curform,$(this));
+			
+			//隐藏或绑定dataIgnore的表单对象不做验证;
+			if(settings.ignoreHidden && $(this).is(":hidden") || $(this).data("dataIgnore")==="dataIgnore"){
+				return true;
+			}
+			
+			//dragonfly=true时，没有绑定ignore，值为空不做验证，但验证不通过;
+			if(settings.dragonfly && !$(this).data("cked") && Validform.util.isEmpty.call($(this),inputval) && $(this).attr("ignore")!="ignore"){
+				return false;
+			}
+			
+			var flag=Validform.util.regcheck.call(curform,$(this).attr("datatype"),inputval,$(this));
+			
+			//值没变化不做检测，这时要考虑recheck情况;
+			//不是在提交表单时触发的ajax验证;
+			if(inputval==this.validform_lastval && !$(this).attr("recheck") && subpost==""){
+				return flag.passed ? true : false;
+			}
+
+			this.validform_lastval=inputval;//存储当前值;
+			
+			var _this;
+			errorobj=_this=$(this);
+			
+			if(!flag.passed){
+				//取消正在进行的ajax验证;
+				Validform.util.abort.call(_this[0]);
+				
+				if(!bool){
+					//传入"bycheck"，指示当前是check方法里调用的，当tiptype=1时，blur事件不让触发错误信息显示;
+					Validform.util.showmsg.call(curform,flag.info,settings.tiptype,{obj:$(this),type:flag.type,sweep:settings.tipSweep},"bycheck");
+					
+					!settings.tipSweep && _this.addClass("Validform_error");
+				}
+				return false;
+			}
+			
+			//验证通过的话，如果绑定有ajaxurl，要执行ajax检测;
+			//当ignore="ignore"时，为空值可以通过验证，这时不需要ajax检测;
+			var ajaxurl=$(this).attr("ajaxurl");
+			if(ajaxurl && !Validform.util.isEmpty.call($(this),inputval) && !bool){
+				var inputobj=$(this);
+
+				//当提交表单时，表单中的某项已经在执行ajax检测，这时需要让该项ajax结束后继续提交表单;
+				if(subpost=="postform"){
+					inputobj[0].validform_subpost="postform";
+				}else{
+					inputobj[0].validform_subpost="";
+				}
+				
+				if(inputobj[0].validform_valid==="posting" && inputval==inputobj[0].validform_ckvalue){return "ajax";}
+				
+				inputobj[0].validform_valid="posting";
+				inputobj[0].validform_ckvalue=inputval;
+				Validform.util.showmsg.call(curform,curform.data("tipmsg").c||tipmsg.c,settings.tiptype,{obj:inputobj,type:1,sweep:settings.tipSweep},"bycheck");
+				
+				Validform.util.abort.call(_this[0]);
+				
+				var ajaxsetup=$.extend(true,{},settings.ajaxurl || {});
+								
+				var localconfig={
+					type: "POST",
+					cache:false,
+					url: ajaxurl,
+					data: "param="+encodeURIComponent(inputval)+"&name="+encodeURIComponent($(this).attr("name")),
+					success: function(data){
+						if($.trim(data.status)==="y"){
+							inputobj[0].validform_valid="true";
+							data.info && inputobj.attr("sucmsg",data.info);
+							Validform.util.showmsg.call(curform,inputobj.attr("sucmsg") || curform.data("tipmsg").r||tipmsg.r,settings.tiptype,{obj:inputobj,type:2,sweep:settings.tipSweep},"bycheck");
+							_this.removeClass("Validform_error");
+							errorobj=null;
+							if(inputobj[0].validform_subpost=="postform"){
+								curform.trigger("submit");
+							}
+						}else{
+							inputobj[0].validform_valid=data.info;
+							Validform.util.showmsg.call(curform,data.info,settings.tiptype,{obj:inputobj,type:3,sweep:settings.tipSweep});
+							_this.addClass("Validform_error");
+						}
+						_this[0].validform_ajax=null;
+					},
+					error: function(data){
+						if(data.status=="200"){
+							if(data.responseText=="y"){
+								ajaxsetup.success({"status":"y"});
+							}else{
+								ajaxsetup.success({"status":"n","info":data.responseText});	
+							}
+							return false;
+						}
+						
+						//正在检测时，要检测的数据发生改变，这时要终止当前的ajax。不是这种情况引起的ajax错误，那么显示相关错误信息;
+						if(data.statusText!=="abort"){
+							var msg="status: "+data.status+"; statusText: "+data.statusText;
+						
+							Validform.util.showmsg.call(curform,msg,settings.tiptype,{obj:inputobj,type:3,sweep:settings.tipSweep});
+							_this.addClass("Validform_error");
+						}
+						
+						inputobj[0].validform_valid=data.statusText;
+						_this[0].validform_ajax=null;
+						
+						//localconfig.error返回true表示还需要执行temp_err;
+						return true;
+					}
+				}
+				
+				if(ajaxsetup.success){
+					var temp_suc=ajaxsetup.success;
+					ajaxsetup.success=function(data){
+						localconfig.success(data);
+						temp_suc(data,inputobj);
+					}
+				}
+				
+				if(ajaxsetup.error){
+					var temp_err=ajaxsetup.error;
+					ajaxsetup.error=function(data){
+						//localconfig.error返回false表示不需要执行temp_err;
+						localconfig.error(data) && temp_err(data,inputobj);
+					}	
+				}
+
+				ajaxsetup=$.extend({},localconfig,ajaxsetup,{dataType:"json"});
+				_this[0].validform_ajax=$.ajax(ajaxsetup);
+				
+				return "ajax";
+			}else if(ajaxurl && Validform.util.isEmpty.call($(this),inputval)){
+				Validform.util.abort.call(_this[0]);
+				_this[0].validform_valid="true";
+			}
+			
+			if(!bool){
+				Validform.util.showmsg.call(curform,flag.info,settings.tiptype,{obj:$(this),type:flag.type,sweep:settings.tipSweep},"bycheck");
+				_this.removeClass("Validform_error");
+			}
+			errorobj=null;
+			
+			return true;
+		
+		},
+		
+		submitForm:function(settings,flg,url,ajaxPost,sync){
+			/*
+				flg===true时跳过验证直接提交;
+				ajaxPost==="ajaxPost"指示当前表单以ajax方式提交;
+			*/
+			var curform=this;
+			
+			//表单正在提交时点击提交按钮不做反应;
+			if(curform[0].validform_status==="posting"){return false;}
+			
+			//要求只能提交一次时;
+			if(settings.postonce && curform[0].validform_status==="posted"){return false;}
+			
+			var beforeCheck=settings.beforeCheck && settings.beforeCheck(curform);
+			if(beforeCheck===false){return false;}
+			
+			var flag=true,
+				inflag;
+				
+			curform.find("[datatype]").each(function(){
+				//跳过验证;
+				if(flg){
+					return false;
+				}
+				
+				//隐藏或绑定dataIgnore的表单对象不做验证;
+				if(settings.ignoreHidden && $(this).is(":hidden") || $(this).data("dataIgnore")==="dataIgnore"){
+					return true;
+				}
+				
+				var inputval=Validform.util.getValue.call(curform,$(this)),
+					_this;
+				errorobj=_this=$(this);
+				
+				inflag=Validform.util.regcheck.call(curform,$(this).attr("datatype"),inputval,$(this));
+				
+				if(!inflag.passed){
+					Validform.util.showmsg.call(curform,inflag.info,settings.tiptype,{obj:$(this),type:inflag.type,sweep:settings.tipSweep});
+					_this.addClass("Validform_error");
+					
+					if(!settings.showAllError){
+						_this.focus();
+						flag=false;
+						return false;
+					}
+					
+					flag && (flag=false);
+					return true;
+				}
+				
+				//当ignore="ignore"时，为空值可以通过验证，这时不需要ajax检测;
+				if($(this).attr("ajaxurl") && !Validform.util.isEmpty.call($(this),inputval)){
+					if(this.validform_valid!=="true"){
+						var thisobj=$(this);
+						Validform.util.showmsg.call(curform,curform.data("tipmsg").v||tipmsg.v,settings.tiptype,{obj:thisobj,type:3,sweep:settings.tipSweep});
+						_this.addClass("Validform_error");
+						
+						thisobj.trigger("blur",["postform"]);//continue the form post;
+						
+						if(!settings.showAllError){
+							flag=false;
+							return false;
+						}
+						
+						flag && (flag=false);
+						return true;
+					}
+				}else if($(this).attr("ajaxurl") && Validform.util.isEmpty.call($(this),inputval)){
+					Validform.util.abort.call(this);
+					this.validform_valid="true";
+				}
+
+				Validform.util.showmsg.call(curform,inflag.info,settings.tiptype,{obj:$(this),type:inflag.type,sweep:settings.tipSweep});
+				_this.removeClass("Validform_error");
+				errorobj=null;
+			});
+			
+			if(settings.showAllError){
+				curform.find(".Validform_error:first").focus();
+			}
+
+			if(flag){
+				var beforeSubmit=settings.beforeSubmit && settings.beforeSubmit(curform);
+				if(beforeSubmit===false){return false;}
+				
+				curform[0].validform_status="posting";
+							
+				if(settings.ajaxPost || ajaxPost==="ajaxPost"){
+					//获取配置参数;
+					var ajaxsetup=$.extend(true,{},settings.ajaxpost || {});
+					//有可能需要动态的改变提交地址，所以把action所指定的url层级设为最低;
+					ajaxsetup.url=url || ajaxsetup.url || settings.url || curform.attr("action");
+					
+					//byajax：ajax时，tiptye为1、2或3需要弹出提示框;
+					Validform.util.showmsg.call(curform,curform.data("tipmsg").p||tipmsg.p,settings.tiptype,{obj:curform,type:1,sweep:settings.tipSweep},"byajax");
+
+					//方法里的优先级要高;
+					//有undefined情况;
+					if(sync){
+						ajaxsetup.async=false;
+					}else if(sync===false){
+						ajaxsetup.async=true;
+					}
+					
+					if(ajaxsetup.success){
+						var temp_suc=ajaxsetup.success;
+						ajaxsetup.success=function(data){
+							settings.callback && settings.callback(data);
+							curform[0].validform_ajax=null;
+							if($.trim(data.status)==="y"){
+								curform[0].validform_status="posted";
+							}else{
+								curform[0].validform_status="normal";
+							}
+							
+							temp_suc(data,curform);
+						}
+					}
+					
+					if(ajaxsetup.error){
+						var temp_err=ajaxsetup.error;
+						ajaxsetup.error=function(data){
+							settings.callback && settings.callback(data);
+							curform[0].validform_status="normal";
+							curform[0].validform_ajax=null;
+							
+							temp_err(data,curform);
+						}	
+					}
+					
+					var localconfig={
+						type: "POST",
+						async:true,
+						data: curform.serializeArray(),
+						success: function(data){
+							if($.trim(data.status)==="y"){
+								//成功提交;
+								curform[0].validform_status="posted";
+								Validform.util.showmsg.call(curform,data.info,settings.tiptype,{obj:curform,type:2,sweep:settings.tipSweep},"byajax");
+							}else{
+								//提交出错;
+								curform[0].validform_status="normal";
+								Validform.util.showmsg.call(curform,data.info,settings.tiptype,{obj:curform,type:3,sweep:settings.tipSweep},"byajax");
+							}
+							
+							settings.callback && settings.callback(data);
+							curform[0].validform_ajax=null;
+						},
+						error: function(data){
+							var msg="status: "+data.status+"; statusText: "+data.statusText;
+									
+							Validform.util.showmsg.call(curform,msg,settings.tiptype,{obj:curform,type:3,sweep:settings.tipSweep},"byajax");
+							
+							settings.callback && settings.callback(data);
+							curform[0].validform_status="normal";
+							curform[0].validform_ajax=null;
+						}
+					}
+					
+					ajaxsetup=$.extend({},localconfig,ajaxsetup,{dataType:"json"});
+					
+					curform[0].validform_ajax=$.ajax(ajaxsetup);
+
+				}else{
+					if(!settings.postonce){
+						curform[0].validform_status="normal";
+					}
+					
+					var url=url || settings.url;
+					if(url){
+						curform.attr("action",url);
+					}
+					
+					return settings.callback && settings.callback(curform);
+				}
+			}
+			
+			return false;
+			
+		},
+		
+		resetForm:function(){
+			var brothers=this;
+			brothers.each(function(){
+				this.reset && this.reset();
+				this.validform_status="normal";
+			});
+			
+			brothers.find(".Validform_right").text("");
+			brothers.find(".passwordStrength").children().removeClass("bgStrength");
+			brothers.find(".Validform_checktip").removeClass("Validform_wrong Validform_right Validform_loading");
+			brothers.find(".Validform_error").removeClass("Validform_error");
+			brothers.find("[datatype]").removeData("cked").removeData("dataIgnore").each(function(){
+				this.validform_lastval=null;
+			});
+			brothers.eq(0).find("input:first").focus();
+		},
+		
+		abort:function(){
+			if(this.validform_ajax){
+				this.validform_ajax.abort();	
+			}
+		}
+		
+	}
+	
+	$.Datatype=Validform.util.dataType;
+	
+	Validform.prototype={
+		dataType:Validform.util.dataType,
+		
+		eq:function(n){
+			var obj=this;
+			
+			if(n>=obj.forms.length){
+				return null;	
+			}
+			
+			if(!(n in obj.objects)){
+				obj.objects[n]=new Validform($(obj.forms[n]).get(),{},true);
+			}
+			
+			return obj.objects[n];
+
+		},
+		
+		resetStatus:function(){
+			var obj=this;
+			$(obj.forms).each(function(){
+				this.validform_status="normal";	
+			});
+			
+			return this;
+		},
+		
+		setStatus:function(status){
+			var obj=this;
+			$(obj.forms).each(function(){
+				this.validform_status=status || "posting";	
+			});
+			
+			return this;
+		},
+		
+		getStatus:function(){
+			var obj=this;
+			var status=$(obj.forms)[0].validform_status;
+			
+			return status;
+		},
+		
+		ignore:function(selector){
+			var obj=this;
+			var selector=selector || "[datatype]"
+			
+			$(obj.forms).find(selector).each(function(){
+				$(this).data("dataIgnore","dataIgnore").removeClass("Validform_error");
+			});
+			
+			return this;
+		},
+		
+		unignore:function(selector){
+			var obj=this;
+			var selector=selector || "[datatype]"
+			
+			$(obj.forms).find(selector).each(function(){
+				$(this).removeData("dataIgnore");
+			});
+			
+			return this;
+		},
+		
+		addRule:function(rule){
+			/*
+				rule => [{
+					ele:"#id",
+					datatype:"*",
+					errormsg:"出错提示文字！",
+					nullmsg:"为空时的提示文字！",
+					tip:"默认显示的提示文字",
+					altercss:"gray",
+					ignore:"ignore",
+					ajaxurl:"valid.php",
+					recheck:"password",
+					plugin:"passwordStrength"
+				},{},{},...]
+			*/
+			var obj=this;
+			var rule=rule || [];
+			
+			for(var index=0; index<rule.length; index++){
+				var o=$(obj.forms).find(rule[index].ele);
+				for(var attr in rule[index]){
+					attr !=="ele" && o.attr(attr,rule[index][attr]);
+				}
+			}
+			
+			$(obj.forms).each(function(){
+				var $this=$(this);
+				Validform.util.enhance.call($this,this.settings.tiptype,this.settings.usePlugin,this.settings.tipSweep,"addRule");
+			});
+			
+			return this;
+		},
+		
+		ajaxPost:function(flag,sync,url){
+			var obj=this;
+			
+			$(obj.forms).each(function(){
+				//创建pop box;
+				if( this.settings.tiptype==1 || this.settings.tiptype==2 || this.settings.tiptype==3 ){
+					creatMsgbox();
+				}
+				
+				Validform.util.submitForm.call($(obj.forms[0]),this.settings,flag,url,"ajaxPost",sync);
+			});
+			
+			return this;
+		},
+		
+		submitForm:function(flag,url){
+			/*flag===true时不做验证直接提交*/
+			
+
+			var obj=this;
+			
+			$(obj.forms).each(function(){
+				var subflag=Validform.util.submitForm.call($(this),this.settings,flag,url);
+				subflag === undef && (subflag=true);
+				if(subflag===true){
+					this.submit();
+				}
+			});
+			
+			return this;
+		},
+		
+		resetForm:function(){
+			var obj=this;
+			Validform.util.resetForm.call($(obj.forms));
+			
+			return this;
+		},
+		
+		abort:function(){
+			var obj=this;
+			$(obj.forms).each(function(){
+				Validform.util.abort.call(this);
+			});
+			
+			return this;
+		},
+		
+		check:function(bool,selector){
+			/*
+				bool：传入true，只检测不显示提示信息;
+			*/
+			
+			var selector=selector || "[datatype]",
+				obj=this,
+				curform=$(obj.forms),
+				flag=true;
+			
+			curform.find(selector).each(function(){
+				Validform.util.check.call(this,curform,"",bool) || (flag=false);
+			});
+			
+			return flag;
+		},
+		
+		config:function(setup){
+		/*
+			config={
+				url:"ajaxpost.php",//指定了url后，数据会提交到这个地址;
+				ajaxurl:{
+					timeout:1000,
+					...
+				},
+				ajaxpost:{
+					timeout:1000,
+					...
+				}
+			}
+		*/
+			var obj=this;
+			setup=setup || {};
+			$(obj.forms).each(function(){
+				var $this=$(this);
+				this.settings=$.extend(true,this.settings,setup);
+				Validform.util.enhance.call($this,this.settings.tiptype,this.settings.usePlugin,this.settings.tipSweep);
+			});
+			
+			return this;
+		}
+	}
+
+	$.fn.Validform=function(settings){
+		return new Validform(this,settings);
+	};
+	
+	function setCenter(obj,time){
+		var left=($(window).width()-obj.outerWidth())/2,
+			top=($(window).height()-obj.outerHeight())/2,
+			
+		top=(document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop)+(top>0?top:0);
+
+		obj.css({
+			left:left
+		}).animate({
+			top : top
+		},{ duration:time , queue:false });
+	}
+	
+	function creatMsgbox(){
+		if($("#Validform_msg").length!==0){return false;}
+		msgobj=$('<div id="Validform_msg"><div class="Validform_title">'+tipmsg.tit+'<a class="Validform_close" href="javascript:void(0);">&chi;</a></div><div class="Validform_info"></div><div class="iframe"><iframe frameborder="0" scrolling="no" height="100%" width="100%"></iframe></div></div>').appendTo("body");//提示信息框;
+		msgobj.find("a.Validform_close").click(function(){
+			msgobj.hide();
+			msghidden=true;
+			if(errorobj){
+				errorobj.focus().addClass("Validform_error");
+			}
+			return false;
+		}).focus(function(){this.blur();});
+
+		$(window).bind("scroll resize",function(){
+			!msghidden && setCenter(msgobj,400);
+		});
+	};
+	
+	//公用方法显示&关闭信息提示框;
+	$.Showmsg=function(msg){
+		creatMsgbox();
+		Validform.util.showmsg.call(win,msg,1,{});
+	};
+	
+	$.Hidemsg=function(){
+		msgobj.hide();
+		msghidden=true;
+	};
+	
+})(jQuery,window);
+#

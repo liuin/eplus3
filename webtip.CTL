@@ -2933,12 +2933,34 @@ moveToPoint(^!)
 margin-right:^!;
 #T=mr-a
 margin-right:auto;
+#T=ms-$event
+$event
+#T=ms-$outer
+$outer
+#T=ms-$watch
+  vm.lang.$watch("length", function(){
+    vm.langtext = vm.lang.join(",")
+  })
+#T=ms-avalon.define //定义
+var vmfile =  avalon.define({
+    $id: "share",
+  })
+#T=ms-ready //开始加载
+ avalon.ready(function  () {
+  
+ })
 #T=ms-{
 {{^!}}
 #T=ms-controller
 ms-controller="^!"
+#T=ms-data-duplex-event="change"
+data-duplex-event="change"
+#T=ms-duplex
+ms-duplex=""
 #T=ms-each
 ms-each="^!"
+#T=ms-visible="filevs"
+ms-visible="filevs"
 #T=ms-with
 ms-with="^!"
 #T=msWriteProfilerMark
@@ -3445,6 +3467,8 @@ padding-left:^!;
 placeholder="^!"
 #T=pop
 pop(^!)
+#T=pop-ck
+$("#popbk2").data('ck.pokbk').open();
 #T=pos
 position:^!;
 #T=pos-a
@@ -3674,6 +3698,11 @@ search(^!)
 </select>
 #T=select()
 select(^!)
+#T=select-multiple="multiple" //多选
+<select name="" multiple="multiple" >
+          <option></option>
+          <option></option>
+        </select>
 #T=selected
 selected
 #T=selectedIndex
