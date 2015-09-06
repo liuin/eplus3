@@ -157,6 +157,8 @@ attr(^!)
 <audio src="^!"></audio>
 #T=autofocus
 autofocus
+#T=avalon
+avalon
 #T=b
 
   ^!
@@ -2941,16 +2943,12 @@ $outer
   vm.lang.$watch("length", function(){
     vm.langtext = vm.lang.join(",")
   })
+#T=ms-{
+{{^!}}
 #T=ms-avalon.define //定义
 var vmfile =  avalon.define({
     $id: "share",
   })
-#T=ms-ready //开始加载
- avalon.ready(function  () {
-  
- })
-#T=ms-{
-{{^!}}
 #T=ms-controller
 ms-controller="^!"
 #T=ms-data-duplex-event="change"
@@ -2959,6 +2957,12 @@ data-duplex-event="change"
 ms-duplex=""
 #T=ms-each
 ms-each="^!"
+#T=ms-ready //开始加载
+ avalon.ready(function  () {
+  
+ })
+#T=ms-repeat=""
+ms-repeat=""
 #T=ms-visible="filevs"
 ms-visible="filevs"
 #T=ms-with
@@ -3698,11 +3702,6 @@ search(^!)
 </select>
 #T=select()
 select(^!)
-#T=select-multiple="multiple" //多选
-<select name="" multiple="multiple" >
-          <option></option>
-          <option></option>
-        </select>
 #T=selected
 selected
 #T=selectedIndex
@@ -3713,6 +3712,11 @@ selectedIndex
 
 #T=selection //::
 selection
+#T=select-multiple="multiple" //多选
+<select name="" multiple="multiple" >
+          <option></option>
+          <option></option>
+        </select>
 #T=send
 send(^!)
 #T=serialize
