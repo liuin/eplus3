@@ -6,6 +6,39 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
+#T=e6内页
+<img src="{{media url="wysiwyg//e6/e6720.jpg"}}" alt="" />
+      <link rel="stylesheet" type="text/css" href="http://www.bydauto.com.cn/css/video-js.min.css" media="all" />
+      <style type="text/css">
+            @font-face {
+                font-family:VideoJS;
+                src:url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.eot);
+                src:url(http://mall.bydauto.com.cn/skin/frontend/base/default/crowdfunding/font/font/vjs.eot?#iefix) format('embedded-opentype'), url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.woff) format('woff'), url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.ttf) format('truetype');
+                font-weight:400;
+                font-style:normal
+            }
+            .peizhi-hd {font-size: 18px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px; font-family:"微软雅黑";}
+            .peizhi-bk {margin-left:-1px;}
+          </style>
+          <script type="text/javascript" src="http://www.bydauto.com.cn/js/video.js"></script>
+          <div class="flash" >
+            <video style="margin:0 auto;" id="my_video_1" class="video-js vjs-default-skin" controls
+             preload="auto" width="720" height="576" preload="none"  data-setup="{}">
+             <source src="http://down.bydauto.com.cn/downloads/e6/e6_6m.mp4" type='video/mp4'>
+            </video>
+          </div>
+<img src="{{media url="wysiwyg//e6/e6720-02.jpg"}}" alt="" />
+<img src="{{media url="wysiwyg//e6/e6720-03.jpg"}}" alt="" />
+<img src="{{media url="wysiwyg//e6/e6720-04.jpg"}}" alt="" />
+<div class="peizhi-hd">e6配置参数</div>
+<div class="peizhi-bk">
+  <img src="{{media url="wysiwyg//e6/peizhi.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-02.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-03.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-04.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-05.jpg"}}" alt="" />
+</div>
+
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -17,6 +50,325 @@ $(this)[0].offsetWidth;
       return Select;
     });
   }
+#T=byd 首页
+<div class="home-sale">
+<div class="scorll-pic">
+<ul id="slider1">
+
+
+<!--<li><a href="http://mall.bydauto.com.cn/index.php/hbws2015"><img src="{{media url="wysiwyg/20150405/720x246.jpg"}}" alt="" /></a></li>-->
+
+
+
+<li><a href="http://mall.bydauto.com.cn/summer2015hzhd"><img src="{{media url="wysiwyg/20150812/720x246.jpg"}}" alt="" /></a></li>
+
+<li><a href="http://mall.bydauto.com.cn/summer2015hn"><img src="{{media url="wysiwyg/20150805/720X246.jpg"}}" alt="" /></a></li>
+
+<li><a href="http://mall.bydauto.com.cn/summer2015sd"><img src="{{media url="wysiwyg/20150721/720x246.jpg"}}" alt="" /></a></li>
+<li><a href="http://mall.bydauto.com.cn/summer2015xn"><img src="{{media url="wysiwyg/20150717/720X246.jpg"}}" alt="" /></a></li>
+
+<li><a href="http://mall.bydauto.com.cn/summer2015hz"><img src="{{media url="wysiwyg/20150716/720x246.jpg"}}" alt="" /></a></li>
+
+<li><a href="http://mall.bydauto.com.cn/s6js"><img src="{{media url="wysiwyg/20150410/720-246.jpg"}}" alt="" /></a></li>
+
+
+
+
+
+<li><a href="http://mall.bydauto.com.cn/mg2015"><img src="{{media url="wysiwyg/02150210/720x246.jpg"}}" alt="" /></a></li>
+
+<li><a href="javascript:void(0);"><img src="{{media url="wysiwyg/20150130/720x246des.jpg"}}" alt="" /></a></li>
+
+
+
+
+</ul>
+</div>
+{{widget type="announcement/bestsellers"}}
+<div class="cx-sale">
+<h3><span>促销车型</span></h3>
+<ul class="products-grid first odd">
+
+<li class="item first">
+                <a href="http://mall.bydauto.com.cn/index.php/s7e.html" title="S7e购特供车型" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/8/0/800x800_2_2.jpg" width="135" height="135" alt="S7e购特供车型"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/s7e.html" title="S7e购特供车型">S7e购特供车型</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-984">
+                                            <span class="price">￥500.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/s7e.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/s7e.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/s7e.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/984/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2NhdGFsb2dzZWFyY2gvcmVzdWx0Lz9jYXQ9MzUmcT1TNw,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/984/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/984/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2NhdGFsb2dzZWFyY2gvcmVzdWx0Lz9jYXQ9MzUmcT1TNw,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div></li>
+
+<li class="item">
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/g5.html" title="比亚迪 G5 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/8/0/800x800-g5.jpg" width="135" height="135" alt="比亚迪 G5 全系定金"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/g5.html" title="比亚迪 G5 全系定金">比亚迪 G5 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-958">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/g5.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/g5.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/g5.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/958/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/958/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/958/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+            </li>
+<li class="item last">
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/f3car.html" title="比亚迪 F3 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/f/3/f31_2__1.jpg" width="135" height="135" alt="比亚迪 F3 全系定金"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/f3car.html" title="比亚迪 F3 全系定金">比亚迪 F3 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-705">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f3car.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f3car.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f3car.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/705/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/705/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/705/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+</li>
+
+
+
+
+</ul>
+
+<ul class="products-grid even">
+<li class="item first">
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/s6car.html" title="比亚迪 S6 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/s/6/s6800x800_1.jpg" width="135" height="135" alt="比亚迪 S6 全系定金"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/s6car.html" title="比亚迪 S6 全系定金">比亚迪 S6 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-754">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/s6car.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/s6car.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/s6car.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/754/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/754/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/754/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+          </li>
+ 
+
+
+<li class="item">
+
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/suruicar.html" title="比亚迪 速锐 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/f/i/file_1_2.jpg" width="135" height="135" alt="比亚迪 全新速锐 全系裸车全款（不含深圳地区）"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/suruicar.html" title="比亚迪 速锐 全系定金">比亚迪 速锐 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-725">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/suruicar.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/suruicar.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/suruicar.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/725/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/725/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/725/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+
+</li>
+
+
+
+
+
+
+<li class="item last">
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/f3car-853.html" title="比亚迪 全新F3 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/f/i/file_1.jpg" width="135" height="135" alt="比亚迪 全新F3 全系定金"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/f3car-853.html" title="比亚迪 全新F3 全系定金">比亚迪 全新F3 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-853">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f3car-853.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f3car-853.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f3car-853.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/853/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/853/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/853/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+            </li>
+
+
+
+</ul>
+<ul class="products-grid even last">
+<li class="item first">
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/g6car.html" title="比亚迪 G6 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/g/6/g6_4_1.jpg" width="135" height="135" alt="比亚迪 G6 全系定金"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/g6car.html" title="比亚迪 G6 全系定金">比亚迪 G6 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-745">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/g6car.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/g6car.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/g6car.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/745/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/745/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/745/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+            </li>
+<li class="item">
+                <a href="http://mall.bydauto.com.cn/index.php/all-car-type/f0car.html" title="比亚迪 F0 全系定金" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/f/0/f0_2_1_2.jpg" width="135" height="135" alt="比亚迪 F0 全系定金"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/f0car.html" title="比亚迪 F0 全系定金">比亚迪 F0 全系定金</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-687">
+                                            <span class="price">￥499.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f0car.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f0car.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/f0car.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/687/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/687/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/687/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sP3A9Mg,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div>
+            </li>
+
+
+<li class="item last"> <a href="http://mall.bydauto.com.cn/index.php/all-car-type/newm6-full.html" title="比亚迪 新M6 全系 新车全款" class="product-image"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/small_image/135x/9df78eab33525d08d6e5fb8d27136e95/_/m/_m6_2_1.jpg" width="135" height="135" alt="比亚迪 新M6 全系 新车全款"></a>
+                <h2 class="product-name"><a href="http://mall.bydauto.com.cn/index.php/all-car-type/newm6-full.html" title="比亚迪 新M6 全系 新车全款">比亚迪 新M6 全系 新车全款</a></h2>
+                                
+
+                
+    <div class="price-box1 price-box">
+                                			<span class="order-m">定金:</span>
+                            <span class="regular-price" id="product-price-861">
+                                            <span class="price">￥103,900.00</span>                                    </span>
+                        
+        </div>
+
+                <div class="actions">
+                                            <!-- <button type="button" title="添加到购物车" class="button btn-cart" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/newm6-full.html?options=cart')"><span><span>添加到购物车</span></span></button> -->
+						<a title="添加到购物车" class="add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/newm6-full.html?options=cart')"><span>
+						<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/add-top-car.png" width="122" height="29" alt="">
+						</span></a>
+                                        <ul class="add-to-links">
+                                                    <li>
+							<!-- <button type="button" title="添加到购物车" class="add-bt-ws add-bt" onclick="setLocation('http://mall.bydauto.com.cn/index.php/all-car-type/newm6-full.html?options=cart')"><span>
+							<img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/gm-pic1.png"  alt="" />
+							</span></button> -->
+							<a title="添加到购物车" href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/861/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="add-bt-ws add-bt"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/bj-bt1.png" alt="比较"></a><a href="http://mall.bydauto.com.cn/index.php/wishlist/index/add/product/861/" class="link-wishlist"><span><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/sc-pic.png" alt=""></span></a></li>
+                                                                            <!-- <li style="margin-top:5px;"><span class="separator">|</span> <a href="http://mall.bydauto.com.cn/index.php/catalog/product_compare/add/product/861/uenc/aHR0cDovL21hbGwuYnlkYXV0by5jb20uY24vaW5kZXgucGhwL2FsbC1jYXItdHlwZS5odG1sLw,,/" class="link-compare"><img src="http://mall.bydauto.com.cn/skin/frontend/default/test/images/cp-bt.png" alt="添加并比较" /></a></li> -->
+                                            </ul>
+                </div></li>
+</ul>
+
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
 #T=cdn
 <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/jqueryui/1.10.3/jquery-ui.min.js"></script>
