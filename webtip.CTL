@@ -157,6 +157,8 @@ attr(^!)
 <audio src="^!"></audio>
 #T=autofocus
 autofocus
+#T=avalon
+avalon
 #T=b
 
   ^!
@@ -2941,51 +2943,16 @@ $outer
   vm.lang.$watch("length", function(){
     vm.langtext = vm.lang.join(",")
   })
-#T=ms-ui-build
-define(["avalon",'../trans/trans'], function(avalon) {
-    var widget = avalon.ui.pop =  function(element, data, vmodels) {
-        var options = data.popOptions;
-        var elemParent = element.parentNode;
-        var parentstr = avalon.parseHTML('<div class="pop-wrap"  ms-on-click="hidePop($event)" id="' + data.popId + '"></div>').firstChild;
-        var closeBtn = avalon.parseHTML('<span ms-click="hidePop()" class="close">X</span>').firstChild;
-        var vmodel =  avalon.define({
-            $id: data.popId,
-            toggle:false,
-            stopUp:function  (e) {  //阻止冒泡
-              e.stopPropagation();
-            },
-            hidePop:function  (e) {
-              vmodel.toggle = false;
-            },
-            $init:function  () {
-              //element.setAttribute("ms-visible", 'toggle');                        
-              
-              elemParent.insertBefore(parentstr,element)
-              parentstr.appendChild(element);
-              element.appendChild(closeBtn);
-
-              avalon.scan(parentstr, [vmodel].concat(vmodels)); //连接模块
-            }
-          })       
-        return vmodel
-    }
-
-    widget.vertion = 1.0
-    widget.defaults = {
-        width: 200,
-        height: 160,
-        className: "pop"
-    }
-    return avalon
-})
-#T=ms-widget="pop, pp1,$opt"
-ms-widget="pop, pp1,$opt"
-#T=ms-{
-{{^!}}
-#T=ms-avalon.define //定义
+#T=ms-define //定义
 var vmfile =  avalon.define({
     $id: "share",
   })
+#T=ms-scan()
+avalon.scan();
+#T=ms-widget=""
+ms-widget=""
+#T=ms-{
+{{^!}}
 #T=ms-controller
 ms-controller="^!"
 #T=ms-data-duplex-event="change"
