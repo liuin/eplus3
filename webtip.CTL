@@ -157,8 +157,6 @@ attr(^!)
 <audio src="^!"></audio>
 #T=autofocus
 autofocus
-#T=avalon
-avalon
 #T=b
 
   ^!
@@ -1328,6 +1326,8 @@ font-family:'微软雅黑';
 </figure>
 #T=filter
 filter(^!)
+#T=filter: alpha(opacity=100)
+filter: alpha(opacity=100)
 #T=find
 find(^!)
 #T=findText
@@ -2005,6 +2005,35 @@ html(^!)
       </div>
     </div>
   </div>  
+#T=html-byd-hdmeate
+     <meta charste="utf-8">
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+       <title>比亚迪e购</title>
+       <meta name="keywords" content="比亚迪e购,比亚迪e购商城,比亚迪e购官方商城,比亚迪汽车商城,比亚迪汽车官方商城">
+       <meta name="description" content=""/>
+
+	<!-- <link rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'jquery-ui-1.10.1.custom/css/smoothness/jquery-ui-1.10.1.custom.min.css'; ?>" /> -->
+	<!-- <link rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'jquery-ui-1.10.1.custom/css/smoothness/jquery-ui-1.10.1.custom.min.js'; ?>" /> -->
+  <link rel="stylesheet" href="<?php echo $this->getSkinUrl('home/css/reset.css'); ?>">
+  <link rel="stylesheet" href="<?php echo $this->getSkinUrl('home/css/style.css'); ?>">
+  <!--[if IE 6]>
+    <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'test/DD_belatedPNG_0.0.8a.js'; ?>" ></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      DD_belatedPNG.fix('.png');
+      //]]></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="<?php echo $this->getSkinUrl('js/html5shiv.min.js'); ?>"></script>
+    <script src="<?php echo $this->getSkinUrl('js/respond.min.js'); ?>"></script>
+  <![endif]-->
+
+	<script src="<?php echo $this->getSkinUrl('home/js/avalon.min.js') ?>" ></script>
+	<script src="<?php echo $this->getSkinUrl('home/js/script.js') ?>" ></script>
+	<!--[if lt IE 8]>
+		<link href="css/ie.css" rel="stylesheet" media="all" type="text/css" />
+	<![endif]-->
 #T=html-byd-header
 <style>
   .logo a {display: inline-block;width: 135px;height: 84px;}
@@ -2943,16 +2972,14 @@ $outer
   vm.lang.$watch("length", function(){
     vm.langtext = vm.lang.join(",")
   })
-#T=ms-define //定义
+#T=ms-css-opacity
+ms-css-opacity
+#T=ms-{
+{{^!}}
+#T=ms-avalon.define //定义
 var vmfile =  avalon.define({
     $id: "share",
   })
-#T=ms-scan()
-avalon.scan();
-#T=ms-widget=""
-ms-widget=""
-#T=ms-{
-{{^!}}
 #T=ms-controller
 ms-controller="^!"
 #T=ms-data-duplex-event="change"
@@ -2969,8 +2996,47 @@ ms-each="^!"
 require(["domReady!","../ui/mmRouter/mmRouter.js"], function(a) {
       console.log(a);
     })
+#T=ms-ui-build
+define(["avalon",'../trans/trans'], function(avalon) {
+    var widget = avalon.ui.pop =  function(element, data, vmodels) {
+        var options = data.popOptions;
+        var elemParent = element.parentNode;
+        var parentstr = avalon.parseHTML('<div class="pop-wrap"  ms-on-click="hidePop($event)" id="' + data.popId + '"></div>').firstChild;
+        var closeBtn = avalon.parseHTML('<span ms-click="hidePop()" class="close">X</span>').firstChild;
+        var vmodel =  avalon.define({
+            $id: data.popId,
+            toggle:false,
+            stopUp:function  (e) {  //阻止冒泡
+              e.stopPropagation();
+            },
+            hidePop:function  (e) {
+              vmodel.toggle = false;
+            },
+            $init:function  () {
+              //element.setAttribute("ms-visible", 'toggle');                        
+              
+              elemParent.insertBefore(parentstr,element)
+              parentstr.appendChild(element);
+              element.appendChild(closeBtn);
+
+              avalon.scan(parentstr, [vmodel].concat(vmodels)); //连接模块
+            }
+          })       
+        return vmodel
+    }
+
+    widget.vertion = 1.0
+    widget.defaults = {
+        width: 200,
+        height: 160,
+        className: "pop"
+    }
+    return avalon
+})
 #T=ms-visible="filevs"
 ms-visible="filevs"
+#T=ms-widget="pop, pp1,$opt"
+ms-widget="pop, pp1,$opt"
 #T=ms-with
 ms-with="^!"
 #T=msWriteProfilerMark
