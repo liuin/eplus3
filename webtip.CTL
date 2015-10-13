@@ -883,6 +883,8 @@ colspan="^!"
 compareEndPoints(^!)
 #T=compile
 compile(^!)
+#T=complete
+complete
 #T=componentFromPoint
 componentFromPoint(^!)
 #T=concat
@@ -2551,7 +2553,7 @@ html(^!)
 if (^!) {
 }
 #T=iframe
-<iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
+<iframe allowTransparency="true" scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 #T=img
 <img src="^!" alt="" />
 #T=indeterminate
@@ -2972,8 +2974,6 @@ $outer
   vm.lang.$watch("length", function(){
     vm.langtext = vm.lang.join(",")
   })
-#T=ms-css-opacity
-ms-css-opacity
 #T=ms-{
 {{^!}}
 #T=ms-avalon.define //定义
@@ -2982,6 +2982,8 @@ var vmfile =  avalon.define({
   })
 #T=ms-controller
 ms-controller="^!"
+#T=ms-css-opacity
+ms-css-opacity
 #T=ms-data-duplex-event="change"
 data-duplex-event="change"
 #T=ms-duplex
@@ -4635,7 +4637,7 @@ ubound(^!)
   use:
  --*/
 
-+(function() {
++(function($) {
   'use strict';
 
 
@@ -4839,11 +4841,9 @@ $(".ckiput").prop('checked',true);
     }
     var $this = $(el);
     $this.css(setCss);
-    var idiv = $('<i></i>');
-    idiv.insertBefore($this);
     $this.parent("label").css("position","relative");
     $this.on("change.resize",function  () {      
-        $(this).parent("label").addClass("ck-select").siblings("label").removeClass("ck-select");     
+        $(this).parent("label").addClass("ck-checked").siblings("label").removeClass("ck-checked");     
     });
   }
 
@@ -4863,7 +4863,26 @@ $(".ckiput").prop('checked',true);
     var $this = $(formSting);
     Plugin.call($this,'build');
   })
+
+  $(document).on('rebuildCkRadio', function (e) {
+    var $this = $(formSting);
+    alert('111222');
+    $(formSting).each(function () {
+      
+      if ($(this).data('ck.select') == undefined) {
+        Plugin.call($this,'build');
+      }
+    })    
+  })
   
+  $(window).load(function  () {
+    $(formSting).each(function () {      
+        if ($(this).is(':checked')) {
+          $(this).trigger('change');
+        }
+    })
+  })
+
 }(jQuery); 
 #T=ui-formSelect
 /** 
@@ -5609,6 +5628,36 @@ jQuery.extend(jQuery.easing, {
       return jQuery.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * .5 + c * .5 + b;
   }
 });
+#T=ui-lazyload
+/*-- 
+  anchor:cuki13
+  use:lazyload
+ --*/
+
++(function($) {
+  'use strict';
+  function reloadPic(arr) {
+    this.count = arr.length;
+    this.start = 0;
+    this.state = 'load';
+  }
+  reloadPic.prototype.loadPic = function  (url) {
+    var $this = this;
+    var img = $('<img />');
+    img.src = url;
+    img.load(function  () {
+      $this.count--;
+      if ($this.count == arr.length) {
+        $this.state = 'complete';
+      }
+    });
+  }
+
+  document.trigger('openclick');
+  
+
+
+})(jQuery);
 #T=ui-ltIE9 //placeholder 低版本生效
   +(function() {
   'use strict';
