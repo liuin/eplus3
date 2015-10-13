@@ -421,7 +421,7 @@
 			"fw:b": "font-weight:bold;",
 			"fw:br": "font-weight:bolder;",
 			"fw:lr": "font-weight:lighter;",
-			"fs": "font-style:|;",
+			"fs": "font-size:|;",
 			"fs:n": "font-style:normal;",
 			"fs:i": "font-style:italic;",
 			"fs:o": "font-style:oblique;",
