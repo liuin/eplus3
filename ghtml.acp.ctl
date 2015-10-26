@@ -6,39 +6,8 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=e6内页
-<img src="{{media url="wysiwyg//e6/e6720.jpg"}}" alt="" />
-      <link rel="stylesheet" type="text/css" href="http://www.bydauto.com.cn/css/video-js.min.css" media="all" />
-      <style type="text/css">
-            @font-face {
-                font-family:VideoJS;
-                src:url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.eot);
-                src:url(http://mall.bydauto.com.cn/skin/frontend/base/default/crowdfunding/font/font/vjs.eot?#iefix) format('embedded-opentype'), url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.woff) format('woff'), url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.ttf) format('truetype');
-                font-weight:400;
-                font-style:normal
-            }
-            .peizhi-hd {font-size: 18px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px; font-family:"微软雅黑";}
-            .peizhi-bk {margin-left:-1px;}
-          </style>
-          <script type="text/javascript" src="http://www.bydauto.com.cn/js/video.js"></script>
-          <div class="flash" >
-            <video style="margin:0 auto;" id="my_video_1" class="video-js vjs-default-skin" controls
-             preload="auto" width="720" height="576" preload="none"  data-setup="{}">
-             <source src="http://down.bydauto.com.cn/downloads/e6/e6_6m.mp4" type='video/mp4'>
-            </video>
-          </div>
-<img src="{{media url="wysiwyg//e6/e6720-02.jpg"}}" alt="" />
-<img src="{{media url="wysiwyg//e6/e6720-03.jpg"}}" alt="" />
-<img src="{{media url="wysiwyg//e6/e6720-04.jpg"}}" alt="" />
-<div class="peizhi-hd">e6配置参数</div>
-<div class="peizhi-bk">
-  <img src="{{media url="wysiwyg//e6/peizhi.jpg"}}" alt="" />
-  <img src="{{media url="wysiwyg//e6/peizhi-02.jpg"}}" alt="" />
-  <img src="{{media url="wysiwyg//e6/peizhi-03.jpg"}}" alt="" />
-  <img src="{{media url="wysiwyg//e6/peizhi-04.jpg"}}" alt="" />
-  <img src="{{media url="wysiwyg//e6/peizhi-05.jpg"}}" alt="" />
-</div>
-
+#T=magento-topsell
+<div class="top-sale"><h3><span>热销排行</span></h3><ol class="bestsellers"><li class="num-1"><span class="count">TOP1</span><a data-ipid="974" href="http://mall.bydauto.com.cn/index.php/all-car-type/20141212.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>比亚迪e购首届12.12购车节10元诚意金宝贝</span><span>已销出<i>1717</i>笔</span></li><li class="num-2"><span class="count">TOP2</span><a data-ipid="872" href="http://mall.bydauto.com.cn/index.php/all-car-type/hongbao520.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>【e购520特惠日】10元免单宝贝 每个ID限拍一份</span><span>已销出<i>748</i>笔</span></li><li class="num-3"><span class="count">TOP3</span><a data-ipid="978" href="http://mall.bydauto.com.cn/index.php/all-car-type/byd201415buy.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>比亚迪跨年盛惠  亿万豪礼送不停</span><span>已销出<i>369</i>笔</span></li><li class="num-4"><span class="count">TOP4</span><a data-ipid="858" href="http://mall.bydauto.com.cn/index.php/all-car-type/s6surui.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>【超值特惠】2014款S6/速锐 1元送500元加油卡及原厂附件</span><span>已销出<i>210</i>笔</span></li><li class="num-5"><span class="count">TOP5</span><a data-ipid="984" href="http://mall.bydauto.com.cn/index.php/all-car-type/s7e.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>S7e购特供车型</span><span>已销出<i>208</i>笔</span></li></ol></div>
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -376,6 +345,39 @@ $(this)[0].offsetWidth;
 
 http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js
 http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js
+#T=e6内页
+<img src="{{media url="wysiwyg//e6/e6720.jpg"}}" alt="" />
+      <link rel="stylesheet" type="text/css" href="http://www.bydauto.com.cn/css/video-js.min.css" media="all" />
+      <style type="text/css">
+            @font-face {
+                font-family:VideoJS;
+                src:url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.eot);
+                src:url(http://mall.bydauto.com.cn/skin/frontend/base/default/crowdfunding/font/font/vjs.eot?#iefix) format('embedded-opentype'), url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.woff) format('woff'), url(http://mall.bydauto.com.cn/skin/frontend/default/test/crowdfunding/font/vjs.ttf) format('truetype');
+                font-weight:400;
+                font-style:normal
+            }
+            .peizhi-hd {font-size: 18px;padding-left: 10px;padding-top: 5px;padding-bottom: 5px; font-family:"微软雅黑";}
+            .peizhi-bk {margin-left:-1px;}
+          </style>
+          <script type="text/javascript" src="http://www.bydauto.com.cn/js/video.js"></script>
+          <div class="flash" >
+            <video style="margin:0 auto;" id="my_video_1" class="video-js vjs-default-skin" controls
+             preload="auto" width="720" height="576" preload="none"  data-setup="{}">
+             <source src="http://down.bydauto.com.cn/downloads/e6/e6_6m.mp4" type='video/mp4'>
+            </video>
+          </div>
+<img src="{{media url="wysiwyg//e6/e6720-02.jpg"}}" alt="" />
+<img src="{{media url="wysiwyg//e6/e6720-03.jpg"}}" alt="" />
+<img src="{{media url="wysiwyg//e6/e6720-04.jpg"}}" alt="" />
+<div class="peizhi-hd">e6配置参数</div>
+<div class="peizhi-bk">
+  <img src="{{media url="wysiwyg//e6/peizhi.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-02.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-03.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-04.jpg"}}" alt="" />
+  <img src="{{media url="wysiwyg//e6/peizhi-05.jpg"}}" alt="" />
+</div>
+
 #T=fc公用函数
 var fc = {
 		//绝对定位
