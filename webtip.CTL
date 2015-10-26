@@ -54,9 +54,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after(^!)
-#T=after
 after
+#T=after
+after(^!)
 #T=afunc
 function (^!) {
 }
@@ -248,9 +248,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -360,9 +360,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before(^!)
-#T=before
 before
+#T=before
+before(^!)
 #T=bg
 background:^!;
 #T=bg-
@@ -1241,9 +1241,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty(^!)
-#T=empty
 empty
+#T=empty
+empty(^!)
 #T=enabled
 enabled
 #T=encodeURI
@@ -1311,9 +1311,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:'\5B8B\4F53',Arial;
-#T=ff-st
 font-family:"\5B8B\4F53"
+#T=ff-st
+font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1407,9 +1407,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus(^!)
-#T=focus
 focus
+#T=focus
+focus(^!)
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -2022,9 +2022,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover(^!)
-#T=hover
 hover
+#T=hover
+hover(^!)
 #T=hr
 <hr />^!
 #T=href-j
@@ -2918,9 +2918,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2948,11 +2948,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3677,9 +3677,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3825,9 +3825,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3938,9 +3938,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3964,9 +3964,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -4002,9 +4002,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -4018,9 +4018,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4044,14 +4044,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4093,9 +4093,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4137,9 +4137,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4281,9 +4281,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4311,9 +4311,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -4786,10 +4786,19 @@ removeElement()
 
 +(function($) {
   'use strict';
+  var selectString = '[ckScroll]';
+
+  function fcName(arr) {
+    this.picGround = arr;
+  }
+
+
+  $(selectString).each(function () {
+     //callsome
+  })
 
 
 })(jQuery);
-
 #T=ui-fixtable
 /*固定表格
 fixhead($(".fixhead"));
@@ -8360,9 +8369,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
