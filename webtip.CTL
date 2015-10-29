@@ -4660,6 +4660,118 @@ removeElement()
   })
 
 })(jQuery);
+#T=ui-cktarget
+  /*-- 
+    anchor:cuki13
+    use:data-cktarget
+   --*/
+  
+  +(function($) {
+
+    'use strict';
+    var selectString = '[data-cktarget]';  
+
+    function Cktarget(obj) {
+      this.obj = obj;
+      this.addClass = 'active';
+      this.index = obj.index();
+      this.targetObj = $(obj.data('cktarget'));
+      this.ajaxPro = false;
+      this.loadObj = $('#load-tag');
+      this.ajaxUrl = obj.data('ckurl');
+      this.curPage = 0;
+      this.totlePage = obj.data('totlepage');
+      this.end = false;
+
+      var $this = this;
+
+      //点击事件
+      this.obj.on('click',function  (e) {
+       if ($this.obj.hasClass($this.addClass) || $this.ajaxPro) {
+        return false;
+       }else {         
+         $this.obj.addClass($this.addClass).siblings().removeClass($this.addClass);
+         $this.curPage = 0;
+         $this.end = false;
+         $('.tag-part-more').find('a').removeClass('end');
+         if ($this.ajaxUrl != '' && (!$this.end)) {
+          
+          $this.ajaxLoad();
+         }else {
+           $this.showIn();           
+         }
+       }
+       return false;
+      })
+    }
+
+    Cktarget.prototype.ajaxLoad = function  () {     
+
+      var $this = this;
+      
+      if ($this.end) {
+       
+        return false
+      }
+      var url = $this.ajaxUrl + '?p =' + $this.curPage;
+      var arg = arguments[0];
+      
+      $this.ajaxPro = true;
+      $.ajax({
+          type: "GET",
+          url: url,
+          dataType: 'html',
+          success: function(data){
+            if ($this.curPage == 0) {
+              $this.targetObj.empty();
+            }              
+            
+            $this.targetObj.append(data);
+            
+
+            if ($this.curPage == $this.totlePage) {
+              $this.end = true;
+            }else {
+              $this.curPage++;
+            }
+            
+            $this.showIn(); 
+            $this.afterAjax();
+            $this.loadObj.fadeOut();
+
+            $this.ajaxPro = false;
+
+            
+          },
+          error:function  () {
+          },
+          beforeSend:function  () {
+              if (arg != 'moreload') {
+                $this.loadObj.show();
+              }
+          }
+      });      
+    }
+
+    Cktarget.prototype.afterAjax = function  () {
+      
+    } 
+  
+    Cktarget.prototype.showIn = function  () {
+      if (this.targetObj.hasClass(this.addClass)) {
+        return false;
+      }
+      this.targetObj.addClass(this.addClass).fadeIn().siblings().removeClass(this.addClass).hide();
+    }
+
+    $(document).ready(function() {
+      $(selectString).each(function () {
+        $(this).data('cktarget',new Cktarget($(this)))          
+      })
+
+      $(selectString).eq(0).trigger('click');
+    })
+  })(jQuery);
 #T=ui-cooki
 /*-- 
   anchor:cuki13
@@ -5876,6 +5988,71 @@ jQuery.extend(jQuery.easing, {
     return new reloadPic(arr);
   }
   //document.trigger('openclick');
+})(jQuery);
+#T=ui-lazyLoad2
+/*-- 
+  anchor:cuki13
+  use:LazyLoad
+ --*/
+
++(function($) {
+  'use strict';
+  var selectString = '[cklazyload]';
+
+  function LazyLoad() {
+    this.run();
+  }
+
+  LazyLoad.prototype.delayload = function  () {
+    var $this = this;
+    
+    $(selectString).each(function () {
+      
+      var imgItem = $(this),
+          eleTop = imgItem.offset().top,
+          eleHeight = imgItem.outerHeight(),
+          winTop = $(window).scrollTop(),
+          winHeight = $(window).height()      
+      if(winTop === 0){ //修正chrome下取不到的問題
+          winTop = document.body.scrollTop;
+      }
+            
+      //加载正确的图片,条件是屏幕范围内并且要防止重复设置
+      if (eleTop < winTop + winHeight && eleTop + eleHeight > winTop && imgItem.data('lazyload') == undefined) {
+          //加载开动        
+          $this.reloadImg(imgItem);
+      }      
+    })
+  }
+
+  LazyLoad.prototype.reloadImg = function  (obj) {
+    var gSrc = obj.data('src');
+    var img = $('<img src="'+ gSrc +'" alt="" />');
+    if (img[0].complete) {
+      obj.attr('src',gSrc);
+    }else {
+      img.load(function  () {
+        obj.attr('src',gSrc);
+      })
+    }   
+    obj.data('lazyload','compelete');
+  }
+
+  LazyLoad.prototype.run = function  (obj) {
+    var $this = this;
+    setInterval(
+      function(){
+        
+        $this.delayload();
+      },400
+    )
+  }
+
+  $(document).ready(function() {
+    new LazyLoad();  
+  })
+
+
 })(jQuery);
 #T=ui-ltIE9 //placeholder 低版本生效
   +(function() {
