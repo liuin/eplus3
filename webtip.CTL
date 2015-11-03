@@ -54,9 +54,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after(^!)
-#T=after
 after
+#T=after
+after(^!)
 #T=afunc
 function (^!) {
 }
@@ -248,9 +248,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -360,9 +360,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before(^!)
-#T=before
 before
+#T=before
+before(^!)
 #T=bg
 background:^!;
 #T=bg-
@@ -1267,9 +1267,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty(^!)
-#T=empty
 empty
+#T=empty
+empty(^!)
 #T=enabled
 enabled
 #T=encodeURI
@@ -1337,9 +1337,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:'\5B8B\4F53',Arial;
-#T=ff-st
 font-family:"\5B8B\4F53"
+#T=ff-st
+font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1433,9 +1433,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus(^!)
-#T=focus
 focus
+#T=focus
+focus(^!)
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -2048,9 +2048,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover(^!)
-#T=hover
 hover
+#T=hover
+hover(^!)
 #T=hr
 <hr />^!
 #T=href-j
@@ -2944,9 +2944,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2974,11 +2974,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -3703,9 +3703,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3851,9 +3851,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3964,9 +3964,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3990,9 +3990,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -4028,9 +4028,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -4044,9 +4044,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4070,14 +4070,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4119,9 +4119,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4163,9 +4163,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4307,9 +4307,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4337,9 +4337,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -6569,6 +6569,98 @@ jQuery.extend(jQuery.easing, {
  }
 
 })(jQuery);
+#T=ui-scbanner //图片滚动
+/** 
+* extend 图片滚动插件
+* 
+* @package scbanner
+* @author xcld
+*/
+;(function($){  
+    $.fn.scbanner = function (options) {  
+        var defualts = { 
+			scroll_width: 980,     //滚动距离
+			warp_id: 'banner1', //外部包含ID
+			auto:	true,     //是否自动,
+			speed:	5000,     //间隔5秒
+			show_type: 'scroll'
+		};  
+        var opts = $.extend({}, defualts, options);  
+        var obj = $(this);
+
+		//生成控制器
+		obj.wrap('<div id="'+opts.warp_id+'"></div>');
+	
+		//生成页码
+		function  nav(obj) {
+			var nav_html = '<div class="banner-nav">';
+			for (var i = 0; i < obj.find('li').length; i++) {
+				nav_html += '<a class="'+(i == 0 ? 'current' : '')+'" data="'+i+'" href="javascript:void(0);"><span>'+(i+1)+'</span></a>';
+			}
+			nav_html += '</div>';
+			return nav_html;
+		}
+
+		obj.css('width',980*obj.find('li').length);
+
+		var nav=$(nav(obj));
+
+		nav.find('a').click(function  (e) {
+			if ($(this).hasClass('current')) {
+				return false;
+			}else {
+				var w = $(this).attr('data');
+				obj_scroll(obj,-w,opts.show_type);
+				$(this).siblings('.current').removeClass('current'); 
+				$(this).addClass('current');
+			}
+			e.preventDefault();
+		})
+
+		//自动滚动函数
+		$('#'+opts.warp_id).hover(function  () {
+			opts.auto = false;
+		},function  () {
+			opts.auto = true;
+		})
+		function loop_main() {
+			if (opts.auto) {
+				click_next();
+			}
+		}
+				
+		//循环
+		setInterval(function  () {
+			loop_main();
+		}, opts.speed);
+		
+		function click_next() {
+			var n = nav.find('a.current').next();
+			if (n.length > 0) {
+				n.trigger('click'); 
+			}else {
+				nav.find('a').eq(0).trigger('click');
+			}
+		}
+
+		$('#'+opts.warp_id).append(nav);
+
+
+		//显示
+		function obj_scroll(obj,w,type) {
+			switch (type) {
+			case 'scroll':
+				obj.animate({'left':opts.scroll_width*w},800,'easeInOutExpo');
+			break
+			case 'fade':
+				obj.css({'left':opts.scroll_width*w}).hide().fadeIn();
+			break
+			default:
+			}
+		}
+
+    };  
+})(jQuery);
 #T=ui-scbanner //菲亚特滚动
  /** 
 * extend 图片滚动插件
@@ -8572,9 +8664,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
