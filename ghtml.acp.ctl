@@ -3,11 +3,11 @@
 
 #T=$(this)[0].offsetWidth;
 $(this)[0].offsetWidth;
+#T=<span class="line1">——</span>
+<span class="line1">——</span>
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=magento-topsell
-<div class="top-sale"><h3><span>热销排行</span></h3><ol class="bestsellers"><li class="num-1"><span class="count">TOP1</span><a data-ipid="974" href="http://mall.bydauto.com.cn/index.php/all-car-type/20141212.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>比亚迪e购首届12.12购车节10元诚意金宝贝</span><span>已销出<i>1717</i>笔</span></li><li class="num-2"><span class="count">TOP2</span><a data-ipid="872" href="http://mall.bydauto.com.cn/index.php/all-car-type/hongbao520.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>【e购520特惠日】10元免单宝贝 每个ID限拍一份</span><span>已销出<i>748</i>笔</span></li><li class="num-3"><span class="count">TOP3</span><a data-ipid="978" href="http://mall.bydauto.com.cn/index.php/all-car-type/byd201415buy.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>比亚迪跨年盛惠  亿万豪礼送不停</span><span>已销出<i>369</i>笔</span></li><li class="num-4"><span class="count">TOP4</span><a data-ipid="858" href="http://mall.bydauto.com.cn/index.php/all-car-type/s6surui.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>【超值特惠】2014款S6/速锐 1元送500元加油卡及原厂附件</span><span>已销出<i>210</i>笔</span></li><li class="num-5"><span class="count">TOP5</span><a data-ipid="984" href="http://mall.bydauto.com.cn/index.php/all-car-type/s7e.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>S7e购特供车型</span><span>已销出<i>208</i>笔</span></li></ol></div>
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -463,7 +463,7 @@ $ pure release # 编译
 $ pure release -omp # -omp 代表压缩,md5后缀,打包
 $ pure release -d build # -d 代表发布到配置文件中的build节点
 #T=href="(.[^"]*)" ep搜索href="内容"的内容
-href="(.[^"]*)"
+href="(.[^^"]*)"
 #T=iframe
       <iframe scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 
@@ -483,6 +483,8 @@ href="(.[^"]*)"
   'use strict';
 
 })(jQuery);
+#T=magento-topsell
+<div class="top-sale"><h3><span>热销排行</span></h3><ol class="bestsellers"><li class="num-1"><span class="count">TOP1</span><a data-ipid="974" href="http://mall.bydauto.com.cn/index.php/all-car-type/20141212.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>比亚迪e购首届12.12购车节10元诚意金宝贝</span><span>已销出<i>1717</i>笔</span></li><li class="num-2"><span class="count">TOP2</span><a data-ipid="872" href="http://mall.bydauto.com.cn/index.php/all-car-type/hongbao520.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>【e购520特惠日】10元免单宝贝 每个ID限拍一份</span><span>已销出<i>748</i>笔</span></li><li class="num-3"><span class="count">TOP3</span><a data-ipid="978" href="http://mall.bydauto.com.cn/index.php/all-car-type/byd201415buy.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>比亚迪跨年盛惠  亿万豪礼送不停</span><span>已销出<i>369</i>笔</span></li><li class="num-4"><span class="count">TOP4</span><a data-ipid="858" href="http://mall.bydauto.com.cn/index.php/all-car-type/s6surui.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>【超值特惠】2014款S6/速锐 1元送500元加油卡及原厂附件</span><span>已销出<i>210</i>笔</span></li><li class="num-5"><span class="count">TOP5</span><a data-ipid="984" href="http://mall.bydauto.com.cn/index.php/all-car-type/s7e.html"><img src="http://mall.bydauto.com.cn/media/catalog/product/cache/4/thumbnail/77x77/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg"></a><span>S7e购特供车型</span><span>已销出<i>208</i>笔</span></li></ol></div>
 #T=magento产品模板
 <style type="text/css">
               
@@ -510,6 +512,8 @@ href="(.[^"]*)"
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-02.jpg" alt="">
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-03.jpg" alt="">
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-04.jpg" alt="">
+#T=style="(.[^"]*)" //搜索里面的内容
+style="(.[^^"]*)"
 #T=tablefix
 jQuery.fn.fixedtableheader = function(options) {var settings = jQuery.extend({headerrowsize: 1, highlightrow: false, highlightclass: "highlight", thetop: 0 }, options); this.each(function(i) {var $tbl = $(this); var $tblhfixed = $tbl.find("tr:lt(" + settings.headerrowsize + ")"); var headerelement = "th"; if ($tblhfixed.find(headerelement).length == 0) headerelement = "td"; if ($tblhfixed.find(headerelement).length > 0) {$tblhfixed.find(headerelement).each(function() {$(this).css("width", $(this).width()); }); var $clonedTable = $tbl.clone().empty(); var tblwidth = GetTblWidth($tbl); $clonedTable.attr("id", "fixedtableheader" + i).css({"position": "fixed", "top": settings.thetop, "left": $tbl.offset().left }).append($tblhfixed.clone()).width(tblwidth).hide().appendTo($("body")); if (settings.highlightrow) $("tr:gt(" + (settings.headerrowsize - 1) + ")", $tbl).hover(function() {$(this).addClass(settings.highlightclass); }, function() {$(this).removeClass(settings.highlightclass); }); $(window).scroll(function() {if (jQuery.browser.msie && jQuery.browser.version == "6.0") $clonedTable.css({"position": "absolute", "top": $(window).scrollTop(), "left": $tbl.offset().left }); else $clonedTable.css({"position": "fixed", "top": settings.thetop, "left": $tbl.offset().left - $(window).scrollLeft() }); var sctop = $(window).scrollTop(); var elmtop = $tblhfixed.offset().top; if (sctop > elmtop && sctop <= (elmtop + $tbl.height() - $tblhfixed.height())) $clonedTable.show(); else $clonedTable.hide(); }); $(window).resize(function() {if ($clonedTable.outerWidth() != $tbl.outerWidth()) {$tblhfixed.find(headerelement).each(function(index) {var w = $(this).width(); $(this).css("width", w); $clonedTable.find(headerelement).eq(index).css("width", w); }); $clonedTable.width($tbl.outerWidth()); } $clonedTable.css("left", $tbl.offset().left); }); } }); function GetTblWidth($tbl) {var tblwidth = $tbl.outerWidth(); return tblwidth; } };
 #T=v.charAt(i)
@@ -542,6 +546,19 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=比亚迪简单产品CSS
+<style type="text/css">
+  #J_ItemDesc .des-car-t3{border:0;}
+  #J_ItemDesc p { color:#656565; font-family:"微软雅黑"; font-size:12px; }
+  #J_ItemDesc .des-car-t4 {font-family: "微软雅黑"; font-size: 12px; font-weight: bold;}
+  #J_ItemDesc .des-car-t5 {font-size:22px; color:#909090; font-family:"微软雅黑"; font-weight:normal; margin-bottom:5px;}
+  #J_ItemDesc .ct5 {overflow:hidden;padding:20px;}
+  #J_ItemDesc .des-car-list li {margin-bottom:0px;}
+  .tc {text-align:center;}
+.cpd-c2{display:none;}
+body.catalog-product-view .product-view .price-box1 {display: inline-block;  float: left; }
+.product-view .product-shop .product-name{margin-bottom:10px;}
+</style>
 #T=比亚迪元旦right活动
 <li>
 <a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>

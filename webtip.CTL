@@ -1033,6 +1033,11 @@ content: " ";border-left: 10px solid transparent;border-top: 10px solid transpar
   background-image:-webkit-linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
   background-image:linear-gradient(top, red, orange,yellow,green,blue,indigo,violet);
 }	
+#T=css-color1 //颜色渐变
+background-image: -webkit-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);
+background-image: -moz-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);
+background-image: -o-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);
+background-image: linear-gradient(135deg,rgba(69, 51, 51, 0) 0,rgba(255,255,255,.8) 40%,rgba(255,255,255,.8) 60%,rgba(255,255,255,0) 100%);
 #T=css-line-clamp //多行溢出省略
     overflow: hidden;
     max-height: 40px;
@@ -2979,6 +2984,8 @@ max-height:none;
 </map>
 #T=map
 map(^!)
+#T=map-html
+<map name="bk2"> <area coords="972,527,1206,591" href="#" alt="1元订金" /> </map>
 #T=mark
 <mark>^!</mark>
 #T=match
@@ -6569,98 +6576,6 @@ jQuery.extend(jQuery.easing, {
  }
 
 })(jQuery);
-#T=ui-scbanner //图片滚动
-/** 
-* extend 图片滚动插件
-* 
-* @package scbanner
-* @author xcld
-*/
-;(function($){  
-    $.fn.scbanner = function (options) {  
-        var defualts = { 
-			scroll_width: 980,     //滚动距离
-			warp_id: 'banner1', //外部包含ID
-			auto:	true,     //是否自动,
-			speed:	5000,     //间隔5秒
-			show_type: 'scroll'
-		};  
-        var opts = $.extend({}, defualts, options);  
-        var obj = $(this);
-
-		//生成控制器
-		obj.wrap('<div id="'+opts.warp_id+'"></div>');
-	
-		//生成页码
-		function  nav(obj) {
-			var nav_html = '<div class="banner-nav">';
-			for (var i = 0; i < obj.find('li').length; i++) {
-				nav_html += '<a class="'+(i == 0 ? 'current' : '')+'" data="'+i+'" href="javascript:void(0);"><span>'+(i+1)+'</span></a>';
-			}
-			nav_html += '</div>';
-			return nav_html;
-		}
-
-		obj.css('width',980*obj.find('li').length);
-
-		var nav=$(nav(obj));
-
-		nav.find('a').click(function  (e) {
-			if ($(this).hasClass('current')) {
-				return false;
-			}else {
-				var w = $(this).attr('data');
-				obj_scroll(obj,-w,opts.show_type);
-				$(this).siblings('.current').removeClass('current'); 
-				$(this).addClass('current');
-			}
-			e.preventDefault();
-		})
-
-		//自动滚动函数
-		$('#'+opts.warp_id).hover(function  () {
-			opts.auto = false;
-		},function  () {
-			opts.auto = true;
-		})
-		function loop_main() {
-			if (opts.auto) {
-				click_next();
-			}
-		}
-				
-		//循环
-		setInterval(function  () {
-			loop_main();
-		}, opts.speed);
-		
-		function click_next() {
-			var n = nav.find('a.current').next();
-			if (n.length > 0) {
-				n.trigger('click'); 
-			}else {
-				nav.find('a').eq(0).trigger('click');
-			}
-		}
-
-		$('#'+opts.warp_id).append(nav);
-
-
-		//显示
-		function obj_scroll(obj,w,type) {
-			switch (type) {
-			case 'scroll':
-				obj.animate({'left':opts.scroll_width*w},800,'easeInOutExpo');
-			break
-			case 'fade':
-				obj.css({'left':opts.scroll_width*w}).hide().fadeIn();
-			break
-			default:
-			}
-		}
-
-    };  
-})(jQuery);
 #T=ui-scbanner //菲亚特滚动
  /** 
 * extend 图片滚动插件
@@ -6913,6 +6828,98 @@ var sl = $('#slider1').scbanner({
     
     return contr;
   };  
+})(jQuery);
+#T=ui-scbanner //图片滚动
+/** 
+* extend 图片滚动插件
+* 
+* @package scbanner
+* @author xcld
+*/
+;(function($){  
+    $.fn.scbanner = function (options) {  
+        var defualts = { 
+			scroll_width: 980,     //滚动距离
+			warp_id: 'banner1', //外部包含ID
+			auto:	true,     //是否自动,
+			speed:	5000,     //间隔5秒
+			show_type: 'scroll'
+		};  
+        var opts = $.extend({}, defualts, options);  
+        var obj = $(this);
+
+		//生成控制器
+		obj.wrap('<div id="'+opts.warp_id+'"></div>');
+	
+		//生成页码
+		function  nav(obj) {
+			var nav_html = '<div class="banner-nav">';
+			for (var i = 0; i < obj.find('li').length; i++) {
+				nav_html += '<a class="'+(i == 0 ? 'current' : '')+'" data="'+i+'" href="javascript:void(0);"><span>'+(i+1)+'</span></a>';
+			}
+			nav_html += '</div>';
+			return nav_html;
+		}
+
+		obj.css('width',980*obj.find('li').length);
+
+		var nav=$(nav(obj));
+
+		nav.find('a').click(function  (e) {
+			if ($(this).hasClass('current')) {
+				return false;
+			}else {
+				var w = $(this).attr('data');
+				obj_scroll(obj,-w,opts.show_type);
+				$(this).siblings('.current').removeClass('current'); 
+				$(this).addClass('current');
+			}
+			e.preventDefault();
+		})
+
+		//自动滚动函数
+		$('#'+opts.warp_id).hover(function  () {
+			opts.auto = false;
+		},function  () {
+			opts.auto = true;
+		})
+		function loop_main() {
+			if (opts.auto) {
+				click_next();
+			}
+		}
+				
+		//循环
+		setInterval(function  () {
+			loop_main();
+		}, opts.speed);
+		
+		function click_next() {
+			var n = nav.find('a.current').next();
+			if (n.length > 0) {
+				n.trigger('click'); 
+			}else {
+				nav.find('a').eq(0).trigger('click');
+			}
+		}
+
+		$('#'+opts.warp_id).append(nav);
+
+
+		//显示
+		function obj_scroll(obj,w,type) {
+			switch (type) {
+			case 'scroll':
+				obj.animate({'left':opts.scroll_width*w},800,'easeInOutExpo');
+			break
+			case 'fade':
+				obj.css({'left':opts.scroll_width*w}).hide().fadeIn();
+			break
+			default:
+			}
+		}
+
+    };  
 })(jQuery);
 #T=ui-scollUp
 /** 
