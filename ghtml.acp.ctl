@@ -3,8 +3,10 @@
 
 #T=$(this)[0].offsetWidth;
 $(this)[0].offsetWidth;
-#T=<span class="line1">——</span>
-<span class="line1">——</span>
+#T=:root :root 选择器匹配文档根元素 ie8+
+    :root #loading span {
+      background-color: rgba(102, 102, 102, 0.95);
+    }
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
@@ -12,6 +14,8 @@ $(this)[0].offsetWidth;
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
 <div id='fancybox-loading'><div></div></div>
+#T=<span class="line1">——</span>
+<span class="line1">——</span>
 #T=AMD格式
   //AMD格式
   if ( typeof define === "function" && define.amd ) {

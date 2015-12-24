@@ -54,9 +54,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after
-#T=after
 after(^!)
+#T=after
+after
 #T=afunc
 function (^!) {
 }
@@ -248,9 +248,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -360,9 +360,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before
-#T=before
 before(^!)
+#T=before
+before
 #T=bg
 background:^!;
 #T=bg-
@@ -1044,6 +1044,8 @@ background-image: linear-gradient(135deg,rgba(69, 51, 51, 0) 0,rgba(255,255,255,
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+#T=css-pointer-events:none; //底部可点击事件
+pointer-events:none;
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
 input:-moz-placeholder {  
@@ -1272,9 +1274,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty
-#T=empty
 empty(^!)
+#T=empty
+empty
 #T=enabled
 enabled
 #T=encodeURI
@@ -1342,9 +1344,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1438,9 +1440,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus
-#T=focus
 focus(^!)
+#T=focus
+focus
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -1470,6 +1472,8 @@ forward(^!)
 fromCharCode(^!)
 #T=fs
 font-size:^!;
+#T=fs-d
+text-decoration: line-through;
 #T=fs-i
 font-style:italic;
 #T=fsm
@@ -2053,9 +2057,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover
-#T=hover
 hover(^!)
+#T=hover
+hover
 #T=hr
 <hr />^!
 #T=href-j
@@ -2224,45 +2228,41 @@ html(^!)
 </form>
 <!-- end form-inline -->
 #T=html-form-v
-<!-- start form-v -->
-<style type="text/css">
-  .form-v {font-size:14px;}
-  .form-v .form-group {margin-bottom:15px;}
-  .form-v .form-group label {display:inline-block;margin-bottom:5px; font-weight:bold;}
-  .form-v .form-control,.form-v .file{display:block;width:100%;height: 20px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555; vertical-align: middle; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;}
-  .form-v .file {border:0;padding:0;}
-  .form-v .help-block { display: block; margin-top: 5px; margin-bottom: 10px; color: #737373; line-height:2;}
-  .form-v .checkbox,.form-v .radio {display: block; min-height: 20px;  margin-top: 10px; margin-bottom: 10px; vertical-align: middle;}
-  .form-v .checkbox input,.form-v .radio input{ line-height: normal;padding: 0; box-sizing: border-box; float:left; margin-right:5px;}
-  .form-v .btn {display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; line-height: 1.428571429; text-align: center; white-space: nowrap; vertical-align: middle;}
-</style>
-<form action="#" class="form-v">
-  <div class="form-group">
-  <label for="exampleInputEmail1">Email address</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-  <label for="exampleInputPassword1">Password</label>
-  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-  <label for="exampleInputFile">File input</label>
-  <input class="file" type="file" id="exampleInputFile">
-  <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-  <label>
-    <input type="checkbox"> Check me out
-  </label>
-  </div>
-  <div class="radio">
-  <label>
-    <input type="radio"> Check me out
-  </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-<!-- end form-ver -->
+  <style type="text/css">
+    /*-- form-bk --*/
+    .form-style {display:block; }
+    .ground-form { margin-bottom: 10px; position:relative;}
+    .ground-form .f-box{width:328px; height: 26px; line-height: 26px;background: #fff; padding-left: 10px;padding-right: 10px; border: 0; border: 1px solid #a3a3a3;}
+    .ground-form i {position: absolute;font-size: 20px;right: -18px;top: 5px; color: }
+  </style> 
+   <form action="#" class="form-style">
+      <div class="ground-form ground-form-car">
+            <label>车　型：</label>
+            <select name="" class="yh" data-form="select" >
+              <option>车   型1</option>
+              <option>车   型2</option>
+            </select>  
+          </div>
+          <div class="ground-form ground-form-biz">
+            <label>经销商：</label>
+            <select name="" class="yh" data-form="select" >
+              <option>经销商1</option>
+              <option>经销商2</option>
+            </select>  
+          </div>      
+      <div class="ground-form ground-form-name">
+        <label>姓　名：</label>
+        <input type="text" name="" class="f-box yh" id=""> 
+      </div>
+      <div class="ground-form ground-form-tel">
+        <label>电　话：</label>
+        <input type="text" name="" class="f-box yh" id=""> 
+      </div>
+      
+      <div class="ground-form-sub">
+        <button type="submit" class="btn-sub yh">预约试驾</button>
+      </div>
+    </form>   
 #T=html-list-group
 <style type="text/css">
   .list-group {margin-top:0;}
@@ -2655,7 +2655,7 @@ html(^!)
 if (^!) {
 }
 #T=iframe
-<iframe allowTransparency="true" scrolling="no" boder="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
+<iframe allowTransparency="true" scrolling="no" border="0" frameborder="no" width="900" height="224"   src="<?=$this->getUrl('*/*/wfile')?>"></iframe>
 #T=img
 <img src="^!" alt="" />
 #T=indeterminate
@@ -2949,9 +2949,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2974,16 +2974,25 @@ margin:0 0 0;
 margin:0 0 0 0;
 #T=m-a
 margin:auto;
+#T=magento-topnav-html
+<?php echo $this->getChildHtml('topnav');  ?>
+#T=magento-topnav-link
+  Mage::register('loginUrl', $url_login);
+  Mage::register('regUrl', $url_register);
+  Mage::register('backUrl', $url_mall);
+
+
+
 #T=mah
 max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=map-html
 <map name="bk2"> <area coords="972,527,1206,591" href="#" alt="1元订金" /> </map>
 #T=mark
@@ -3710,9 +3719,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3789,6 +3798,8 @@ removeNamedItem(^!)
 removeNode(^!)
 #T=removeRule
 removeRule(^!)
+#T=Renderer
+Renderer
 #T=replace
 replace(^!)
 #T=replaceAdjacentText
@@ -3858,9 +3869,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3971,9 +3982,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3997,9 +4008,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -4035,9 +4046,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -4051,9 +4062,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4077,14 +4088,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4126,9 +4137,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4170,9 +4181,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4181,6 +4192,58 @@ text-height:auto;
 text-height:font-size;
 #T=th-m
 text-height:max-size;
+#T=three-//new THREE.MeshNormalMaterial() 法向材质
+new THREE.MeshNormalMaterial()
+#T=three-MeshBasicMaterial(opt)//基本材质
+THREE.MeshBasicMaterial(opt)
+#T=three-renderer.setClearColor(0x000000) //渲染器加颜色
+renderer.setClearColor(0x000000);
+#T=three-THREE.WebGLRenderer //定义渲染器
+var renderer = new THREE.WebGLRenderer({
+  canvas: document.getElementById('mycanvas')
+});
+#T=three-var scene = new THREE.Scene();//建立场景
+var scene = new THREE.Scene();
+#T=three-加载图片 loadTexttrue
+var texture = THREE.TextureLoader('../img/0.png');
+#T=three-定义几何体THREE.Mesh
+      var cube = new THREE.Mesh(new THREE.TorusKnotGeometry(2, 0.5, 32, 8),
+        new THREE.MeshBasicMaterial({
+            color: 0xff0000,
+            opacity: 0.75
+        })
+      );
+      scene.add(cube);
+
+#T=three-定义相机camera并添加到场景里面
+//相机
+var camera = new THREE.PerspectiveCamera(45, 4 / 3, 1,1000);
+camera.position.set(0, 0, 5);
+scene.add(camera);  
+#T=three-立方体 THREE.CubeGeometry
+THREE.CubeGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
+#T=three-平面 
+THREE.PlaneGeometry(width, height, widthSegments, heightSegments)
+#T=three-球体
+THREE.SphereGeometry(radius, segmentsWidth, segmentsHeight, phiStart, phiLength, thetaStart, thetaLength)
+#T=three-园结环
+THREE.TorusKnotGeometry(radius, tube, radialSegments, tubularSegments, p, q, heightScale)
+#T=three-圆环面
+THREE.TorusGeometry(radius, tube, radialSegments, tubularSegments, arc)
+#T=three-圆形
+THREE.CircleGeometry(radius, segments, thetaStart, thetaLength)
+#T=three-圆柱体
+THREE.CylinderGeometry(radiusTop, radiusBottom, height, radiusSegments, heightSegments, openEnded)
+#T=three-正八面体
+new THREE.OctahedronGeometry(3)
+#T=three-正二十面体
+new THREE.IcosahedronGeometry(3)
+#T=three-正交投影照相机
+THREE.OrthographicCamera(left, right, top, bottom, near, far)
+#T=three-正四面体
+THREE.TetrahedronGeometry(radius, detail)
+#T=three-自定义类
+THREE.Geometry()
 #T=th-t
 text-height:text-size;
 #T=thtml-3cols (wrap > head > content 3col > footer)
@@ -4314,9 +4377,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4344,9 +4407,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -6345,7 +6408,7 @@ jQuery.extend(jQuery.easing, {
 * @author cuki13
   .popbk-wrap {position: fixed; top: 0; left: 0; bottom: 0; right: 0; overflow: auto; z-index:100; background:rgba(0, 0, 0, 0.5);}
   .popbk {position: absolute; top:0; left:50%; -webkit-transition:0.5s; transition:0.5s;  -webkit-transform: scale(0); transform: scale(0);}
-  .popbk .close {position:absolute;right:0;top:0;}
+  .popbk .close {position:absolute;right:0;top:0; width: 30px;height: 30px;background:red; cursor:pointer;}
   .fade.in { opacity: 1; }
   .fade.in .popbk {-webkit-transform: scale(1); transform: scale(1);}
   .fade{opacity: 0;-webkit-transition: opacity .15s linear;-o-transition: opacity .15s linear;transition: opacity .15s linear;}
@@ -6376,7 +6439,13 @@ jQuery.extend(jQuery.easing, {
     sClose = $(sClose);
     sClose.insertAfter($this);
     var ml = $this.width()/2;     
-    $this.parent(".popbk").css("margin-left",-ml);
+    var mlstyle={
+      "margin-left" : -ml,
+      "width":$this.width(),
+      "height":$this.height()
+
+    }
+    $this.parent(".popbk").css(mlstyle);
     var wh = $this.height();
     if ($(window).height() < wh) {
       $this.parent(".popbk").css("top","30px");
@@ -6402,8 +6471,12 @@ jQuery.extend(jQuery.easing, {
     if ($this.length) {
       $this.parents(".popbk-wrap").show();
       $this.parents(".popbk-wrap")[0].offsetWidth;
-      $this.parents(".popbk-wrap").addClass("in");
-      $('body').css('overflow','hidden');
+      setTimeout(
+        function(){
+          $this.parents(".popbk-wrap").addClass("in");
+          $('body').css('overflow','hidden');          
+        }, 300)
+
 
     }
   }
@@ -6426,6 +6499,9 @@ jQuery.extend(jQuery.easing, {
 
   function Plugin(option) {
     return this.each(function (n) {
+      if ($(this).html() == undefined) {
+        return 
+      }
       var $this   = $(this)
       var data    = $this.data('ck.pokbk')
       var number = $this.attr('id') || n 
@@ -6442,6 +6518,15 @@ jQuery.extend(jQuery.easing, {
       Plugin.call($this,'build');
     }
   })
+
+  $.fn.popbk = function  () {
+    var $this = $(this);      
+    
+    if ($this.data('ck.pokbk') == undefined) {
+      Plugin.call($this,'build');
+    }    
+  }
+
 })(jQuery);
 #T=ui-randomColor
 /* 取随机数 */
@@ -6988,7 +7073,6 @@ var sl = $('#slider1').scbanner({
       this.startPro[i] = groudEl[i][5];
       this.initPosFun(this.$el[i],groudEl[i][2],groudEl[i][3],groudEl[i][4]);
     }
-
     this.initScroll();
 
   }
@@ -7008,6 +7092,10 @@ var sl = $('#slider1').scbanner({
     $dom.data("tempY",tempY);
 
     $dom.css({"left":$dom.data("startX"),"top":$dom.data("startY")});
+    
+    $dom.hide();
+
+
   }
 
   scrollEffe.prototype.posMoveFun = function($dom,$domParent,plong)
@@ -7019,80 +7107,112 @@ var sl = $('#slider1').scbanner({
         permb = 0;
       }
       //父级到窗口上边缘的距离
-      var tempY = $(document).scrollTop()-$domParent.position().top + permb;
-      var per = Math.max(-tempY/800,0);
+      //var tempC = eleTop < winTop + winHeight && eleTop + eleHeight > winTop;      
+
+      //var tempY = $(document).scrollTop()-$domParent.position().top + permb;
+      var tempY = $(window).scrollTop() + $(window).height() - $domParent.position().top - $domParent.height() + permb;
+
+      var per = Math.max(-tempY/1800,0);
       var targetX = $dom.data("endX")+$dom.data("tempX")*per;
       var targetY = $dom.data("endY")+$dom.data("tempY")*per;
-      $dom.css({"left":targetX,"top":targetY});
+      //$dom.css({"left":targetX,"top":targetY});
+      
+      var tempY1 = $(window).scrollTop() + $(window).height() - $domParent.position().top - $domParent.height() + permb + 100;
+     
+      var opacity1 = Math.min(tempY1*0.008,1);
+      var style = {
+        'left':targetX,
+        'top':targetY,
+        'opacity':opacity1
+      }
+      
+      $dom.css(style);
   }
 
 
   scrollEffe.prototype.opacity = function($dom,$domParent,ease)
   {
     //父级到窗口上边缘的距离
-    var tempY = $(document).scrollTop()-$domParent.position().top;
-    var opacity = Math.min(tempY*0.008,1);
+    var tempY = $(window).scrollTop()-$domParent.position().top;
+    var opacity = Math.min(tempY*0.002,1);
+
     $dom.css("opacity",opacity);
   };
 
-  scrollEffe.prototype.scale = function($dom,$domParent,ease)
+  scrollEffe.prototype.scale = function($dom,$domParent,ease,permb)
   {
     //父级到窗口上边缘的距离
-    var tempY = $(document).scrollTop()-$domParent.position().top + $(window).height()/2;
+    var tempY = $(window).scrollTop()-$domParent.position().top + $(window).height()/2 + 300;
 
     var scale = Math.min(tempY*0.003,1);
     if (scale < 0) {
       scale = 0
     }
-    $dom.css("transform","scale(" + scale + ")");
+    $dom.css({
+      "transform":"scale(" + scale + ")",
+      'opacity':scale
+    });
   };
 
 
   scrollEffe.prototype.initScroll = function  () {
     var $this = this;
-    $(window).bind("scroll",function(){
+    $(window).bind("scroll",function(){      
       for (var i = 0;  i<$this.groudEl.length ; i++) {
         switch ($this.groudEl[i][4]) {
-        case 'moveblock':
+          case 'moveblock':          
+            $this.posMoveFun($this.$el[i],$this.$parentEl[i],$this.startPro[i]);
+          break
+          case 'opacity':
+       
+           $this.opacity($this.$el[i],$this.$parentEl[i]);
+          case 'scale':
+           $this.scale($this.$el[i],$this.$parentEl[i]);
+          break
+          default:
+        } 
+      }   
+    })
+
+    for (var i = 0;  i<$this.groudEl.length ; i++) {
+      $this.$el[i].show();
+      $this.$el[i].css('transition','1s');
+      switch ($this.groudEl[i][4]) {
+        case 'moveblock':          
           $this.posMoveFun($this.$el[i],$this.$parentEl[i],$this.startPro[i]);
         break
         case 'opacity':
+     
          $this.opacity($this.$el[i],$this.$parentEl[i]);
         case 'scale':
          $this.scale($this.$el[i],$this.$parentEl[i]);
         break
         default:
-        }
-           
       }
-    })
+    }
+
+
+    
+    
   }
 
   $(document).ready(function() {
       //控制模块
-      if ($('body.home').length > 0) {
-        var blockSilder = [
-          [$(".server-block1"),$("#server-container"),-700,-600-300,'moveblock'],
-          [$(".server-block2"),$("#server-container"),-1500,-600+300,'moveblock'],
-          [$(".server-block3"),$("#server-container"),0,500,'moveblock'],
-          [$(".server-block4"),$("#server-container"),300,-600-300,'moveblock'],
-          [$(".server-box-top"),$("#server-container"),0, -1200,'moveblock'],
-          [$(".advantage-ct-pk"),$("#advantage-container"),0.5, 1,'scale'],
-          [$(".advantage-cir-active"),$("#advantage-container"),-500, 0,'moveblock'],
-          [$(".advantage-cir-media"),$("#advantage-container"),0, -500,'moveblock'],
-          [$(".advantage-cir-design"),$("#advantage-container"),-300, 500,'moveblock'],
-          [$(".advantage-cir-power"),$("#advantage-container"),-300, -500,'moveblock'],
-          [$(".advantage-cir-brand"),$("#advantage-container"),300, -500,'moveblock'],
-          [$(".advantage-cir-res"),$("#advantage-container"),-300, 500,'moveblock'],
-          [$(".team-box-txt"),$("#team-container"),-600, 0,'moveblock'],
-          [$(".team-ld"),$("#team-container"),600, 0,'moveblock'],
-          [$(".news-list"),$("#news-container"),0, 700,'moveblock'],
-          [$(".contact-adress"),$("#contact-container"),-500, 0,'moveblock',500],
-          [$(".share-box"),$("#contact-container"),500, 0,'moveblock',500]
-        ]
-        var $serverBlock1 = new scrollEffe(blockSilder);
+      var blockSilder = [
+        [$(".s6"),$(".container-2 .row-w1000"),-1200,-600-300,'moveblock',500],
+        [$(".surui"),$(".container-2 .row-w1000"),1200,-600,'scale'],
+        [$(".s7"),$(".container-2 .row-w1000"),1200,-600-300,'moveblock',500],
+        [$(".f3"),$(".container-2 .row-w1000"),-700,900-300,'moveblock',500],
+        [$(".g5"),$(".container-2 .row-w1000"),700,900-300,'moveblock',500]
+      ]
+      if ($.support.transition){
+        var $serverBlock1 = new scrollEffe(blockSilder);        
+      }else {
+        $(".surui").css('transform','scale(1)');
       }
+      
   })
+
 }(jQuery);
 #T=ui-scrollPic
 /** 
@@ -8671,9 +8791,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
