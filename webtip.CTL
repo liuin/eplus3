@@ -54,9 +54,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after(^!)
-#T=after
 after
+#T=after
+after(^!)
 #T=afunc
 function (^!) {
 }
@@ -248,9 +248,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -360,9 +360,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before(^!)
-#T=before
 before
+#T=before
+before(^!)
 #T=bg
 background:^!;
 #T=bg-
@@ -1098,6 +1098,8 @@ content:no-close-quote;
 content:no-open-quote;
 #T=ct-oq
 content:open-quote;
+#T=cube //立方体
+cube
 #T=cur
 cursor:^!;
 #T=cur-a
@@ -1274,9 +1276,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty(^!)
-#T=empty
 empty
+#T=empty
+empty(^!)
 #T=enabled
 enabled
 #T=encodeURI
@@ -1344,9 +1346,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:'\5B8B\4F53',Arial;
-#T=ff-st
 font-family:"\5B8B\4F53"
+#T=ff-st
+font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1440,9 +1442,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus(^!)
-#T=focus
 focus
+#T=focus
+focus(^!)
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -1542,6 +1544,8 @@ font-size:^!;
 font-size-adjust:^!;
 #T=fza-n
 font-size-adjust:none;
+#T=geometry //模型
+geometry
 #T=get
 get(^!)
 #T=getAdjacentText
@@ -2057,9 +2061,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover(^!)
-#T=hover
 hover
+#T=hover
+hover(^!)
 #T=hr
 <hr />^!
 #T=href-j
@@ -2949,9 +2953,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -2988,17 +2992,19 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=map-html
 <map name="bk2"> <area coords="972,527,1206,591" href="#" alt="1元订金" /> </map>
 #T=mark
 <mark>^!</mark>
 #T=match
 match(^!)
+#T=material //材质
+material
 #T=Math.cos(0);
 Math.cos(0);
 #T=Math.sin(0)
@@ -3719,9 +3725,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3869,9 +3875,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3982,9 +3988,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -4008,9 +4014,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -4046,9 +4052,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -4062,9 +4068,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4088,14 +4094,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4137,9 +4143,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4181,9 +4187,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4192,20 +4198,72 @@ text-height:auto;
 text-height:font-size;
 #T=th-m
 text-height:max-size;
+#T=three- mesh //网格
+var mesh = new THREE.Mesh( geometry, material );
 #T=three-//new THREE.MeshNormalMaterial() 法向材质
 new THREE.MeshNormalMaterial()
+#T=three-axes //添加坐标
+// show axes in the screen
+        var axes = new THREE.AxisHelper(1500);
+        scene.add(axes);
+#T=three-castShadow //产生影子
+cube.castShadow = true;
 #T=three-MeshBasicMaterial(opt)//基本材质
 THREE.MeshBasicMaterial(opt)
+#T=three-MeshLambertMaterial //材质 lamber
+new THREE.MeshLambertMaterial({color: 0xffffff});
+#T=three-position //位置
+position
+#T=three-receiveShadow//接受影子
+plane.receiveShadow = true;
 #T=three-renderer.setClearColor(0x000000) //渲染器加颜色
 renderer.setClearColor(0x000000);
+#T=three-scene.traverse//场景里面的元素都执行一遍
+            // rotate the cubes around its axes
+            scene.traverse(function (e) {
+                if (e instanceof THREE.Mesh && e != plane) {
+
+                    e.rotation.x += controls.rotationSpeed;
+                    e.rotation.y += controls.rotationSpeed;
+                    e.rotation.z += controls.rotationSpeed;
+                }
+            });
+#T=three-THREE.SpotLight //添加光源SpotLight
+        // add spotlight for the shadows
+        var spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.position.set(-40, 60, -10);
+        spotLight.castShadow = true;
+        scene.add(spotLight);
+#T=three-THREE.TextureLoader()图片加载 
+      var textureloading = new THREE.TextureLoader();
+
+      textureloading.load(
+        'images/app-img3.jpg',
+        function ( texture ) {
+          init(texture);
+          animate();          
+        },
+        function ( xhr ) {
+          console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+        },
+        function ( xhr ) {
+          console.log( 'An error happened' );
+        }
+      );
 #T=three-THREE.WebGLRenderer //定义渲染器
 var renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById('mycanvas')
 });
+
+renderer.setClearColor(new THREE.Color(0xEEEEEE, 1.0));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMapEnabled = true;
+//camera.lookAt(scene.position);
+renderer.render(scene, camera);
+#T=three-updateProjectionMatrix //重置相机像素
+camera.updateProjectionMatrix();
 #T=three-var scene = new THREE.Scene();//建立场景
 var scene = new THREE.Scene();
-#T=three-加载图片 loadTexttrue
-var texture = THREE.TextureLoader('../img/0.png');
 #T=three-定义几何体THREE.Mesh
       var cube = new THREE.Mesh(new THREE.TorusKnotGeometry(2, 0.5, 32, 8),
         new THREE.MeshBasicMaterial({
@@ -4220,8 +4278,15 @@ var texture = THREE.TextureLoader('../img/0.png');
 var camera = new THREE.PerspectiveCamera(45, 4 / 3, 1,1000);
 camera.position.set(0, 0, 5);
 scene.add(camera);  
+#T=three-加载图片 loadTexttrue
+var texture = THREE.TextureLoader('../img/0.png');
+#T=three-添加光源AmbientLight
+        // add subtle ambient lighting
+        var ambientLight = new THREE.AmbientLight(0xff6600);
+        scene.add(ambientLight);
+
 #T=three-立方体 THREE.CubeGeometry
-THREE.CubeGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
+THREE.BoxGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
 #T=three-平面 
 THREE.PlaneGeometry(width, height, widthSegments, heightSegments)
 #T=three-球体
@@ -4377,9 +4442,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4407,9 +4472,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -8763,6 +8828,8 @@ white-space:pre-wrap;
 width(^!)
 #T=width=""
 width="^!"
+#T=window.devicePixelRatio //默认读数
+window.devicePixelRatio
 #T=with
 with (^!) {
 }
@@ -8791,9 +8858,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
