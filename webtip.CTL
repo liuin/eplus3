@@ -1046,6 +1046,8 @@ background-image: linear-gradient(135deg,rgba(69, 51, 51, 0) 0,rgba(255,255,255,
     -webkit-box-orient: vertical;
 #T=css-pointer-events:none; //底部可点击事件
 pointer-events:none;
+#T=css-textep //截断文字
+.textep{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
 input:-moz-placeholder {  
@@ -1098,6 +1100,8 @@ content:no-close-quote;
 content:no-open-quote;
 #T=ct-oq
 content:open-quote;
+#T=cube //立方体
+cube
 #T=cur
 cursor:^!;
 #T=cur-a
@@ -1546,6 +1550,8 @@ font-size:^!;
 font-size-adjust:^!;
 #T=fza-n
 font-size-adjust:none;
+#T=geometry //模型
+geometry
 #T=get
 get(^!)
 #T=getAdjacentText
@@ -1620,6 +1626,8 @@ getUTCSeconds(^!)
 getVarDate(^!)
 #T=getYear
 getYear(^!)
+#T=global //全球
+global
 #T=go
 go(^!)
 #T=grobal
@@ -2072,6 +2080,21 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
+#T=html-menu
+/*-- menu --*/
+.menu {font-size: 16px;}
+.menu li{float: left;}
+.menu li a {color: #fff;}
+
+
+<ul class="menu">
+  <li class="item item-1"><a href="#">产品</a></li>
+  <li class="item item-2"><a href="#">在线商城</a></li>
+  <li class="item item-3"><a href="#">产品支持</a></li>
+  <li class="item item-4"><a href="#">活动速递</a></li>
+  <li class="item item-5"><a href="#">特惠专区</a></li>
+  <li class="item item-6"><a href="#">飞利浦俱乐部</a></li>
+</ul>
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -2158,6 +2181,10 @@ html(^!)
   <a href="http://mall.bydauto.com.cn/index.php/customer/account/login/?referer=20150520">登录</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/customer/account/create/?referer=20150520">注册</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/home">返回商城</a></div>
 #T=html-byd-imglink
 <?=$this->getSkinUrl('t20150520/images/images/order5000.png')?>
+#T=html-container+row //容器
+  <div class="container container-header">
+    <div class="row"></div>
+  </div>
 #T=html-form-horizontal
 <style type="text/css">
   .form-horizontal .form-group {padding:5px; font-size:14px;}
@@ -2267,19 +2294,26 @@ html(^!)
         <button type="submit" class="btn-sub yh">预约试驾</button>
       </div>
     </form>   
-#T=html-list-group
+#T=html-list-dec
 <style type="text/css">
-  .list-group {margin-top:0;}
-  .list-group .list-group-item { display:block; line-height:20px; margin-bottom:5px;}
-  .list-group .list-group-item i {display:inline-block;width:10px;height:10px;background:#000; border-radius:50%; margin-right:10px;}
-</style>
-<ul class="list-group clearfix">
-  <li class="list-group-item"><i></i>Crasjustoodio</li>
-  <li class="list-group-item"><i></i>Dapibusacfacilisisin</li>
-  <li class="list-group-item"><i></i>Morbileorisus</li>
-  <li class="list-group-item"><i></i>Portaacconsecteturac</li>
-  <li class="list-group-item"><i></i>Vestibulumateros</li>
-</ul><!-- /list-group -->
+    /*-- list-dec --*/
+    .list-dec {line-height: 25px;}
+    .list-dec li{position:relative; padding-left:48px; margin-bottom:5px;}
+    .list-dec .list-dec-count {position:absolute; background:#000; width:25px; height:25px; margin-bottom:15px; text-align:center;left: 0; top:1px; color: #fff;}
+  </style>
+
+
+ 
+<ul class="list-dec fs14 lh15">
+      <li><span class="list-dec-count">1</span>需要到选定的合作商家交定金及提车才能享受活动的各种福利；</li>
+      <li><span class="list-dec-count">2</span>团购价格以团购当天协定的价格为准；</li>
+      <li><span class="list-dec-count">3</span>提车时间以客户选择提车商家的提车安排时间为准；</li>
+      <li><span class="list-dec-count">4</span>需要通过线上参团，才可以享受合作商家线下的其他购车福利；</li>
+      <li><span class="list-dec-count">5</span>报名后1-2个工作日没接到商家安排团购电话，请告知在线客服；</li>
+      <li><span class="list-dec-count">6</span>商家确认购车后，礼品会在活动结束后10个工作日内邮递；</li>
+      <li><span class="list-dec-count">7</span>其他不了解的情况，请咨询在线客服，我们将竭诚为您服务。</li>
+    </ul>    <!-- /html-list-group -->
+
 #T=html-loading
 <style type="text/css"> 
   /*-- loading --*/
@@ -3003,6 +3037,8 @@ map(^!)
 <mark>^!</mark>
 #T=match
 match(^!)
+#T=material //材质
+material
 #T=Math.cos(0);
 Math.cos(0);
 #T=Math.sin(0)
@@ -4196,16 +4232,70 @@ text-height:auto;
 text-height:font-size;
 #T=th-m
 text-height:max-size;
+#T=three- mesh //网格
+var mesh = new THREE.Mesh( geometry, material );
 #T=three-//new THREE.MeshNormalMaterial() 法向材质
 new THREE.MeshNormalMaterial()
+#T=three-axes //添加坐标
+// show axes in the screen
+        var axes = new THREE.AxisHelper(1500);
+        scene.add(axes);
+#T=three-castShadow //产生影子
+cube.castShadow = true;
 #T=three-MeshBasicMaterial(opt)//基本材质
 THREE.MeshBasicMaterial(opt)
+#T=three-MeshLambertMaterial //材质 lamber
+new THREE.MeshLambertMaterial({color: 0xffffff});
+#T=three-position //位置
+position
+#T=three-receiveShadow//接受影子
+plane.receiveShadow = true;
 #T=three-renderer.setClearColor(0x000000) //渲染器加颜色
 renderer.setClearColor(0x000000);
+#T=three-scene.traverse//场景里面的元素都执行一遍
+            // rotate the cubes around its axes
+            scene.traverse(function (e) {
+                if (e instanceof THREE.Mesh && e != plane) {
+
+                    e.rotation.x += controls.rotationSpeed;
+                    e.rotation.y += controls.rotationSpeed;
+                    e.rotation.z += controls.rotationSpeed;
+                }
+            });
+#T=three-THREE.SpotLight //添加光源SpotLight
+        // add spotlight for the shadows
+        var spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.position.set(-40, 60, -10);
+        spotLight.castShadow = true;
+        scene.add(spotLight);
+#T=three-THREE.TextureLoader()图片加载 
+      var textureloading = new THREE.TextureLoader();
+
+      textureloading.load(
+        'images/app-img3.jpg',
+        function ( texture ) {
+          init(texture);
+          animate();          
+        },
+        function ( xhr ) {
+          console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+        },
+        function ( xhr ) {
+          console.log( 'An error happened' );
+        }
+      );
 #T=three-THREE.WebGLRenderer //定义渲染器
 var renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById('mycanvas')
 });
+
+renderer.setClearColor(new THREE.Color(0xEEEEEE, 1.0));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMapEnabled = true;
+//camera.lookAt(scene.position);
+renderer.render(scene, camera);
+#T=three-updateProjectionMatrix //重置相机像素
+camera.updateProjectionMatrix();
 #T=three-var scene = new THREE.Scene();//建立场景
 var scene = new THREE.Scene();
 #T=three-定义几何体THREE.Mesh
@@ -4225,11 +4315,16 @@ scene.add(camera);
 #T=three-加载图片 loadTexttrue
 var texture = THREE.TextureLoader('../img/0.png');
 #T=three-立方体 THREE.CubeGeometry
-THREE.CubeGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
+THREE.BoxGeometry(width, height, depth, widthSegments, heightSegments, depthSegments)
 #T=three-平面 
 THREE.PlaneGeometry(width, height, widthSegments, heightSegments)
 #T=three-球体
 THREE.SphereGeometry(radius, segmentsWidth, segmentsHeight, phiStart, phiLength, thetaStart, thetaLength)
+#T=three-添加光源AmbientLight
+        // add subtle ambient lighting
+        var ambientLight = new THREE.AmbientLight(0xff6600);
+        scene.add(ambientLight);
+
 #T=three-园结环
 THREE.TorusKnotGeometry(radius, tube, radialSegments, tubularSegments, p, q, heightScale)
 #T=three-圆环面
@@ -8767,6 +8862,8 @@ white-space:pre-wrap;
 width(^!)
 #T=width=""
 width="^!"
+#T=window.devicePixelRatio //默认读数
+window.devicePixelRatio
 #T=with
 with (^!) {
 }

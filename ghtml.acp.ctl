@@ -550,6 +550,31 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=天猫双11首页
+<div class="fixed-img">
+	 <img src="//gdp.alicdn.com/imgextra/i3/2670509137/TB2ShGJhXXXXXapXXXXXXXXXXXX_!!2670509137.jpg" />
+</div>
+
+<div class="fixed-img">
+	 <img src="//gdp.alicdn.com/imgextra/i2/2670509137/TB2n9ihhXXXXXb.XpXXXXXXXXXX_!!2670509137.jpg" usemap="#bk2" />
+</div>
+
+<div class="fixed-img">
+	 <img src="//gdp.alicdn.com/imgextra/i4/2670509137/TB22fWPhpXXXXbqXXXXXXXXXXXX_!!2670509137.jpg" usemap="#bk3" />
+</div>
+
+<div class="fixed-img">
+	 <img src="//gdp.alicdn.com/imgextra/i3/2670509137/TB2p7qDhXXXXXcBXpXXXXXXXXXX_!!2670509137.jpg" />
+</div>
+
+<div class="fixed-img">
+	 <img src="//gdp.alicdn.com/imgextra/i2/2670509137/TB2XVikhXXXXXbaXpXXXXXXXXXX_!!2670509137.jpg" usemap="#bk5" />
+</div>
+
+<div class="fixed-img">
+	 <img src="//gdp.alicdn.com/imgextra/i4/2670509137/TB2w1eqhXXXXXawXpXXXXXXXXXX_!!2670509137.jpg" />
+</div>
+ <map name="bk2"> <area coords="972,527,1206,591" href="//detail.tmall.com/item.htm?spm=0.0.0.0.ruIXWU&amp;id=524013376739&amp;scene=taobao_shop" alt="1元订金" /></map> <map name="bk3"> <area coords="932,467,1218,536" href="//detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-12673924061.129.ogWjJa&amp;id=524146516307&amp;rn=267c847fcbbcc5539c6d45c2aac359d7&amp;abbucket=4&amp;scene=taobao_shop" alt="88元" /></map> <map name="bk5"> <area coords="398,240,692,408" href="//bydqiche.tmall.com/p/rd622555.htm?scene=taobao_shop" alt="华中地区" /> <area coords="396,240,987,408" href="//bydqiche.tmall.com/p/rd561558.htm?scene=taobao_shop" alt="华东地区" /> <area coords="993,242,1284,405" href="//bydqiche.tmall.com/p/rd521103.htm?spm=a1z10.4-b.w5002-12663986771.8.ocy1cb&amp;scene=taobao_shop" alt="西南地区" /> <area coords="399,414,690,590" href="//bydqiche.tmall.com/p/rd211904.htm?scene=taobao_shop" alt="华北地区" /> <area coords="696,405,984,590" href="//bydqiche.tmall.com/p/rd750238.htm?scene=taobao_shop" alt="华南地区" /> <area coords="990,415,1284,590" href="//bydqiche.tmall.com/p/rd041398.htm?spm=a1z10.1-b.w5002-12663986771.7.lhnkWF&amp;scene=taobao_shop" alt="西北/东北地区" /> </map> <br />
 #T=比亚迪简单产品CSS
 <style type="text/css">
   #J_ItemDesc .des-car-t3{border:0;}
