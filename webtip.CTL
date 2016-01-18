@@ -1149,6 +1149,10 @@ display:compact;
 decodeURI(^!)
 #T=decodeURIComponent
 decodeURIComponent(^!)
+#T=decodeURIComponent
+decodeURIComponent('11654-%E5%8F%98%E5%B9%BB%E4%B9%8B%E9%A3%
+ 
+8E.mp3')
 #T=default
 default
 #T=default
