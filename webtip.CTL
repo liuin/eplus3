@@ -1185,6 +1185,8 @@ detachEvent(^!)
 <details>^!</details>
 #T=d-fl
 display:flex;
+#T=details
+details
 #T=dfn
 <dfn>^!</dfn>
 #T=d-i
@@ -5128,16 +5130,17 @@ china['香港特别行政区']=new Array('台北市','高雄市','基隆市','台中市','台南市','
 
 +(function($) {
   'use strict';
-  var selectString = '[ckScroll]';
+  var selectString = '[ckUndline]';
 
-  function fcName(arr) {
-    this.picGround = arr;
+  function ckUndline() {    
   }
 
 
   $(selectString).each(function () {
      //callsome
   })
+
+  $.ckUndline = ckUndline;
 
 
 })(jQuery);
@@ -7981,6 +7984,69 @@ $.fn.scollpic= function (options) {
   })
 
 }(jQuery);
+#T=ui-showin //class
+/*-- 
+  showIn="classname includeObj even";
+  changeclass://改变的class
+  targetObj://目标改变的class
+  even://触发事件 click tap hover
+--*/
++(function() {
+  'use strict';
+  var selectString = '[showIn]';
+  $(selectString).each(function () {    
+     var attrPro = $(this).attr('showIn').split(',');
+     var targetObj = attrPro[1];
+     if (targetObj == 'this') {
+      targetObj = $(this);
+     }else {
+      targetObj = $(attrPro[1]);     
+     }
+
+     targetObj = $(this).find(attrPro[1]);
+     
+     targetObj.on('targetRemoveClass',function  () {
+       var $this = $(this);
+       $(this).removeClass(attrPro[0]);
+       if ($.support.transition) {
+        $this.one('bsTransitionEnd', function  () {          
+          if ($(this).hasClass('in')) {
+            return
+          }
+          $(this).hide();
+        })
+       }else {
+         $(this).hide();
+       }       
+     })
+     targetObj.on('targetAddClass',function  () {
+       $(this).show();
+       $(this)[0].offsetWidth;
+       $(this).addClass(attrPro[0]);
+
+     })
+      
+    
+
+    if (attrPro[2]) {
+     if (attrPro[2] == 'hover') {
+      $(this).hover(function  () {        
+        targetObj.trigger('targetAddClass');
+      },function  () {
+        targetObj.trigger('targetRemoveClass');
+      })
+      return
+     }
+     $(this).on(attrPro[2],function  () {
+        if (targetObj.hasClass(attrPro[0])) {
+          targetObj.trigger('targetAddClass');
+        }else {
+          targetObj.trigger('targetRemoveClass');
+        }          
+     })
+    }
+  })
+})(jQuery);
 #T=ui-showInClass  or showInClass 切换单个目标的class
 /*-- 
   showInClass="showInclass tagetObj outtime even" 
