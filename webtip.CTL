@@ -54,9 +54,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after
-#T=after
 after(^!)
+#T=after
+after
 #T=afunc
 function (^!) {
 }
@@ -248,9 +248,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -360,9 +360,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before
-#T=before
 before(^!)
+#T=before
+before
 #T=bg
 background:^!;
 #T=bg-
@@ -1148,11 +1148,11 @@ display:compact;
 #T=decodeURI
 decodeURI(^!)
 #T=decodeURIComponent
-decodeURIComponent(^!)
-#T=decodeURIComponent
 decodeURIComponent('11654-%E5%8F%98%E5%B9%BB%E4%B9%8B%E9%A3%
  
 8E.mp3')
+#T=decodeURIComponent
+decodeURIComponent(^!)
 #T=default
 default
 #T=default
@@ -1282,9 +1282,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty
-#T=empty
 empty(^!)
+#T=empty
+empty
 #T=enabled
 enabled
 #T=encodeURI
@@ -1352,9 +1352,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1448,9 +1448,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus
-#T=focus
 focus(^!)
+#T=focus
+focus
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -2069,9 +2069,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover
-#T=hover
 hover(^!)
+#T=hover
+hover
 #T=hr
 <hr />^!
 #T=href-j
@@ -2080,21 +2080,6 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
-#T=html-menu
-/*-- menu --*/
-.menu {font-size: 16px;}
-.menu li{float: left;}
-.menu li a {color: #fff;}
-
-
-<ul class="menu">
-  <li class="item item-1"><a href="#">产品</a></li>
-  <li class="item item-2"><a href="#">在线商城</a></li>
-  <li class="item item-3"><a href="#">产品支持</a></li>
-  <li class="item item-4"><a href="#">活动速递</a></li>
-  <li class="item item-5"><a href="#">特惠专区</a></li>
-  <li class="item item-6"><a href="#">飞利浦俱乐部</a></li>
-</ul>
 #T=html5-ie
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -2463,6 +2448,21 @@ html(^!)
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus veritatis.</p>
   </div>
 </div><!-- /media -->
+#T=html-menu
+/*-- menu --*/
+.menu {font-size: 16px;}
+.menu li{float: left;}
+.menu li a {color: #fff;}
+
+
+<ul class="menu">
+  <li class="item item-1"><a href="#">产品</a></li>
+  <li class="item item-2"><a href="#">在线商城</a></li>
+  <li class="item item-3"><a href="#">产品支持</a></li>
+  <li class="item item-4"><a href="#">活动速递</a></li>
+  <li class="item item-5"><a href="#">特惠专区</a></li>
+  <li class="item item-6"><a href="#">飞利浦俱乐部</a></li>
+</ul>
 #T=html-note-ie6
 <!--[if lte IE 6]>
 
@@ -2987,9 +2987,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -3026,11 +3026,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=map-html
 <map name="bk2"> <area coords="972,527,1206,591" href="#" alt="1元订金" /> </map>
 #T=mark
@@ -3759,9 +3759,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3909,9 +3909,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -4022,9 +4022,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -4048,9 +4048,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -4086,9 +4086,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -4102,9 +4102,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4128,14 +4128,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4177,9 +4177,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4221,9 +4221,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4476,9 +4476,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4506,9 +4506,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -7946,6 +7946,67 @@ $.fn.scollpic= function (options) {
   })
 
 }(jQuery);
+#T=ui-showIn //层内的互换
+/*-- 
+  showIn="classname includeObj even";
+  changeclass://改变的class
+  targetObj://目标改变的class
+  even://触发事件 click tap hover
+--*/
++(function() {
+  'use strict';
+  var selectString = '[showIn]';
+  $(selectString).each(function () {    
+     var attrPro = $(this).attr('showIn').split(',');
+     var targetObj = attrPro[1];
+     if (targetObj == 'this') {
+      targetObj = $(this);
+     }else {
+      targetObj = $(attrPro[1]);     
+     }
+
+     targetObj = $(this).find(attrPro[1]);
+     
+     targetObj.on('targetRemoveClass',function  () {
+       var $this = $(this);
+       $(this).removeClass(attrPro[0]);
+       if ($.support.transition) {
+        $(this).one('bsTransitionEnd', function  () {
+          $(this).hide();
+        })
+       }else {
+         $(this).hide();
+       }
+       
+     })
+     targetObj.on('targetAddClass',function  () {
+       $(this).show();
+       $(this)[0].offsetWidth;
+       $(this).addClass(attrPro[0]);
+
+     })
+      
+    
+
+    if (attrPro[2]) {
+     if (attrPro[2] == 'hover') {
+      $(this).hover(function  () {        
+        targetObj.trigger('targetAddClass');
+      },function  () {
+        targetObj.trigger('targetRemoveClass');
+      })
+      return
+     }
+     $(this).on(attrPro[2],function  () {
+        if (targetObj.hasClass(attrPro[0])) {
+          targetObj.trigger('targetAddClass');
+        }else {
+          targetObj.trigger('targetRemoveClass');
+        }          
+     })
+    }
+  })
+})(jQuery);
 #T=ui-showInClass  or showInClass 切换单个目标的class
 /*-- 
   showInClass="showInclass tagetObj outtime even" 
@@ -8892,9 +8953,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
