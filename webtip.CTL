@@ -21,6 +21,8 @@ New Cliptext library
 }
 #T=__STATIC__
 __STATIC__
+#T=<?=base_url('application/views/activities/panda2016/images/order-suc.png')?>
+<?=base_url('application/views/activities/panda2016/images/order-suc.png')?>
 #T=a
 <a href="#">^!</a>
 #T=abbr
@@ -54,9 +56,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after(^!)
-#T=after
 after
+#T=after
+after(^!)
 #T=afunc
 function (^!) {
 }
@@ -248,9 +250,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-left:^!;
-#T=bdl
 border-length:^!;
+#T=bdl
+border-left:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -360,9 +362,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before(^!)
-#T=before
 before
+#T=before
+before(^!)
 #T=bg
 background:^!;
 #T=bg-
@@ -845,6 +847,8 @@ charCodeAt(^!)
 checked
 #T=checked
 checked
+#T=checked
+checked
 #T=childrenj
 children(^!)
 #T=cite
@@ -1048,6 +1052,8 @@ background-image: linear-gradient(135deg,rgba(69, 51, 51, 0) 0,rgba(255,255,255,
 pointer-events:none;
 #T=css-textep //截断文字
 .textep{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#T=css-圆形渐变
+ background-image: radial-gradient(circle at top, #eee,#AFAFAF);background-image: -webkit-radial-gradient(top left, #eee,#AFAFAF);
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
 input:-moz-placeholder {  
@@ -1148,11 +1154,11 @@ display:compact;
 #T=decodeURI
 decodeURI(^!)
 #T=decodeURIComponent
-decodeURIComponent(^!)
-#T=decodeURIComponent
 decodeURIComponent('11654-%E5%8F%98%E5%B9%BB%E4%B9%8B%E9%A3%
  
 8E.mp3')
+#T=decodeURIComponent
+decodeURIComponent(^!)
 #T=default
 default
 #T=default
@@ -1182,11 +1188,11 @@ detach(^!)
 #T=detachEvent
 detachEvent(^!)
 #T=details
+details
+#T=details
 <details>^!</details>
 #T=d-fl
 display:flex;
-#T=details
-details
 #T=dfn
 <dfn>^!</dfn>
 #T=d-i
@@ -1284,9 +1290,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty(^!)
-#T=empty
 empty
+#T=empty
+empty(^!)
 #T=enabled
 enabled
 #T=encodeURI
@@ -1354,9 +1360,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:'\5B8B\4F53',Arial;
-#T=ff-st
 font-family:"\5B8B\4F53"
+#T=ff-st
+font-family:'\5B8B\4F53',Arial;
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1450,9 +1456,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus(^!)
-#T=focus
 focus
+#T=focus
+focus(^!)
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -2071,9 +2077,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover(^!)
-#T=hover
 hover
+#T=hover
+hover(^!)
 #T=hr
 <hr />^!
 #T=href-j
@@ -2989,9 +2995,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-'^!'
-#T=ll
 "^!"
+#T=ll
+'^!'
 #T=load
 load(^!)
 #T=localeCompare
@@ -3028,11 +3034,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
-map(^!)
-#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
+#T=map
+map(^!)
 #T=map-html
 <map name="bk2"> <area coords="972,527,1206,591" href="#" alt="1元订金" /> </map>
 #T=mark
@@ -3761,9 +3767,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-<q>^!</q>
-#T=q
 quotes:^!;
+#T=q
+<q>^!</q>
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3911,9 +3917,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(^!)
-#T=scroll
 scroll(function(){^!})
+#T=scroll
+scroll(^!)
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -4024,9 +4030,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show(^!)
-#T=show
 show()^!
+#T=show
+show(^!)
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -4050,9 +4056,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-small(^!)
-#T=small
 <small>^!</small>
+#T=small
+small(^!)
 #T=sort
 sort(^!)
 #T=source
@@ -4088,9 +4094,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-sub(^!)
-#T=sub
 <sub>^!</sub>
+#T=sub
+sub(^!)
 #T=submit
 submit(^!)
 #T=submit
@@ -4104,9 +4110,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-sup(^!)
-#T=sup
 <sup>^!</sup>
+#T=sup
+sup(^!)
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4130,14 +4136,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
-table(^!)
-#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
+#T=table
+table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4179,9 +4185,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-<td>^!</td>
-#T=td
 text-decoration:^!;
+#T=td
+<td>^!</td>
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4223,9 +4229,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-<th>^!</th>
-#T=th
 text-height:^!;
+#T=th
+<th>^!</th>
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4478,9 +4484,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-<tr>^!</tr>
-#T=tr
 text-replace:^!;
+#T=tr
+<tr>^!</tr>
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4508,9 +4514,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-/*^!*/ 
-#T=tt
 text-transform:^!;
+#T=tt
+/*^!*/ 
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -4866,6 +4872,148 @@ china['西藏自治区']=new Array('拉萨市');
 china['宁夏回族自治区']=new Array('银川市','石嘴山市','吴忠市','固原市','中卫市');
 china['新疆维吾尔自治区']=new Array('乌鲁木齐市','克拉玛依市');
 china['香港特别行政区']=new Array('台北市','高雄市','基隆市','台中市','台南市','新竹市','嘉义市');
+#T=ui-ckselectArea //选择省份城市
+/*-- 
+  anchor:cuki13
+  //选择省份
+ --*/
+
++(function($) {
+  'use strict';
+  var selectString = '[ckSelectArea]';
+
+  function ckSelectArea(linkObj) {    
+    this.linkObj = linkObj;
+    this.prov = null;
+    this.city = null;
+  }
+
+  ckSelectArea.prototype.showIn = function  (obj) {
+    var $obj = obj;
+    if ($.support.transition) {
+      $obj.addClass('in');
+
+      $obj.one('bsTransitionEnd',function  () {
+        $obj.trigger('showIn');
+      }).emulateTransitionEnd(400);
+
+    }else {
+      $obj.addClass('in');
+      //$obj.show();      
+      $obj.trigger('showIn');
+    }
+  }
+
+  ckSelectArea.prototype.showOut = function  (obj) {
+    var $obj = obj;
+    if ($.support.transition) {
+      $obj.removeClass('in');
+      $obj.one('bsTransitionEnd',function  () {
+        //$obj.hide();
+        $obj.trigger('showOut');
+      }).emulateTransitionEnd(400);
+    }else {
+         
+    }
+  }
+
+  ckSelectArea.prototype.reset = function  () {
+    this.linkObj = null;
+    this.prov = null;
+    this.city = null;    
+  }
+
+  ckSelectArea.prototype.putdata = function  () {
+    var $this = this;
+    var dhtml = '<span href="#">'+$this.prov+'</span><span href="#">'+$this.city+'</span>'
+    $this.linkObj.find('.adressarea').empty().append(dhtml);
+    
+  }
+
+  var ckSelectArea1 = new ckSelectArea();
+
+
+  //加载省份
+  function provLoad () {
+    if ($('.step-prov .control-list li').length < 1) {
+      var provHtml = '';
+      for (var i in china) {
+        provHtml += '<a class="item" data-prov="' + i + '"  href="javascript:void(0);">' + i + '<i class="arrow arrow-right"></i></a>';
+      }
+      $('.wrapright-prov .itemlist').empty().append(provHtml);
+    }
+     
+  }
+  provLoad();
+  
+
+  //加载城市
+  function cityLoad (prov) {
+    var provVal = prov;
+    var cityHtml = '';
+    for (var i = 0;  i<china[provVal].length ; i++) {
+      cityHtml += '<a class="item" data-city="' + china[provVal][i] + '"  href="javascript:void(0);">' + china[provVal][i] + '</a>';
+    }
+
+    $('.wrapright-city .itemlist').empty().append(cityHtml);
+  }
+
+
+
+
+  $(document).ready(function() {
+    $(selectString).click(function  () {
+      ckSelectArea1.linkObj = $(this);
+      ckSelectArea1.showIn($('.wrapright-prov'));
+    })
+
+    $('.wrapright .back').on('click',function  () {
+      ckSelectArea1.showOut($(this).parent());
+    })
+    
+
+    //省份点击
+    $('.wrapright-prov .itemlist').on('click','a',function  () {          
+      var provVal = $(this).data('prov'); 
+      ckSelectArea1.prov = provVal;
+
+      cityLoad(provVal);
+      ckSelectArea1.showIn($('.wrapright-city'));
+    })
+
+    //城市点击
+    $('.wrapright-city .itemlist').on('click','a',function  () {
+      var cityVal = $(this).data('city'); 
+      ckSelectArea1.city = cityVal;
+      ckSelectArea1.showOut($('.wrapright-city'));
+      ckSelectArea1.showOut($('.wrapright-prov'));
+      ckSelectArea1.putdata();
+    })
+
+    //于收货地址一样
+    $('.row-reg .cklabel-1 input').change(function  () {
+      if ($(this).is(':checked')) {
+        $('.formbox-1 [ckCopy]').each(function (n) {
+            if ($(this).is('div')) {
+              var ghtml = $(this).html();                        
+              $('.formbox-2 [ckCopy]').eq(n).html(ghtml);              
+            }else {
+              var gval = $(this).val();                        
+              $('.formbox-2 [ckCopy]').eq(n).html(gval);                            
+            }
+            
+        })
+      }
+    })
+
+
+  })
+
+
+  $.ckSelectArea = ckSelectArea;
+
+
+})(jQuery);
 #T=ui-cktarget
   /*-- 
     anchor:cuki13
@@ -6798,6 +6946,36 @@ jQuery.extend(jQuery.easing, {
  }
 
 })(jQuery);
+#T=ui-rem //将屏幕分成10/1rem
+    //将屏幕分割成10/1em
+    (function(win) {
+        var doc = win.document;
+        var docEl = doc.documentElement;
+        var tid;
+
+        function refreshRem() {
+            var width = docEl.getBoundingClientRect().width;
+            if (width > 640) { // 最大宽度
+                width = 640;
+            }
+            var rem = width / 10; // 将屏幕宽度分成10份， 1份为1rem
+            docEl.style.fontSize = rem + 'px';
+        }
+
+        win.addEventListener('resize', function() {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }, false);
+        win.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }
+        }, false);
+
+        refreshRem();
+
+    })(window);
 #T=ui-scbanner //菲亚特滚动
  /** 
 * extend 图片滚动插件
@@ -8993,9 +9171,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap(^!)
-#T=wrap
 wrap
+#T=wrap
+wrap(^!)
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner

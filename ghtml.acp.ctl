@@ -10,6 +10,8 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
+#T=magento加cms模块<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -550,6 +552,27 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=比亚迪简单产品CSS
+<style type="text/css">
+  #J_ItemDesc .des-car-t3{border:0;}
+  #J_ItemDesc p { color:#656565; font-family:"微软雅黑"; font-size:12px; }
+  #J_ItemDesc .des-car-t4 {font-family: "微软雅黑"; font-size: 12px; font-weight: bold;}
+  #J_ItemDesc .des-car-t5 {font-size:22px; color:#909090; font-family:"微软雅黑"; font-weight:normal; margin-bottom:5px;}
+  #J_ItemDesc .ct5 {overflow:hidden;padding:20px;}
+  #J_ItemDesc .des-car-list li {margin-bottom:0px;}
+  .tc {text-align:center;}
+.cpd-c2{display:none;}
+body.catalog-product-view .product-view .price-box1 {display: inline-block;  float: left; }
+.product-view .product-shop .product-name{margin-bottom:10px;}
+</style>
+#T=比亚迪元旦right活动
+<li>
+<a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
+</li>
+#T=普通闭包
+(function() {
+  ^!
+})()
 #T=天猫双11首页
 <div class="fixed-img">
 	 <img src="//gdp.alicdn.com/imgextra/i3/2670509137/TB2ShGJhXXXXXapXXXXXXXXXXXX_!!2670509137.jpg" />
@@ -575,27 +598,6 @@ v.charAt(i)
 	 <img src="//gdp.alicdn.com/imgextra/i4/2670509137/TB2w1eqhXXXXXawXpXXXXXXXXXX_!!2670509137.jpg" />
 </div>
  <map name="bk2"> <area coords="972,527,1206,591" href="//detail.tmall.com/item.htm?spm=0.0.0.0.ruIXWU&amp;id=524013376739&amp;scene=taobao_shop" alt="1元订金" /></map> <map name="bk3"> <area coords="932,467,1218,536" href="//detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-12673924061.129.ogWjJa&amp;id=524146516307&amp;rn=267c847fcbbcc5539c6d45c2aac359d7&amp;abbucket=4&amp;scene=taobao_shop" alt="88元" /></map> <map name="bk5"> <area coords="398,240,692,408" href="//bydqiche.tmall.com/p/rd622555.htm?scene=taobao_shop" alt="华中地区" /> <area coords="396,240,987,408" href="//bydqiche.tmall.com/p/rd561558.htm?scene=taobao_shop" alt="华东地区" /> <area coords="993,242,1284,405" href="//bydqiche.tmall.com/p/rd521103.htm?spm=a1z10.4-b.w5002-12663986771.8.ocy1cb&amp;scene=taobao_shop" alt="西南地区" /> <area coords="399,414,690,590" href="//bydqiche.tmall.com/p/rd211904.htm?scene=taobao_shop" alt="华北地区" /> <area coords="696,405,984,590" href="//bydqiche.tmall.com/p/rd750238.htm?scene=taobao_shop" alt="华南地区" /> <area coords="990,415,1284,590" href="//bydqiche.tmall.com/p/rd041398.htm?spm=a1z10.1-b.w5002-12663986771.7.lhnkWF&amp;scene=taobao_shop" alt="西北/东北地区" /> </map> <br />
-#T=比亚迪简单产品CSS
-<style type="text/css">
-  #J_ItemDesc .des-car-t3{border:0;}
-  #J_ItemDesc p { color:#656565; font-family:"微软雅黑"; font-size:12px; }
-  #J_ItemDesc .des-car-t4 {font-family: "微软雅黑"; font-size: 12px; font-weight: bold;}
-  #J_ItemDesc .des-car-t5 {font-size:22px; color:#909090; font-family:"微软雅黑"; font-weight:normal; margin-bottom:5px;}
-  #J_ItemDesc .ct5 {overflow:hidden;padding:20px;}
-  #J_ItemDesc .des-car-list li {margin-bottom:0px;}
-  .tc {text-align:center;}
-.cpd-c2{display:none;}
-body.catalog-product-view .product-view .price-box1 {display: inline-block;  float: left; }
-.product-view .product-shop .product-name{margin-bottom:10px;}
-</style>
-#T=比亚迪元旦right活动
-<li>
-<a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
-</li>
-#T=普通闭包
-(function() {
-  ^!
-})()
 #T=图片模板
 <img src="http://placehold.it/300x350/42bdc2/FFFFFF" />
 #T=修改check的属性 $(".ckiput").prop('checked',true); 
