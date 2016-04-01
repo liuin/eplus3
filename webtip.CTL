@@ -9,6 +9,8 @@ New Cliptext library
 <!-- ^! -->
 #T=!doctype
 <!doctype html>
+#T=!important
+!important
 #T=@f
 @font-face {font-family:^!;src:url();}
 #T=@i
@@ -506,6 +508,13 @@ body.catalog-product-view .product-view .price-box1 {display: inline-block;  flo
 <img src="{{media url="wysiwyg/20150323/suruipeizhicut-05.jpg"}}" alt="" />
 </div>
 <div id="buynow"></div>
+#T=byd-topnav(公用头部)
+  Mage::register('backUrl',$url_mall);
+  Mage::register('loginUrl',$url_login);
+  Mage::register('regUrl',$url_register);
+
+
+<?php echo $this->getChildHtml('topnav');  ?>
 #T=c
 color:^!;
 #T=ca-addColorStop(0,'blue') //颜色渐变
@@ -1052,8 +1061,8 @@ background-image: linear-gradient(135deg,rgba(69, 51, 51, 0) 0,rgba(255,255,255,
 pointer-events:none;
 #T=css-textep //截断文字
 .textep{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#T=css-圆形渐变
- background-image: radial-gradient(circle at top, #eee,#AFAFAF);background-image: -webkit-radial-gradient(top left, #eee,#AFAFAF);
+#T=css-webkit-appearance
+-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;
 #T=css-表单 placeholder
 /*-- 表单 placeholder --*/
 input:-moz-placeholder {  
@@ -1088,6 +1097,8 @@ input:-ms-input-placeholder {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+#T=css-圆形渐变
+ background-image: radial-gradient(circle at top, #eee,#AFAFAF);background-image: -webkit-radial-gradient(top left, #eee,#AFAFAF);
 #T=ct
 content:^!;
 #T=ct-a
@@ -2695,6 +2706,86 @@ html(^!)
     <a href="http://www.kaixin001.com/repaste/share.php?rtitle=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;rurl=http://trumpchi.gacmotor.com/&amp;rcontent=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-kx"><img src="images/icon-06.png" alt="开心"></a>
     <a href="http://share.renren.com/share/buttonshare.do?link=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-rr"><img src="images/icon-03.png" alt="人人"></a>
   </div></div><!-- /传祺footer -->
+#T=html-名单
+<td>彭凯</td>
+                                         <td>159*****955</td>
+                                       </tr>
+                                       <tr>
+                                         <td>陈祖欢</td>
+                                          <td>159*****481</td>
+                                       </tr>
+                                       <tr>
+                                         <td>林健文</td>
+                                         <td>153*****818</td>
+                                       </tr>
+                                       <tr>
+                                         <td>陆嘉伦</td>
+                                          <td>135*****516</td>
+                                       </tr>
+                                       <tr>
+                                         <td>郭建明</td>
+                                         <td>135*****524</td>
+                                       </tr>
+                                       <tr>
+                                         <td>谢玉莉</td>
+                                         <td>158*****506</td>
+                                       </tr>
+                                       <tr>
+                                         <td>冯志辉</td>
+                                          <td>136*****844</td>
+                                       </tr>
+                                       <tr>
+                                         <td>方浩玲</td>
+                                          <td>188*****781</td>
+                                       </tr>
+                                       <tr>
+                                         <td>陆颖清</td>
+                                         <td>159*****260</td>
+                                       </tr>
+                                       <tr>
+                                         <td>郑科鹏</td>
+                                         <td>156*****749</td>
+                                       </tr>
+                                       <tr>
+                                         <td>吴强杰</td>
+                                          <td>135*****683</td>
+                                       </tr>
+                                       <tr>
+                                         <td>陈枫阳</td>
+                                         <td>185*****834</td>
+                                       </tr>
+                                       <tr>
+                                         <td>蒋涛</td>
+                                         <td>138*****493</td>
+                                       </tr>
+                                       <tr>
+                                         <td>明根洪</td>
+                                          <td>134*****886</td>
+                                       </tr>
+                                       <tr>
+                                         <td>相國</td>
+                                         <td>185*****966</td>
+                                       </tr>
+                                       <tr>
+                                         <td>伍岳峰</td>
+                                         <td>133*****912</td>
+                                       </tr>
+                                       <tr>
+                                         <td>周健生</td>
+                                         <td>137*****531</td>
+                                       </tr>
+                                       <tr>
+                                         <td>温梦鸥</td>
+                                         <td>132*****310</td>
+                                       </tr>
+                                       <tr>
+                                         <td>王允正</td>
+                                         <td>135*****441</td>
+                                       </tr>
+                                       <tr>
+                                         <td>刘东涛</td>
+                                         <td>134*****207</td>
+                                       </tr>  
 #T=i
 <i>^!</i>
 #T=if
@@ -3913,7 +4004,7 @@ ScriptEngineMajorVersion(^!)
 #T=ScriptEngineMinorVersion
 ScriptEngineMinorVersion(^!)
 #T=script-jq
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.12.1/jquery.js"></script>
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
@@ -5558,10 +5649,19 @@ $(".ckiput").prop('checked',true);
     gettxt = $(gettxt);       
     gettxt.insertBefore($this);
     $this.parents(".selectstyle").addClass("select-"+ this.id);
-    $this.on("change.resize",function  () {
+    $this.on("change.resize",function  () {      
       var vl = $(this).find("option:selected").html();
       $(this).prev('.val').html(vl);
       $(this).parents(".selectstyle").find('.val').html(vl);
+
+      var ind = $(this).find("option:selected").index();
+
+      if (ind == 0) {
+        $(this).parents(".selectstyle").find('.val').addClass('firstval');
+      }else{
+        $(this).parents(".selectstyle").find('.val').removeClass('firstval');        
+      }
+
     })
     $this.trigger('change.resize');
   }
@@ -5592,6 +5692,7 @@ $(".ckiput").prop('checked',true);
     var $this = $(this);
     Plugin.call($this,'build');
   }
+
 
 })()
 #T=ui-formSelect-1 
@@ -8894,6 +8995,38 @@ valid-form = "req" 不能为空
   })
   
 }(jQuery);
+#T=ui-valid-form1
+      var ckForm = $('.form-ck').Validform({
+        showAllError:true,
+        tiptype:function(msg,o,cssctl){ //提示类型
+          if (o.type == 3) {          
+          
+            var errorObj = o.obj.parents('.box1-login').find('.error');
+
+            if (errorObj.is(':visible')) {
+              o.obj.parents('.box1-login').find('> .p16').hide();
+              return
+            }
+
+            if (!errorObj.is(':visible')) {
+              o.obj.parents('.box1-login').find('> .p16').hide();
+              errorObj.stop(true).hide().fadeIn();  
+            }
+          }
+
+          if (o.type == 2) {
+            if (ckForm.check()) {
+              var errorObj = o.obj.parents('.box1-login').find('.error');
+              errorObj.hide();
+              o.obj.parents('.box1-login').find('> .p16').stop(true).hide().fadeIn();              
+            }else {
+            //  var errorObj = o.obj.parents('.box1-login').find('.error');
+            //  errorObj.stop(true).hide().fadeIn();  
+            //  o.obj.parents('.box1-login').find('> .p16').hide();                  
+            }
+          }
+        }
+      })
 #T=ui-video//视频全屏
 /*-- 视频全屏 --*/
 +(function($) {
@@ -9193,4 +9326,12 @@ zoom:1;
 
 #T=zs-ze
 <!-- /^! -->
+#T=判断是否IE
+//判断是否IE
+function ifIe () {
+  if (!!window.ActiveXObject || "ActiveXObject" in window)  
+        return true;  
+    else  
+        return false;  
+}
 #
