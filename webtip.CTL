@@ -996,16 +996,6 @@ createTFoot(^!)
 createTHead(^!)
 #T=css
 css(^!)
-#T=css- type=number//去掉css上下箭头
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
-
-input[type="number"] {
--moz-appearance: textfield;
-}
 #T=css-//弹性滚动条
 //弹性滚动条
 -webkit-overflow-scrolling:touch;
@@ -1287,6 +1277,8 @@ display:table-header-group;
 display:table-row;
 #T=d-tbrg
 display:table-row-group;
+#T=duration 时间间隔
+duration
 #T=each
 each(function () {
     ^!
@@ -2109,136 +2101,76 @@ href="javascript:void(0);"
 href="#"
 #T=html()
 html(^!)
-#T=html5-ie
+#T=html5-ie //低版本兼容html5标签
 <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script>
 <![endif]-->
-#T=html-block-col
-<style type="text/css">
-  /*-- block-col --*/
-  .block-col1 {width:320px; margin-right:10px;}
-  .block-col2 {width:300px;}
-</style>
 
-<div class="block-col clearfix">
-  <div class="block-col1 fl">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab qui?
-  </div>
-  <div class="block-col2 fl">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed pariatur earum non reiciendis assumenda voluptatibus vitae atque natus omnis itaque.
-  </div>
-</div><!-- /block-col -->
-#T=html-byd-footer
-<style type="text/css">
-/* footer网站底部样式 */
-.footer {height: 182px; background: url("../images/bg3.jpg") center 0 no-repeat; padding-top:50px;}
-.footer-p1 { color: #333333; font-size: 12px; text-align: center;}
-
-.qqbk {width: 355px; height: 143px; padding-left: 0; margin: 0 auto;}
-.qqbk .link {margin-top:13px;}
-.qqbk .hd {width: 300px;   margin-bottom:20px;text-align: center;}
-.qqbk .hd img {margin-right:18px;}
-.qqbk .hd p { padding-top: 9px; font-size: 18px; margin-top: 0;}  
-</style>
-  <div class="footer">
-    <div class="w1000">
-      <div class="qqbk  yh">
-        <div class="hd clearfix">
-          <b>各位亲！</b><br />
-          有任何问题请联系QQ在线客服
-          <div class="link">
-            <script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA0OTQ4Nl82NTgyM184MDAwNDk0ODZf"></script>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>  
-#T=html-byd-hdmeate
-     <meta charste="utf-8">
-       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-       <title>比亚迪e购</title>
-       <meta name="keywords" content="比亚迪e购,比亚迪e购商城,比亚迪e购官方商城,比亚迪汽车商城,比亚迪汽车官方商城">
-       <meta name="description" content=""/>
-
-	<!-- <link rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'jquery-ui-1.10.1.custom/css/smoothness/jquery-ui-1.10.1.custom.min.css'; ?>" /> -->
-	<!-- <link rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'jquery-ui-1.10.1.custom/css/smoothness/jquery-ui-1.10.1.custom.min.js'; ?>" /> -->
-  <link rel="stylesheet" href="<?php echo $this->getSkinUrl('home/css/reset.css'); ?>">
-  <link rel="stylesheet" href="<?php echo $this->getSkinUrl('home/css/style.css'); ?>">
-  <!--[if IE 6]>
-    <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'test/DD_belatedPNG_0.0.8a.js'; ?>" ></script>
-    <script type="text/javascript">
-      //<![CDATA[
-      DD_belatedPNG.fix('.png');
-      //]]></script>
-  <![endif]-->
-
-  <!--[if lt IE 9]>
-    <script src="<?php echo $this->getSkinUrl('js/html5shiv.min.js'); ?>"></script>
-    <script src="<?php echo $this->getSkinUrl('js/respond.min.js'); ?>"></script>
-  <![endif]-->
-
-	<script src="<?php echo $this->getSkinUrl('home/js/avalon.min.js') ?>" ></script>
-	<script src="<?php echo $this->getSkinUrl('home/js/script.js') ?>" ></script>
-	<!--[if lt IE 8]>
-		<link href="css/ie.css" rel="stylesheet" media="all" type="text/css" />
-	<![endif]-->
-#T=html-byd-header
-<style>
-  .logo a {display: inline-block;width: 135px;height: 84px;}
-  .topnav { font-size: 14px; color: #fff;  right: 0; top:10px; }
-  .topnav a {color: #fff; text-decoration:none; }
-  .topnav a.home {margin-left:20px;}
-</style>
-<div class="fl logo"><a href="http://mall.bydauto.com.cn/index.php/home"><span class="none">比亚迪</span></a></div>
-<div class="topnav yh">
-  <a href="http://mall.bydauto.com.cn/index.php/customer/account/login/?referer=20150520">登录</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/customer/account/create/?referer=20150520">注册</a> <span>|</span> <a href="http://mall.bydauto.com.cn/index.php/home">返回商城</a></div>
+#T=html-bkcol 多行多列
+   <style type="text/css">
+     /*-- bkcol --*/
+     .bkcol {overflow:hidden;}
+     .bkcol .col{float:left;}
+     .bkcol .col-1{width: 300px;}
+     .bkcol .col-2{width: 300px;}
+   </style>
+   
+   <div class="bkcol clearfix">
+     <div class="col col-1">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab qui?
+     </div>
+     <div class="col col-2">
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed pariatur earum non reiciendis assumenda voluptatibus vitae atque natus omnis itaque.
+     </div>
+   </div><!-- /bkcol -->
 #T=html-byd-imglink
 <?=$this->getSkinUrl('t20150520/images/images/order5000.png')?>
-#T=html-container+row //容器
+#T=html-container+row //container容器 
   <div class="container container-header">
     <div class="row"></div>
   </div>
-#T=html-form-horizontal
+#T=html-form //表单左右结构
 <style type="text/css">
-  .form-horizontal .form-group {padding:5px; font-size:14px;}
-  .form-horizontal label {font-size:24px; font-weight:bold; display:inline-block;width:150px;margin-right:10px; }
-  .form-horizontal .form-control {padding:0;border:1px solid #000; width:100%; height:30px; line-height:30px;  }
-  .form-horizontal .checkbox {font-size:12px;}
-</style>
-<form class="form-horizontal yh">
-  <div class="form-group clearfix">
-    <label for="inputEmail3" class="col-1 control-label fl">Email</label>
-    <div class="fl col-2">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+  /*-- form-bk --*/
+  .form-style {display:block; }
+  .groundform { margin-bottom: 10px; position:relative; overflow:hidden;}
+  .groundform .f-box{width:328px; height: 26px; line-height: 26px;background: #fff; padding-left: 10px;padding-right: 10px; border: 0; border: 1px solid #a3a3a3;}
+  .groundform label{float:left; line-height: 30px; width: 70px;}
+  .groundform i {position: absolute;font-size: 20px;right: -18px;top: 5px; color: }
+</style> 
+ <form action="#" class="form-style">
+    <div class="groundform groundform-car">
+          <label>车　型：</label>
+          <select name="" class="yh" data-form="select" >
+            <option>车   型1</option>
+            <option>车   型2</option>
+          </select>  
+        </div>
+        <div class="groundform groundform-biz">
+          <label>经销商：</label>
+          <select name="" class="yh" data-form="select" >
+            <option>经销商1</option>
+            <option>经销商2</option>
+          </select>  
+        </div>      
+    <div class="groundform groundform-name">
+      <label>姓　名：</label>
+      <input type="text" name="" class="f-box yh" id=""> 
     </div>
-  </div>
-  <div class="form-group clearfix">
-    <label for="inputPassword3" class="col-1 control-label fl">Password</label>
-    <div class="fl col-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    <div class="groundform groundform-tel">
+      <label>电　话：</label>
+      <input type="text" name="" class="f-box yh" id=""> 
     </div>
-  </div>
-  <div class="form-group clearfix">
-    <label for="inputPassword3" class="col-1 control-label fl">Biz</label>
-    <div class="fl col-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+
+    <div class="groundform groundform-ck">
+      <label><input type="radio" name="" id="" />是</label>
     </div>
-  </div>
-  <div class="form-group clearfix">
-    <div class="col-3">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
+    
+    <div class="groundform-sub">
+      <button type="submit" class="btn-sub yh">预约试驾</button>
     </div>
-  </div>
-  <div class="form-group clearfix">
-    <div class="col-3">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form><!-- /form-horizontal -->
-#T=html-form-inline
+  </form>   
+#T=html-form-inline //一行form
 <!-- start form-inline -->
 <style type="text/css">
   .form-inline .form-group{display: inline-block; margin-bottom: 0; vertical-align: middle; _display:inline;}
@@ -2272,61 +2204,23 @@ html(^!)
     <button type="submit" class="btn btn-default">Sign in</button>
 </form>
 <!-- end form-inline -->
-#T=html-form-v
-  <style type="text/css">
-    /*-- form-bk --*/
-    .form-style {display:block; }
-    .ground-form { margin-bottom: 10px; position:relative;}
-    .ground-form .f-box{width:328px; height: 26px; line-height: 26px;background: #fff; padding-left: 10px;padding-right: 10px; border: 0; border: 1px solid #a3a3a3;}
-    .ground-form i {position: absolute;font-size: 20px;right: -18px;top: 5px; color: }
-  </style> 
-   <form action="#" class="form-style">
-      <div class="ground-form ground-form-car">
-            <label>车　型：</label>
-            <select name="" class="yh" data-form="select" >
-              <option>车   型1</option>
-              <option>车   型2</option>
-            </select>  
-          </div>
-          <div class="ground-form ground-form-biz">
-            <label>经销商：</label>
-            <select name="" class="yh" data-form="select" >
-              <option>经销商1</option>
-              <option>经销商2</option>
-            </select>  
-          </div>      
-      <div class="ground-form ground-form-name">
-        <label>姓　名：</label>
-        <input type="text" name="" class="f-box yh" id=""> 
-      </div>
-      <div class="ground-form ground-form-tel">
-        <label>电　话：</label>
-        <input type="text" name="" class="f-box yh" id=""> 
-      </div>
-      
-      <div class="ground-form-sub">
-        <button type="submit" class="btn-sub yh">预约试驾</button>
-      </div>
-    </form>   
-#T=html-list-dec
+#T=html-list //列表
 <style type="text/css">
-    /*-- list-dec --*/
-    .list-dec {line-height: 25px;}
-    .list-dec li{position:relative; padding-left:48px; margin-bottom:5px;}
-    .list-dec .list-dec-count {position:absolute; background:#000; width:25px; height:25px; margin-bottom:15px; text-align:center;left: 0; top:1px; color: #fff;}
-  </style>
-
-
- 
-<ul class="list-dec fs14 lh15">
-      <li><span class="list-dec-count">1</span>需要到选定的合作商家交定金及提车才能享受活动的各种福利；</li>
-      <li><span class="list-dec-count">2</span>团购价格以团购当天协定的价格为准；</li>
-      <li><span class="list-dec-count">3</span>提车时间以客户选择提车商家的提车安排时间为准；</li>
-      <li><span class="list-dec-count">4</span>需要通过线上参团，才可以享受合作商家线下的其他购车福利；</li>
-      <li><span class="list-dec-count">5</span>报名后1-2个工作日没接到商家安排团购电话，请告知在线客服；</li>
-      <li><span class="list-dec-count">6</span>商家确认购车后，礼品会在活动结束后10个工作日内邮递；</li>
-      <li><span class="list-dec-count">7</span>其他不了解的情况，请咨询在线客服，我们将竭诚为您服务。</li>
-    </ul>    <!-- /html-list-group -->
+  /*-- list1 --*/
+  .list1 {line-height: 25px;}
+  .list1 li{position:relative; padding-left:48px; margin-bottom:5px;}
+  .list1 .list1-count {position:absolute; background:#000; width:25px; height:25px; margin-bottom:15px; text-align:center;left: 0; top:1px; color: #fff;}
+</style>
+  
+<ul class="list1">
+  <li><span class="list1-count">1</span>需要到选定的合作商家交定金及提车才能享受活动的各种福利；</li>
+  <li><span class="list1-count">2</span>团购价格以团购当天协定的价格为准；</li>
+  <li><span class="list1-count">3</span>提车时间以客户选择提车商家的提车安排时间为准；</li>
+  <li><span class="list1-count">4</span>需要通过线上参团，才可以享受合作商家线下的其他购车福利；</li>
+  <li><span class="list1-count">5</span>报名后1-2个工作日没接到商家安排团购电话，请告知在线客服；</li>
+  <li><span class="list1-count">6</span>商家确认购车后，礼品会在活动结束后10个工作日内邮递；</li>
+  <li><span class="list1-count">7</span>其他不了解的情况，请咨询在线客服，我们将竭诚为您服务。</li>
+</ul><!-- /list1 -->
 
 #T=html-loading
 <style type="text/css"> 
@@ -2699,23 +2593,6 @@ html(^!)
     </div>
   </div>
 </div><!-- /thumbnail -->
-#T=html-tr-footer //传祺footer
-  <div class="footer"><div class="w1000">
-    <a href="#"><i></i>广汽乘用车 </a>
-    <span class="copy">版权所有? 2012 广州汽车集团乘用车有限公司 粤ICP备09202250号</span>
-    <a href="#"><i></i>经销商查询</a>
-    <span class="wb-txt">关注广汽传祺微博</span>
-    <a href="http://weibo.com/gacchuanqi" class="wb-xl"><img src="images/icon.png" alt="新浪"></a>
-    <a href="http://t.qq.com/gacchuanqi" class="wb-tx"><img src="images/icon-02.png" alt="腾讯"></a>
-    <span class="share-txt">分享好友</span>
-<!--     <a href="#" class="share-wx"><img src="images/icon.png" alt="微信"></a> -->
-    <a href="http://v.t.sina.com.cn/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;appkey=1261318687" class="share-xl"><img src="images/icon.png" alt="新浪"></a>
-    <a href="http://v.t.qq.com/share/share.php?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！
-&amp;ralateUid=1779938885" class="share-tx"><img src="images/icon-02.png" alt="腾讯"></a>
-    <a href="http://www.douban.com/recommend/?url=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;comment=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-db"><img src="images/icon-05.png" alt="豆瓣"></a>
-    <a href="http://www.kaixin001.com/repaste/share.php?rtitle=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;rurl=http://trumpchi.gacmotor.com/&amp;rcontent=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-kx"><img src="images/icon-06.png" alt="开心"></a>
-    <a href="http://share.renren.com/share/buttonshare.do?link=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-rr"><img src="images/icon-03.png" alt="人人"></a>
-  </div></div><!-- /传祺footer -->
 #T=i
 <i>^!</i>
 #T=if
@@ -2796,7 +2673,7 @@ in-out-class="inClass inTarget outClass outClassTarget outtime event"
 #T=input-submit
 <input type="submit" value="" />
 #T=input-t
-<input type="text" placeholder="请填写真实姓名" />
+<input type="text" name="" id="" />
 #T=input-text
 <input type="text" name="" id="" />
 #T=input-time
@@ -3070,6 +2947,8 @@ match(^!)
 material
 #T=Math.cos(0);
 Math.cos(0);
+#T=Math.floor
+Math.floor
 #T=Math.sin(0)
 Math.sin(0)
 #T=maw
@@ -7007,94 +6886,6 @@ jQuery.extend(jQuery.easing, {
         refreshRem();
 
     })(window);
-#T=ui-runscroll
-/*-- 跑马灯 --*/
-$(document).ready(function() {      
- /**
-  * Checks for CSS support.
-  * @private
-  * @param {Array} array - The CSS properties to check for.
-  * @returns {Array} - Contains the supported CSS property name and its index or `false`.
-  */
- function isStyleSupported(array) {
-   var p, s, fake = document.createElement('div'), list = array;
-   for (p in list) {
-     s = list[p];
-     if (typeof fake.style[s] !== 'undefined') {
-       fake = null;
-       //return [ s, p ];
-       return [ true ];
-     }
-   }
-   return [ false ];
- }
- 
- /**
-  * Checks for CSS transition support.
-  * @private
-  * @todo Realy bad design
-  * @returns {Number}
-  */
- function isTransition() {
-   return isStyleSupported([ 'animation', 'WebkitAnimation', 'MozAnimation', 'OAnimation' ])[0];
- }
-
-      var timeout1,
-      speed=4000,
-      obj = $('#box'),
-      itemspeed = [0,1,2,3,4],
-      listdata = '<ul class="list"><li>我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li></ul>';
-
-      
-
-        setInterval(
-            function(){
-             adddata ();
-            },speed
-        )
-
-     
-      function adddata () {
-       
-        var $listdata = $(listdata);
-        obj.append($listdata);
-
-        var gettop = Math.random()*50;
-        $listdata.css('top', gettop + 'px');
-
-        
- 
-        setTimeout(
-          function(){
-            var $arrspe = new Array();
-             for (var i = 0;  i<itemspeed.length; i++) {
-              $arrspe[i] = itemspeed[i];
-             }
-
-           
-           $listdata.find('li').each(function () {
-              var getrand = Math.floor($arrspe.length*Math.random());
-
-              if (isTransition() == true) {
-                $(this).addClass('in' + $arrspe[getrand]); //如果支持动画                
-              }else {
-                $(this).animate({
-                  'left':'-100%'
-                },getrand*1000+6000)
-              }
-
-               $arrspe.splice(getrand,1);
-            })
-          }, 100)
-
-        setTimeout(
-          function(){
-           $listdata.remove();
-          }, 2*speed)
-      }
-      adddata();
-    })
-  </script>
 #T=ui-scbanner //菲亚特滚动
  /** 
 * extend 图片滚动插件
@@ -7490,53 +7281,6 @@ var sl = $('#slider1').scbanner({
     
   };  
 })(jQuery);
-#T=ui-scollUp1
-      /** 
-      * extend 每隔几秒向上滚动
-      * @author cuki13
-        $(obj).scollUp({
-          speed:3000,
-          scolldiv:'.scolldiv'
-        })
-      */
-      +(function($){
-        $.fn.scollUp = function (options) {
-          var obj=$(this);
-          var defualts = {
-            scolldiv:'.scolldiv'
-          };
-          var opts = $.extend({}, defualts, options);  
-
-          var MyMar = 0;
-          var scolldiv = obj.find(opts.scolldiv);
-          //var objclone = obj.find(opts.scolldiv).clone();
-          //objclone.appendTo(obj);
-          if (scolldiv.length < 7) {
-            return;
-          }
-          function Marquee() {
-            var gheight = scolldiv.outerHeight();
-            
-            var objFirst = obj.find(opts.scolldiv).first();
-            
-            objFirst.css('margin-top','0').animate({
-              'margin-top' : -gheight
-            },'linear',function  () {
-              objFirst.appendTo(obj).css('margin-top','0');
-            });       
-          }
-
-           MyMar=setInterval(Marquee,opts.speed);
-
-           obj.hover(function  () {
-            clearInterval(MyMar);
-           },function  () {
-            clearInterval(MyMar);
-            MyMar=setInterval(Marquee,opts.speed);
-           })
-          
-        };  
-      })(jQuery);
 #T=ui-scrolleffect
 /* ========================================================================
 滚动控制效果
