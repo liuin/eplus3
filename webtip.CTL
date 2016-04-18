@@ -996,6 +996,16 @@ createTFoot(^!)
 createTHead(^!)
 #T=css
 css(^!)
+#T=css- type=number//去掉css上下箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type="number"] {
+-moz-appearance: textfield;
+}
 #T=css-//弹性滚动条
 //弹性滚动条
 -webkit-overflow-scrolling:touch;
@@ -2706,86 +2716,6 @@ html(^!)
     <a href="http://www.kaixin001.com/repaste/share.php?rtitle=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;rurl=http://trumpchi.gacmotor.com/&amp;rcontent=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-kx"><img src="images/icon-06.png" alt="开心"></a>
     <a href="http://share.renren.com/share/buttonshare.do?link=http://trumpchi.gacmotor.com/&amp;title=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！&amp;content=五星传祺，树立品质新标杆。广汽传祺，邀您品鉴！" class="share-rr"><img src="images/icon-03.png" alt="人人"></a>
   </div></div><!-- /传祺footer -->
-#T=html-名单
-<td>彭凯</td>
-                                         <td>159*****955</td>
-                                       </tr>
-                                       <tr>
-                                         <td>陈祖欢</td>
-                                          <td>159*****481</td>
-                                       </tr>
-                                       <tr>
-                                         <td>林健文</td>
-                                         <td>153*****818</td>
-                                       </tr>
-                                       <tr>
-                                         <td>陆嘉伦</td>
-                                          <td>135*****516</td>
-                                       </tr>
-                                       <tr>
-                                         <td>郭建明</td>
-                                         <td>135*****524</td>
-                                       </tr>
-                                       <tr>
-                                         <td>谢玉莉</td>
-                                         <td>158*****506</td>
-                                       </tr>
-                                       <tr>
-                                         <td>冯志辉</td>
-                                          <td>136*****844</td>
-                                       </tr>
-                                       <tr>
-                                         <td>方浩玲</td>
-                                          <td>188*****781</td>
-                                       </tr>
-                                       <tr>
-                                         <td>陆颖清</td>
-                                         <td>159*****260</td>
-                                       </tr>
-                                       <tr>
-                                         <td>郑科鹏</td>
-                                         <td>156*****749</td>
-                                       </tr>
-                                       <tr>
-                                         <td>吴强杰</td>
-                                          <td>135*****683</td>
-                                       </tr>
-                                       <tr>
-                                         <td>陈枫阳</td>
-                                         <td>185*****834</td>
-                                       </tr>
-                                       <tr>
-                                         <td>蒋涛</td>
-                                         <td>138*****493</td>
-                                       </tr>
-                                       <tr>
-                                         <td>明根洪</td>
-                                          <td>134*****886</td>
-                                       </tr>
-                                       <tr>
-                                         <td>相國</td>
-                                         <td>185*****966</td>
-                                       </tr>
-                                       <tr>
-                                         <td>伍岳峰</td>
-                                         <td>133*****912</td>
-                                       </tr>
-                                       <tr>
-                                         <td>周健生</td>
-                                         <td>137*****531</td>
-                                       </tr>
-                                       <tr>
-                                         <td>温梦鸥</td>
-                                         <td>132*****310</td>
-                                       </tr>
-                                       <tr>
-                                         <td>王允正</td>
-                                         <td>135*****441</td>
-                                       </tr>
-                                       <tr>
-                                         <td>刘东涛</td>
-                                         <td>134*****207</td>
-                                       </tr>  
 #T=i
 <i>^!</i>
 #T=if
@@ -2866,7 +2796,7 @@ in-out-class="inClass inTarget outClass outClassTarget outtime event"
 #T=input-submit
 <input type="submit" value="" />
 #T=input-t
-<input type="text" name="" id="" />
+<input type="text" placeholder="请填写真实姓名" />
 #T=input-text
 <input type="text" name="" id="" />
 #T=input-time
@@ -3140,8 +3070,6 @@ match(^!)
 material
 #T=Math.cos(0);
 Math.cos(0);
-#T=Math.floor
-Math.floor
 #T=Math.sin(0)
 Math.sin(0)
 #T=maw
@@ -7079,6 +7007,94 @@ jQuery.extend(jQuery.easing, {
         refreshRem();
 
     })(window);
+#T=ui-runscroll
+/*-- 跑马灯 --*/
+$(document).ready(function() {      
+ /**
+  * Checks for CSS support.
+  * @private
+  * @param {Array} array - The CSS properties to check for.
+  * @returns {Array} - Contains the supported CSS property name and its index or `false`.
+  */
+ function isStyleSupported(array) {
+   var p, s, fake = document.createElement('div'), list = array;
+   for (p in list) {
+     s = list[p];
+     if (typeof fake.style[s] !== 'undefined') {
+       fake = null;
+       //return [ s, p ];
+       return [ true ];
+     }
+   }
+   return [ false ];
+ }
+ 
+ /**
+  * Checks for CSS transition support.
+  * @private
+  * @todo Realy bad design
+  * @returns {Number}
+  */
+ function isTransition() {
+   return isStyleSupported([ 'animation', 'WebkitAnimation', 'MozAnimation', 'OAnimation' ])[0];
+ }
+
+      var timeout1,
+      speed=4000,
+      obj = $('#box'),
+      itemspeed = [0,1,2,3,4],
+      listdata = '<ul class="list"><li>我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li><li>我的一段文字我的一段文字我的一段文字</li></ul>';
+
+      
+
+        setInterval(
+            function(){
+             adddata ();
+            },speed
+        )
+
+     
+      function adddata () {
+       
+        var $listdata = $(listdata);
+        obj.append($listdata);
+
+        var gettop = Math.random()*50;
+        $listdata.css('top', gettop + 'px');
+
+        
+ 
+        setTimeout(
+          function(){
+            var $arrspe = new Array();
+             for (var i = 0;  i<itemspeed.length; i++) {
+              $arrspe[i] = itemspeed[i];
+             }
+
+           
+           $listdata.find('li').each(function () {
+              var getrand = Math.floor($arrspe.length*Math.random());
+
+              if (isTransition() == true) {
+                $(this).addClass('in' + $arrspe[getrand]); //如果支持动画                
+              }else {
+                $(this).animate({
+                  'left':'-100%'
+                },getrand*1000+6000)
+              }
+
+               $arrspe.splice(getrand,1);
+            })
+          }, 100)
+
+        setTimeout(
+          function(){
+           $listdata.remove();
+          }, 2*speed)
+      }
+      adddata();
+    })
+  </script>
 #T=ui-scbanner //菲亚特滚动
  /** 
 * extend 图片滚动插件
@@ -7474,6 +7490,53 @@ var sl = $('#slider1').scbanner({
     
   };  
 })(jQuery);
+#T=ui-scollUp1
+      /** 
+      * extend 每隔几秒向上滚动
+      * @author cuki13
+        $(obj).scollUp({
+          speed:3000,
+          scolldiv:'.scolldiv'
+        })
+      */
+      +(function($){
+        $.fn.scollUp = function (options) {
+          var obj=$(this);
+          var defualts = {
+            scolldiv:'.scolldiv'
+          };
+          var opts = $.extend({}, defualts, options);  
+
+          var MyMar = 0;
+          var scolldiv = obj.find(opts.scolldiv);
+          //var objclone = obj.find(opts.scolldiv).clone();
+          //objclone.appendTo(obj);
+          if (scolldiv.length < 7) {
+            return;
+          }
+          function Marquee() {
+            var gheight = scolldiv.outerHeight();
+            
+            var objFirst = obj.find(opts.scolldiv).first();
+            
+            objFirst.css('margin-top','0').animate({
+              'margin-top' : -gheight
+            },'linear',function  () {
+              objFirst.appendTo(obj).css('margin-top','0');
+            });       
+          }
+
+           MyMar=setInterval(Marquee,opts.speed);
+
+           obj.hover(function  () {
+            clearInterval(MyMar);
+           },function  () {
+            clearInterval(MyMar);
+            MyMar=setInterval(Marquee,opts.speed);
+           })
+          
+        };  
+      })(jQuery);
 #T=ui-scrolleffect
 /* ========================================================================
 滚动控制效果
