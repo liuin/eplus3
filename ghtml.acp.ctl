@@ -10,8 +10,6 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=magento加cms模块<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
-<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -518,6 +516,8 @@ href="(.[^^"]*)"
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-02.jpg" alt="">
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-03.jpg" alt="">
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-04.jpg" alt="">
+#T=magento加cms模块<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
 #T=style="(.[^"]*)" //搜索里面的内容
 style="(.[^^"]*)"
 #T=tablefix
@@ -552,6 +552,8 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
+#T=乐视地址
+http://minisite.letv.com/tuiguang/index.shtml?islive=1&pid=6020160407173939&typeFrom=baidu&ark=100&cid=4
 #T=比亚迪简单产品CSS
 <style type="text/css">
   #J_ItemDesc .des-car-t3{border:0;}
