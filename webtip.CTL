@@ -754,8 +754,8 @@ window.requestNextAnimationFrame =
     var ca = this.obj;
     var bbox = ca.getBoundingClientRect(); 
     return {
-      x : x - bbox.left * (ca.width/bbox.width),
-      y : y - bbox.top * (ca.height/bbox.height)
+      x : (x - bbox.left) * (ca.width/bbox.width),
+      y : (y - bbox.top) * (ca.height/bbox.height)
     };
   }
 #T=ca-getBoundingClientRect //获取canva的边界框
