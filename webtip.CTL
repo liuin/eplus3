@@ -58,9 +58,9 @@ addRule(^!)
 #T=a-email
 <a href="mailto:^!">
 #T=after
-after
-#T=after
 after(^!)
+#T=after
+after
 #T=afunc
 function (^!) {
 }
@@ -252,9 +252,9 @@ border-image:none;
 #T=bdi-w
 -webkit-border-image:url(^!) 0 0 0 0 stretch stretch;
 #T=bdl
-border-length:^!;
-#T=bdl
 border-left:^!;
+#T=bdl
+border-length:^!;
 #T=bdl-
 border-left:1px solid #000;
 #T=bdl-a
@@ -364,9 +364,9 @@ border-top-width:^!;
 #T=bdw
 border-width:^!;
 #T=before
-before
-#T=before
 before(^!)
+#T=before
+before
 #T=bg
 background:^!;
 #T=bg-
@@ -1165,11 +1165,11 @@ display:compact;
 #T=decodeURI
 decodeURI(^!)
 #T=decodeURIComponent
+decodeURIComponent(^!)
+#T=decodeURIComponent
 decodeURIComponent('11654-%E5%8F%98%E5%B9%BB%E4%B9%8B%E9%A3%
  
 8E.mp3')
-#T=decodeURIComponent
-decodeURIComponent(^!)
 #T=default
 default
 #T=default
@@ -1199,9 +1199,9 @@ detach(^!)
 #T=detachEvent
 detachEvent(^!)
 #T=details
-details
-#T=details
 <details>^!</details>
+#T=details
+details
 #T=d-fl
 display:flex;
 #T=dfn
@@ -1303,9 +1303,9 @@ else if (^!) {
 #T=embed
 <embed src="^!" quality="high" type="application/x-shockwave-flash"></embed>
 #T=empty
-empty
-#T=empty
 empty(^!)
+#T=empty
+empty
 #T=enabled
 enabled
 #T=encodeURI
@@ -1373,9 +1373,9 @@ font-family:serif;
 #T=ff-ss
 font-family:sans-serif;
 #T=ff-st
-font-family:"\5B8B\4F53"
-#T=ff-st
 font-family:'\5B8B\4F53',Arial;
+#T=ff-st
+font-family:"\5B8B\4F53"
 #T=ff-yh
 font-family:'微软雅黑';
 #T=fieldset
@@ -1469,9 +1469,9 @@ floor(^!)
 #T=fl-r
 float:right;
 #T=focus
-focus
-#T=focus
 focus(^!)
+#T=focus
+focus
 #T=fontcolor
 fontcolor(^!)
 #T=fontsize
@@ -2090,9 +2090,9 @@ history.back();
 #T=history-p
 history.prev();
 #T=hover
-hover
-#T=hover
 hover(^!)
+#T=hover
+hover
 #T=hr
 <hr />^!
 #T=href-j
@@ -2893,9 +2893,9 @@ list-style-type:upper-roman;
 #T=live
 live(^!)
 #T=ll
-"^!"
-#T=ll
 '^!'
+#T=ll
+"^!"
 #T=load
 load(^!)
 #T=localeCompare
@@ -2932,11 +2932,11 @@ max-height:^!;
 #T=mah-n
 max-height:none;
 #T=map
+map(^!)
+#T=map
 <map id="^!">
   <area shape="" href="" coords="" alt="" />
 </map>
-#T=map
-map(^!)
 #T=map-html
 <map name="bk2"> <area coords="972,527,1206,591" href="#" alt="1元订金" /> </map>
 #T=mark
@@ -3667,9 +3667,9 @@ padding-top:^!;
 #T=push
 push(^!)
 #T=q
-quotes:^!;
-#T=q
 <q>^!</q>
+#T=q
+quotes:^!;
 #T=q-en
 quotes:'\201C' '\201D' '\2018' '\2019';
 #T=q-n
@@ -3817,9 +3817,9 @@ ScriptEngineMinorVersion(^!)
 #T=script-src
 <script type="text/javascript" src="^!"></script>
 #T=scroll
-scroll(function(){^!})
-#T=scroll
 scroll(^!)
+#T=scroll
+scroll(function(){^!})
 #T=scrollBy
 scrollBy(^!)
 #T=scrollIntoView
@@ -3930,9 +3930,9 @@ setYear(^!)
 #T=shift
 shift(^!)
 #T=show
-show()^!
-#T=show
 show(^!)
+#T=show
+show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3956,9 +3956,9 @@ slideToggle(^!)
 #T=slideUp
 slideUp(^!)
 #T=small
-<small>^!</small>
-#T=small
 small(^!)
+#T=small
+<small>^!</small>
 #T=sort
 sort(^!)
 #T=source
@@ -3994,9 +3994,9 @@ var /*string*/ ^!
 #T=style=""
 style="^!"
 #T=sub
-<sub>^!</sub>
-#T=sub
 sub(^!)
+#T=sub
+<sub>^!</sub>
 #T=submit
 submit(^!)
 #T=submit
@@ -4010,9 +4010,9 @@ substringData(^!)
 #T=summary
 <summary>^!</summary>
 #T=sup
-<sup>^!</sup>
-#T=sup
 sup(^!)
+#T=sup
+<sup>^!</sup>
 #T=swapNode
 swapNode(^!)
 #T=switch
@@ -4036,14 +4036,14 @@ text-align:^!;
 #T=t-a
 top:auto;
 #T=table
+table(^!)
+#T=table
 <table>
 <tr>
   <td>^!</td>
   <td></td>
 </tr>
 </table>
-#T=table
-table(^!)
 #T=ta-c
 text-align:center;
 #T=tagName
@@ -4085,9 +4085,9 @@ table-layout:fixed;
 #T=tbody
 <tbody>^!</tbody>
 #T=td
-text-decoration:^!;
-#T=td
 <td>^!</td>
+#T=td
+text-decoration:^!;
 #T=tdate
 /*Date*/ 
 #T=tdic
@@ -4129,9 +4129,9 @@ text(^!)
 #T=tfoot
 <tfoot>^!</tfoot>
 #T=th
-text-height:^!;
-#T=th
 <th>^!</th>
+#T=th
+text-height:^!;
 #T=th-a
 text-height:auto;
 #T=thead
@@ -4384,9 +4384,9 @@ toUpperCase(^!)
 #T=toUTCString
 toUTCString(^!)
 #T=tr
-text-replace:^!;
-#T=tr
 <tr>^!</tr>
+#T=tr
+text-replace:^!;
 #T=transform-rotate //45deg
 -webkit-transform: rotate(45deg); transform: rotate(45deg);
 #T=transform-translate //位移
@@ -4414,9 +4414,9 @@ text-shadow:none;
 #T=tstring
 /*string*/ 
 #T=tt
-text-transform:^!;
-#T=tt
 /*^!*/ 
+#T=tt
+text-transform:^!;
 #T=tt-c
 text-transform:capitalize;
 #T=tt-l
@@ -4705,6 +4705,126 @@ removeElement()
     }).emulateTransitionEnd(350);
   }
 }(jQuery);
+#T=ui-BrowserDetect  //判断浏览器
+//Browser detection scrpit
+//Source: http://www.quirksmode.org/js/detect.html
+var BrowserDetect = {
+    init: function() {
+        this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+        this.version = this.searchVersion(navigator.userAgent)
+            || this.searchVersion(navigator.appVersion)
+            || "an unknown version";
+        this.OS = this.searchString(this.dataOS) || "an unknown OS";
+    },
+    searchString: function(data) {
+        for (var i = 0; i < data.length; i++) {
+            var dataString = data[i].string;
+            var dataProp = data[i].prop;
+            this.versionSearchString = data[i].versionSearch || data[i].identity;
+            if (dataString) {
+                if (dataString.indexOf(data[i].subString) != -1)
+                    return data[i].identity;
+            }
+            else if (dataProp)
+                return data[i].identity;
+        }
+    },
+    searchVersion: function(dataString) {
+        var index = dataString.indexOf(this.versionSearchString);
+        if (index == -1)
+            return;
+        return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+    },
+    dataBrowser: [
+        {
+            string: navigator.userAgent,
+            subString: "Chrome",
+            identity: "Chrome"
+        },
+        {string: navigator.userAgent,
+            subString: "OmniWeb",
+            versionSearch: "OmniWeb/",
+            identity: "OmniWeb"
+        },
+        {
+            string: navigator.vendor,
+            subString: "Apple",
+            identity: "Safari",
+            versionSearch: "Version"
+        },
+        {
+            prop: window.opera,
+            identity: "Opera",
+            versionSearch: "Version"
+        },
+        {
+            string: navigator.vendor,
+            subString: "iCab",
+            identity: "iCab"
+        },
+        {
+            string: navigator.vendor,
+            subString: "KDE",
+            identity: "Konqueror"
+        },
+        {
+            string: navigator.userAgent,
+            subString: "Firefox",
+            identity: "Firefox"
+        },
+        {
+            string: navigator.vendor,
+            subString: "Camino",
+            identity: "Camino"
+        },
+        {// for newer Netscapes (6+)
+            string: navigator.userAgent,
+            subString: "Netscape",
+            identity: "Netscape"
+        },
+        {
+            string: navigator.userAgent,
+            subString: "MSIE",
+            identity: "Explorer",
+            versionSearch: "MSIE"
+        },
+        {
+            string: navigator.userAgent,
+            subString: "Gecko",
+            identity: "Mozilla",
+            versionSearch: "rv"
+        },
+        {// for older Netscapes (4-)
+            string: navigator.userAgent,
+            subString: "Mozilla",
+            identity: "Netscape",
+            versionSearch: "Mozilla"
+        }
+    ],
+    dataOS: [
+        {
+            string: navigator.platform,
+            subString: "Win",
+            identity: "Windows"
+        },
+        {
+            string: navigator.platform,
+            subString: "Mac",
+            identity: "Mac"
+        },
+        {
+            string: navigator.userAgent,
+            subString: "iPhone",
+            identity: "iPhone/iPod"
+        },
+        {
+            string: navigator.platform,
+            subString: "Linux",
+            identity: "Linux"
+        }
+    ]
+
+};
 #T=ui-change-class //切换class名字
 /*-- 
   change-class="changeclass even" 
@@ -7281,6 +7401,185 @@ var sl = $('#slider1').scbanner({
     
   };  
 })(jQuery);
+#T=ui-scrollbar //温柔滚动
+
+/*
+//使用方式
+      var platform = BrowserDetect;
+      platform.init();
+
+      switch (platform.browser) {
+          case 'Firefox':
+          case 'Explorer':
+              if (navigator.userAgent.indexOf('Mac OS X') == -1) {
+                  $('html').smoothWheel();
+              }
+              break;
+          case 'Chrome':
+          case 'Safari':
+              if (navigator.userAgent.indexOf('Mac OS X') == -1) {
+                  $(document.body).smoothWheel();
+              }
+              break;
+          default:
+              break;
+      }
+ */
+
+(function ($) {
+
+    var self = this, container, running=false, currentY = 0, targetY = 0, oldY = 0, maxScrollTop= 0, minScrollTop, direction, onRenderCallback=null,
+            fricton = 0.90, // higher value for slower deceleration
+            vy = 0,
+            stepAmt = 5,
+            minMovement= 0.1,
+            ts=0.1;
+
+    var updateScrollTarget = function (amt) {
+        targetY += amt;
+        vy += (targetY - oldY) * stepAmt;
+      
+          //console.dir(minScrollTop);
+        
+        oldY = targetY;
+        
+        
+
+
+    }
+    var render = function () {
+        if (vy < -(minMovement) || vy > minMovement) {
+
+            currentY = (currentY + vy);
+            if (currentY > maxScrollTop) {
+                currentY = vy = 0;
+            } else if (currentY < minScrollTop) {
+                    vy = 0;
+                    currentY = minScrollTop;
+                }
+           
+            container.scrollTop(-currentY);
+
+            vy *= fricton;
+            
+         //   vy += ts * (currentY-targetY);
+            // scrollTopTweened += settings.tweenSpeed * (scrollTop - scrollTopTweened);
+            // currentY += ts * (targetY - currentY);
+
+            if(onRenderCallback){
+                onRenderCallback();
+            }
+        }
+    }
+    var animateLoop = function () {
+        if(! running)return;
+        requestAnimFrame(animateLoop);
+        render();
+        //log("45","animateLoop","animateLoop", "",stop);
+    }
+    var onWheel = function (e) {        
+        e.preventDefault();
+        var evt = e.originalEvent;
+       
+        var delta = evt.detail ? evt.detail * -1 : evt.wheelDelta / 40;
+        var dir = delta < 0 ? -1 : 1;
+        if (dir != direction) {
+            vy = 0;
+            direction = dir;
+        }
+
+        //reset currentY in case non-wheel scroll has occurred (scrollbar drag, etc.)
+        currentY = -container.scrollTop();
+        
+        updateScrollTarget(delta);
+    }
+
+    /*
+     * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+     */
+    window.requestAnimFrame = (function () {
+        return  window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                }; 
+              
+                
+    })();
+
+    /*
+     * http://jsbin.com/iqafek/2/edit
+     */
+    var normalizeWheelDelta = function () {
+        // Keep a distribution of observed values, and scale by the
+        // 33rd percentile.
+        var distribution = [], done = null, scale = 30;
+        return function (n) {
+            // Zeroes don't count.
+            if (n == 0) return n;
+            // After 500 samples, we stop sampling and keep current factor.
+            if (done != null) return n * done;
+            var abs = Math.abs(n);
+            // Insert value (sorted in ascending order).
+            outer: do { // Just used for break goto
+                for (var i = 0; i < distribution.length; ++i) {
+                    if (abs <= distribution[i]) {
+                        distribution.splice(i, 0, abs);
+                        break outer;
+                    }
+                }
+                distribution.push(abs);
+            } while (false);
+            // Factor is scale divided by 33rd percentile.
+            var factor = scale / distribution[Math.floor(distribution.length / 3)];
+            if (distribution.length == 500) done = factor;
+            return n * factor;
+        };
+    }();
+
+
+    $.fn.smoothWheel = function () {
+        //  var args = [].splice.call(arguments, 0);
+        var options = jQuery.extend({}, arguments[0]);
+        return this.each(function (index, elm) {
+
+            if(!('ontouchstart' in window)){
+                container = $(this);
+                container.bind("mousewheel", onWheel);
+                container.bind("DOMMouseScroll", onWheel);
+
+                //set target/old/current Y to match current scroll position to prevent jump to top of container
+                targetY = oldY = container.get(0).scrollTop;
+                currentY = -targetY;
+                
+                //Hack to fix resizing bug
+                setInterval(function() {
+                    minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
+                }, 250);
+                
+                minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
+                if(options.onRender){
+                    onRenderCallback = options.onRender;
+                }
+                if(options.remove){
+                    log("122","smoothWheel","remove", "");
+                    running=false;
+                    container.unbind("mousewheel", onWheel);
+                    container.unbind("DOMMouseScroll", onWheel);
+                }else if(!running){
+                    running=true;
+                    animateLoop();
+                }
+
+            }
+        });
+    };
+
+
+})(jQuery);
 #T=ui-scrolleffect
 /* ========================================================================
 滚动控制效果
@@ -9113,9 +9412,9 @@ word-wrap:suppress;
 #T=wow-u
 word-wrap:unrestricted;
 #T=wrap
-wrap
-#T=wrap
 wrap(^!)
+#T=wrap
+wrap
 #T=wrapAll
 wrapAll(^!)
 #T=wrapInner
