@@ -772,6 +772,11 @@ lineCap = 'butt';
 lineCap = 'round';
 #T=ca-lc-s //lineCap = 'square';
 lineCap = 'square';
+#T=ca-lineCap //上线文中线的端点
+lineCap = 'butt|round|square';
+
+#T=ca-lineJoin // 两条线相交产生的拐角
+lineJoin = 'miter|bevel|round';
 #T=ca-lineTo() //划线
 lineTo(0,0)
 #T=ca-lineWidth //线粗度
@@ -782,6 +787,8 @@ call(^!)
 measureText(txt)
 #T=ca-moveTo() //移动坐标
 moveTo(0,0)
+#T=can2d-globalAlpha  //设置透明度
+globalAlpha = .5 // can2d.gloalAlpha
 #T=canvas
 <canvas>^!</canvas>
 #T=cap
@@ -1328,6 +1335,8 @@ exec(^!)
 execCommand(^!)
 #T=exp
 exp(^!)
+#T=extend //$.extend(defaultObj, optionsObj);
+$.extend(defaultObj, optionsObj);
 #T=f
 font:^!;
 #T=f-

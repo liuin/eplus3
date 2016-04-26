@@ -10,6 +10,16 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
+#T=magento空页面
+<reference name="root">
+   <action method="setTemplate"><template>page/cms-empty.phtml</template></action>
+</reference>
+<reference name="content">
+            <action method="unsetChild">
+                <alias>cms.wrapper</alias>
+            </action>
+            <block type="cms/page" name="cms_page"/>
+</reference>
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -552,8 +562,8 @@ v.charAt(i)
 .Validform_error{
 	background-color:#ffe7e7;
 }
-#T=乐视地址
-http://minisite.letv.com/tuiguang/index.shtml?islive=1&pid=6020160407173939&typeFrom=baidu&ark=100&cid=4
+#T=window.parent.location.href// ifram里面让父页面跳转
+window.parent.location.href='http://mall.bydauto.com.cn/index.php/echo/index/newhome';
 #T=比亚迪简单产品CSS
 <style type="text/css">
   #J_ItemDesc .des-car-t3{border:0;}
@@ -571,6 +581,8 @@ body.catalog-product-view .product-view .price-box1 {display: inline-block;  flo
 <li>
 <a href="http://mall.bydauto.com.cn/xian/index/byd201415buy"><img src="{{media url="wysiwyg/1215/_237x255.jpg"}}" alt="" /></a>
 </li>
+#T=乐视地址
+http://minisite.letv.com/tuiguang/index.shtml?islive=1&pid=6020160407173939&typeFrom=baidu&ark=100&cid=4
 #T=普通闭包
 (function() {
   ^!
