@@ -482,6 +482,10 @@ box-sizing:^!;
 box-sizing:border-box;
 #T=bxz-cb
 box-sizing:content-box;
+#T=byd-getSkinUrl //加skin地址
+<?php echo $this->getSkinUrl("images/carlogin.jpg") ?>
+#T=byd-Mage::getUrl //加链接
+<?=Mage::getUrl('drive/index/allcars'); ?>
 #T=byd-simple product 单个产品
 <style type="text/css">
   #J_ItemDesc .des-car-t3{border:0;}
@@ -529,8 +533,6 @@ ca.bezierCurveTo(150 + 100 * x,150 + 100 * y - 100,150 + 100 * x,150 + 100 * y +
 clip()
 #T=ca-closePath() //关闭路径
 closePath()
-#T=ca-cp //closePath();
-closePath();
 #T=ca-cr //clearRect(0, 0, c.width, c.height);
 clearRect(0, 0, c.width, c.height);
 #T=ca-createLinearGradient() //颜色渐变
@@ -766,12 +768,6 @@ getContext('2d')
 getImageData(sx,sy,sw,sh);
 #T=ca-globalCompositeOperation //图像重叠方式
 globalCompositeOperation = 'source-atop|source-in|source-out|source-over|destination-atop|destination-in|destination-out|destination-over|lighter|copy|xor'
-#T=ca-lc-b //lineCap = 'butt';
-lineCap = 'butt';
-#T=ca-lc-r //lineCap = 'round';
-lineCap = 'round';
-#T=ca-lc-s //lineCap = 'square';
-lineCap = 'square';
 #T=ca-lineCap //上线文中线的端点
 lineCap = 'butt|round|square';
 
