@@ -48,8 +48,6 @@ upload_url 的地址链接必须是绝对地址才能运行
 urlencode
 #T=var_dump($_subcategory);
 <?php var_dump($_subcategory); ?>
-#T=xmapp 的httpd.conf 修改端口
-httpd.conf
 #T=分割字符串为数组
 $parts = explode('-', $getcolor);
 #

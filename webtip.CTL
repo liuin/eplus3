@@ -937,8 +937,6 @@ confirm(^!)
 console.log(^!);
 #T=container
 container
-#T=container
-container
 #T=contains
 contains(^!)
 #T=content
@@ -2913,16 +2911,6 @@ lorem
 letter-spacing:^!;
 #T=m
 margin:^!;
-#T=m-0
-margin:0;
-#T=m-2
-margin:0 0;
-#T=m-3
-margin:0 0 0;
-#T=m-4
-margin:0 0 0 0;
-#T=m-a
-margin:auto;
 #T=magento-topnav-html
 <?php echo $this->getChildHtml('topnav');  ?>
 #T=magento-topnav-link
@@ -3936,8 +3924,6 @@ setYear(^!)
 shift(^!)
 #T=show
 show(^!)
-#T=show
-show()^!
 #T=showHelp
 showHelp(^!)
 #T=showModalDialog
@@ -3982,8 +3968,6 @@ sqrt(^!)
 start(^!)
 #T=stop
 stop(^!)
-#T=stop
-stop(^!)
 #T=stopPropagation
 stopPropagation()
 #T=strike
@@ -4002,8 +3986,6 @@ style="^!"
 sub(^!)
 #T=sub
 <sub>^!</sub>
-#T=submit
-submit(^!)
 #T=submit
 submit(^!)
 #T=substr
@@ -4091,7 +4073,7 @@ table-layout:fixed;
 <tbody>^!</tbody>
 #T=td
 <td>^!</td>
-#T=td
+#T=td-decoration
 text-decoration:^!;
 #T=tdate
 /*Date*/ 
@@ -4258,72 +4240,12 @@ THREE.TetrahedronGeometry(radius, detail)
 THREE.Geometry()
 #T=th-t
 text-height:text-size;
-#T=thtml-3cols (wrap > head > content 3col > footer)
-<div class="wrap">
-  <div class="wrap-header">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-  <div class="wrap-content clearfix">
-    <div class="wrap-left">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-    </div>
-    <div class="wrap-center">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-    </div>
-    <div class="wrap-right">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-  </div>			
-  <div class="wrap-footer">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-</div>
-#T=thtml-bt1 (a > span)
-<a href="#" class="bt1"><span>^!</span></a>
-#T=thtml-bt1 (input > span >span)
-<button class="input-bt" type="button"><span class="bt1" ><span>按钮</span></span></button>
-#T=thtml-list (ul > li > a > span)
-<ul class="list-fl clearfix">
-  <li><a href="#"><span>豆瓣读书</span></a></li>
-  <li><a href="#"><span>豆瓣读书</span></a></li>
-  <li><a href="#"><span>豆瓣读书</span></a></li>
-  <li><a href="#"><span>豆瓣读书</span></a></li>
-  <li><a href="#"><span>豆瓣读书</span></a></li>
-</ul>
-#T=thtml-list (ul > li > a)
-<ul class="list-fl clearfix">
-  <li><a href="#">豆瓣读书</a></li>
-  <li><a href="#">豆瓣读书</a></li>
-  <li><a href="#">豆瓣读书</a></li>
-  <li><a href="#">豆瓣读书</a></li>
-  <li><a href="#">豆瓣读书</a></li>
-  <li><a href="#">豆瓣读书</a></li>
-  <li><a href="#">豆瓣读书</a></li>
-</ul>
-
-#T=thtml-list-nofl (ul > li > a > span)
-<ul class="list-nofl clearfix">
-  <li><a href="#"><span>美国夫妇在华救助数千孤残儿童 善款多来自美国</span></a></li>
-  <li><a href="#"><span>美国夫妇在华救助数千孤残儿童 善款多来自美国</span></a></li>
-  <li><a href="#"><span>美国夫妇在华救助数千孤残儿童 善款多来自美国</span></a></li>
-  <li><a href="#"><span>美国夫妇在华救助数千孤残儿童 善款多来自美国</span></a></li>
-</ul>
-#T=thtml-list-nofl (ul > li > a)
-<ul class="list-nofl clearfix">
-  <li><a href="#">美国夫妇在华救助数千孤残儿童 善款多来自美国</a></li>
-  <li><a href="#">美国夫妇在华救助数千孤残儿童 善款多来自美国</a></li>
-  <li><a href="#">美国夫妇在华救助数千孤残儿童 善款多来自美国</a></li>
-  <li><a href="#">美国夫妇在华救助数千孤残儿童 善款多来自美国</a></li>
-  <li><a href="#">美国夫妇在华救助数千孤残儿童 善款多来自美国</a></li>
-</ul>
 #T=ti
 text-indent:^!;
 #T=ti--
 text-indent:-9999px;
 #T=time
 <time>^!</time>
-#T=tint
-/*int*/ 
 #T=title
 <title>^!</title>
 #T=tj
@@ -5901,7 +5823,7 @@ $(".ckiput").prop('checked',true);
     })
     
     })(jQuery);
-#T=ui-guagua
+#T=ui-guagua //刮刮看代码
 /** 
 * extend 刮刮看代码
 */
@@ -6493,235 +6415,6 @@ jQuery.extend(jQuery.easing, {
     })
   }
 })(jQuery);
-#T=ui-mobileTouch
-  <!--
-  +(function ($) {
-    'use strict';
-    var touch = {},
-        touchTimeout, tapTimeout, swipeTimeout, longTapTimeout,
-        longTapDelay = 750,
-        gesture
-  
-    function swipeDirection(x1, x2, y1, y2) {
-      return Math.abs(x1 - x2) >=
-      Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
-    }
-  
-    function longTap() {
-      longTapTimeout = null
-      if (touch.last) {
-        touch.el.trigger('longTap')
-        touch = {}
-      }
-    }
-  
-    function cancelLongTap() {
-      if (longTapTimeout) clearTimeout(longTapTimeout)
-      longTapTimeout = null
-    }
-  
-    function cancelAll() {
-      if (touchTimeout) clearTimeout(touchTimeout)
-      if (tapTimeout) clearTimeout(tapTimeout)
-      if (swipeTimeout) clearTimeout(swipeTimeout)
-      if (longTapTimeout) clearTimeout(longTapTimeout)
-      touchTimeout = tapTimeout = swipeTimeout = longTapTimeout = null
-      touch = {}
-    }
-  
-    function isPrimaryTouch(event) {
-      return (event.pointerType == 'touch' ||
-      event.pointerType == event.MSPOINTER_TYPE_TOUCH)
-      && event.isPrimary
-    }
-  
-    function isPointerEventType(e, type) {
-      return (e.type == 'pointer' + type ||
-      e.type.toLowerCase() == 'mspointer' + type)
-    }
-  
-    $(document).ready(function () {
-      var now, delta, deltaX = 0, deltaY = 0, firstTouch, _isPointerType
-  
-      if ('MSGesture' in window) {
-        gesture = new MSGesture()
-        gesture.target = document.body
-      }
-  
-      $(document)
-          .bind('MSGestureEnd', function (e) {
-            var swipeDirectionFromVelocity =
-                e.velocityX > 1 ? 'Right' : e.velocityX < -1 ? 'Left' : e.velocityY > 1 ? 'Down' : e.velocityY < -1 ? 'Up' : null;
-            if (swipeDirectionFromVelocity) {
-              touch.el.trigger('swipe')
-              touch.el.trigger('swipe' + swipeDirectionFromVelocity)
-            }
-          })
-          .on('touchstart MSPointerDown pointerdown', function (e) {
-            if ((_isPointerType = isPointerEventType(e, 'down')) && !isPrimaryTouch(e)) return
-            
-            firstTouch = _isPointerType ? e : e.originalEvent.touches[0]
-            if (e.touches && e.touches.length === 1 && touch.x2) {
-              // Clear out touch movement data if we have it sticking around
-              // This can occur if touchcancel doesn't fire due to preventDefault, etc.
-              touch.x2 = undefined
-              touch.y2 = undefined
-            }
-            now = Date.now()
-            delta = now - (touch.last || now)
-            touch.el = $('tagName' in firstTouch.target ?
-                firstTouch.target : firstTouch.target.parentNode)
-            touchTimeout && clearTimeout(touchTimeout)
-            touch.x1 = firstTouch.pageX
-            touch.y1 = firstTouch.pageY
-            if (delta > 0 && delta <= 250) touch.isDoubleTap = true
-            touch.last = now
-            longTapTimeout = setTimeout(longTap, longTapDelay)
-            // adds the current touch contact for IE gesture recognition
-            if (gesture && _isPointerType) gesture.addPointer(e.pointerId);
-          })
-          .on('touchmove MSPointerMove pointermove', function (e) {
-            if ((_isPointerType = isPointerEventType(e, 'move')) && !isPrimaryTouch(e)) return
-            firstTouch = _isPointerType ? e : e.originalEvent.touches[0]
-            cancelLongTap()
-            touch.x2 = firstTouch.pageX
-            touch.y2 = firstTouch.pageY
-  
-            deltaX += Math.abs(touch.x1 - touch.x2)
-            deltaY += Math.abs(touch.y1 - touch.y2)
-            e.preventDefault();
-          })
-          .on('touchend MSPointerUp pointerup', function (e) {
-            if ((_isPointerType = isPointerEventType(e, 'up')) && !isPrimaryTouch(e)) return
-            cancelLongTap()
-  
-            // swipe
-            if ((touch.x2 && Math.abs(touch.x1 - touch.x2) > 30) ||
-                (touch.y2 && Math.abs(touch.y1 - touch.y2) > 30))
-  
-              swipeTimeout = setTimeout(function () {
-                touch.el.trigger('swipe')
-                touch.el.trigger('swipe' + (swipeDirection(touch.x1, touch.x2, touch.y1, touch.y2)))
-                touch = {}
-              }, 0)
-  
-            // normal tap
-            else if ('last' in touch)
-            // don't fire tap when delta position changed by more than 30 pixels,
-            // for instance when moving to a point and back to origin
-              if (deltaX < 30 && deltaY < 30) {
-                // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
-                // ('tap' fires before 'scroll')
-                tapTimeout = setTimeout(function () {
-  
-                  // trigger universal 'tap' with the option to cancelTouch()
-                  // (cancelTouch cancels processing of single vs double taps for faster 'tap' response)
-                  var event = $.Event('tap')
-                  event.cancelTouch = cancelAll
-                  touch.el.trigger(event)
-  
-                  // trigger double tap immediately
-                  if (touch.isDoubleTap) {
-                    if (touch.el) touch.el.trigger('doubleTap')
-                    touch = {}
-                  }
-  
-                  // trigger single tap after 250ms of inactivity
-                  else {
-                    touchTimeout = setTimeout(function () {
-                      touchTimeout = null
-                      if (touch.el) touch.el.trigger('singleTap')
-                      touch = {}
-                    }, 250)
-                  }
-                }, 0)
-              } else {
-                touch = {}
-              }
-            deltaX = deltaY = 0
-  
-          })
-        // when the browser window loses focus,
-        // for example when a modal dialog is shown,
-        // cancel all ongoing events
-          .on('touchcancel MSPointerCancel pointercancel', cancelAll)
-  
-      // scrolling the window indicates intention of the user
-      // to scroll, not tap or swipe, so cancel all ongoing events
-      $(window).on('scroll', cancelAll)
-    })
-  
-    ;
-    ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
-      'doubleTap', 'tap', 'singleTap', 'longTap'].forEach(function (eventName) {
-          $.fn[eventName] = function (callback) {
-            return this.on(eventName, callback)
-          }
-        })
-  
-  })(jQuery);
-#T=ui-moblietouch //滚动座位
-      //滚动座位
-      var currntp = 0;
-      var pageX = 0;
-      var pageY = 0;
-      var ifchlick = false;
-      var widthStep = 15;
-      var wpscrollLeft = 0;
-      var wpscrollTop = 0;
-      var clicksettime = 0;
-      var touchtap = true;
-
-      $('#block-site-map').on('touchstart MSPointerDown pointerdown',function  (e) {
-
-        e.stopPropagation();
-        e.preventDefault();
-        currntpX = window.event.touches[0].pageX;
-        currntpY = window.event.touches[0].pageY;
-        ifchlick = true;
-        touchtap = true;
-      })
-
-      $('#block-site-map').on('touchmove MSPointerMove pointermove',function  (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        if (ifchlick) {
-          pageX = window.event.targetTouches[0].pageX;
-          pageY = window.event.targetTouches[0].pageY;
-          if (Math.abs(currntpX - pageX) > Math.abs(currntpY - pageY)) {
-            if (Math.abs(currntpX - pageX) > widthStep) {
-              var getsroll = $('#block-site-map').scrollLeft();
-              $('#block-site-map').scrollLeft(getsroll += (currntpX - pageX));
-              //clearTimeout(clicksettime);
-              touchtap = false;
-            }
-          }else{
-            if (Math.abs(currntpY - pageY) > widthStep) {
-              var getsroll = $('#block-site-wrap1').scrollTop();;
-              $('#block-site-wrap1').scrollTop(getsroll += (currntpY - pageY));
-              touchtap = false;
-              //clearTimeout(clicksettime);
-            }
-          }
-          currntpX = pageX;
-          currntpY = pageY;          
-        }
-
-      })
-
-      $('#block-site-map').on('touchend MSPointerUp pointerup',function  (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        ifchlick = false;
-        pageX = 0;
-        pageY = 0;
-        if (touchtap) {
-          if ($(e.target).hasClass('site')) {
-            $(e.target).trigger('sitein');
-          }
-        }
-
-      })
 #T=ui-pop //弹出框
 /** 
 * extend 弹出框
@@ -6848,7 +6541,7 @@ jQuery.extend(jQuery.easing, {
   }
 
 })(jQuery);
-#T=ui-randomColor
+#T=ui-randomColor //随机颜色
 /* 取随机数 */
 +function ($) {
   'use strict';
@@ -6870,9 +6563,9 @@ jQuery.extend(jQuery.easing, {
   }
   $(document).on('click', srand, Rand.prototype.rcolor);
 }(jQuery);
-#T=ui-reload
+#T=ui-reload //html5 历史地址跳转
 /** 
-/* 取随机颜色 */
+/* ajax加载 */
 * 
 * @package jquery
 * @author cuki13
@@ -6932,7 +6625,7 @@ jQuery.extend(jQuery.easing, {
         ajax = true;
       },
       error:function  () {
-        alert('????????????????????????');
+        alert('加载错误');
         $.blockHide($("#loading-wrap"));
       },
       beforeSend:function  () {
@@ -6981,36 +6674,6 @@ jQuery.extend(jQuery.easing, {
  }
 
 })(jQuery);
-#T=ui-rem //将屏幕分成10/1rem
-    //将屏幕分割成10/1em
-    (function(win) {
-        var doc = win.document;
-        var docEl = doc.documentElement;
-        var tid;
-
-        function refreshRem() {
-            var width = docEl.getBoundingClientRect().width;
-            if (width > 640) { // 最大宽度
-                width = 640;
-            }
-            var rem = width / 10; // 将屏幕宽度分成10份， 1份为1rem
-            docEl.style.fontSize = rem + 'px';
-        }
-
-        win.addEventListener('resize', function() {
-            clearTimeout(tid);
-            tid = setTimeout(refreshRem, 300);
-        }, false);
-        win.addEventListener('pageshow', function(e) {
-            if (e.persisted) {
-                clearTimeout(tid);
-                tid = setTimeout(refreshRem, 300);
-            }
-        }, false);
-
-        refreshRem();
-
-    })(window);
 #T=ui-scbanner //菲亚特滚动
  /** 
 * extend 图片滚动插件
@@ -7356,56 +7019,6 @@ var sl = $('#slider1').scbanner({
 
     };  
 })(jQuery);
-#T=ui-scollUp
-/** 
-* extend 向上每隔几秒滚动
-* @author cuki13
-  $(obj).scollUp({
-    speed:3000,
-    scolldiv:'.scolldiv'
-  })
-*/
-+(function($){
-  $.fn.scollUp = function (options) {
-    var obj=$(this);
-    var defualts = {
-      scolldiv:'.scolldiv'
-    };
-    var opts = $.extend({}, defualts, options);  
-
-    var MyMar = 0;
-    var scolldiv = obj.find(opts.scolldiv);
-    var objclone = obj.find(opts.scolldiv).clone();
-    objclone.appendTo(obj);
-    function Marquee() {
-       if(objclone.offset().top - obj.offset().top <=0){
-          obj.scrollTop(0);
-         }else{
-           if ((obj.scrollTop())%(objclone.height()/2) == 0) {
-            clearInterval(MyMar);
-            setTimeout(
-              function(){
-                clearInterval(MyMar);
-                MyMar=setInterval(Marquee,speed);
-              }, 3000)
-
-           }
-            var k = obj.scrollTop();
-            obj.scrollTop(k+1);
-         }
-    }
-
-     MyMar=setInterval(Marquee,speed);
-
-     obj.hover(function  () {
-      clearInterval(MyMar);
-     },function  () {
-      clearInterval(MyMar);
-      MyMar=setInterval(Marquee,speed);
-     })
-    
-  };  
-})(jQuery);
 #T=ui-scrollbar //温柔滚动
 
 /*
@@ -7585,7 +7198,7 @@ var sl = $('#slider1').scbanner({
 
 
 })(jQuery);
-#T=ui-scrolleffect
+#T=ui-scrolleffect //巴萨 滚动控制效果
 /* ========================================================================
 滚动控制效果
  */
@@ -7743,7 +7356,7 @@ var sl = $('#slider1').scbanner({
   })
 
 }(jQuery);
-#T=ui-scrollPic
+#T=ui-scrollPic //图片循环
 /** 
 * extend 图片循环
 * 
@@ -8522,8 +8135,8 @@ $.fn.scollpic= function (options) {
 
 
 })(jQuery);
-#T=ui-snows
-///** 
+#T=ui-snows //html5 雪花效果
+/** 
 * extend 雪花效果
 * 
 * @package jquery
@@ -8757,7 +8370,7 @@ $.fn.scollpic= function (options) {
 
     var opts = $.extend({}, defualts, options);  
 
-    var is_fade=false;   //?ж?Ч??????????
+    var is_fade=false;   //是否动画中
     opts.taglink.click(function  (e) {
       if ($(this).hasClass(opts.current_class)) {
         return false;
