@@ -2960,13 +2960,17 @@ margin-bottom:auto;
 mergeAttributes(^!)
 #T=meta telephone=no //取消网页自动拨号
 <meta name="format-detection" content="telephone=no">
-#T=meta-com
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
-#T=meta-edge
+#T=meta-edge //以最高版本IE运行
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-#T=meta-moblie
+#T=meta-expires //缓存时间
+<meta http-equiv="expires" content="0|Wed,26 Feb 1997 08:21:57: GMT" />
+#T=meta-moblie //移动端1:1
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-#T=meta-utf
+#T=meta-refresh //10秒自动跳转
+<meta http-equiv="refresh" content="10|10; url=http://wwww.doyoe.com" />
+#T=meta-renderer //360以极速模式运行
+<meta name="renderer" content="webkit" />
+#T=meta-utf // 声明UTF格式
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 #T=meter
 <meter>^!</meter>
