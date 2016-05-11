@@ -10,16 +10,6 @@ $(this)[0].offsetWidth;
 #T=@内核判断
 @-moz-document url-prefix() {.body { overflow-x: hidden; }}
 @media screen and (-webkit-min-device-pixel-ratio:0) { .body { overflow-y: hidden;}}
-#T=magento空页面
-<reference name="root">
-   <action method="setTemplate"><template>page/cms-empty.phtml</template></action>
-</reference>
-<reference name="content">
-            <action method="unsetChild">
-                <alias>cms.wrapper</alias>
-            </action>
-            <block type="cms/page" name="cms_page"/>
-</reference>
 #T=““
 “  ”
 #T=<div id='fancybox-loading'><div></div></div>
@@ -528,6 +518,16 @@ href="(.[^^"]*)"
             <img src="http://mall.bydauto.com.cn/media/wysiwyg/1113/_720-04.jpg" alt="">
 #T=magento加cms模块<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('slidownblock')->toHtml(); ?>
+#T=magento空页面
+<reference name="root">
+   <action method="setTemplate"><template>page/cms-empty.phtml</template></action>
+</reference>
+<reference name="content">
+            <action method="unsetChild">
+                <alias>cms.wrapper</alias>
+            </action>
+            <block type="cms/page" name="cms_page"/>
+</reference>
 #T=style="(.[^"]*)" //搜索里面的内容
 style="(.[^^"]*)"
 #T=tablefix
@@ -564,6 +564,8 @@ v.charAt(i)
 }
 #T=window.parent.location.href// ifram里面让父页面跳转
 window.parent.location.href='http://mall.bydauto.com.cn/index.php/echo/index/newhome';
+#T=优酷自动播放
+<embed src="http://player.youku.com/player.php/sid/XMTM5MDU4MzI4OA=/v.swf?VideoIDS=XMTM5MDU4MzI4OA&isAutoPlay=true" allowFullScreen="true" quality="high" width="480" height="400"  align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" ></embed>
 #T=比亚迪简单产品CSS
 <style type="text/css">
   #J_ItemDesc .des-car-t3{border:0;}
